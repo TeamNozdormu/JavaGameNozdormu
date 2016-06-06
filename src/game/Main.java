@@ -1,6 +1,5 @@
 package game;
 
-import game.engine.Game;
 import game.menu.Menu;
 import javafx.application.Application;
 import javafx.scene.Group;
@@ -18,6 +17,12 @@ public class Main extends Application {
 
     public static void main(String[] args) {
         launch(args);
+    }
+
+    @Override
+    public void init() throws Exception {
+        super.init();
+        //init res
     }
 
     @Override
@@ -39,5 +44,20 @@ public class Main extends Application {
 
         primaryStage.setScene(theScene);
         primaryStage.show();
+
+        Thread gameLoop = new Thread(new Runnable() {
+            @Override
+            public void run() {
+
+            }
+        });
+
+        gameLoop.start();
+    }
+
+    @Override
+    public void stop() throws Exception {
+        super.stop();
+        //release res
     }
 }
