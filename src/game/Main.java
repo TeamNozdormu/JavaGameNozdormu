@@ -1,19 +1,32 @@
 package game;
 
 import game.menu.Menu;
+import game.menu.StatusMenu;
 import javafx.application.Application;
+import javafx.geometry.Insets;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
+import javafx.scene.layout.GridPane;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 public class Main extends Application {
 
-    private static final int width = 1240;  //800
-    private static final int high = 826;    //width / 12 * 9;
+    private static final int WIDTH = 1240;  //800
+    private static final int HIGH = 826;    //width / 12 * 9;
+    private static final String BACKGROUND = "universe.jpg";
+    private static final String MAP = "map.png";
+
     private static Menu menu;
+    private StatusMenu status;
+    private Group root;
+    private Scene rootScene;
+    private Canvas canvas;
+    private GraphicsContext graphicsContext;
 
     public static void main(String[] args) {
         launch(args);
@@ -22,6 +35,15 @@ public class Main extends Application {
     @Override
     public void init() throws Exception {
         super.init();
+        this.root = new Group();                                        //create root node
+        this.rootScene = new Scene(this.root, WIDTH, HIGH);
+        this.canvas = new Canvas(WIDTH, HIGH);
+        this.graphicsContext = this.canvas.getGraphicsContext2D();
+        this.graphicsContext.drawImage(new Image(BACKGROUND), 0, 0);    //draw background
+        this.graphicsContext.drawImage(new Image(MAP), 100, 100);       //draw map
+        this.root.getChildren().add(canvas);
+
+        this.status = new StatusMenu();
         //init res
     }
 
@@ -29,20 +51,16 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception{
         primaryStage.setTitle("Game Nozdormu");
 
-        Group root = new Group();
-        Scene theScene = new Scene(root, width, high);
-        Canvas canvas = new Canvas(width, high);
-        GraphicsContext gc = canvas.getGraphicsContext2D();
-        Image background = new Image("universe.jpg");
-        Image map = new Image("map.png");
 
-        gc.drawImage(background, 0, 0);
-        gc.drawImage(map, 100, 100);
+//        GridPane grid = new GridPane();
+//        grid.setPadding(new Insets(5));
+//        Label name = new Label("Ime");
+//        name.setTextFill(Color.web("#FFFFFF"));
+//        grid.add(name, 0, 0);
+//
+//        menu = new Menu(root);
 
-        root.getChildren().add(canvas);
-        menu = new Menu(root);
-
-        primaryStage.setScene(theScene);
+        primaryStage.setScene(this.rootScene);
         primaryStage.show();
 
         Thread gameLoop = new Thread(new Runnable() {
