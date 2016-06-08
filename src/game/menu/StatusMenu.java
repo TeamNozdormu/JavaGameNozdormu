@@ -1,7 +1,7 @@
 package game.menu;
 
 public class StatusMenu {
-    private static final int HEALTH_DEFAULT = 100;
+    private static final int HEALTH_DEFAULT = 0;
     private static final int EXPERIENCE_DEFAULT = 0;
     private static final int ATTACK_DEFAULT = 0;
     private static final int DEFENCE_DEFAULT = 0;

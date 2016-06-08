@@ -50,7 +50,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
         primaryStage.setTitle("Game Nozdormu");
-
+        this.menu = new Menu(this.root, this.status);
 
 //        GridPane grid = new GridPane();
 //        grid.setPadding(new Insets(5));
@@ -58,7 +58,7 @@ public class Main extends Application {
 //        name.setTextFill(Color.web("#FFFFFF"));
 //        grid.add(name, 0, 0);
 //
-//        menu = new Menu(root);
+
 
         primaryStage.setScene(this.rootScene);
         primaryStage.show();
