@@ -2,17 +2,18 @@ package game;
 
 import game.menu.Menu;
 import game.menu.StatusMenu;
+import game.player.EnemyNames;
+import game.player.Player;
+import game.player.Type;
 import javafx.application.Application;
-import javafx.geometry.Insets;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.control.Label;
 import javafx.scene.image.Image;
-import javafx.scene.layout.GridPane;
-import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+
+import java.util.HashMap;
 
 public class Main extends Application {
 
@@ -27,6 +28,8 @@ public class Main extends Application {
     private Scene rootScene;
     private Canvas canvas;
     private GraphicsContext graphicsContext;
+    protected Player player;
+    protected HashMap<String, Player> enemies;
 
     public static void main(String[] args) {
         launch(args);
@@ -42,15 +45,23 @@ public class Main extends Application {
         this.graphicsContext.drawImage(new Image(BACKGROUND), 0, 0);    //draw background
         this.graphicsContext.drawImage(new Image(MAP), 100, 100);       //draw map
         this.root.getChildren().add(canvas);
-
         this.status = new StatusMenu();
+        this.menu = new Menu(this.root, this.status);
+        this.enemies = new HashMap<>();
+        for (int i = 0; i < 25; i++) {
+            this.enemies.put(EnemyNames.Achilles +"", new Player(EnemyNames.Achilles+ "", this.status, Type.ENEMY));
+        }
+
+        //TODO player init after click Create player button
+        this.player = new Player("Player First", this.status, Type.USER);
+
+        System.out.println();
         //init res
     }
 
     @Override
     public void start(Stage primaryStage) throws Exception{
         primaryStage.setTitle("Game Nozdormu");
-        this.menu = new Menu(this.root, this.status);
 
 //        GridPane grid = new GridPane();
 //        grid.setPadding(new Insets(5));

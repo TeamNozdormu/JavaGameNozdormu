@@ -82,4 +82,8 @@ public class Menu {
         player.setLayoutX(880);
         player.setLayoutY(20);
     }
+
+    public void updateGridMenu(StatusMenu status) {
+
+    }
 }
