@@ -1,8 +1,18 @@
 package game.player;
 
 public abstract class Personality {
-    protected static final int HEALTH_DEFAULT = 20;
-    protected static final int EXPERIENCE_DEFAULT = 5;
-    protected static final int ATTACK_DEFAULT = 5;
-    protected static final int DEFENCE_DEFAULT = 5;
+    public static final int HEALTH_DEFAULT = 0;
+    public static final int EXPERIENCE_DEFAULT = 0;
+    public static final int ATTACK_DEFAULT = 0;
+    public static final int DEFENCE_DEFAULT = 0;
+
+    public abstract void setHealth(int health);
+    public abstract void setExperience(int experience);
+    public abstract void setAttack(int attack);
+    public abstract void setDefence(int defence);
+
+    public abstract int getDefence();
+    public abstract int getAttack();
+    public abstract int getExperience();
+    public abstract int getHealth();
 }
