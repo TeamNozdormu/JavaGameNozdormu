@@ -18,7 +18,6 @@ import javafx.scene.paint.Color;
 public class Menu {
     private Group group;
     private StatusMenu status;
-    private GridPane gridMenu;
     private Player playerGame;
 
     public Menu(Group group, StatusMenu status, Player playerGame) {
@@ -98,6 +97,7 @@ public class Menu {
                         String username = user.getText();
                         Menu.this.playerGame = new Player(username, Menu.this.status, Type.USER);
                         Object a = Menu.this.group.getChildren().remove(3); //remove grid with username field
+                        //TODO render again status menu
                     }
                 });
 

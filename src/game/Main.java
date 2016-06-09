@@ -6,11 +6,13 @@ import game.player.EnemyNames;
 import game.player.Player;
 import game.player.Type;
 import javafx.application.Application;
+import javafx.event.EventHandler;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
+import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 
 import java.util.HashMap;
@@ -19,6 +21,8 @@ public class Main extends Application {
 
     private static final int WIDTH = 1240;  //800
     private static final int HIGH = 826;    //width / 12 * 9;
+    private static final int GAME_WIDTH = 1240;
+    private static final int GAME_HIGH = 826;
     private static final String BACKGROUND = "universe.jpg";
     private static final String MAP = "map.png";
 
@@ -26,6 +30,7 @@ public class Main extends Application {
     private StatusMenu status;
     private Group root;
     private Scene rootScene;
+    public Scene gameScene;
     private Canvas canvas;
     private GraphicsContext graphicsContext;
     private Player player;
@@ -40,6 +45,7 @@ public class Main extends Application {
         super.init();
         this.root = new Group();                                        //create root node
         this.rootScene = new Scene(this.root, WIDTH, HIGH);
+        //this.gameScene = new Scene(this.root, GAME_WIDTH, GAME_HIGH);
         this.canvas = new Canvas(WIDTH, HIGH);
         this.graphicsContext = this.canvas.getGraphicsContext2D();
         this.graphicsContext.drawImage(new Image(BACKGROUND), 0, 0);    //draw background
@@ -52,9 +58,6 @@ public class Main extends Application {
             EnemyNames name = EnemyNames.values()[i];
             this.enemies.put(name + "", new Player( name + "", this.status, Type.ENEMY));
         }
-
-        System.out.println("init");
-        //init res
     }
 
     @Override
@@ -66,7 +69,16 @@ public class Main extends Application {
         Thread gameLoop = new Thread(new Runnable() {
             @Override
             public void run() {
-
+                while (true) {
+                    Main.this.rootScene.setOnKeyPressed(new EventHandler<KeyEvent>() {
+                        @Override
+                        public void handle(KeyEvent event) {
+                            //TODO move steps
+                            System.out.println(event);
+                            System.out.println();
+                        }
+                    });
+                }
             }
         });
 
