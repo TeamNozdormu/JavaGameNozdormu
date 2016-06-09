@@ -87,6 +87,13 @@ public class Main extends Application {
     @Override
     public void stop() throws Exception {
         super.stop();
+        this.status = null;
+        this.root = null;
+        this.rootScene = null;
+        this.player = null;
+        this.graphicsContext = null;
+        this.enemies = null;
+        this.canvas = null;
         //release res
     }
 }
