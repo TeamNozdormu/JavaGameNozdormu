@@ -48,29 +48,21 @@ public class Main extends Application {
         this.status = new StatusMenu();
         this.menu = new Menu(this.root, this.status);
         this.enemies = new HashMap<>();
-        for (int i = 0; i < 25; i++) {
-            this.enemies.put(EnemyNames.Achilles +"", new Player(EnemyNames.Achilles+ "", this.status, Type.ENEMY));
+        for (int i = 0; i < 20; i++) {
+            EnemyNames name = EnemyNames.values()[i];
+            this.enemies.put(name + "", new Player( name + "", this.status, Type.ENEMY));
         }
 
         //TODO player init after click Create player button
         this.player = new Player("Player First", this.status, Type.USER);
 
-        System.out.println();
+        System.out.println("init");
         //init res
     }
 
     @Override
     public void start(Stage primaryStage) throws Exception{
         primaryStage.setTitle("Game Nozdormu");
-
-//        GridPane grid = new GridPane();
-//        grid.setPadding(new Insets(5));
-//        Label name = new Label("Ime");
-//        name.setTextFill(Color.web("#FFFFFF"));
-//        grid.add(name, 0, 0);
-//
-
-
         primaryStage.setScene(this.rootScene);
         primaryStage.show();
 
