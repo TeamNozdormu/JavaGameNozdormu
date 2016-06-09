@@ -1,7 +1,6 @@
 package game;
 
 import game.menu.Menu;
-import game.menu.StatusMenu;
 import game.player.EnemyNames;
 import game.player.Player;
 import game.player.Type;
@@ -28,7 +27,6 @@ public class Main extends Application {
     private static final String MAP = "map.png";
 
     private Menu menu;
-    private StatusMenu status;
     private Group root;
     private Scene rootScene;
     public Scene gameScene;
@@ -52,7 +50,6 @@ public class Main extends Application {
         this.graphicsContext.drawImage(new Image(BACKGROUND), 0, 0);    //draw background
         this.graphicsContext.drawImage(new Image(MAP), 100, 100);       //draw map
         this.root.getChildren().add(canvas);
-        this.status = new StatusMenu();
         this.menu = new Menu(this.root, this.player);
         this.enemies = new HashMap<>();
         for (int i = 0; i < 20; i++) {
@@ -86,11 +83,10 @@ public class Main extends Application {
         //move heroes in this timer
         new AnimationTimer() {
             public void handle(long currentNanoTime) {
-                Main.this.menu.updateGridMenu();
+                Main.this.menu.renderGridMenu();
                 System.out.println(currentNanoTime);
             }
         }.start();
-
         gameLoop.start();
 
         primaryStage.show();
@@ -99,7 +95,6 @@ public class Main extends Application {
     @Override
     public void stop() throws Exception {
         super.stop();
-        this.status = null;
         this.root = null;
         this.rootScene = null;
         this.player = null;
