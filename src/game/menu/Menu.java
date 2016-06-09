@@ -1,6 +1,6 @@
 package game.menu;
 
-import game.Main;
+import game.player.Personality;
 import game.player.Player;
 import game.player.Type;
 import javafx.event.ActionEvent;
@@ -17,15 +17,18 @@ import javafx.scene.paint.Color;
 
 public class Menu {
     private Group group;
-    private StatusMenu status;
     private Player playerGame;
 
-    public Menu(Group group, StatusMenu status, Player playerGame) {
+    public Menu(Group group, Player playerGame) {
         this.group = group;
         this.playerGame = playerGame;
-        this.status = status;
         group.getChildren().add(this.createButton());
         group.getChildren().add(this.createGridMenu());
+    }
+
+    public void updateGridMenu() {
+        //this.group.getChildren().remove(2)
+        System.out.println("update grid");
     }
 
     private GridPane createGridMenu() {
@@ -39,7 +42,7 @@ public class Menu {
 
         Label health = new Label("Health:");
         health.setTextFill(Color.web("#FFFFFF"));
-        Label healthValue = new Label(status.getHealth() + "");
+        Label healthValue = new Label(Personality.HEALTH_DEFAULT + "");
         healthValue.setTextFill(Color.web("#A40013"));
         GridPane.setHalignment(health, HPos.LEFT);
         GridPane.setHalignment(healthValue, HPos.RIGHT);
@@ -48,7 +51,7 @@ public class Menu {
 
         Label attack = new Label("Attack:");
         attack.setTextFill(Color.web("#FFFFFF"));
-        Label attackValue = new Label(status.getAttack() + "");
+        Label attackValue = new Label(Personality.ATTACK_DEFAULT + "");
         attackValue.setTextFill(Color.web("#A40013"));
         GridPane.setHalignment(attack, HPos.LEFT);
         GridPane.setHalignment(attackValue, HPos.RIGHT);
@@ -57,7 +60,7 @@ public class Menu {
 
         Label defence = new Label("Defence:");
         defence.setTextFill(Color.web("#FFFFFF"));
-        Label defenceValue = new Label(status.getDefence() + "");
+        Label defenceValue = new Label(Personality.DEFENCE_DEFAULT + "");
         defenceValue.setTextFill(Color.web("#A40013"));
         GridPane.setHalignment(defence, HPos.LEFT);
         GridPane.setHalignment(defenceValue, HPos.RIGHT);
@@ -66,7 +69,7 @@ public class Menu {
 
         Label experience = new Label("Experience:");
         experience.setTextFill(Color.web("#FFFFFF"));
-        Label experienceValue = new Label(status.getExperience() + "");
+        Label experienceValue = new Label(Personality.EXPERIENCE_DEFAULT + "");
         experienceValue.setTextFill(Color.web("#A40013"));
         GridPane.setHalignment(experience, HPos.LEFT);
         GridPane.setHalignment(experienceValue, HPos.RIGHT);
@@ -95,8 +98,8 @@ public class Menu {
                     @Override
                     public void handle(ActionEvent event) {
                         String username = user.getText();
-                        Menu.this.playerGame = new Player(username, Menu.this.status, Type.USER);
-                        Object a = Menu.this.group.getChildren().remove(3); //remove grid with username field
+                        Menu.this.playerGame = new Player(username, Type.USER);
+                        Menu.this.group.getChildren().remove(3); //remove grid with username field
                         //TODO render again status menu
                     }
                 });
@@ -115,9 +118,5 @@ public class Menu {
         });
 
         return player;
-    }
-
-    public void updateGridMenu(StatusMenu status) {
-
     }
 }
