@@ -16,77 +16,106 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 
 public class Menu {
+    private Button player;
+    private GridPane grid;
     private Group group;
     private Player playerGame;
+    private GridPane gridMenu;
 
     public Menu(Group group, Player playerGame) {
         this.group = group;
         this.playerGame = playerGame;
-        group.getChildren().add(this.createButton());
-        group.getChildren().add(this.createGridMenu());
+        renderGridMenu();
+        createButton();
     }
 
-    public void updateGridMenu() {
-        //this.group.getChildren().remove(2)
-        System.out.println("update grid");
-    }
+    public void renderGridMenu() {
+        if (this.gridMenu != null) {
+            this.group.getChildren().removeAll(this.gridMenu);
+        }
 
-    private GridPane createGridMenu() {
-        GridPane gridMenu = new GridPane();
-        gridMenu.setPadding(new Insets(5));
-        gridMenu.setHgap(5);
-        gridMenu.setVgap(5);
+        int healthPoints = 0;
+        int attackPoints = 0;
+        int defencePoints = 0;
+        int experiencePoints = 0;
+
+        this.gridMenu = new GridPane();
+        this.gridMenu.setPadding(new Insets(5));
+        this.gridMenu.setHgap(5);
+        this.gridMenu.setVgap(5);
         ColumnConstraints columnOne = new ColumnConstraints(100);
         ColumnConstraints columnTwo = new ColumnConstraints(50, 100, 200);
-        gridMenu.getColumnConstraints().addAll(columnOne, columnTwo);
+        this.gridMenu.getColumnConstraints().addAll(columnOne, columnTwo);
+
+        if (this.playerGame == null) {
+            healthPoints = Personality.HEALTH_DEFAULT;
+            attackPoints = Personality.ATTACK_DEFAULT;
+            defencePoints = Personality.DEFENCE_DEFAULT;
+            experiencePoints = Personality.EXPERIENCE_DEFAULT;
+        } else {
+            healthPoints = this.playerGame.getHealth();
+            attackPoints = this.playerGame.getAttack();
+            defencePoints = this.playerGame.getDefence();
+            experiencePoints = this.playerGame.getExperience();
+
+            Label user = new Label("Username:");
+            user.setTextFill(Color.web("#FFFFFF"));
+            Label userName = new Label(this.playerGame.getPlayerName());
+            userName.setTextFill(Color.web("#A40013"));
+            GridPane.setHalignment(user, HPos.LEFT);
+            GridPane.setHalignment(userName, HPos.RIGHT);
+            this.gridMenu.add(user, 0, 4);
+            this.gridMenu.add(userName, 1, 4);
+
+        }
 
         Label health = new Label("Health:");
         health.setTextFill(Color.web("#FFFFFF"));
-        Label healthValue = new Label(Personality.HEALTH_DEFAULT + "");
+        Label healthValue = new Label(healthPoints + "");
         healthValue.setTextFill(Color.web("#A40013"));
         GridPane.setHalignment(health, HPos.LEFT);
         GridPane.setHalignment(healthValue, HPos.RIGHT);
-        gridMenu.add(health, 0, 0);
-        gridMenu.add(healthValue, 1, 0);
+        this.gridMenu.add(health, 0, 0);
+        this.gridMenu.add(healthValue, 1, 0);
 
         Label attack = new Label("Attack:");
         attack.setTextFill(Color.web("#FFFFFF"));
-        Label attackValue = new Label(Personality.ATTACK_DEFAULT + "");
+        Label attackValue = new Label(attackPoints + "");
         attackValue.setTextFill(Color.web("#A40013"));
         GridPane.setHalignment(attack, HPos.LEFT);
         GridPane.setHalignment(attackValue, HPos.RIGHT);
-        gridMenu.add(attack, 0, 1);
-        gridMenu.add(attackValue, 1, 1);
+        this.gridMenu.add(attack, 0, 1);
+        this.gridMenu.add(attackValue, 1, 1);
 
         Label defence = new Label("Defence:");
         defence.setTextFill(Color.web("#FFFFFF"));
-        Label defenceValue = new Label(Personality.DEFENCE_DEFAULT + "");
+        Label defenceValue = new Label(defencePoints + "");
         defenceValue.setTextFill(Color.web("#A40013"));
         GridPane.setHalignment(defence, HPos.LEFT);
         GridPane.setHalignment(defenceValue, HPos.RIGHT);
-        gridMenu.add(defence, 0, 2);
-        gridMenu.add(defenceValue, 1, 2);
+        this.gridMenu.add(defence, 0, 2);
+        this.gridMenu.add(defenceValue, 1, 2);
 
         Label experience = new Label("Experience:");
         experience.setTextFill(Color.web("#FFFFFF"));
-        Label experienceValue = new Label(Personality.EXPERIENCE_DEFAULT + "");
+        Label experienceValue = new Label(experiencePoints + "");
         experienceValue.setTextFill(Color.web("#A40013"));
         GridPane.setHalignment(experience, HPos.LEFT);
         GridPane.setHalignment(experienceValue, HPos.RIGHT);
-        gridMenu.add(experience, 0, 3);
-        gridMenu.add(experienceValue, 1, 3);
-        gridMenu.setLayoutX(1000);
-        gridMenu.setLayoutY(10);
+        this.gridMenu.add(experience, 0, 3);
+        this.gridMenu.add(experienceValue, 1, 3);
+        this.gridMenu.setLayoutX(1000);
+        this.gridMenu.setLayoutY(10);
 
-        return gridMenu;
+        this.group.getChildren().add(this.gridMenu);
     }
 
-    private Button createButton() {
-        Button player = new Button();
-        player.setText("Create Player");
-        player.setLayoutX(880);
-        player.setLayoutY(20);
-        player.setOnAction(new EventHandler<ActionEvent>() {
+    private void createButton() {
+        this.player = new Button();
+        this.player.setText("Create Player");
+        this.player.setLayoutX(880);
+        this.player.setLayoutY(20);
+        this.player.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
                 TextField user = new TextField();
@@ -99,12 +128,12 @@ public class Menu {
                     public void handle(ActionEvent event) {
                         String username = user.getText();
                         Menu.this.playerGame = new Player(username, Type.USER);
-                        Menu.this.group.getChildren().remove(3); //remove grid with username field
-                        //TODO render again status menu
+                        Menu.this.group.getChildren().remove(Menu.this.grid);       //remove grid with username field
+                        Menu.this.group.getChildren().remove(Menu.this.player);  //remove button for create player
                     }
                 });
 
-                GridPane grid = new GridPane();
+                Menu.this.grid = new GridPane();
                 grid.setLayoutX(450);
                 grid.setLayoutY(350);
                 grid.setVgap(5);
@@ -116,7 +145,6 @@ public class Menu {
                 Menu.this.group.getChildren().add(grid);
             }
         });
-
-        return player;
+        group.getChildren().add(this.player);
     }
 }
