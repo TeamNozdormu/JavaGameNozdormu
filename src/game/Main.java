@@ -5,6 +5,7 @@ import game.menu.StatusMenu;
 import game.player.EnemyNames;
 import game.player.Player;
 import game.player.Type;
+import javafx.animation.AnimationTimer;
 import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.scene.Group;
@@ -21,12 +22,12 @@ public class Main extends Application {
 
     private static final int WIDTH = 1240;  //800
     private static final int HIGH = 826;    //width / 12 * 9;
-    private static final int GAME_WIDTH = 1240;
-    private static final int GAME_HIGH = 826;
+    private static final int GAME_WIDTH = 1000;
+    private static final int GAME_HIGH = 800;
     private static final String BACKGROUND = "universe.jpg";
     private static final String MAP = "map.png";
 
-    private static Menu menu;
+    private Menu menu;
     private StatusMenu status;
     private Group root;
     private Scene rootScene;
@@ -52,37 +53,47 @@ public class Main extends Application {
         this.graphicsContext.drawImage(new Image(MAP), 100, 100);       //draw map
         this.root.getChildren().add(canvas);
         this.status = new StatusMenu();
-        this.menu = new Menu(this.root, this.status, this.player);
+        this.menu = new Menu(this.root, this.player);
         this.enemies = new HashMap<>();
         for (int i = 0; i < 20; i++) {
             EnemyNames name = EnemyNames.values()[i];
-            this.enemies.put(name + "", new Player( name + "", this.status, Type.ENEMY));
+            this.enemies.put(name + "", new Player( name + "", Type.ENEMY));
         }
     }
 
     @Override
     public void start(Stage primaryStage) throws Exception{
         primaryStage.setTitle("Game Nozdormu");
-        primaryStage.setScene(this.rootScene);
-        primaryStage.show();
 
+        primaryStage.setScene(this.rootScene);
         Thread gameLoop = new Thread(new Runnable() {
             @Override
             public void run() {
                 while (true) {
                     Main.this.rootScene.setOnKeyPressed(new EventHandler<KeyEvent>() {
                         @Override
-                        public void handle(KeyEvent event) {
-                            //TODO move steps
-                            System.out.println(event);
-                            System.out.println();
+                        public void handle(KeyEvent key) {
+                            String keyCode = key.getCode().toString();
+                            //TODO move steps player
+                            System.out.println(key);
+                            System.out.println(keyCode);
                         }
                     });
                 }
             }
         });
 
+        //move heroes in this timer
+        new AnimationTimer() {
+            public void handle(long currentNanoTime) {
+                Main.this.menu.updateGridMenu();
+                System.out.println(currentNanoTime);
+            }
+        }.start();
+
         gameLoop.start();
+
+        primaryStage.show();
     }
 
     @Override
