@@ -1,35 +1,42 @@
 package game.menu;
 
+import game.Main;
+import game.player.Player;
+import game.player.Type;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
 import javafx.scene.Group;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 
 public class Menu {
-    private Button start;
-    private Button player;
+    private Group group;
+    private StatusMenu status;
     private GridPane gridMenu;
+    private Player playerGame;
 
-    public Menu(Group group, StatusMenu status) {
-        this.createGrid(status);
-        this.createButtons();
-        group.getChildren().add(start);
-        group.getChildren().add(player);
-        group.getChildren().add(this.gridMenu);
+    public Menu(Group group, StatusMenu status, Player playerGame) {
+        this.group = group;
+        this.playerGame = playerGame;
+        this.status = status;
+        group.getChildren().add(this.createButton());
+        group.getChildren().add(this.createGridMenu());
     }
 
-    private void  createGrid(StatusMenu status) {
-        this.gridMenu = new GridPane();
-        this.gridMenu.setPadding(new Insets(5));
-        this.gridMenu.setHgap(5);
-        this.gridMenu.setVgap(5);
+    private GridPane createGridMenu() {
+        GridPane gridMenu = new GridPane();
+        gridMenu.setPadding(new Insets(5));
+        gridMenu.setHgap(5);
+        gridMenu.setVgap(5);
         ColumnConstraints columnOne = new ColumnConstraints(100);
         ColumnConstraints columnTwo = new ColumnConstraints(50, 100, 200);
-        this.gridMenu.getColumnConstraints().addAll(columnOne, columnTwo);
+        gridMenu.getColumnConstraints().addAll(columnOne, columnTwo);
 
         Label health = new Label("Health:");
         health.setTextFill(Color.web("#FFFFFF"));
@@ -37,8 +44,8 @@ public class Menu {
         healthValue.setTextFill(Color.web("#A40013"));
         GridPane.setHalignment(health, HPos.LEFT);
         GridPane.setHalignment(healthValue, HPos.RIGHT);
-        this.gridMenu.add(health, 0, 0);
-        this.gridMenu.add(healthValue, 1, 0);
+        gridMenu.add(health, 0, 0);
+        gridMenu.add(healthValue, 1, 0);
 
         Label attack = new Label("Attack:");
         attack.setTextFill(Color.web("#FFFFFF"));
@@ -46,8 +53,8 @@ public class Menu {
         attackValue.setTextFill(Color.web("#A40013"));
         GridPane.setHalignment(attack, HPos.LEFT);
         GridPane.setHalignment(attackValue, HPos.RIGHT);
-        this.gridMenu.add(attack, 0, 1);
-        this.gridMenu.add(attackValue, 1, 1);
+        gridMenu.add(attack, 0, 1);
+        gridMenu.add(attackValue, 1, 1);
 
         Label defence = new Label("Defence:");
         defence.setTextFill(Color.web("#FFFFFF"));
@@ -55,8 +62,8 @@ public class Menu {
         defenceValue.setTextFill(Color.web("#A40013"));
         GridPane.setHalignment(defence, HPos.LEFT);
         GridPane.setHalignment(defenceValue, HPos.RIGHT);
-        this.gridMenu.add(defence, 0, 2);
-        this.gridMenu.add(defenceValue, 1, 2);
+        gridMenu.add(defence, 0, 2);
+        gridMenu.add(defenceValue, 1, 2);
 
         Label experience = new Label("Experience:");
         experience.setTextFill(Color.web("#FFFFFF"));
@@ -64,23 +71,50 @@ public class Menu {
         experienceValue.setTextFill(Color.web("#A40013"));
         GridPane.setHalignment(experience, HPos.LEFT);
         GridPane.setHalignment(experienceValue, HPos.RIGHT);
-        this.gridMenu.add(experience, 0, 3);
-        this.gridMenu.add(experienceValue, 1, 3);
-        this.gridMenu.setLayoutX(1000);
-        this.gridMenu.setLayoutY(10);
+        gridMenu.add(experience, 0, 3);
+        gridMenu.add(experienceValue, 1, 3);
+        gridMenu.setLayoutX(1000);
+        gridMenu.setLayoutY(10);
+
+        return gridMenu;
     }
 
-    private void createButtons() {
-        this.start = new Button();
-        this.player = new Button();
-
-        start.setText("Start Game");
-        start.setLayoutX(880);
-        start.setLayoutY(60);
-
+    private Button createButton() {
+        Button player = new Button();
         player.setText("Create Player");
         player.setLayoutX(880);
         player.setLayoutY(20);
+        player.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                TextField user = new TextField();
+                user.setPromptText("Username");
+
+                Button start = new Button();
+                start.setText("Start Game");
+                start.setOnAction(new EventHandler<ActionEvent>() {
+                    @Override
+                    public void handle(ActionEvent event) {
+                        String username = user.getText();
+                        Menu.this.playerGame = new Player(username, Menu.this.status, Type.USER);
+                        Object a = Menu.this.group.getChildren().remove(3); //remove grid with username field
+                    }
+                });
+
+                GridPane grid = new GridPane();
+                grid.setLayoutX(450);
+                grid.setLayoutY(350);
+                grid.setVgap(5);
+                grid.setHgap(5);
+                grid.setPadding(new Insets(5, 5, 5, 5));
+                grid.add(user, 0, 0);
+                grid.add(start, 1, 0);
+
+                Menu.this.group.getChildren().add(grid);
+            }
+        });
+
+        return player;
     }
 
     public void updateGridMenu(StatusMenu status) {

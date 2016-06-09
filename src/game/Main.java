@@ -28,8 +28,8 @@ public class Main extends Application {
     private Scene rootScene;
     private Canvas canvas;
     private GraphicsContext graphicsContext;
-    protected Player player;
-    protected HashMap<String, Player> enemies;
+    private Player player;
+    public HashMap<String, Player> enemies;
 
     public static void main(String[] args) {
         launch(args);
@@ -46,15 +46,12 @@ public class Main extends Application {
         this.graphicsContext.drawImage(new Image(MAP), 100, 100);       //draw map
         this.root.getChildren().add(canvas);
         this.status = new StatusMenu();
-        this.menu = new Menu(this.root, this.status);
+        this.menu = new Menu(this.root, this.status, this.player);
         this.enemies = new HashMap<>();
         for (int i = 0; i < 20; i++) {
             EnemyNames name = EnemyNames.values()[i];
             this.enemies.put(name + "", new Player( name + "", this.status, Type.ENEMY));
         }
-
-        //TODO player init after click Create player button
-        this.player = new Player("Player First", this.status, Type.USER);
 
         System.out.println("init");
         //init res
