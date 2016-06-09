@@ -1,7 +1,5 @@
 package game.player;
 
-import game.menu.StatusMenu;
-
 import java.util.Objects;
 
 public class Player extends Personality implements PersonalityType {
@@ -46,13 +44,13 @@ public class Player extends Personality implements PersonalityType {
         }
     }
 
-    public Player(String playerName, StatusMenu status, Type type) {
+    public Player(String playerName, Type type) {
         this.setPlayerName(playerName);
         this.setType(type);
-        this.setHealth(50);
-        this.setExperience(5);
-        this.setAttack(15);
-        this.setDefence(15);
+        this.setHealth(250);
+        this.setExperience(25);
+        this.setAttack(100);
+        this.setDefence(100);
     }
 
     @Override
@@ -61,5 +59,33 @@ public class Player extends Personality implements PersonalityType {
         if (Objects.equals(this.type, Type.USER)) {
             this.isUser = true;
         }
+    }
+
+    public String getPlayerName() {
+        return this.playerName;
+    }
+
+    public int getHealth() {
+        return this.health;
+    }
+
+    public int getExperience() {
+        return this.experience;
+    }
+
+    public int getAttack() {
+        return this.attack;
+    }
+
+    public int getDefence() {
+        return this.defence;
+    }
+
+    public Type getType() {
+        return this.type;
+    }
+
+    public boolean isUser() {
+        return this.isUser;
     }
 }
