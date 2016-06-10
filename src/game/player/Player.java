@@ -1,10 +1,15 @@
 package game.player;
 
+import javafx.scene.image.Image;
+
 import java.util.Objects;
 
 public class Player extends Personality implements PersonalityType {
     private String playerName;
     private Type type;
+    private Image playerProfile;
+    private int locationX;
+    private int locationY;
     private int health;
     private int experience;
     private int attack;
@@ -17,40 +22,35 @@ public class Player extends Personality implements PersonalityType {
     }
 
     public void setHealth(int health) {
-        this.health = Personality.HEALTH_DEFAULT;
         if (isUser) {
             this.health += health;
+        } else {
+            this.health += health / 5;
         }
     }
 
     public void setExperience(int experience) {
-        this.experience = Personality.EXPERIENCE_DEFAULT;
         if (isUser) {
             this.experience += experience;
+        } else {
+            this.experience += experience / 5;
         }
     }
 
     public void setAttack(int attack) {
-        this.attack = Personality.ATTACK_DEFAULT;
         if (isUser) {
             this.attack += attack;
+        } else {
+            this.attack += attack / 5;
         }
     }
 
     public void setDefence(int defence) {
-        this.defence = Personality.DEFENCE_DEFAULT;
         if (isUser) {
             this.defence += defence;
+        } else {
+            this.defence += defence / 5;
         }
-    }
-
-    public Player(String playerName, Type type) {
-        this.setPlayerName(playerName);
-        this.setType(type);
-        this.setHealth(250);
-        this.setExperience(25);
-        this.setAttack(100);
-        this.setDefence(100);
     }
 
     @Override
@@ -59,6 +59,33 @@ public class Player extends Personality implements PersonalityType {
         if (Objects.equals(this.type, Type.USER)) {
             this.isUser = true;
         }
+    }
+
+    @Override
+    public void setLocationX(int locationX) {
+        this.locationX = locationX;
+    }
+
+    @Override
+    public void setLocationY(int locationY) {
+        this.locationY = locationY;
+    }
+
+    @Override
+    public void setPlayerProfile(Image playerProfile) {
+        this.playerProfile = playerProfile;
+    }
+
+    public Player(String playerName, Type type, int locationX, int locationY, Image playerProfile) {
+        this.setPlayerName(playerName);
+        this.setType(type);
+        this.setHealth(250);
+        this.setExperience(25);
+        this.setAttack(100);
+        this.setDefence(100);
+        this.setLocationX(locationX);
+        this.setLocationY(locationY);
+        this.setPlayerProfile(playerProfile);
     }
 
     public String getPlayerName() {
@@ -88,4 +115,5 @@ public class Player extends Personality implements PersonalityType {
     public boolean isUser() {
         return this.isUser;
     }
+
 }
