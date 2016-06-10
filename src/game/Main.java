@@ -7,24 +7,29 @@ import game.player.Type;
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
 import javafx.event.EventHandler;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 
 import java.util.HashMap;
+import java.util.Random;
 
 public class Main extends Application {
 
-    private static final int WIDTH = 1240;  //800
-    private static final int HIGH = 826;    //width / 12 * 9;
-    private static final int GAME_WIDTH = 1000;
-    private static final int GAME_HIGH = 800;
-    private static final String BACKGROUND = "universe.jpg";
-    private static final String MAP = "map.png";
+    public static final int WIDTH = 1240;  //800
+    public static final int HIGH = 826;    //width / 12 * 9;
+    public static final int GAME_WIDTH = 1000;
+    public static final int GAME_HIGH = 800;
+    public static final String BACKGROUND = "universe.jpg";
+    public static final String MAP = "map.png";
+    public static final String PLAYER_IMAGE = "player.png";
+    public static final String ENEMY_IMAGE = "enemy.png";
 
     private Menu menu;
     private Group root;
@@ -50,18 +55,27 @@ public class Main extends Application {
         this.graphicsContext.drawImage(new Image(BACKGROUND), 0, 0);    //draw background
         this.graphicsContext.drawImage(new Image(MAP), 100, 100);       //draw map
         this.root.getChildren().add(canvas);
+
+//        ImageView imageView = new ImageView(ENEMY_IMAGE);
+//        imageView.setViewport(new Rectangle2D(0, 0, 65, 65));
+//        this.root.getChildren().addAll(canvas, imageView);
+
         this.menu = new Menu(this.root, this.player);
         this.enemies = new HashMap<>();
         for (int i = 0; i < 20; i++) {
             EnemyNames name = EnemyNames.values()[i];
-            this.enemies.put(name + "", new Player( name + "", Type.ENEMY));
+            Random randomGenerator = new Random();
+            int locationX = randomGenerator.nextInt(1100);
+            int locationY = randomGenerator.nextInt(1100);
+            this.enemies.put(name + "", new Player( name + "", Type.ENEMY, locationX, locationY, new Image(ENEMY_IMAGE)));
         }
+
+
     }
 
     @Override
     public void start(Stage primaryStage) throws Exception{
         primaryStage.setTitle("Game Nozdormu");
-
         primaryStage.setScene(this.rootScene);
         Thread gameLoop = new Thread(new Runnable() {
             @Override

@@ -1,5 +1,6 @@
 package game.menu;
 
+import game.Main;
 import game.player.Personality;
 import game.player.Player;
 import game.player.Type;
@@ -11,6 +12,7 @@ import javafx.scene.Group;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
@@ -127,7 +129,7 @@ public class Menu {
                     @Override
                     public void handle(ActionEvent event) {
                         String username = user.getText();
-                        Menu.this.playerGame = new Player(username, Type.USER);
+                        Menu.this.playerGame = new Player(username, Type.USER, 25, 25, new Image(Main.PLAYER_IMAGE));
                         Menu.this.group.getChildren().remove(Menu.this.grid);       //remove grid with username field
                         Menu.this.group.getChildren().remove(Menu.this.player);  //remove button for create player
                     }
