@@ -1,4 +1,4 @@
-package game.player;
+package game.player.enumeration;
 
 public enum EnemyNames {
     //TODO enemies name changed after

@@ -1,9 +1,10 @@
 package game.menu;
 
 import game.Main;
-import game.player.Personality;
-import game.player.Player;
-import game.player.Type;
+import game.player.classes.Person;
+import game.player.classes.Personality;
+import game.player.classes.Player;
+import game.player.enumeration.Type;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.HPos;
@@ -21,10 +22,10 @@ public class Menu {
     private Button player;
     private GridPane grid;
     private Group group;
-    private Player playerGame;
+    private Person playerGame;
     private GridPane gridMenu;
 
-    public Menu(Group group, Player playerGame) {
+    public Menu(Group group, Person playerGame) {
         this.group = group;
         this.playerGame = playerGame;
         renderGridMenu();

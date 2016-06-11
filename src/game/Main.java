@@ -1,19 +1,19 @@
 package game;
 
 import game.menu.Menu;
-import game.player.EnemyNames;
-import game.player.Player;
-import game.player.Type;
+import game.player.classes.Enemy;
+import game.player.classes.Person;
+import game.player.enumeration.EnemyNames;
+import game.player.classes.Player;
+import game.player.enumeration.Type;
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
 import javafx.event.EventHandler;
-import javafx.geometry.Rectangle2D;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 
@@ -23,11 +23,11 @@ import java.util.Random;
 public class Main extends Application {
 
     public static final int WIDTH = 1240;  //800
-    public static final int HIGH = 826;    //width / 12 * 9;
+    public static final int HIGH = 800;    //width / 12 * 9;
     public static final int GAME_WIDTH = 1000;
     public static final int GAME_HIGH = 800;
     public static final String BACKGROUND = "universe.jpg";
-    public static final String MAP = "map.png";
+    public static final String MAP = "map_Castle.jpg";
     public static final String PLAYER_IMAGE = "player.png";
     public static final String ENEMY_IMAGE = "enemy.png";
 
@@ -37,8 +37,8 @@ public class Main extends Application {
     public Scene gameScene;
     private Canvas canvas;
     private GraphicsContext graphicsContext;
-    private Player player;
-    public HashMap<String, Player> enemies;
+    private Person player;
+    public HashMap<String, Enemy> enemies;
 
     public static void main(String[] args) {
         launch(args);
@@ -53,7 +53,7 @@ public class Main extends Application {
         this.canvas = new Canvas(WIDTH, HIGH);
         this.graphicsContext = this.canvas.getGraphicsContext2D();
         this.graphicsContext.drawImage(new Image(BACKGROUND), 0, 0);    //draw background
-        this.graphicsContext.drawImage(new Image(MAP), 100, 100);       //draw map
+        this.graphicsContext.drawImage(new Image(MAP), 0, 0);       //draw map
         this.root.getChildren().add(canvas);
 
 //        ImageView imageView = new ImageView(ENEMY_IMAGE);
@@ -65,11 +65,11 @@ public class Main extends Application {
         for (int i = 0; i < 20; i++) {
             EnemyNames name = EnemyNames.values()[i];
             Random randomGenerator = new Random();
-            int locationX = randomGenerator.nextInt(1100);
-            int locationY = randomGenerator.nextInt(1100);
-            this.enemies.put(name + "", new Player( name + "", Type.ENEMY, locationX, locationY, new Image(ENEMY_IMAGE)));
+            int locationX = randomGenerator.nextInt(GAME_WIDTH);
+            int locationY = randomGenerator.nextInt(GAME_HIGH);
+            this.enemies.put(name + "", new Enemy(name + "", Type.ENEMY, locationX, locationY, new Image(ENEMY_IMAGE)));
         }
-
+        System.out.println();
 
     }
 
@@ -80,7 +80,9 @@ public class Main extends Application {
         Thread gameLoop = new Thread(new Runnable() {
             @Override
             public void run() {
+                int i = 0;
                 while (true) {
+                    i++;
                     Main.this.rootScene.setOnKeyPressed(new EventHandler<KeyEvent>() {
                         @Override
                         public void handle(KeyEvent key) {
