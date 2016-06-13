@@ -1,10 +1,10 @@
 package game.menu;
 
 import game.Main;
-import game.player.classes.Person;
-import game.player.classes.Personality;
-import game.player.classes.Player;
-import game.player.enumeration.Type;
+import game.players.classes.Person;
+import game.players.classes.Personality;
+import game.players.classes.Player;
+import game.players.enumeration.Type;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.HPos;

@@ -1,4 +1,4 @@
-package game.player.enumeration;
+package game.players.enumeration;
 
 public enum Type {
     ENEMY, USER;

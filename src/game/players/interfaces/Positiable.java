@@ -1,4 +1,4 @@
-package game.player.interfaces;
+package game.players.interfaces;
 
 public interface Positiable {
     void setLocationX(int locationX);
