@@ -50,7 +50,7 @@ public class Main extends Application {
         this.root = new Group();                                        //create root node
         this.rootScene = new Scene(this.root, WIDTH, HIGH);
 
-        //create map with background
+        //create map with backgroundImage
         this.createMap = new CreateMap(WIDTH, HIGH, new Image(BACKGROUND), new Image(MAP));
         this.root.getChildren().add(this.createMap.getCanvas());
 
@@ -93,6 +93,13 @@ public class Main extends Application {
                     public void handle(KeyEvent key) {
                         String keyCode = key.getCode().toString();
                         //TODO move steps player
+
+                        if (Main.this.player != null) {
+
+                           Main.this.player.move(keyCode);
+
+                        }
+
                         System.out.println(key);
                         System.out.println(keyCode);
                     }
