@@ -2,6 +2,7 @@ package game;
 
 import game.Map.CreateMap;
 import game.menu.Menu;
+import game.players.classes.CreatePlayer;
 import game.players.classes.Enemy;
 import game.players.classes.Person;
 import game.players.classes.CreateEnemies;
@@ -27,7 +28,7 @@ public class Main extends Application {
     public static final int GAME_HIGH = 608;
     public static final String BACKGROUND = "universe.jpg";
     public static final String MAP = "map-normal.png";
-    public static final String PLAYER_IMAGE = "player.png";
+    public static final String PLAYER_IMAGE = "playerView.png";
     public static final String ENEMY_IMAGE = "enemyMonster.png";
 
     private Menu menu;
@@ -35,7 +36,8 @@ public class Main extends Application {
     private Scene rootScene;
     public Scene gameScene;
     private CreateMap createMap;
-    private Person player;
+    private CreatePlayer player;
+    private boolean createdPlayer;
     public HashMap<String, Enemy> enemies;
 
     public static void main(String[] args) {
@@ -66,6 +68,7 @@ public class Main extends Application {
 //        this.root.getChildren().addAll(canvas, imageView);
 
         this.menu = new Menu(this.root, this.player);
+        this.createdPlayer = false;
     }
 
     @Override
@@ -78,7 +81,9 @@ public class Main extends Application {
             public void handle(long currentNanoTime) {
                 Main.this.menu.renderGridMenu();
                 Main.this.player = Main.this.menu.getPlayerGame();
-                if (Main.this.player != null) {
+                if (Main.this.player != null && !Main.this.createdPlayer) {
+                    Main.this.createdPlayer = true;
+                    Main.this.root.getChildren().add(Main.this.player.getPlayerCanvas());
                     System.out.println();
                 }
 

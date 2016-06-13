@@ -1,10 +1,8 @@
 package game.menu;
 
 import game.Main;
-import game.players.classes.Person;
+import game.players.classes.CreatePlayer;
 import game.players.classes.Personality;
-import game.players.classes.Player;
-import game.players.enumeration.Type;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.HPos;
@@ -22,7 +20,7 @@ public class Menu {
     private Button player;
     private GridPane grid;
     private Group group;
-    private Person playerGame;
+    private CreatePlayer playerGame;
     private GridPane gridMenu;
 
     public Group getGroup() {
@@ -33,15 +31,15 @@ public class Menu {
         this.group = group;
     }
 
-    public Person getPlayerGame() {
+    public CreatePlayer getPlayerGame() {
         return this.playerGame;
     }
 
-    public void setPlayerGame(Person playerGame) {
+    public void setPlayerGame(CreatePlayer playerGame) {
         this.playerGame = playerGame;
     }
 
-    public Menu(Group group, Person playerGame) {
+    public Menu(Group group, CreatePlayer playerGame) {
         this.setGroup(group);
         this.setPlayerGame(playerGame);
         renderGridMenu();
@@ -72,14 +70,14 @@ public class Menu {
             defencePoints = Personality.DEFENCE_DEFAULT;
             experiencePoints = Personality.EXPERIENCE_DEFAULT;
         } else {
-            healthPoints = this.playerGame.getHealth();
-            attackPoints = this.playerGame.getAttack();
-            defencePoints = this.playerGame.getDefence();
-            experiencePoints = this.playerGame.getExperience();
+            healthPoints = this.playerGame.getPlayer().getHealth();
+            attackPoints = this.playerGame.getPlayer().getAttack();
+            defencePoints = this.playerGame.getPlayer().getDefence();
+            experiencePoints = this.playerGame.getPlayer().getExperience();
 
             Label user = new Label("Username:");
             user.setTextFill(Color.web("#FFFFFF"));
-            Label userName = new Label(this.playerGame.getPlayerName());
+            Label userName = new Label(this.playerGame.getPlayer().getPlayerName());
             userName.setTextFill(Color.web("#A40013"));
             GridPane.setHalignment(user, HPos.LEFT);
             GridPane.setHalignment(userName, HPos.RIGHT);
@@ -146,10 +144,9 @@ public class Menu {
                     @Override
                     public void handle(ActionEvent event) {
                         String username = user.getText();
-                        Menu.this.playerGame = new Player(username, Type.USER, 25, 25, new Image(Main.PLAYER_IMAGE));
+                        Menu.this.playerGame = new CreatePlayer(username, new Image(Main.PLAYER_IMAGE));
                         Menu.this.group.getChildren().remove(Menu.this.grid);       //remove grid with username field
                         Menu.this.group.getChildren().remove(Menu.this.player);  //remove button for create player
-
                     }
                 });
 
