@@ -28,7 +28,7 @@ public class Main extends Application {
     public static final String BACKGROUND = "universe.jpg";
     public static final String MAP = "map_Castle.jpg";
     public static final String PLAYER_IMAGE = "player.png";
-    public static final String ENEMY_IMAGE = "enemy.png";
+    public static final String ENEMY_IMAGE = "enemyMonster.png";
 
     private Menu menu;
     private Group root;
@@ -70,7 +70,7 @@ public class Main extends Application {
 //        this.root.getChildren().addAll(canvas, imageView);
 
         this.menu = new Menu(this.root, this.player);
-        CreateEnemies enemies1 = new CreateEnemies(WIDTH, HIGH, new Image(ENEMY_IMAGE));
+        CreateEnemies enemies1 = new CreateEnemies(GAME_WIDTH, GAME_HIGH, new Image(ENEMY_IMAGE));
         this.enemies = enemies1.getEnemies();
         this.root.getChildren().add(enemies1.getEnemyCanvas());
         System.out.println();
