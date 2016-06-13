@@ -25,9 +25,25 @@ public class Menu {
     private Person playerGame;
     private GridPane gridMenu;
 
-    public Menu(Group group, Person playerGame) {
+    public Group getGroup() {
+        return this.group;
+    }
+
+    public void setGroup(Group group) {
         this.group = group;
+    }
+
+    public Person getPlayerGame() {
+        return this.playerGame;
+    }
+
+    public void setPlayerGame(Person playerGame) {
         this.playerGame = playerGame;
+    }
+
+    public Menu(Group group, Person playerGame) {
+        this.setGroup(group);
+        this.setPlayerGame(playerGame);
         renderGridMenu();
         createButton();
     }
@@ -149,6 +165,7 @@ public class Menu {
                 Menu.this.group.getChildren().add(grid);
             }
         });
-        group.getChildren().add(this.player);
+
+        this.getGroup().getChildren().add(this.player);
     }
 }

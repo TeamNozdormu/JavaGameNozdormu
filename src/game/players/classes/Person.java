@@ -89,6 +89,10 @@ public class Person extends Personality implements Positiable, Typeable{
         this.playerProfile = playerProfile;
     }
 
+    public Image getPlayerProfile() {
+        return this.playerProfile;
+    }
+
     public String getPlayerName() {
         return this.playerName;
     }

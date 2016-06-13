@@ -23,10 +23,10 @@ public class Main extends Application {
 
     public static final int WIDTH = 1240;  //800
     public static final int HIGH = 800;    //width / 12 * 9 = 600;
-    public static final int GAME_WIDTH = 1000;
-    public static final int GAME_HIGH = 800;
+    public static final int GAME_WIDTH = 800;
+    public static final int GAME_HIGH = 608;
     public static final String BACKGROUND = "universe.jpg";
-    public static final String MAP = "map_Castle.jpg";
+    public static final String MAP = "map-normal.png";
     public static final String PLAYER_IMAGE = "player.png";
     public static final String ENEMY_IMAGE = "enemyMonster.png";
 
@@ -51,8 +51,12 @@ public class Main extends Application {
         //create map with background
         this.createMap = new CreateMap(WIDTH, HIGH, new Image(BACKGROUND), new Image(MAP));
         this.root.getChildren().add(this.createMap.getCanvas());
+
+        CreateEnemies createdEnemies = new CreateEnemies(GAME_WIDTH, GAME_HIGH, new Image(ENEMY_IMAGE));
+        this.enemies = createdEnemies.getEnemies();
+        this.root.getChildren().add(createdEnemies.getEnemyCanvas());
 //
-//        Canvas canvas2 = new Canvas(1000, 800);
+//        Canvas canvas2 = new Canvas(800, 800);
 //        GraphicsContext gc2 = canvas2.getGraphicsContext2D();
 //        drawShapes(gc2);
 //        root.getChildren().add(canvas2);
@@ -62,40 +66,36 @@ public class Main extends Application {
 //        this.root.getChildren().addAll(canvas, imageView);
 
         this.menu = new Menu(this.root, this.player);
-        CreateEnemies enemies1 = new CreateEnemies(GAME_WIDTH, GAME_HIGH, new Image(ENEMY_IMAGE));
-        this.enemies = enemies1.getEnemies();
-        this.root.getChildren().add(enemies1.getEnemyCanvas());
     }
 
     @Override
     public void start(Stage primaryStage) throws Exception{
         primaryStage.setTitle("Game Nozdormu");
         primaryStage.setScene(this.rootScene);
-        Thread gameLoop = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                while (true) {
-                    Main.this.rootScene.setOnKeyPressed(new EventHandler<KeyEvent>() {
-                        @Override
-                        public void handle(KeyEvent key) {
-                            String keyCode = key.getCode().toString();
-                            //TODO move steps player
-                            System.out.println(key);
-                            System.out.println(keyCode);
-                        }
-                    });
-                }
-            }
-        });
 
-        //move heroes in this timer
+        //move hero in this timer
         new AnimationTimer() {
             public void handle(long currentNanoTime) {
                 Main.this.menu.renderGridMenu();
+                Main.this.player = Main.this.menu.getPlayerGame();
+                if (Main.this.player != null) {
+                    System.out.println();
+                }
+
+
+                Main.this.rootScene.setOnKeyPressed(new EventHandler<KeyEvent>() {
+                    @Override
+                    public void handle(KeyEvent key) {
+                        String keyCode = key.getCode().toString();
+                        //TODO move steps player
+                        System.out.println(key);
+                        System.out.println(keyCode);
+                    }
+                });
+
                 System.out.println(currentNanoTime);
             }
         }.start();
-        gameLoop.start();
 
         primaryStage.show();
     }
@@ -165,6 +165,5 @@ public class Main extends Application {
         shapes.strokeArc(95, 105, 105, 105, 288, 75, ArcType.OPEN);
         shapes.strokeArc(660, 105, 105, 105, 180, 100, ArcType.OPEN);
         shapes.strokeArc(95, 595, 105, 105, 20, 60, ArcType.OPEN);
-
     }
 }
