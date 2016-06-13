@@ -3,9 +3,7 @@ package game;
 import game.menu.Menu;
 import game.players.classes.Enemy;
 import game.players.classes.Person;
-import game.players.classes.createEnemies;
-import game.players.enumeration.EnemyNames;
-import game.players.enumeration.Type;
+import game.players.classes.CreateEnemies;
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
 import javafx.event.EventHandler;
@@ -20,7 +18,6 @@ import javafx.scene.shape.ArcType;
 import javafx.stage.Stage;
 
 import java.util.HashMap;
-import java.util.Random;
 
 public class Main extends Application {
 
@@ -73,10 +70,10 @@ public class Main extends Application {
 //        this.root.getChildren().addAll(canvas, imageView);
 
         this.menu = new Menu(this.root, this.player);
-        this.enemies = new createEnemies(WIDTH, HIGH, new Image(ENEMY_IMAGE)).getEnemies();
-
+        CreateEnemies enemies1 = new CreateEnemies(WIDTH, HIGH, new Image(ENEMY_IMAGE));
+        this.enemies = enemies1.getEnemies();
+        this.root.getChildren().add(enemies1.getEnemyCanvas());
         System.out.println();
-
     }
 
     @Override
@@ -86,9 +83,7 @@ public class Main extends Application {
         Thread gameLoop = new Thread(new Runnable() {
             @Override
             public void run() {
-                int i = 0;
                 while (true) {
-                    i++;
                     Main.this.rootScene.setOnKeyPressed(new EventHandler<KeyEvent>() {
                         @Override
                         public void handle(KeyEvent key) {

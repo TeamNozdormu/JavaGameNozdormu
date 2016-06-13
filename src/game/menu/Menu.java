@@ -133,6 +133,7 @@ public class Menu {
                         Menu.this.playerGame = new Player(username, Type.USER, 25, 25, new Image(Main.PLAYER_IMAGE));
                         Menu.this.group.getChildren().remove(Menu.this.grid);       //remove grid with username field
                         Menu.this.group.getChildren().remove(Menu.this.player);  //remove button for create player
+
                     }
                 });
 
