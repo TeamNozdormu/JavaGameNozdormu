@@ -4,9 +4,7 @@ import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
 
-import java.security.acl.Group;
-
-public class CreateMap extends Canvas{
+public class CreateMap {
     private Canvas canvas;
     private GraphicsContext graphicsContext;
     private Image background;
@@ -50,7 +48,6 @@ public class CreateMap extends Canvas{
         this.setMap(map);
         this.setGraphicsContext(this.getCanvas().getGraphicsContext2D());
         this.createMap();
-        //TODO not create map - return 0 with why
     }
 
     private void createMap() {

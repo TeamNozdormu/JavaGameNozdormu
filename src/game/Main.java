@@ -1,5 +1,6 @@
 package game;
 
+import game.Map.CreateMap;
 import game.menu.Menu;
 import game.players.classes.Enemy;
 import game.players.classes.Person;
@@ -35,7 +36,7 @@ public class Main extends Application {
     private Scene rootScene;
     public Scene gameScene;
     private Canvas canvas;
-    private Canvas createMap;
+    private CreateMap createMap;
     private GraphicsContext graphicsContext;
     private Person player;
     public HashMap<String, Enemy> enemies;
@@ -51,14 +52,8 @@ public class Main extends Application {
         this.rootScene = new Scene(this.root, WIDTH, HIGH);
 
         //create map with background
-//        this.createMap = new CreateMap(WIDTH, HIGH, new Image(BACKGROUND), new Image(MAP));
-//        this.root.getChildren().add(createMap);
-        this.canvas = new Canvas(WIDTH, HIGH);
-        this.graphicsContext = this.canvas.getGraphicsContext2D();
-        this.graphicsContext.drawImage(new Image(BACKGROUND), 0, 0);    //draw background
-        this.graphicsContext.drawImage(new Image(MAP), 0, 0);       //draw map
-        this.root.getChildren().add(canvas);
-
+        this.createMap = new CreateMap(WIDTH, HIGH, new Image(BACKGROUND), new Image(MAP));
+        this.root.getChildren().add(this.createMap.getCanvas());
 //
 //        Canvas canvas2 = new Canvas(1000, 800);
 //        GraphicsContext gc2 = canvas2.getGraphicsContext2D();
@@ -73,7 +68,6 @@ public class Main extends Application {
         CreateEnemies enemies1 = new CreateEnemies(GAME_WIDTH, GAME_HIGH, new Image(ENEMY_IMAGE));
         this.enemies = enemies1.getEnemies();
         this.root.getChildren().add(enemies1.getEnemyCanvas());
-        System.out.println();
     }
 
     @Override
