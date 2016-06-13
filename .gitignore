@@ -34,7 +34,6 @@ $RECYCLE.BIN/
 temp/
 
 # default output directories
-classes/
 deploy/
 javadoc/
 

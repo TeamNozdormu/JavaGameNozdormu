@@ -10,7 +10,6 @@ import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.scene.Group;
 import javafx.scene.Scene;
-import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
 import javafx.scene.input.KeyEvent;
@@ -35,9 +34,7 @@ public class Main extends Application {
     private Group root;
     private Scene rootScene;
     public Scene gameScene;
-    private Canvas canvas;
     private CreateMap createMap;
-    private GraphicsContext graphicsContext;
     private Person player;
     public HashMap<String, Enemy> enemies;
 
@@ -108,10 +105,10 @@ public class Main extends Application {
         super.stop();
         this.root = null;
         this.rootScene = null;
+        this.gameScene = null;
+        this.createMap = null;
         this.player = null;
-        this.graphicsContext = null;
         this.enemies = null;
-        this.canvas = null;
         //release res
     }
 
