@@ -3,6 +3,7 @@ package game;
 import game.menu.Menu;
 import game.players.classes.Enemy;
 import game.players.classes.Person;
+import game.players.classes.createEnemies;
 import game.players.enumeration.EnemyNames;
 import game.players.enumeration.Type;
 import javafx.animation.AnimationTimer;
@@ -72,14 +73,8 @@ public class Main extends Application {
 //        this.root.getChildren().addAll(canvas, imageView);
 
         this.menu = new Menu(this.root, this.player);
-        this.enemies = new HashMap<>();
-        for (int i = 0; i < 20; i++) {
-            EnemyNames name = EnemyNames.values()[i];
-            Random randomGenerator = new Random();
-            int locationX = randomGenerator.nextInt(GAME_WIDTH);
-            int locationY = randomGenerator.nextInt(GAME_HIGH);
-            this.enemies.put(name + "", new Enemy(name + "", Type.ENEMY, locationX, locationY, new Image(ENEMY_IMAGE)));
-        }
+        this.enemies = new createEnemies(WIDTH, HIGH, new Image(ENEMY_IMAGE)).getEnemies();
+
         System.out.println();
 
     }
