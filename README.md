@@ -1,2 +1,1 @@
-# JavaGameNozdormu
-Java RPG game
+# NozdormuGameOverhaul
