@@ -60,6 +60,12 @@ public class CreateEnemies {
             Random randomGenerator = new Random();
             int locationX = randomGenerator.nextInt(width);
             int locationY = randomGenerator.nextInt(high);
+            if (locationX <= 100) {
+                locationX += 100;
+            }
+            if (locationY <= 100) {
+                locationY += 100;
+            }
             this.getEnemies().put(name + "", new Enemy(name + "", Type.ENEMY, locationX, locationY, this.getEnemy()));
             this.putEnemiesOnMap(locationX, locationY);
         }
