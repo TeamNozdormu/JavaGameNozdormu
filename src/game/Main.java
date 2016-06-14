@@ -4,7 +4,6 @@ import game.Map.CreateMap;
 import game.menu.Menu;
 import game.players.classes.CreatePlayer;
 import game.players.classes.Enemy;
-import game.players.classes.Person;
 import game.players.classes.CreateEnemies;
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
@@ -95,7 +94,7 @@ public class Main extends Application {
 
                         if (Main.this.player != null) {
 
-                           Main.this.player.move(keyCode);
+                           //Main.this.player.move(keyCode);
 
                         }
 
