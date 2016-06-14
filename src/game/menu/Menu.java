@@ -2,6 +2,7 @@ package game.menu;
 
 import game.Main;
 import game.players.classes.CreatePlayer;
+import game.players.classes.Enemy;
 import game.players.classes.Personality;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -16,12 +17,25 @@ import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
+
 public class Menu {
     private Button player;
     private GridPane grid;
     private Group group;
     private CreatePlayer playerGame;
+    private HashMap enemies;
     private GridPane gridMenu;
+
+    public HashMap getEnemies() {
+        return this.enemies;
+    }
+
+    public void setEnemies(HashMap enemies) {
+        this.enemies = enemies;
+    }
 
     public Group getGroup() {
         return this.group;
@@ -39,9 +53,10 @@ public class Menu {
         this.playerGame = playerGame;
     }
 
-    public Menu(Group group, CreatePlayer playerGame) {
+    public Menu(Group group, CreatePlayer playerGame, HashMap enemies) {
         this.setGroup(group);
         this.setPlayerGame(playerGame);
+        this.setEnemies(enemies);
         renderGridMenu();
         createButton();
     }
@@ -57,7 +72,7 @@ public class Menu {
         int experiencePoints = 0;
 
         this.gridMenu = new GridPane();
-        this.gridMenu.setPadding(new Insets(5));
+        this.gridMenu.setPadding(new Insets(30));
         this.gridMenu.setHgap(5);
         this.gridMenu.setVgap(5);
         ColumnConstraints columnOne = new ColumnConstraints(100);
@@ -123,6 +138,16 @@ public class Menu {
         this.gridMenu.add(experienceValue, 1, 3);
         this.gridMenu.setLayoutX(1000);
         this.gridMenu.setLayoutY(10);
+
+        Label enemies = new Label("Enemies:");
+        enemies.setTextFill(Color.web("#FF00FF"));
+        Label enemiesValue = new Label(this.getEnemies().size() + "");
+        enemiesValue.setTextFill(Color.web("#FF00FF"));
+        GridPane.setHalignment(experience, HPos.LEFT);
+        GridPane.setHalignment(experienceValue, HPos.RIGHT);
+        this.gridMenu.add(enemies, 0, 6);
+        this.gridMenu.add(enemiesValue, 1, 6);
+        //iteation on enemies
 
         this.group.getChildren().add(this.gridMenu);
     }

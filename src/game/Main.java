@@ -18,7 +18,6 @@ import javafx.scene.shape.ArcType;
 import javafx.stage.Stage;
 
 import java.util.HashMap;
-import java.util.Objects;
 
 public class Main extends Application {
 
@@ -67,7 +66,7 @@ public class Main extends Application {
 //        imageView.setViewport(new Rectangle2D(0, 0, 65, 65));
 //        this.root.getChildren().addAll(canvas, imageView);
 
-        this.menu = new Menu(this.root, this.player);
+        this.menu = new Menu(this.root, this.player, this.enemies);
         this.createdPlayer = false;
     }
 
