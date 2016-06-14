@@ -12,13 +12,15 @@ public class Player extends Person implements Attackable, Defendable, Dyable{
 	@Override
 	public void takeDamage(Attackable attacker) {
 		int currentHealth = this.getHealth();
+		//TODO formula
+		//current health - (attacker attack + attacker experience + attacker defence / 4)
 		this.setHealth(currentHealth - attacker.getAttack());
 	}
 
 	@Override
 	public void defend(Attackable attacker) {
-		// TODO Auto-generated method stub
-		
+		// TODO formula Auto-generated method stub
+		//(defender defence + defender experience + defender attack / 4)
 	}
 
 	@Override
