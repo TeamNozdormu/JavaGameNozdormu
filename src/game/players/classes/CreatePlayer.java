@@ -55,4 +55,40 @@ public class CreatePlayer {
         this.setGraphicsContext(this.getPlayerCanvas().getGraphicsContext2D());
         this.getGraphicsContext().drawImage(this.getPlayerImage(), locationX, locationY);
     }
+
+    public void move(String direction) {
+
+        int dx =  this.getPlayer().getLocationX();
+        int dy =  this.getPlayer().getLocationY();
+
+        switch (direction) {
+            case "UP":
+                dy-=5;
+                this.getPlayer().setLocationY(dy);
+                this.getGraphicsContext().drawImage(this.getPlayerImage(), dx, dy);
+                break;
+
+            case "DOWN":
+                dy+=5;
+                this.getPlayer().setLocationY(dy);
+                this.getGraphicsContext().drawImage(this.getPlayerImage(), dx, dy);
+
+                break;
+
+            case "LEFT":
+                dx-=5;
+                this.getPlayer().setLocationX(dx);
+                this.getGraphicsContext().drawImage(this.getPlayerImage(), dx, dy);
+                break;
+            case "RIGHT":
+                dx+=5;
+                this.getPlayer().setLocationX(dx);
+                this.getGraphicsContext().drawImage(this.getPlayerImage(), dx, dy);
+                break;
+
+            default:
+                break;
+        }
+       // moveCounter++;  - for sprites
+    }
 }
