@@ -83,10 +83,9 @@ public class Main extends Application {
                 Main.this.player = Main.this.menu.getPlayerGame();
                 if (Main.this.player != null && !Main.this.createdPlayer) {
                     Main.this.createdPlayer = true;
+                    //put created player on map
                     Main.this.root.getChildren().add(Main.this.player.getPlayerCanvas());
-                    System.out.println();
                 }
-
 
                 Main.this.rootScene.setOnKeyPressed(new EventHandler<KeyEvent>() {
                     @Override
