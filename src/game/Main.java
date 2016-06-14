@@ -18,6 +18,7 @@ import javafx.scene.shape.ArcType;
 import javafx.stage.Stage;
 
 import java.util.HashMap;
+import java.util.Objects;
 
 public class Main extends Application {
 
@@ -93,8 +94,10 @@ public class Main extends Application {
                         //TODO move steps player
 
                         if (Main.this.createdPlayer) {
+                            Object main = Main.this;    //here have player with coordinates
 
                            //Main.this.player.move(keyCode);
+                            System.out.println();
 
                         }
 
