@@ -92,7 +92,7 @@ public class Main extends Application {
                         String keyCode = key.getCode().toString();
                         //TODO move steps player
 
-                        if (Main.this.player != null) {
+                        if (Main.this.createdPlayer) {
 
                            //Main.this.player.move(keyCode);
 
