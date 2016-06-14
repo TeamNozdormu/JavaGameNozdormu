@@ -1,12 +1,16 @@
 package game.engine;
 
+import game.contracts.Updatable;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.event.Event;
+import javafx.scene.canvas.GraphicsContext;
 import javafx.util.Duration;
 
-public class Engine {
+import java.awt.*;
+
+public class Engine implements Updatable{
     private int frameCount = 0;
     private int frameRate;
     private final Game game;
@@ -37,6 +41,16 @@ public class Engine {
         game.display();
     }
 
+    @Override
+    public void tick() {
+
+    }
+
+    @Override
+    public void render(GraphicsContext gc) {
+
+    }
+
     public void start() {
         gameLoop.playFromStart();
     }
@@ -52,5 +66,4 @@ public class Engine {
         t.setCycleCount(Animation.INDEFINITE);
         return t;
     }
-
 }
