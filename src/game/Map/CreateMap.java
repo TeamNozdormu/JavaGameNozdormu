@@ -52,6 +52,6 @@ public class CreateMap {
 
     private void createMap() {
         this.getGraphicsContext().drawImage(this.getBackground(), 0, 0);
-        this.getGraphicsContext().drawImage(this.getMap(), 0, 0);
+        this.getGraphicsContext().drawImage(this.getMap(), 100, 100);
     }
 }
