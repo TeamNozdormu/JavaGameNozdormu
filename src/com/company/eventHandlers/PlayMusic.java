@@ -9,7 +9,7 @@ public class PlayMusic {
     // Change file name to match yours, of course
     public static PlayMusic empire = new PlayMusic("/Sounds/SithEmpireMusic.wav");
     public static PlayMusic rebels = new PlayMusic("/Sounds/RebelsMusic.wav");
-    public static PlayMusic fire = new PlayMusic("/Sounds/BlasterFire.wav");
+    public static PlayMusic fire = new PlayMusic("/Sounds/Arrow.wav");
     public static PlayMusic boom = new PlayMusic("/Sounds/Explosion.wav");
 
     public PlayMusic(String fileName) {
