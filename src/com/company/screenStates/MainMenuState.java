@@ -10,7 +10,7 @@ public class MainMenuState extends State {
     //TODO: Display the menu with options and listen for the event clicked
     private int currentSelection;
 
-    public static Button playButton = new Button(-220, 300, Assets.button, "play");
+    public static Button playButton = new Button(-220, 300, Assets.button, "Play");
     public static Button highScoreButton = new Button(-220, 400, Assets.button, "High scores");
     public static Button quitButton = new Button(-220, 500, Assets.button, "Quit");
 
@@ -53,12 +53,12 @@ public class MainMenuState extends State {
 
         g.drawImage(Assets.mainMenuBackground, 0, 0, null);
 
-        Font titleFont = new Font("redensek", Font.BOLD, 55);
+        Font titleFont = new Font("Immortal", Font.BOLD, 55);
         g.setFont(titleFont);
-        g.setColor(Color.green);
-        g.drawString("Space Invasion!", 350, 100);
+        g.setColor(Color.white);
+        g.drawString("Monster Invasion!", 90, 270);
 
-        Font buttonsFont = new Font("redensek", Font.BOLD, 33);
+        Font buttonsFont = new Font("Immortal", Font.BOLD, 25);
         g.setFont(buttonsFont);
         g.drawImage(Assets.buttonBar, -185, playButton.getY() + 35, null);
         playButton.display(g);

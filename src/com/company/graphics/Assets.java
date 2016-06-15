@@ -22,7 +22,6 @@ public class Assets {
     public static BufferedImage live;
     public static BufferedImage gameover;
     public static BufferedImage chooseSide;
-    public static SpriteSheet explosion;
     public static SpriteSheet die;
     public static BufferedImage mainMenuBackground;
     public static BufferedImage button;
@@ -58,7 +57,6 @@ public class Assets {
         doubleDamageBonus = ImageLoader.loadImage(ImageAlbum.DoubleDamageBonus.getPath());
         highScoresBackground = ImageLoader.loadImage(ImageAlbum.HighScores.getPath());
         gameover = ImageLoader.loadImage(ImageAlbum.GameOver.getPath());
-//        explosion = new SpriteSheet(ImageLoader.loadImage(ImageAlbum.ArcherDeath.getPath()), 100, 100);
 
         chooseSide = ImageLoader.loadImage(ImageAlbum.ChooseClass.getPath());
         mainMenuBackground = ImageLoader.loadImage(ImageAlbum.MainMenu.getPath());
@@ -69,7 +67,13 @@ public class Assets {
         try {
             GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
             //TODO change font
-            ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File("res\\REDENSEK.TTF")));
+            ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File("res\\IMMORTAL.ttf")));
+            String fonts[]
+                    = GraphicsEnvironment.getLocalGraphicsEnvironment().getAvailableFontFamilyNames();
+
+            for (int i = 0; i < fonts.length; i++) {
+                System.out.println(fonts[i]);
+            }
         } catch (IOException | FontFormatException e) {
             //TODO Handle exception
         }
