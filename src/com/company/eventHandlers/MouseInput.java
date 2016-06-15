@@ -25,7 +25,7 @@ public class MouseInput implements MouseListener {
         if(StateManager.getCurrentState() instanceof MainMenuState) {
             //Play Button
             if(MainMenuState.playButton.getColliderBox().contains(mouseX, mouseY)){
-                StateManager.setCurrentState(new ChooseSideState());
+                StateManager.setCurrentState(new ChooseClassState());
             }
 
             //High Scores Button
@@ -41,7 +41,7 @@ public class MouseInput implements MouseListener {
                 System.exit(0);
             }
         }
-        else if(StateManager.getCurrentState() instanceof ChooseSideState) {
+        else if(StateManager.getCurrentState() instanceof ChooseClassState) {
             //Sith Button
             if (mouseX >= 50 && mouseX <= 350) {
                 if (mouseY >= 300 && mouseY <= 400) {
@@ -59,7 +59,7 @@ public class MouseInput implements MouseListener {
                     StateManager.setCurrentState(new GameState());
                 }
             }
-            if(ChooseSideState.backButton.getColliderBox().contains(mouseX, mouseY)) {
+            if(ChooseClassState.backButton.getColliderBox().contains(mouseX, mouseY)) {
                 StateManager.setCurrentState(new MainMenuState());
             }
         }

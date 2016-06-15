@@ -161,10 +161,10 @@ public class GameState extends State implements Displayable {
 
         }
 
-        g.setFont(new Font("redensek", Font.PLAIN, 40));
-        g.setColor(Color.GREEN);
+        g.setFont(new Font("Immortal", Font.PLAIN, 40));
+        g.setColor(Color.white);
         g.drawString(String.format("Score: %d", this.score), 30, 50);
-        g.drawString("Lives: ", 560, 50);
+        g.drawString("Lives: ", 540, 50);
 
         for (int i = 0; i < player.getNumberOfLives(); i++) {
             g.drawImage(Assets.live, 660 + i * 38, 30, null);
@@ -173,8 +173,8 @@ public class GameState extends State implements Displayable {
         now = System.currentTimeMillis();
 
         if (now-lastTimeMissed < 3000) {
-            g.setFont(new Font("redensek", Font.CENTER_BASELINE, 50));
-            g.drawString("You've missed three enemies", 50, 200);
+            g.setFont(new Font("Immortal", Font.CENTER_BASELINE, 45));
+            g.drawString("You've missed three enemies!", 50, 200);
         }
 
         if (explode) {

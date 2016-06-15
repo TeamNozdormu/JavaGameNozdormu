@@ -10,3 +10,4 @@ SPAS 280
 S 55
 S 20
 S 5
+SPAS 0

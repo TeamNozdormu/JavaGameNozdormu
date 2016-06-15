@@ -31,7 +31,7 @@ public class Game implements Runnable {
         menuState = new MainMenuState();
         gameOverState = new GameOverState();
         highScoreState = new HighScoresState();
-        chooseSideState = new ChooseSideState();
+        chooseSideState = new ChooseClassState();
         StateManager.setCurrentState(this.menuState);
     }
 

@@ -35,14 +35,14 @@ public class HighScoresState extends State {
     @Override
     public void display(Graphics g) {
 
-        Font blackout = new Font("redensek", Font.PLAIN, 40);
+        Font blackout = new Font("Immortal", Font.PLAIN, 40);
         g.setFont(blackout);
         FontMetrics fontMetrics = g.getFontMetrics();
-        g.setColor(Color.green);
+        g.setColor(Color.orange);
         g.drawImage(Assets.highScoresBackground, 0, 0, null);
         g.drawString("High Scores", 330, 50);
         g.drawString("Name",130, 85);
-        g.drawString("score", 700 - fontMetrics.stringWidth("score"), 85);
+        g.drawString("Score", 700 - fontMetrics.stringWidth("score"), 85);
         g.setColor(Color.white);
 
         for (Map.Entry<String, Integer> entry : Assets.highScores.entrySet()) {
