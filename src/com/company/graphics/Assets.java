@@ -13,8 +13,10 @@ public class Assets {
     public static BufferedImage background;
     public static BufferedImage player;
     public static BufferedImage bullet;
-    public static BufferedImage easyEnemy;
-    public static BufferedImage sturdyEnemy;
+    public static BufferedImage easyEnemyInit;
+    public static SpriteSheet easyEnemy;
+    public static BufferedImage sturdyEnemyInit;
+    public static SpriteSheet sturdyEnemy;
     public static BufferedImage doubleDamageBonus;
     public static BufferedImage highScoresBackground;
     public static BufferedImage live;
@@ -24,6 +26,7 @@ public class Assets {
     public static BufferedImage mainMenuBackground;
     public static BufferedImage button;
     public static BufferedImage buttonBar;
+    public static BufferedImage[] sprites = new BufferedImage[4];
 
     private static SortedMap<String,Integer> scores;
     public static Map<String,Integer> highScores;
@@ -35,12 +38,19 @@ public class Assets {
 
         if (MouseInput.isRebel) {
             player = ImageLoader.loadImage(ImageAlbum.RebelPlayer.getPath());
-            easyEnemy = ImageLoader.loadImage(ImageAlbum.EasyEmpireEnemy.getPath());
-            sturdyEnemy = ImageLoader.loadImage(ImageAlbum.SturdyEmpireEnemy.getPath());
+            easyEnemy = new SpriteSheet(ImageLoader.loadImage(ImageAlbum.EasyEnemy.getPath()), 97, 56);
+            easyEnemyInit = easyEnemy.crop(1,0);
+
+            sturdyEnemy = new SpriteSheet(ImageLoader.loadImage(ImageAlbum.SturdyEnemy.getPath()), 95, 98);
+            sturdyEnemyInit = sturdyEnemy.crop(1,0);
         } else {
+
             player = ImageLoader.loadImage(ImageAlbum.SithPlayer.getPath());
-            easyEnemy = ImageLoader.loadImage(ImageAlbum.EasyRebelsEnemy.getPath());
-            sturdyEnemy = ImageLoader.loadImage(ImageAlbum.SturdyRebelsEnemy.getPath());
+              easyEnemy = new SpriteSheet(ImageLoader.loadImage(ImageAlbum.EasyEnemy.getPath()), 97, 56);
+
+            easyEnemyInit = easyEnemy.crop(1,0);
+            sturdyEnemy = new SpriteSheet(ImageLoader.loadImage(ImageAlbum.SturdyEnemy.getPath()), 95, 98);
+            sturdyEnemyInit = sturdyEnemy.crop(1,0);
         }
 
         bullet = ImageLoader.loadImage(ImageAlbum.Bullet.getPath());

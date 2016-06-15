@@ -28,6 +28,7 @@ public class GameState extends State implements Displayable {
     private int enemyTypes = 1;
     private boolean explode;
     private int cropX, cropY;
+    private int cropXMonster=0, cropYMonster=0;
 
     public GameState() {
         score = 0;
@@ -143,7 +144,18 @@ public class GameState extends State implements Displayable {
         }
 
         for (int i = 0; i < enemiesList.size(); i++) {
-            enemiesList.get(i).display(g);
+           // enemiesList.get(i).display(g);
+            if (enemiesList.get(i).getPointsForPlayer()==5){
+                g.drawImage(Assets.easyEnemy.crop(cropXMonster, cropYMonster), enemiesList.get(i).getX() - 20, enemiesList.get(i).getY(), null);
+            } else {
+                g.drawImage(Assets.sturdyEnemy.crop(cropXMonster, cropYMonster), enemiesList.get(i).getX() - 20, enemiesList.get(i).getY(), null);
+            }
+
+            cropXMonster+=1;
+            if (cropXMonster>=4){
+                cropXMonster = 0;
+            }
+
         }
 
         g.setFont(new Font("redensek", Font.PLAIN, 40));

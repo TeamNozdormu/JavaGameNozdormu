@@ -11,7 +11,7 @@ public class EasyEnemy extends Enemy {
 
     //number of enemies that were not destroyed and passed. If player missed three enemies lose one life.
     public EasyEnemy(int x, int y) {
-        super(x, y, HEALTH, Assets.easyEnemy, POINTS_FOR_PLAYER, SPEED_MULTIPLIER);
+        super(x, y, HEALTH, Assets.easyEnemyInit, POINTS_FOR_PLAYER, SPEED_MULTIPLIER);
     }
 
 }
