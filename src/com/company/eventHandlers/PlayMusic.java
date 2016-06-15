@@ -7,10 +7,17 @@ public class PlayMusic {
     private Clip clip;
 
     // Change file name to match yours, of course
+<<<<<<< HEAD
     public static PlayMusic music = new PlayMusic("/Sounds/ThemeMusic.wav");
     public static PlayMusic spell = new PlayMusic("/Sounds/FireBall.wav");
     public static PlayMusic arrow = new PlayMusic("/Sounds/BowFire.wav");
     public static PlayMusic death = new PlayMusic("/Sounds/Death.wav");
+=======
+    public static PlayMusic empire = new PlayMusic("/Sounds/SithEmpireMusic.wav");
+    public static PlayMusic rebels = new PlayMusic("/Sounds/RebelsMusic.wav");
+    public static PlayMusic fire = new PlayMusic("/Sounds/Arrow.wav");
+    public static PlayMusic boom = new PlayMusic("/Sounds/Explosion.wav");
+>>>>>>> origin/master
 
     public PlayMusic(String fileName) {
         try {
