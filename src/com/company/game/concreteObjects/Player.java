@@ -23,17 +23,16 @@ public class Player extends GameObject  {
             isFiring = false;
 
     public Player(int x, int y, String name, int speed) {
-
         super(x, y, Assets.player, speed);
-        this.numberOfLives = INITILAL_NUMBER_OF_LIVES;
-        this.playerName = name;
-        this.score = 0;
-
+        this.setNumberOfLives(INITILAL_NUMBER_OF_LIVES);
+        this.setPlayerName(name);
+        this.setScore(0);
     }
 
     @Override
     public void update() {
 
+        //TODO problem with replace getter and setter
         if(this.timeForBonus > 0) {
             this.timeForBonus--;
         } else if(this.currentBonus != null && this.timeForBonus == 0) {
@@ -60,16 +59,27 @@ public class Player extends GameObject  {
         }
 
         if (isFiring) {
-            if(this.currentBonus != null){
-                GameState.bulletsList.add(new Bullet(this.getX() + 16, this.getY(), currentBonus.getMultiplierForDamage()));
-            }
-            else{
+            if(this.getCurrentBonus() != null){
+                GameState.bulletsList.add(new Bullet(this.getX() + 16, this.getY(), this.getCurrentBonus().getMultiplierForDamage()));
+            } else {
                 GameState.bulletsList.add(new Bullet(this.getX() + 16, this.getY(), 1));
             }
 
             isFiring = false;
         }
 
+    }
+
+    public int getTimeForBonus() {
+        return this.timeForBonus;
+    }
+
+    public void setTimeForBonus(int timeForBonus) {
+        this.timeForBonus = timeForBonus;
+    }
+
+    public void addToScore(int points) {
+        this.score += points;
     }
 
     public void setNumberOfLives(int numberOfLives) {
@@ -80,6 +90,10 @@ public class Player extends GameObject  {
         return this.score;
     }
 
+    public void setScore(int score) {
+        this.score = score;
+    }
+
     public String getPlayerName() {
         return this.playerName;
     }
@@ -88,17 +102,13 @@ public class Player extends GameObject  {
         return this.numberOfLives;
     }
 
-    public void addToScore(int points) {
-        this.score += points;
-    }
-
     public void setPlayerName(String playerName) {
         this.playerName = playerName;
     }
 
     public void setCurrentBonus(Bonus bonus) {
-        this.timeForBonus = bonus.getBonusDuration();
         this.currentBonus = bonus;
+        this.setTimeForBonus(bonus.getBonusDuration());
     }
 
     public Bonus getCurrentBonus() {

@@ -24,7 +24,7 @@ public class GameState extends State implements Displayable {
     public static List<Bonus> bonusList;
     public Random rnd = new Random();
     private long lastTimeMissed, now;
-    public static int score = 0;
+    public static int score;
     private int enemyTypes = 1;
     private boolean explode;
     private int cropX, cropY;
@@ -33,11 +33,10 @@ public class GameState extends State implements Displayable {
         score = 0;
         init();
         this.bulletsList = new LinkedList<>();
-        this.player = new Player(350, 500, "Player", 14);
+        this.player = new Player(350, 500, "Player", 15);
         this.enemiesList = new LinkedList<>();
         this.bonusList = new LinkedList<>();
         enemiesList.add(new EasyEnemy(rnd.nextInt(725), -100));
-
     }
 
     public void init() {

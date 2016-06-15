@@ -20,16 +20,16 @@ public abstract class GameObject implements Displayable, Updateable {
     private BufferedImage gameObjectIcon;
 
     public GameObject(int x, int y, BufferedImage gameObjectIcon, int speedMultiplier) {
-
-        this.x = x;
-        this.y = y;
-        this.speed = speedMultiplier;
-        this.gameObjectIcon = gameObjectIcon;
-        this.colliderBox = new Rectangle(
+        this.setX(x);
+        this.setY(y);
+        this.setSpeed(speedMultiplier);
+        this.setObjectIcon(gameObjectIcon);
+        this.setColliderBox(new Rectangle(
                 this.x,
                 this.y,
                 this.gameObjectIcon.getWidth(),
                 this.gameObjectIcon.getHeight()
+            )
         );
     }
 
@@ -45,6 +45,10 @@ public abstract class GameObject implements Displayable, Updateable {
         return this.gameObjectIcon;
     }
 
+    public void setObjectIcon(BufferedImage gameObjectIcon) {
+        this.gameObjectIcon = gameObjectIcon;
+    }
+
     public void setY(int y) {
         this.y = y;
     }
@@ -57,6 +61,10 @@ public abstract class GameObject implements Displayable, Updateable {
         return speed;
     }
 
+    public void setSpeed(int speed) {
+        this.speed = speed;
+    }
+
     public Rectangle getColliderBox() {
         return colliderBox;
     }
@@ -66,8 +74,7 @@ public abstract class GameObject implements Displayable, Updateable {
     }
 
     public boolean collide(Rectangle r) {
-
-        if (this.colliderBox.intersects(r)) {
+        if (this.getColliderBox().intersects(r)) {
             return true;
         }
 

@@ -11,12 +11,19 @@ public class Bullet extends GameObject {
 
     public Bullet(int x, int y, int strengthMultiplier) {
         super(x, y, Assets.bullet, speedMultiplier);
-        this.bulletStrength = 1;
-        this.bulletStrength *= strengthMultiplier;
+        this.setBulletStrength(1 * strengthMultiplier);
     }
 
-    public int GetBulletStrength() {
+    public int getBulletStrength() {
         return this.bulletStrength;
+    }
+
+    public void setBulletStrength(int bulletStrength) {
+        this.bulletStrength = bulletStrength;
+    }
+
+    public static int getSpeedMultiplier() {
+        return speedMultiplier;
     }
 
     @Override

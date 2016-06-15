@@ -24,7 +24,7 @@ public class Game implements Runnable {
     private State chooseSideState;
 
     private void init() {
-        this.display = new Display("Space Invasion", 800, 600);
+        this.display = new Display("Nozdormu Battle", 800, 600);
         this.keyboardInput = new KeyboardInput(this, this.display);
         this.mouseInput =new MouseInput(this.display);
         gameState = new GameState();
