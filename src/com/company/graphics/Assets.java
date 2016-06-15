@@ -37,7 +37,6 @@ public class Assets {
             player = ImageLoader.loadImage(ImageAlbum.RebelPlayer.getPath());
             easyEnemy = ImageLoader.loadImage(ImageAlbum.EasyEmpireEnemy.getPath());
             sturdyEnemy = ImageLoader.loadImage(ImageAlbum.SturdyEmpireEnemy.getPath());
-
         } else {
             player = ImageLoader.loadImage(ImageAlbum.SithPlayer.getPath());
             easyEnemy = ImageLoader.loadImage(ImageAlbum.EasyRebelsEnemy.getPath());
@@ -45,7 +44,6 @@ public class Assets {
         }
 
         bullet = ImageLoader.loadImage(ImageAlbum.Bullet.getPath());
-
         live = ImageLoader.loadImage(ImageAlbum.Live.getPath());
         doubleDamageBonus = ImageLoader.loadImage(ImageAlbum.DoubleDamageBonus.getPath());
         highScoresBackground = ImageLoader.loadImage(ImageAlbum.HighScores.getPath());
@@ -58,11 +56,11 @@ public class Assets {
 
         //Loading font
         try {
-            GraphicsEnvironment ge =
-                    GraphicsEnvironment.getLocalGraphicsEnvironment();
+            GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+            //TODO change font
             ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File("res\\REDENSEK.TTF")));
-        } catch (IOException |FontFormatException e) {
-            //Handle exception
+        } catch (IOException | FontFormatException e) {
+            //TODO Handle exception
         }
 
     }
@@ -78,9 +76,8 @@ public class Assets {
             String[] tokens;
 
             while (line != null) {
-                tokens = line.split(" ");
+                tokens = line.split("\\s+");
                 scores.put(tokens[0], Integer.parseInt(tokens[1]));
-
                 line = fileReader.readLine();
             }
         } catch (IOException ioex) {
@@ -101,19 +98,15 @@ public class Assets {
         if (list.size() > 0) {
             lowestScore = list.get(list.size() - 1).getValue();
         }
-
     }
 
     public static void savingHighScores(String name, int score) {
-
         if (score > lowestScore || highScores.size() < 10) {
             try (PrintWriter writer = new PrintWriter(new FileWriter("res\\highScores.txt", true))) {
-            writer.println(name + " " + score);
-        } catch (IOException e) {
-            e.printStackTrace();
+                writer.println(name + " " + score);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
-        }
-
     }
-
 }
