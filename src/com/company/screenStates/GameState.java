@@ -97,7 +97,7 @@ public class GameState extends State implements Displayable {
 
         // Player Ends Playing
         if(player.getNumberOfLives() == 0) {
-            if (MouseInput.isRebel) {
+            if (MouseInput.isMage) {
                 PlayMusic.rebels.stop();
             } else {
                 PlayMusic.empire.stop();
@@ -183,7 +183,8 @@ public class GameState extends State implements Displayable {
 
         if (explode) {
            // g.drawImage(Assets.explosion.crop(cropX, cropY), player.getX() - 20, player.getY(), null);
-            g.drawImage(Assets.die.crop(cropX, cropY), player.getX(), player.getY(), null);
+           g.drawImage(Assets.die.crop(cropX, cropY), player.getX(), player.getY(), null);
+
         }
 
     }

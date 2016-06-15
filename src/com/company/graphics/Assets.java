@@ -37,31 +37,30 @@ public class Assets {
 
         background = ImageLoader.loadImage(ImageAlbum.Background.getPath());
 
-        if (MouseInput.isRebel) {
-            player = ImageLoader.loadImage(ImageAlbum.RebelPlayer.getPath());
-            easyEnemy = new SpriteSheet(ImageLoader.loadImage(ImageAlbum.EasyEnemy.getPath()), 97, 56);
-            easyEnemyInit = easyEnemy.crop(1,0);
+        if (MouseInput.isMage) {
+            player = ImageLoader.loadImage(ImageAlbum.MagePlayer.getPath());
 
-            sturdyEnemy = new SpriteSheet(ImageLoader.loadImage(ImageAlbum.SturdyEnemy.getPath()), 95, 98);
-            sturdyEnemyInit = sturdyEnemy.crop(1,0);
+            die = new SpriteSheet(ImageLoader.loadImage(ImageAlbum.MageDeath.getPath()), 64, 64);
         } else {
 
-            player = ImageLoader.loadImage(ImageAlbum.SithPlayer.getPath());
-              easyEnemy = new SpriteSheet(ImageLoader.loadImage(ImageAlbum.EasyEnemy.getPath()), 97, 56);
-
-            easyEnemyInit = easyEnemy.crop(1,0);
-            sturdyEnemy = new SpriteSheet(ImageLoader.loadImage(ImageAlbum.SturdyEnemy.getPath()), 95, 98);
-            sturdyEnemyInit = sturdyEnemy.crop(1,0);
+            player = ImageLoader.loadImage(ImageAlbum.ArcherPlayer.getPath());
+            die = new SpriteSheet(ImageLoader.loadImage(ImageAlbum.ArcherDeath.getPath()), 66, 59);
         }
+
+        easyEnemy = new SpriteSheet(ImageLoader.loadImage(ImageAlbum.EasyEnemy.getPath()), 97, 56);
+        easyEnemyInit = easyEnemy.crop(1,0);
+        sturdyEnemy = new SpriteSheet(ImageLoader.loadImage(ImageAlbum.SturdyEnemy.getPath()), 95, 98);
+        sturdyEnemyInit = sturdyEnemy.crop(1,0);
+
 
         bullet = ImageLoader.loadImage(ImageAlbum.Bullet.getPath());
         live = ImageLoader.loadImage(ImageAlbum.Live.getPath());
         doubleDamageBonus = ImageLoader.loadImage(ImageAlbum.DoubleDamageBonus.getPath());
         highScoresBackground = ImageLoader.loadImage(ImageAlbum.HighScores.getPath());
         gameover = ImageLoader.loadImage(ImageAlbum.GameOver.getPath());
-        explosion = new SpriteSheet(ImageLoader.loadImage(ImageAlbum.Explosion.getPath()), 100, 100);
-        die = new SpriteSheet(ImageLoader.loadImage(ImageAlbum.Die.getPath()), 66, 59);
-        chooseSide = ImageLoader.loadImage(ImageAlbum.ChooseSideBG.getPath());
+//        explosion = new SpriteSheet(ImageLoader.loadImage(ImageAlbum.ArcherDeath.getPath()), 100, 100);
+
+        chooseSide = ImageLoader.loadImage(ImageAlbum.ChooseClass.getPath());
         mainMenuBackground = ImageLoader.loadImage(ImageAlbum.MainMenu.getPath());
         button = ImageLoader.loadImage(ImageAlbum.Button.getPath());
         buttonBar = ImageLoader.loadImage(ImageAlbum.ButtonSlider.getPath());

@@ -7,7 +7,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 public class MouseInput implements MouseListener {
-    public static boolean isRebel;
+    public static boolean isMage;
     public MouseInput(Display display) {
         display.getCanvas().addMouseListener(this);
     }
@@ -46,7 +46,7 @@ public class MouseInput implements MouseListener {
             if (mouseX >= 50 && mouseX <= 350) {
                 if (mouseY >= 300 && mouseY <= 400) {
                     PlayMusic.empire.loop();
-                    isRebel = false;
+                     isMage = false;
                     StateManager.setCurrentState(new GameState());
                 }
             }
@@ -55,7 +55,7 @@ public class MouseInput implements MouseListener {
             if (mouseX >= 450 && mouseX <= 750) {
                 if (mouseY >= 300 && mouseY <= 400) {
                     PlayMusic.rebels.loop();
-                    isRebel = true;
+                    isMage = true;
                     StateManager.setCurrentState(new GameState());
                 }
             }
