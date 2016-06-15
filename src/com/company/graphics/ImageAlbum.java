@@ -5,8 +5,10 @@ public enum ImageAlbum {
     //If you add another object to the game you must insert it in the enumeration here in order to get it's path
     RebelPlayer("/Ships/MilleniumFalcon.png"),
     SithPlayer("/Ships/SithInfiltrator.png"),
-    EasyEmpireEnemy("/Ships/TIEFighter.png"),
-    SturdyEmpireEnemy("/Ships/StarDestroyer.png"),
+ //   EasyEmpireEnemy("/Ships/TIEFighter.png"),
+    EasyEmpireEnemy("/Ships/Monster1Bahamut.png"),
+   // SturdyEmpireEnemy("/Ships/StarDestroyer.png"),
+    SturdyEmpireEnemy("/Ships/Monster2TheMontain.png"),
     EasyRebelsEnemy("/Ships/XWing.png"),
     SturdyRebelsEnemy("/Ships/JediStarFighter.png"),
     DoubleDamageBonus("/InGame/x2Bonus.png"),
