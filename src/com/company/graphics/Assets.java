@@ -23,6 +23,7 @@ public class Assets {
     public static BufferedImage gameover;
     public static BufferedImage chooseSide;
     public static SpriteSheet explosion;
+    public static SpriteSheet die;
     public static BufferedImage mainMenuBackground;
     public static BufferedImage button;
     public static BufferedImage buttonBar;
@@ -59,6 +60,7 @@ public class Assets {
         highScoresBackground = ImageLoader.loadImage(ImageAlbum.HighScores.getPath());
         gameover = ImageLoader.loadImage(ImageAlbum.GameOver.getPath());
         explosion = new SpriteSheet(ImageLoader.loadImage(ImageAlbum.Explosion.getPath()), 100, 100);
+        die = new SpriteSheet(ImageLoader.loadImage(ImageAlbum.Die.getPath()), 66, 59);
         chooseSide = ImageLoader.loadImage(ImageAlbum.ChooseSideBG.getPath());
         mainMenuBackground = ImageLoader.loadImage(ImageAlbum.MainMenu.getPath());
         button = ImageLoader.loadImage(ImageAlbum.Button.getPath());

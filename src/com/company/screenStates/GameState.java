@@ -109,17 +109,22 @@ public class GameState extends State implements Displayable {
         if (explode) {
             cropX++;
 
-            if (cropX >= 8) {
-                cropY++;
+            if (cropX >= 6) {
+                //cropY++;
                 cropX = 0;
+                explode = false;
+                enemiesList.clear();
+                player.setX(350);
+                player.setY(500);
             }
-            if (cropY >= 6) {
+         /*   if (cropY >= 6) {
                 explode = false;
                 enemiesList.clear();
                 player.setX(350);
                 player.setY(500);
                 cropX = cropY = 0;
             }
+            */
         }
 
     }
@@ -133,7 +138,9 @@ public class GameState extends State implements Displayable {
             g.drawImage(player.getCurrentBonus().getObjectIcon(), 730, 530, null);
         }
 
-        player.display(g);
+        if (!explode){
+            player.display(g);
+        }
 
         for(int i = 0; i < bonusList.size(); i++){
             bonusList.get(i).display(g);
@@ -175,7 +182,8 @@ public class GameState extends State implements Displayable {
         }
 
         if (explode) {
-            g.drawImage(Assets.explosion.crop(cropX, cropY), player.getX() - 20, player.getY(), null);
+           // g.drawImage(Assets.explosion.crop(cropX, cropY), player.getX() - 20, player.getY(), null);
+            g.drawImage(Assets.die.crop(cropX, cropY), player.getX(), player.getY(), null);
         }
 
     }
