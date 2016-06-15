@@ -11,7 +11,13 @@ public class DoubleDamageBonus extends Bonus {
     private static final int BONUS_DURATION = 60;
 
     public DoubleDamageBonus(int x, int y) {
-        super(x, y, Assets.doubleDamageBonus, DAMAGE_MULTIPLIER, SPEED_MULTIPLIER, SCORE_MULTIPLIER, BONUS_DURATION);
+        super(x, y,
+                Assets.doubleDamageBonus,
+                DAMAGE_MULTIPLIER,
+                SPEED_MULTIPLIER,
+                SCORE_MULTIPLIER,
+                BONUS_DURATION
+        );
     }
 
 }

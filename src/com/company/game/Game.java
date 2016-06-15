@@ -11,14 +11,10 @@ import java.awt.image.BufferStrategy;
 public class Game implements Runnable {
 
     private Display display;
-    private boolean isRuning = false;
-
+    private boolean isRunning = false;
     private MouseInput mouseInput;
-
     private Thread thread;
-
     private KeyboardInput keyboardInput;
-
     private BufferStrategy bs;
     private Graphics g;
     private State gameState;
@@ -28,29 +24,23 @@ public class Game implements Runnable {
     private State chooseSideState;
 
     private void init() {
-
         this.display = new Display("Space Invasion", 800, 600);
-        this.keyboardInput = new KeyboardInput(this,this.display);
+        this.keyboardInput = new KeyboardInput(this, this.display);
         this.mouseInput =new MouseInput(this.display);
-
         gameState = new GameState();
         menuState = new MainMenuState();
         gameOverState = new GameOverState();
         highScoreState = new HighScoresState();
         chooseSideState = new ChooseSideState();
-
-        StateManager.setCurrentState(menuState);
-
+        StateManager.setCurrentState(this.menuState);
     }
 
     public void displayFrame() {
-
         //Display the current frame using the display frame;
         this.bs = this.display.getCanvas().getBufferStrategy();
 
         if (bs == null) {
             this.display.getCanvas().createBufferStrategy(2);
-
             return;
         }
 
@@ -66,36 +56,30 @@ public class Game implements Runnable {
         ////////////// TO HERE////////////
         g.dispose();
         bs.show();
-
     }
 
     public void update() {
-
         if(StateManager.getCurrentState() != null) {
             StateManager.getCurrentState().update();
         }
-
     }
 
     public synchronized void start() {
-
-        if (isRuning) {
+        if (isRunning) {
             return;
         }
 
-        isRuning = true;
+        isRunning = true;
         thread = new Thread(this);
         thread.start();
-
     }
 
     public synchronized void stop() {
-
-        if (!isRuning) {
+        if (!isRunning) {
             return;
         }
 
-        isRuning = false;
+        isRunning = false;
 
         try {
             thread.join();
@@ -103,7 +87,6 @@ public class Game implements Runnable {
             e.printStackTrace();
             System.exit(1);
         }
-
     }
 
     @Override
@@ -118,7 +101,7 @@ public class Game implements Runnable {
         long timer = 0;
         int ticks = 0;
 
-        while (isRuning) {
+        while (isRunning) {
             now = System.nanoTime();
             delta += (now-lastTime) / timePerTick;
             timer += now - lastTime;
@@ -138,7 +121,5 @@ public class Game implements Runnable {
         }
 
         stop();
-
     }
-
 }

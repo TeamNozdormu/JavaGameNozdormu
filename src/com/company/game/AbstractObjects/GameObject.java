@@ -25,9 +25,12 @@ public abstract class GameObject implements Displayable, Updateable {
         this.y = y;
         this.speed = speedMultiplier;
         this.gameObjectIcon = gameObjectIcon;
-        this.colliderBox = new Rectangle(this.x, this.y,
-                this.gameObjectIcon.getWidth(), this.gameObjectIcon.getHeight());
-
+        this.colliderBox = new Rectangle(
+                this.x,
+                this.y,
+                this.gameObjectIcon.getWidth(),
+                this.gameObjectIcon.getHeight()
+        );
     }
 
     public int getX() {
@@ -69,8 +72,8 @@ public abstract class GameObject implements Displayable, Updateable {
         }
 
         return false;
-
     }
+
     @Override
     public void display(Graphics g) {
         g.drawImage(this.getObjectIcon(), this.getX(), this.getY(), null);

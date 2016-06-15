@@ -28,13 +28,20 @@ public abstract class Enemy extends GameObject {
 
     @Override
     public void update() {
-
-        this.getColliderBox().setBounds(this.getX(), this.getY(), this.getObjectIcon().getWidth(),
-                this.getObjectIcon().getHeight());
+        this.getColliderBox().setBounds(
+                this.getX(),
+                this.getY(),
+                this.getObjectIcon().getWidth(),
+                this.getObjectIcon().getHeight()
+        );
 
         if (this.getHealth() > 0) {
-            this.getColliderBox().setBounds(this.getX(), this.getY(), this.getObjectIcon().getWidth(),
-                    this.getObjectIcon().getHeight());
+            this.getColliderBox().setBounds(
+                    this.getX(),
+                    this.getY(),
+                    this.getObjectIcon().getWidth(),
+                    this.getObjectIcon().getHeight()
+            );
             this.setY(this.getY() + this.getSpeed());
 
             //enemy is outside the window
@@ -46,11 +53,10 @@ public abstract class Enemy extends GameObject {
             for (int i = 0; i < GameState.bulletsList.size(); i++) {
                 if (this.collide(GameState.bulletsList.get(i).getColliderBox())) {
                     this.health -= GameState.bulletsList.get(i).GetBulletStrength();
-
                     if (this.health < 0) {
                         this.health = 0;
                         if (GameState.player.getCurrentBonus() != null) {
-                            this.pointsForPlayer *= GameState.player.getCurrentBonus().getMultiploerForScore();
+                            this.pointsForPlayer *= GameState.player.getCurrentBonus().getMultiplierForScore();
                         }
                     }
 
@@ -68,12 +74,10 @@ public abstract class Enemy extends GameObject {
             }
 
             if (GameState.player.getCurrentBonus() != null) {
-                GameState.score += this.getPointsForPlayer() * GameState.player.getCurrentBonus().getMultiploerForScore();
+                GameState.score += this.getPointsForPlayer() * GameState.player.getCurrentBonus().getMultiplierForScore();
             } else {
                 GameState.score += this.getPointsForPlayer();
             }
         }
-
     }
-
 }

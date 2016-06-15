@@ -6,19 +6,17 @@ import com.company.screenStates.GameState;
 
 public class Bullet extends GameObject {
 
-    private int bulletStrenght;
+    private int bulletStrength;
     private static final int speedMultiplier = 5;
 
-    public Bullet(int x, int y, int strenghtMultiplier) {
-
+    public Bullet(int x, int y, int strengthMultiplier) {
         super(x, y, Assets.bullet, speedMultiplier);
-        this.bulletStrenght = 1;
-        this.bulletStrenght *= strenghtMultiplier;
-
+        this.bulletStrength = 1;
+        this.bulletStrength *= strengthMultiplier;
     }
 
     public int GetBulletStrength() {
-        return this.bulletStrenght;
+        return this.bulletStrength;
     }
 
     @Override

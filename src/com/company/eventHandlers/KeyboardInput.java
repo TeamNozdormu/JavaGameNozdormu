@@ -31,7 +31,6 @@ public class KeyboardInput implements KeyListener {
 
         if (key == KeyEvent.VK_RIGHT) {
             GameState.player.isMovingRight = true;
-
         } else if (key == KeyEvent.VK_LEFT) {
             GameState.player.isMovingLeft = true;
         } else if (key == KeyEvent.VK_UP) {

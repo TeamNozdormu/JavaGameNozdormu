@@ -9,8 +9,7 @@ public class RandomGenerator {
         random = new Random();
     }
 
-    public static double getNextRandom()
-    {
+    public static double getNextRandom() {
         if (random == null){
             init();
         }

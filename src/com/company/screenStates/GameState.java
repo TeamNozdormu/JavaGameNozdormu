@@ -30,9 +30,7 @@ public class GameState extends State implements Displayable {
     private int cropX, cropY;
 
     public GameState() {
-
         score = 0;
-
         init();
         this.bulletsList = new LinkedList<>();
         this.player = new Player(350, 500, "Player", 14);

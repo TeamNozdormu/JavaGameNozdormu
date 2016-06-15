@@ -16,7 +16,7 @@ public class GameOverState extends State implements Displayable {
 
     public void display(Graphics g) {
 
-        g.setColor(Color.GREEN);
+        g.setColor(Color.WHITE);
 
         g.setFont(new Font("redensek", Font.PLAIN, 100));
         g.drawImage(Assets.gameover, 0, 0, null);

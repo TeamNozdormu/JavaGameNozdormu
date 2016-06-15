@@ -39,7 +39,6 @@ public class MouseInput implements MouseListener {
 
                 // TODO: Saving to file
                 System.exit(0);
-
             }
         }
         else if(StateManager.getCurrentState() instanceof ChooseSideState) {
