@@ -39,11 +39,11 @@ public class Assets {
 
         if (MouseInput.isMage) {
             player = ImageLoader.loadImage(ImageAlbum.MagePlayer.getPath());
-
+            bullet = ImageLoader.loadImage(ImageAlbum.FireBall.getPath());
             die = new SpriteSheet(ImageLoader.loadImage(ImageAlbum.MageDeath.getPath()), 64, 64);
         } else {
-
             player = ImageLoader.loadImage(ImageAlbum.ArcherPlayer.getPath());
+            bullet = ImageLoader.loadImage(ImageAlbum.Arrow.getPath());
             die = new SpriteSheet(ImageLoader.loadImage(ImageAlbum.ArcherDeath.getPath()), 66, 59);
         }
 
@@ -53,7 +53,7 @@ public class Assets {
         sturdyEnemyInit = sturdyEnemy.crop(1,0);
 
 
-        bullet = ImageLoader.loadImage(ImageAlbum.Bullet.getPath());
+
         live = ImageLoader.loadImage(ImageAlbum.Live.getPath());
         doubleDamageBonus = ImageLoader.loadImage(ImageAlbum.DoubleDamageBonus.getPath());
         highScoresBackground = ImageLoader.loadImage(ImageAlbum.HighScores.getPath());

@@ -43,7 +43,11 @@ public class KeyboardInput implements KeyListener {
 
         if (key == KeyEvent.VK_SPACE && GameState.player.isFiring == false) {
             GameState.player.isFiring = true;
-            PlayMusic.fire.play();
+            if (MouseInput.isMage) {
+                PlayMusic.spell.play();
+            } else {
+                PlayMusic.arrow.play();
+            }
         }
 
     }

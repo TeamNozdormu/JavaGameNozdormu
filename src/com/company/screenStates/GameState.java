@@ -73,7 +73,7 @@ public class GameState extends State implements Displayable {
             if(player.collide(enemiesList.get(i).getColliderBox())) {
                 player.setNumberOfLives(player.getNumberOfLives() - 1);
                 explode = true;
-                PlayMusic.boom.play();
+                PlayMusic.death.play();
                 enemiesList.get(i).setColliderBox(new Rectangle(0, 0, 1, 1));
 
                 break;
@@ -97,11 +97,7 @@ public class GameState extends State implements Displayable {
 
         // Player Ends Playing
         if(player.getNumberOfLives() == 0) {
-            if (MouseInput.isMage) {
-                PlayMusic.rebels.stop();
-            } else {
-                PlayMusic.empire.stop();
-            }
+            PlayMusic.music.stop();
 
             StateManager.setCurrentState(new GameOverState());
         }
