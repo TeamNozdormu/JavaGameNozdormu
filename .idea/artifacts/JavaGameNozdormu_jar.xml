@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="JavaGameNozdormu:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/JavaGameNozdormu_jar</output-path>
+    <root id="archive" name="JavaGameNozdormu.jar">
+      <element id="module-output" name="JavaGameNozdormu" />
+    </root>
+  </artifact>
+</component>
