@@ -27,10 +27,9 @@ public class Assets {
     public static BufferedImage button;
     public static BufferedImage buttonBar;
     public static BufferedImage[] sprites = new BufferedImage[4];
-
-    private static SortedMap<String,Integer> scores;
-    public static Map<String,Integer> highScores;
+    public static Map<String, Integer> highScores;
     public static int lowestScore;
+    private static SortedMap<String, Integer> scores;
 
     public static void init() {
 
@@ -47,11 +46,9 @@ public class Assets {
         }
 
         easyEnemy = new SpriteSheet(ImageLoader.loadImage(ImageAlbum.EasyEnemy.getPath()), 97, 56);
-        easyEnemyInit = easyEnemy.crop(1,0);
+        easyEnemyInit = easyEnemy.crop(1, 0);
         sturdyEnemy = new SpriteSheet(ImageLoader.loadImage(ImageAlbum.SturdyEnemy.getPath()), 95, 98);
-        sturdyEnemyInit = sturdyEnemy.crop(1,0);
-
-
+        sturdyEnemyInit = sturdyEnemy.crop(1, 0);
 
         live = ImageLoader.loadImage(ImageAlbum.Live.getPath());
         doubleDamageBonus = ImageLoader.loadImage(ImageAlbum.DoubleDamageBonus.getPath());
@@ -68,23 +65,19 @@ public class Assets {
             GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
             //TODO change font
             ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File("res\\IMMORTAL.ttf")));
-            String fonts[]
-                    = GraphicsEnvironment.getLocalGraphicsEnvironment().getAvailableFontFamilyNames();
-
+            String fonts[] = GraphicsEnvironment.getLocalGraphicsEnvironment().getAvailableFontFamilyNames();
             for (int i = 0; i < fonts.length; i++) {
                 System.out.println(fonts[i]);
             }
         } catch (IOException | FontFormatException e) {
             //TODO Handle exception
         }
-
     }
 
     public static void loadingHighScores() {
-
         scores = new TreeMap<>();
         highScores = new LinkedHashMap<>();
-        List<Map.Entry<String,Integer>> list;
+        List<Map.Entry<String, Integer>> list;
 
         try (BufferedReader fileReader = new BufferedReader(new FileReader("res\\highScores.txt"))) {
             String line = fileReader.readLine();
@@ -102,7 +95,7 @@ public class Assets {
         list = new ArrayList<>(scores.entrySet());
         Collections.sort(list, (a, b) -> b.getValue().compareTo(a.getValue()));
 
-        if(list.size() > 10) {
+        if (list.size() > 10) {
             list.subList(0, 10);
         }
 

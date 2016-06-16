@@ -27,10 +27,12 @@ public abstract class Bonus extends GameObject {
     public int getMultiplierForDamage() {
         return this.multiplierForDamage;
     }
-    public int getMultiplierForScore(){
+
+    public int getMultiplierForScore() {
         return this.multiplierForScore;
     }
-    public int getBonusDuration(){
+
+    public int getBonusDuration() {
         return this.bonusDuration;
     }
 

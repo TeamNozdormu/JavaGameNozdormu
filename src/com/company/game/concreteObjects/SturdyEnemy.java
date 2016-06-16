@@ -12,5 +12,4 @@ public class SturdyEnemy extends Enemy {
     public SturdyEnemy(int x, int y) {
         super(x, y, HEALTH, Assets.sturdyEnemyInit, POINTS_FOR_PLAYER, speedMultiplier);
     }
-
 }

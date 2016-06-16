@@ -1,8 +1,8 @@
 package com.company.eventHandlers;
 
+import com.company.game.Game;
 import com.company.graphics.Assets;
 import com.company.graphics.Display;
-import com.company.game.Game;
 import com.company.screenStates.GameOverState;
 import com.company.screenStates.GameState;
 import com.company.screenStates.MainMenuState;
@@ -72,7 +72,7 @@ public class KeyboardInput implements KeyListener {
             GameState.player.isFiring = false;
         }
         if (StateManager.getCurrentState() instanceof GameOverState) {
-            if (key>='A' && key<='Z' && GameOverState.sb.length() < 14) {
+            if (key >= 'A' && key <= 'Z' && GameOverState.sb.length() < 14) {
                 GameOverState.sb.append((char) key);
             } else if (key == KeyEvent.VK_BACK_SPACE && GameOverState.sb.length() > 0) {
                 GameOverState.sb.deleteCharAt(GameOverState.sb.length() - 1);

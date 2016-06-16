@@ -13,5 +13,4 @@ public class EasyEnemy extends Enemy {
     public EasyEnemy(int x, int y) {
         super(x, y, HEALTH, Assets.easyEnemyInit, POINTS_FOR_PLAYER, SPEED_MULTIPLIER);
     }
-
 }

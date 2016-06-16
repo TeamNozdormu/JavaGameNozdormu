@@ -28,7 +28,7 @@ public enum ImageAlbum {
         this.path = path;
     }
 
-    public String getPath(){
+    public String getPath() {
         return this.path;
     }
 

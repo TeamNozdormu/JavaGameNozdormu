@@ -14,8 +14,8 @@ public abstract class Enemy extends GameObject {
 
     public Enemy(int x, int y, int health, BufferedImage gameObjectIcon, int pointsForPlayer, int speedMultiplier) {
         super(x, y, gameObjectIcon, speedMultiplier);
-        this.health = health;
-        this.pointsForPlayer = pointsForPlayer;
+        this.setHealth(health);
+        this.setPointsForPlayer(pointsForPlayer);
     }
 
     public int getHealth() {
@@ -24,6 +24,14 @@ public abstract class Enemy extends GameObject {
 
     public int getPointsForPlayer() {
         return this.pointsForPlayer;
+    }
+
+    public void setHealth(int health) {
+        this.health = health;
+    }
+
+    public void setPointsForPlayer(int pointsForPlayer) {
+        this.pointsForPlayer = pointsForPlayer;
     }
 
     @Override

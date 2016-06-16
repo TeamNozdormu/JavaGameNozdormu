@@ -1,7 +1,5 @@
 package com.company.graphics;
 
-import com.company.game.AbstractObjects.GameObject;
-
 import javax.swing.*;
 import java.awt.*;
 
@@ -10,12 +8,12 @@ public class Display {
     private int width;
     private int height;
     private String title;
+    //TODO add getter and setter
 
     private JFrame frame;
     private Canvas canvas;
 
     public Display(String title, int width, int height) {
-
         this.title = title;
         this.width = width;
         this.height = height;
@@ -24,7 +22,7 @@ public class Display {
 
     }
 
-    private void initDisplay(){
+    private void initDisplay() {
 
         this.frame = new JFrame(this.title);
         this.frame.setSize(width, height);
@@ -45,7 +43,7 @@ public class Display {
 
     }
 
-    public Canvas getCanvas(){
+    public Canvas getCanvas() {
         return this.canvas;
     }
 

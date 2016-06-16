@@ -7,13 +7,12 @@ public class SpriteSheet {
     private BufferedImage sheet;
     private int cropWidth;
     private int cropHeight;
+    //TODO add getter and setter
 
     public SpriteSheet(BufferedImage sheet, int cropWidth, int cropHeight) {
-
         this.sheet = sheet;
         this.cropWidth = cropWidth;
         this.cropHeight = cropHeight;
-
     }
 
     //Method that crops the image from x to width and from y to height

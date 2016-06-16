@@ -7,13 +7,11 @@ import java.awt.*;
 
 public class MainMenuState extends State {
 
-    //TODO: Display the menu with options and listen for the event clicked
-    private int currentSelection;
-
     public static Button playButton = new Button(-220, 300, Assets.button, "Play");
     public static Button highScoreButton = new Button(-220, 400, Assets.button, "High scores");
     public static Button quitButton = new Button(-220, 500, Assets.button, "Quit");
-
+    //TODO: Display the menu with options and listen for the event clicked
+    private int currentSelection;
     private int playButtonXPos;
     private int highScoresButtonXPos;
     private int quitButtonXPos;
@@ -32,13 +30,13 @@ public class MainMenuState extends State {
     @Override
     public void update() {
 
-        if(playButtonXPos < 90) {
+        if (playButtonXPos < 90) {
             playButtonXPos += 10;
             playButton.setX(playButtonXPos);
         } else if (highScoresButtonXPos < 90) {
             highScoresButtonXPos += 10;
             highScoreButton.setX(highScoresButtonXPos);
-        } else if(quitButtonXPos < 90) {
+        } else if (quitButtonXPos < 90) {
             quitButtonXPos += 10;
             quitButton.setX(quitButtonXPos);
         }

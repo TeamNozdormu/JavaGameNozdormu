@@ -7,14 +7,15 @@ import java.awt.*;
 
 public class ChooseClassState extends State {
 
+    public static Button backButton = new Button(300, 480, Assets.button, "Back");
     //TODO: Display the menu with options and listen for the event clicked
     public Rectangle archerButtor = new Rectangle(50, 300, 300, 100);
     public Rectangle mageButton = new Rectangle(450, 300, 300, 100);
-    public static Button backButton = new Button(300, 480, Assets.button, "Back");
 
     public ChooseClassState() {
 
     }
+
     @Override
     public void update() {
 
