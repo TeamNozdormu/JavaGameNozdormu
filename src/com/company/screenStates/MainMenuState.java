@@ -7,11 +7,13 @@ import java.awt.*;
 
 public class MainMenuState extends State {
 
-    public static Button playButton = new Button(-220, 300, Assets.button, "Play");
-    public static Button highScoreButton = new Button(-220, 400, Assets.button, "High scores");
-    public static Button quitButton = new Button(-220, 500, Assets.button, "Quit");
     //TODO: Display the menu with options and listen for the event clicked
     private int currentSelection;
+
+    public static Button playButton = new Button(-220, 300, Assets.button, "play");
+    public static Button highScoreButton = new Button(-220, 400, Assets.button, "High scores");
+    public static Button quitButton = new Button(-220, 500, Assets.button, "Quit");
+
     private int playButtonXPos;
     private int highScoresButtonXPos;
     private int quitButtonXPos;
@@ -30,13 +32,13 @@ public class MainMenuState extends State {
     @Override
     public void update() {
 
-        if (playButtonXPos < 90) {
+        if(playButtonXPos < 90) {
             playButtonXPos += 10;
             playButton.setX(playButtonXPos);
         } else if (highScoresButtonXPos < 90) {
             highScoresButtonXPos += 10;
             highScoreButton.setX(highScoresButtonXPos);
-        } else if (quitButtonXPos < 90) {
+        } else if(quitButtonXPos < 90) {
             quitButtonXPos += 10;
             quitButton.setX(quitButtonXPos);
         }
@@ -51,12 +53,12 @@ public class MainMenuState extends State {
 
         g.drawImage(Assets.mainMenuBackground, 0, 0, null);
 
-        Font titleFont = new Font("Immortal", Font.BOLD, 55);
+        Font titleFont = new Font("redensek", Font.BOLD, 55);
         g.setFont(titleFont);
-        g.setColor(Color.white);
-        g.drawString("Monster Invasion!", 90, 270);
+        g.setColor(Color.green);
+        g.drawString("Space Invasion!", 350, 100);
 
-        Font buttonsFont = new Font("Immortal", Font.BOLD, 25);
+        Font buttonsFont = new Font("redensek", Font.BOLD, 33);
         g.setFont(buttonsFont);
         g.drawImage(Assets.buttonBar, -185, playButton.getY() + 35, null);
         playButton.display(g);

@@ -4,13 +4,15 @@ public enum ImageAlbum {
 
     //If you add another object to the game you must insert it in the enumeration here in order to get it's path
     ArcherPlayer("/Characters/ArcherIdle.png"),
+    ArcherPlayerL("/Characters/ArcherIdleLeft.png"),
+    ArcherPlayerR("/Characters/ArcherIdleRight.png"),
     MagePlayer("/Characters/MageIdle.png"),
     EasyEnemy("/Characters/Monster1Fly.png"),
     SturdyEnemy("/Characters/Monster2Bahamut.png"),
     DoubleDamageBonus("/InGame/x2Bonus.png"),
     Arrow("/InGame/Arrow.png"),
     FireBall("/InGame/FireBall.gif"),
-    Background("/Backgrounds/GrassField.png"),
+    Background("/Backgrounds/OrtogonalMap.png"),
     Live("/Interface/Life.png"),
     GameOver("/Backgrounds/Background.jpg"),
     HighScores("/Backgrounds/Background.jpg"),
@@ -28,7 +30,7 @@ public enum ImageAlbum {
         this.path = path;
     }
 
-    public String getPath() {
+    public String getPath(){
         return this.path;
     }
 

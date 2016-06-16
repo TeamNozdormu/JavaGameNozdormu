@@ -16,16 +16,16 @@ public class GameOverState extends State implements Displayable {
 
     public void display(Graphics g) {
 
-        g.setColor(Color.white);
+        g.setColor(Color.WHITE);
 
-        g.setFont(new Font("Immortal", Font.PLAIN, 50));
+        g.setFont(new Font("redensek", Font.PLAIN, 100));
         g.drawImage(Assets.gameover, 0, 0, null);
-        g.drawString("GAME OVER", 200, 200);
+        g.drawString("GAME OVER", 190, 300);
 
-        g.setFont(new Font("Immortal", Font.PLAIN, 40));
-        g.drawString("Please enter your name:", 180, 350);
+        g.setFont(new Font("redensek", Font.PLAIN, 40));
+        g.drawString("Please enter your name:", 190, 350);
         g.drawRect(260, 370, 280, 40);
-        g.drawString(sb.toString(), 265, 405);
+        g.drawString(sb.toString(), 265, 395);
 
     }
 

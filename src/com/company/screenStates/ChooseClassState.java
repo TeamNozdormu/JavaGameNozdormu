@@ -31,7 +31,6 @@ public class ChooseClassState extends State {
         g2d.draw(archerButtor);
         g2d.draw(mageButton);
         backButton.display(g);
-
     }
 
 }

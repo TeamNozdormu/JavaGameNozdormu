@@ -5,7 +5,9 @@ import com.company.game.AbstractObjects.GameObject;
 import com.company.graphics.Assets;
 import com.company.screenStates.GameState;
 
-public class Player extends GameObject {
+import java.awt.image.BufferedImage;
+
+public class Player extends GameObject  {
 
     private final int INITILAL_NUMBER_OF_LIVES = 3;
     private int numberOfLives;
@@ -29,13 +31,17 @@ public class Player extends GameObject {
         this.setScore(0);
     }
 
+    public Player(BufferedImage bufferedImage) {
+        super(bufferedImage);
+    }
+
     @Override
     public void update() {
 
         //TODO problem with replace getter and setter
-        if (this.timeForBonus > 0) {
+        if(this.timeForBonus > 0) {
             this.timeForBonus--;
-        } else if (this.currentBonus != null && this.timeForBonus == 0) {
+        } else if(this.currentBonus != null && this.timeForBonus == 0) {
             this.currentBonus = null;
         } else {
             this.currentBonus = null;
@@ -59,7 +65,7 @@ public class Player extends GameObject {
         }
 
         if (isFiring) {
-            if (this.getCurrentBonus() != null) {
+            if(this.getCurrentBonus() != null){
                 GameState.bulletsList.add(new Bullet(this.getX() + 16, this.getY(), this.getCurrentBonus().getMultiplierForDamage()));
             } else {
                 GameState.bulletsList.add(new Bullet(this.getX() + 16, this.getY(), 1));

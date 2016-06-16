@@ -1,6 +1,7 @@
 package com.company.eventHandlers;
 
 import com.company.game.Game;
+import com.company.game.concreteObjects.Player;
 import com.company.graphics.Assets;
 import com.company.graphics.Display;
 import com.company.screenStates.GameOverState;
@@ -30,9 +31,9 @@ public class KeyboardInput implements KeyListener {
         int key = e.getKeyCode();
 
         if (key == KeyEvent.VK_RIGHT) {
-            GameState.player.isMovingRight = true;
+            Player.isMovingRight = true;
         } else if (key == KeyEvent.VK_LEFT) {
-            GameState.player.isMovingLeft = true;
+            Player.isMovingLeft = true;
         } else if (key == KeyEvent.VK_UP) {
             GameState.player.isMovingUp = true;
         } else if (key == KeyEvent.VK_DOWN) {
@@ -43,11 +44,7 @@ public class KeyboardInput implements KeyListener {
 
         if (key == KeyEvent.VK_SPACE && GameState.player.isFiring == false) {
             GameState.player.isFiring = true;
-            if (MouseInput.isMage) {
-                PlayMusic.spell.play();
-            } else {
-                PlayMusic.arrow.play();
-            }
+            PlayMusic.fire.play();
         }
 
     }
@@ -72,7 +69,7 @@ public class KeyboardInput implements KeyListener {
             GameState.player.isFiring = false;
         }
         if (StateManager.getCurrentState() instanceof GameOverState) {
-            if (key >= 'A' && key <= 'Z' && GameOverState.sb.length() < 14) {
+            if (key>='A' && key<='Z' && GameOverState.sb.length() < 14) {
                 GameOverState.sb.append((char) key);
             } else if (key == KeyEvent.VK_BACK_SPACE && GameOverState.sb.length() > 0) {
                 GameOverState.sb.deleteCharAt(GameOverState.sb.length() - 1);

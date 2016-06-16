@@ -8,7 +8,6 @@ import java.awt.event.MouseListener;
 
 public class MouseInput implements MouseListener {
     public static boolean isMage;
-
     public MouseInput(Display display) {
         display.getCanvas().addMouseListener(this);
     }
@@ -23,10 +22,10 @@ public class MouseInput implements MouseListener {
         int mouseX = e.getX();
         int mouseY = e.getY();
 
-        if (StateManager.getCurrentState() instanceof MainMenuState) {
+        if(StateManager.getCurrentState() instanceof MainMenuState) {
             //Play Button
-            if (MainMenuState.playButton.getColliderBox().contains(mouseX, mouseY)) {
-                StateManager.setCurrentState(new ChooseClassState());
+            if(MainMenuState.playButton.getColliderBox().contains(mouseX, mouseY)){
+                StateManager.setCurrentState(new ChooseSideState());
             }
 
             //High Scores Button
@@ -41,12 +40,13 @@ public class MouseInput implements MouseListener {
                 // TODO: Saving to file
                 System.exit(0);
             }
-        } else if (StateManager.getCurrentState() instanceof ChooseClassState) {
+        }
+        else if(StateManager.getCurrentState() instanceof ChooseSideState) {
             //Sith Button
             if (mouseX >= 50 && mouseX <= 350) {
                 if (mouseY >= 300 && mouseY <= 400) {
-                    PlayMusic.music.loop();
-                    isMage = false;
+                    PlayMusic.empire.loop();
+                     isMage = false;
                     StateManager.setCurrentState(new GameState());
                 }
             }
@@ -54,20 +54,20 @@ public class MouseInput implements MouseListener {
             //Rebels Button
             if (mouseX >= 450 && mouseX <= 750) {
                 if (mouseY >= 300 && mouseY <= 400) {
-                    PlayMusic.music.loop();
+                    PlayMusic.rebels.loop();
                     isMage = true;
                     StateManager.setCurrentState(new GameState());
                 }
             }
-            if (ChooseClassState.backButton.getColliderBox().contains(mouseX, mouseY)) {
+            if(ChooseSideState.backButton.getColliderBox().contains(mouseX, mouseY)) {
                 StateManager.setCurrentState(new MainMenuState());
             }
         }
 
         // HighScores
-        if (StateManager.getCurrentState() instanceof HighScoresState) {
+        if(StateManager.getCurrentState() instanceof HighScoresState) {
             // Back Button
-            if (HighScoresState.backButton.getColliderBox().contains(mouseX, mouseY)) {
+            if(HighScoresState.backButton.getColliderBox().contains(mouseX, mouseY)) {
                 StateManager.setCurrentState(new MainMenuState());
             }
         }

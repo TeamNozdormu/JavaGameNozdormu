@@ -2,6 +2,7 @@ package com.company.game.AbstractObjects;
 
 import com.company.gameObjectsInterfaces.Displayable;
 import com.company.gameObjectsInterfaces.Updateable;
+import com.company.graphics.ImageLoader;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -24,12 +25,16 @@ public abstract class GameObject implements Displayable, Updateable {
         this.setSpeed(speedMultiplier);
         this.setObjectIcon(gameObjectIcon);
         this.setColliderBox(new Rectangle(
-                        this.x,
-                        this.y,
-                        this.gameObjectIcon.getWidth(),
-                        this.gameObjectIcon.getHeight()
-                )
+                this.x,
+                this.y,
+                this.gameObjectIcon.getWidth(),
+                this.gameObjectIcon.getHeight()
+            )
         );
+    }
+
+    public GameObject(BufferedImage bufferedImage) {
+
     }
 
     public int getX() {

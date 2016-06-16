@@ -1,8 +1,8 @@
 package com.company.game;
 
+import com.company.graphics.Display;
 import com.company.eventHandlers.KeyboardInput;
 import com.company.eventHandlers.MouseInput;
-import com.company.graphics.Display;
 import com.company.screenStates.*;
 
 import java.awt.*;
@@ -24,14 +24,14 @@ public class Game implements Runnable {
     private State chooseSideState;
 
     private void init() {
-        this.display = new Display("Monster Invasion", 800, 600);
+        this.display = new Display("Nozdormu Battle", 800, 600);
         this.keyboardInput = new KeyboardInput(this, this.display);
-        this.mouseInput = new MouseInput(this.display);
+        this.mouseInput =new MouseInput(this.display);
         gameState = new GameState();
         menuState = new MainMenuState();
         gameOverState = new GameOverState();
         highScoreState = new HighScoresState();
-        chooseSideState = new ChooseClassState();
+        chooseSideState = new ChooseSideState();
         StateManager.setCurrentState(this.menuState);
     }
 
@@ -49,7 +49,7 @@ public class Game implements Runnable {
 
         g.clearRect(0, 0, 800, 600);
 
-        if (StateManager.getCurrentState() != null) {
+        if(StateManager.getCurrentState() != null) {
             StateManager.getCurrentState().display(g);
         }
 
@@ -59,30 +59,30 @@ public class Game implements Runnable {
     }
 
     public void update() {
-        if (StateManager.getCurrentState() != null) {
+        if(StateManager.getCurrentState() != null) {
             StateManager.getCurrentState().update();
         }
     }
 
     public synchronized void start() {
-        if (this.isRunning) {
+        if (isRunning) {
             return;
         }
 
-        this.isRunning = true;
-        this.thread = new Thread(this);
-        this.thread.start();
+        isRunning = true;
+        thread = new Thread(this);
+        thread.start();
     }
 
     public synchronized void stop() {
-        if (!this.isRunning) {
+        if (!isRunning) {
             return;
         }
 
-        this.isRunning = false;
+        isRunning = false;
 
         try {
-            this.thread.join();
+            thread.join();
         } catch (InterruptedException e) {
             e.printStackTrace();
             System.exit(1);
@@ -101,9 +101,9 @@ public class Game implements Runnable {
         long timer = 0;
         int ticks = 0;
 
-        while (this.isRunning) {
+        while (isRunning) {
             now = System.nanoTime();
-            delta += (now - lastTime) / timePerTick;
+            delta += (now-lastTime) / timePerTick;
             timer += now - lastTime;
             lastTime = now;
 
