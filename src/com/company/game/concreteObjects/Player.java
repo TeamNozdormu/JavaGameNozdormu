@@ -1,5 +1,6 @@
 package com.company.game.concreteObjects;
 
+import com.company.Settings.PlayerSettings;
 import com.company.game.AbstractObjects.Bonus;
 import com.company.game.AbstractObjects.GameObject;
 import com.company.graphics.Assets;
@@ -8,8 +9,6 @@ import com.company.screenStates.GameState;
 import java.awt.image.BufferedImage;
 
 public class Player extends GameObject  {
-
-    private final int INITILAL_NUMBER_OF_LIVES = 3;
     private int numberOfLives;
     private String playerName;
     private int score;
@@ -26,9 +25,9 @@ public class Player extends GameObject  {
 
     public Player(int x, int y, String name, int speed) {
         super(x, y, Assets.player, speed);
-        this.setNumberOfLives(INITILAL_NUMBER_OF_LIVES);
         this.setPlayerName(name);
-        this.setScore(0);
+        this.setNumberOfLives(PlayerSettings.PLAYER_INITIAL_NUMBER_OF_LIVES);
+        this.setScore(PlayerSettings.PLAYER_DEFAULT_SCORES);
     }
 
     public Player(BufferedImage bufferedImage) {

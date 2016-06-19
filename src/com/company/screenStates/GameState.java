@@ -1,5 +1,7 @@
 package com.company.screenStates;
 
+import com.company.Settings.GameSettings;
+import com.company.Settings.PlayerSettings;
 import com.company.eventHandlers.MouseInput;
 import com.company.eventHandlers.PlayMusic;
 import com.company.game.AbstractObjects.Bonus;
@@ -13,13 +15,15 @@ import com.company.graphics.Assets;
 
 import java.awt.*;
 import java.awt.Font;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.util.*;
 import java.util.List;
 
 public class GameState extends State implements Displayable {
 
     public static Player player;
-
     public static List<Enemy> enemiesList;
     public static List<Bullet> bulletsList;
     public static List<Bonus> bonusList;
@@ -35,7 +39,11 @@ public class GameState extends State implements Displayable {
         score = 0;
         init();
         this.bulletsList = new LinkedList<>();
-        this.player = new Player(350, 500, "Player", 15);
+        this.player = new Player(
+                PlayerSettings.PLAYER_SET_X,
+                PlayerSettings.PLAYER_SET_Y,
+                PlayerSettings.PLAYER_DEFAULT_NAME,
+                PlayerSettings.PLAYER_DEFAULT_SPEED);
 
         this.enemiesList = new LinkedList<>();
         this.bonusList = new LinkedList<>();
@@ -86,15 +94,16 @@ public class GameState extends State implements Displayable {
             }
         }
 
+        //TODO from here change number of enemies
         if (enemiesList.size() < 3) {
-            if (enemyTypes == 3) {
+            if (this.enemyTypes == 3) {
                 enemiesList.add(new SturdyEnemy(rnd.nextInt(725), -100));
-                enemyTypes = 0;
+                this.enemyTypes = 0;
             } else {
                 enemiesList.add((new EasyEnemy(rnd.nextInt(725), -100)));
             }
 
-            enemyTypes++;
+            this.enemyTypes++;
         }
 
         // Player Ends Playing
@@ -177,9 +186,6 @@ public class GameState extends State implements Displayable {
         if (explode) {
            // g.drawImage(Assets.explosion.crop(cropX, cropY), player.getX() - 20, player.getY(), null);
            g.drawImage(Assets.die.crop(cropX, cropY), player.getX(), player.getY(), null);
-
         }
-
     }
-
 }

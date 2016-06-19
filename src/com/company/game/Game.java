@@ -33,6 +33,9 @@ public class Game implements Runnable {
     }
 
     private void init() {
+        //TODO create coordinate system
+
+
         this.display = new Display(
                 GameSettings.GAME_NAME,
                 GameSettings.GAME_WIDTH,
@@ -60,7 +63,7 @@ public class Game implements Runnable {
         this.g = bs.getDrawGraphics();
         /////////DRAW HERE /////////////////
 
-        g.clearRect(0, 0, 800, 600);
+        g.clearRect(0, 0, GameSettings.GAME_WIDTH, GameSettings.GAME_HIGH);
 
         if(StateManager.getCurrentState() != null) {
             StateManager.getCurrentState().display(g);
