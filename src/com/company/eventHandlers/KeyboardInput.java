@@ -14,10 +14,18 @@ import java.awt.event.KeyListener;
 
 public class KeyboardInput implements KeyListener {
 
-    Game game;
+    private Game game;
+
+    public Game getGame() {
+        return this.game;
+    }
+
+    public void setGame(Game game) {
+        this.game = game;
+    }
 
     public KeyboardInput(Game game, Display display) {
-        this.game = game;
+        this.setGame(game);
         display.getCanvas().addKeyListener(this);
     }
 
