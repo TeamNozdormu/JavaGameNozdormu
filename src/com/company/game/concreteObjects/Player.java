@@ -38,7 +38,7 @@ public class Player extends GameObject  {
     @Override
     public void update() {
 
-        //TODO problem with replace getter and setter
+        //TODO problem with replace with getter and setter
         if(this.timeForBonus > 0) {
             this.timeForBonus--;
         } else if(this.currentBonus != null && this.timeForBonus == 0) {

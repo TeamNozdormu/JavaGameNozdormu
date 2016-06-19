@@ -119,16 +119,7 @@ public class GameState extends State implements Displayable {
                 player.setX(350);
                 player.setY(500);
             }
-         /*   if (cropY >= 6) {
-                explode = false;
-                enemiesList.clear();
-                player.setX(350);
-                player.setY(500);
-                cropX = cropY = 0;
-            }
-            */
         }
-
     }
 
     @Override
