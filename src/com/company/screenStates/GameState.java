@@ -6,12 +6,15 @@ import com.company.eventHandlers.MouseInput;
 import com.company.eventHandlers.PlayMusic;
 import com.company.game.AbstractObjects.Bonus;
 import com.company.game.AbstractObjects.Enemy;
+import com.company.game.Game;
 import com.company.game.concreteObjects.Bullet;
 import com.company.game.concreteObjects.EasyEnemy;
 import com.company.game.concreteObjects.Player;
 import com.company.game.concreteObjects.SturdyEnemy;
 import com.company.gameObjectsInterfaces.Displayable;
 import com.company.graphics.Assets;
+import com.company.graphics.Field;
+import com.company.graphics.GameMap;
 
 import java.awt.*;
 import java.awt.Font;
@@ -133,8 +136,20 @@ public class GameState extends State implements Displayable {
 
     @Override
     public void display(Graphics g) {
+//        very slow
 
+//        GameMap map = new GameMap(
+//                GameSettings.GAME_WIDTH,
+//                GameSettings.GAME_HEIGHT);
+//
+//        for (Field field : map.getFields()) {
+//            g.drawImage(field.getPicture(), field.getX(), field.getY(), null);
+//        }
+
+
+        //TODO draw map
         g.drawImage(Assets.background, 0, 0, null);
+
 
         if(player.getCurrentBonus() != null){
             g.drawImage(player.getCurrentBonus().getObjectIcon(), 730, 530, null);
