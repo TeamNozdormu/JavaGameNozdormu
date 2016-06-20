@@ -8,7 +8,7 @@ import java.util.TreeMap;
 public class GameMap {
     private int width;
     private int height;
-    private TreeMap<int[][], Field> map;
+    private TreeMap<String, Field> map;
     private List<Field> fields;
 
     public int getWidth() {
@@ -35,28 +35,43 @@ public class GameMap {
         this.fields = fields;
     }
 
+    public TreeMap<String, Field> getMap() {
+        return this.map;
+    }
+
+    private void setMap(TreeMap<String, Field> map) {
+        this.map = map;
+    }
+
     public GameMap(int width, int height) {
         this.setWidth(width);
         this.setHeight(height);
         this.setFields(new LinkedList<>());
+        this.setMap(new TreeMap<>());
         this.init();
     }
 
     private void init() {
         this.generationFields();
-        this.generationOnMap();
     }
 
     private void generationFields() {
         for (int row = 0; row < this.getWidth(); row+=20) {
             for (int coll = 0; coll < this.getHeight(); coll+=20) {
-                BufferedImage field = ImageLoader.loadImage(ImageAlbum.Field.getPath());
-                this.getFields().add(new Field(row, coll, field));
+                BufferedImage fieldPicture = ImageLoader.loadImage(ImageAlbum.Field.getPath());
+                Field field = new Field(row, coll, fieldPicture);
+                this.getFields().add(field);
+                this.generationOnMap(row, coll, field);
             }
         }
     }
 
-    private void generationOnMap() {
+    private void generationOnMap(int x, int y, Field field) {
+        StringBuilder coordinates = new StringBuilder();
+        coordinates.append(x);
+        coordinates.append(",");
+        coordinates.append(y);
+        this.getMap().put(coordinates.toString(), field);
         //TODO generate map with picture - random
     }
 }
