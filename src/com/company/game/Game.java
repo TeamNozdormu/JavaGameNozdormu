@@ -4,7 +4,7 @@ import com.company.Settings.GameSettings;
 import com.company.graphics.Display;
 import com.company.eventHandlers.KeyboardInput;
 import com.company.eventHandlers.MouseInput;
-import com.company.graphics.Map;
+import com.company.graphics.GameMap;
 import com.company.screenStates.*;
 
 import java.awt.*;
@@ -25,7 +25,7 @@ public class Game implements Runnable {
     private State highScoreState;
     private State chooseSideState;
 
-    private Map map;
+    public GameMap map;
 
     public boolean isRunning() {
         return this.isRunning;
@@ -36,7 +36,7 @@ public class Game implements Runnable {
     }
 
     private void init() {
-        this.map = new Map(
+        this.map = new GameMap(
                 GameSettings.GAME_WIDTH,
                 GameSettings.GAME_HEIGHT);
         this.display = new Display(

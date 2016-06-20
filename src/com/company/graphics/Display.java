@@ -68,7 +68,7 @@ public class Display {
         this.getFrame().setFocusable(true);
 
         this.setCanvas(new Canvas());
-        this.getCanvas().setSize(this.width, this.height);
+        this.getCanvas().setSize(this.getWidth(), this.getHeight());
         this.getCanvas().setMaximumSize(new Dimension(this.getWidth(), this.getHeight()));
         this.getCanvas().setMinimumSize(new Dimension(this.getWidth(), this.getHeight()));
         this.getFrame().add(this.getCanvas());
