@@ -1,7 +1,6 @@
 package com.company.graphics;
 
 import com.company.eventHandlers.MouseInput;
-import com.company.game.concreteObjects.Player;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;

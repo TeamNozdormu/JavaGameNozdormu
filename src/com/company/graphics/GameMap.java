@@ -1,10 +1,11 @@
 package com.company.graphics;
 
+import java.awt.image.BufferedImage;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.TreeMap;
 
-public class Map {
+public class GameMap {
     private int width;
     private int height;
     private TreeMap<int[][], Field> map;
@@ -14,7 +15,7 @@ public class Map {
         return this.width;
     }
 
-    public void setWidth(int width) {
+    private void setWidth(int width) {
         this.width = width;
     }
 
@@ -22,7 +23,7 @@ public class Map {
         return this.height;
     }
 
-    public void setHeight(int height) {
+    private void setHeight(int height) {
         this.height = height;
     }
 
@@ -30,11 +31,11 @@ public class Map {
         return this.fields;
     }
 
-    public void setFields(List<Field> fields) {
+    private void setFields(List<Field> fields) {
         this.fields = fields;
     }
 
-    public Map(int width, int height) {
+    public GameMap(int width, int height) {
         this.setWidth(width);
         this.setHeight(height);
         this.setFields(new LinkedList<>());
@@ -49,7 +50,8 @@ public class Map {
     private void generationFields() {
         for (int row = 0; row < this.getWidth(); row+=20) {
             for (int coll = 0; coll < this.getHeight(); coll+=20) {
-                this.getFields().add(new Field(row, coll));
+                BufferedImage field = ImageLoader.loadImage(ImageAlbum.Field.getPath());
+                this.getFields().add(new Field(row, coll, field));
             }
         }
     }

@@ -22,7 +22,10 @@ public enum ImageAlbum {
     ChooseClass("/Backgrounds/ChooseClass.jpg"),
     MainMenu("/Backgrounds/Background.jpg"),
     Button("/Interface/ButtonGreen.png"),
-    ButtonSlider("/Interface/IvySlider.png");
+    ButtonSlider("/Interface/IvySlider.png"),
+
+
+    Field("/Backgrounds/Field.png");
 
     private String path;
 

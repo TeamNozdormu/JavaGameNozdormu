@@ -1,27 +1,39 @@
 package com.company.graphics;
 
+import java.awt.image.BufferedImage;
+
 public class Field {
-    private int x;
-    private int y;
+    private int startX;
+    private int startY;
+    private BufferedImage picture;
 
     public int getX() {
-        return this.x;
+        return this.startX;
     }
 
-    public void setX(int x) {
-        this.x = x;
+    private void setX(int x) {
+        this.startX = x;
     }
 
     public int getY() {
-        return this.y;
+        return this.startY;
     }
 
-    public void setY(int y) {
-        this.y = y;
+    private void setY(int y) {
+        this.startY = y;
     }
 
-    public Field(int x, int y) {
+    public BufferedImage getPicture() {
+        return this.picture;
+    }
+
+    private void setPicture(BufferedImage picture) {
+        this.picture = picture;
+    }
+
+    public Field(int x, int y, BufferedImage fieldPicture) {
         this.setX(x);
         this.setY(y);
+        this.setPicture(fieldPicture);
     }
 }
