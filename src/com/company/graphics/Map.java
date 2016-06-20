@@ -33,9 +33,14 @@ public class Map {
         this.setWidth(width);
         this.setHeight(height);
         this.setMap(new int[this.getWidth()][this.getHeight()]);
+        this.init();
     }
 
     private void init() {
+        this.generationOnMap();
+    }
 
+    private void generationOnMap() {
+        //TODO generate map with picture - random
     }
 }

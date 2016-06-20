@@ -6,5 +6,5 @@ public class PlayerSettings {
     public final static int PLAYER_DEFAULT_SPEED = 15;
     public final static String PLAYER_DEFAULT_NAME = "Nozdormu Warrior";
     public final static int PLAYER_SET_X = GameSettings.GAME_WIDTH / 2 - 40;
-    public final static int PLAYER_SET_Y = GameSettings.GAME_HIGH - 70;
+    public final static int PLAYER_SET_Y = GameSettings.GAME_HEIGHT - 70;
 }

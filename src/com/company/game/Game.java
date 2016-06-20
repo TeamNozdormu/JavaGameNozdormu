@@ -4,6 +4,7 @@ import com.company.Settings.GameSettings;
 import com.company.graphics.Display;
 import com.company.eventHandlers.KeyboardInput;
 import com.company.eventHandlers.MouseInput;
+import com.company.graphics.Map;
 import com.company.screenStates.*;
 
 import java.awt.*;
@@ -24,6 +25,8 @@ public class Game implements Runnable {
     private State highScoreState;
     private State chooseSideState;
 
+    private Map map;
+
     public boolean isRunning() {
         return this.isRunning;
     }
@@ -33,14 +36,13 @@ public class Game implements Runnable {
     }
 
     private void init() {
-        //TODO create coordinate system
-
-
+        this.map = new Map(
+                GameSettings.GAME_WIDTH,
+                GameSettings.GAME_HEIGHT);
         this.display = new Display(
                 GameSettings.GAME_NAME,
                 GameSettings.GAME_WIDTH,
-                GameSettings.GAME_HIGH);
-
+                GameSettings.GAME_HEIGHT);
         this.keyboardInput = new KeyboardInput(this, this.display);
         this.mouseInput =new MouseInput(this.display);
         this.gameState = new GameState();
@@ -63,7 +65,7 @@ public class Game implements Runnable {
         this.g = bs.getDrawGraphics();
         /////////DRAW HERE /////////////////
 
-        g.clearRect(0, 0, GameSettings.GAME_WIDTH, GameSettings.GAME_HIGH);
+        g.clearRect(0, 0, GameSettings.GAME_WIDTH, GameSettings.GAME_HEIGHT);
 
         if(StateManager.getCurrentState() != null) {
             StateManager.getCurrentState().display(g);
