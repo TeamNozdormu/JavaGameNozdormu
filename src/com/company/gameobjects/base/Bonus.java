@@ -11,7 +11,8 @@ public abstract class Bonus extends GameObject {
     private int multiplierForScore;
     private int bonusDuration;
 
-    public Bonus(int x, int y,
+    public Bonus(int x,
+                 int y,
                  BufferedImage gameObjectIcon,
                  int damageMultiplier,
                  int speedMultiplier,
@@ -44,9 +45,9 @@ public abstract class Bonus extends GameObject {
                 this.getObjectIcon().getHeight()
         );
 
-        if (this.collide(GameState.player.getColliderBox())) {
-            GameState.player.setCurrentBonus(this);
-            GameState.bonusList.remove(this);
+        if (this.collide(GameState.getPlayer().getColliderBox())) {
+            GameState.getPlayer().setCurrentBonus(this);
+            GameState.getBonusList().remove(this);
         }
     }
 }

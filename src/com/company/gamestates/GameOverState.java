@@ -7,7 +7,11 @@ import java.awt.*;
 
 public class GameOverState extends State implements Displayable {
 
-    public static StringBuilder sb = new StringBuilder();
+    private static StringBuilder sb = new StringBuilder();
+
+    public static StringBuilder getSb() {
+        return sb;
+    }
 
     @Override
     public void update() {

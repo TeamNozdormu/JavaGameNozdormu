@@ -19,13 +19,13 @@ import java.util.List;
 
 public class GameState extends State implements Displayable {
 
-    public static Player player;
-    public static List<Enemy> enemiesList;
-    public static List<Bullet> bulletsList;
-    public static List<Bonus> bonusList;
-    public Random rnd = new Random();
-    private long lastTimeMissed, now;
     public static int score;
+    private static Player player;
+    private static List<Enemy> enemiesList;
+    private static List<Bullet> bulletsList;
+    private static List<Bonus> bonusList;
+    private Random rnd = new Random();
+    private long lastTimeMissed, now;
     private int enemyTypes = 1;
     private boolean explode;
     private int cropX, cropY;
@@ -44,6 +44,98 @@ public class GameState extends State implements Displayable {
         this.enemiesList = new LinkedList<>();
         this.bonusList = new LinkedList<>();
         enemiesList.add(new EasyEnemy(rnd.nextInt(725), -100));
+    }
+
+    public static Player getPlayer() {
+        return player;
+    }
+
+    public static List<Enemy> getEnemiesList() {
+        return enemiesList;
+    }
+
+    public static List<Bullet> getBulletsList() {
+        return bulletsList;
+    }
+
+    public static List<Bonus> getBonusList() {
+        return bonusList;
+    }
+
+    public static  int getScore() {
+        return score;
+    }
+
+    public Random getRnd() {
+        return rnd;
+    }
+
+    public void setRnd(Random rnd) {
+        this.rnd = rnd;
+    }
+
+    public long getLastTimeMissed() {
+        return lastTimeMissed;
+    }
+
+    public void setLastTimeMissed(long lastTimeMissed) {
+        this.lastTimeMissed = lastTimeMissed;
+    }
+
+    public long getNow() {
+        return now;
+    }
+
+    public void setNow(long now) {
+        this.now = now;
+    }
+
+    public int getEnemyTypes() {
+        return enemyTypes;
+    }
+
+    public void setEnemyTypes(int enemyTypes) {
+        this.enemyTypes = enemyTypes;
+    }
+
+    public boolean isExplode() {
+        return explode;
+    }
+
+    public void setExplode(boolean explode) {
+        this.explode = explode;
+    }
+
+    public int getCropX() {
+        return cropX;
+    }
+
+    public void setCropX(int cropX) {
+        this.cropX = cropX;
+    }
+
+    public int getCropY() {
+        return cropY;
+    }
+
+    public void setCropY(int cropY) {
+        this.cropY = cropY;
+    }
+
+    public int getCropXMonster() {
+        return cropXMonster;
+    }
+
+    public void setCropXMonster(int cropXMonster) {
+        this.cropXMonster = cropXMonster;
+    }
+
+    public int getCropYMonster() {
+        return cropYMonster;
+    }
+
+    public void setCropYMonster(int cropYMonster) {
+        this.cropYMonster = cropYMonster;
     }
 
     public void init() {

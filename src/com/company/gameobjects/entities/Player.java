@@ -9,19 +9,19 @@ import com.company.gamestates.GameState;
 import java.awt.image.BufferedImage;
 
 public class Player extends GameObject  {
-    private int numberOfLives;
-    private String playerName;
-    private int score;
-    private Bonus currentBonus;
-    private int timeForBonus;
-    private int cropX, cropY;
-
     public static boolean
             isMovingLeft = false,
             isMovingRight = false,
             isMovingUp = false,
             isMovingDown = false,
             isFiring = false;
+
+    private int numberOfLives;
+    private String playerName;
+    private int score;
+    private Bonus currentBonus;
+    private int timeForBonus;
+    private int cropX, cropY;
 
     public Player(int x, int y, String name, int speed) {
         super(x, y, Assets.player, speed);
@@ -65,9 +65,9 @@ public class Player extends GameObject  {
 
         if (isFiring) {
             if(this.getCurrentBonus() != null){
-                GameState.bulletsList.add(new Bullet(this.getX() + 16, this.getY(), this.getCurrentBonus().getMultiplierForDamage()));
+                GameState.getBulletsList().add(new Bullet(this.getX() + 16, this.getY(), this.getCurrentBonus().getMultiplierForDamage()));
             } else {
-                GameState.bulletsList.add(new Bullet(this.getX() + 16, this.getY(), 1));
+                GameState.getBulletsList().add(new Bullet(this.getX() + 16, this.getY(), 1));
             }
 
             isFiring = false;
@@ -119,5 +119,4 @@ public class Player extends GameObject  {
     public Bonus getCurrentBonus() {
         return this.currentBonus;
     }
-
 }

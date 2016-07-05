@@ -8,12 +8,11 @@ import java.awt.*;
 public class MainMenuState extends State {
 
     //TODO: Display the menu with options and listen for the event clicked
+    private static Button playButton = new Button(-220, 300, Assets.button, "play");
+    private static Button highScoreButton = new Button(-220, 400, Assets.button, "High scores");
+    private static Button quitButton = new Button(-220, 500, Assets.button, "Quit");
+
     private int currentSelection;
-
-    public static Button playButton = new Button(-220, 300, Assets.button, "play");
-    public static Button highScoreButton = new Button(-220, 400, Assets.button, "High scores");
-    public static Button quitButton = new Button(-220, 500, Assets.button, "Quit");
-
     private int playButtonXPos;
     private int highScoresButtonXPos;
     private int quitButtonXPos;
@@ -27,6 +26,62 @@ public class MainMenuState extends State {
         highScoreButton.setX(highScoresButtonXPos);
         quitButton.setX(quitButtonXPos);
 
+    }
+
+    public static Button getPlayButton() {
+        return playButton;
+    }
+
+    public static void setPlayButton(Button playButton) {
+        MainMenuState.playButton = playButton;
+    }
+
+    public static Button getHighScoreButton() {
+        return highScoreButton;
+    }
+
+    public static void setHighScoreButton(Button highScoreButton) {
+        MainMenuState.highScoreButton = highScoreButton;
+    }
+
+    public static Button getQuitButton() {
+        return quitButton;
+    }
+
+    public static void setQuitButton(Button quitButton) {
+        MainMenuState.quitButton = quitButton;
+    }
+
+    public int getCurrentSelection() {
+        return currentSelection;
+    }
+
+    public void setCurrentSelection(int currentSelection) {
+        this.currentSelection = currentSelection;
+    }
+
+    public int getPlayButtonXPos() {
+        return playButtonXPos;
+    }
+
+    public void setPlayButtonXPos(int playButtonXPos) {
+        this.playButtonXPos = playButtonXPos;
+    }
+
+    public int getHighScoresButtonXPos() {
+        return highScoresButtonXPos;
+    }
+
+    public void setHighScoresButtonXPos(int highScoresButtonXPos) {
+        this.highScoresButtonXPos = highScoresButtonXPos;
+    }
+
+    public int getQuitButtonXPos() {
+        return quitButtonXPos;
+    }
+
+    public void setQuitButtonXPos(int quitButtonXPos) {
+        this.quitButtonXPos = quitButtonXPos;
     }
 
     @Override
@@ -68,5 +123,4 @@ public class MainMenuState extends State {
         quitButton.display(g);
 
     }
-
 }

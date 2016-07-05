@@ -9,9 +9,9 @@ import java.util.Map;
 
 public class HighScoresState extends State {
 
-    public static final int ROW_HEIGHT = 35;
+    private static final int ROW_HEIGHT = 35;
     private int row = 0;
-    public static Button backButton = new Button(300, 470, Assets.button, "Main menu");
+    private static Button backButton = new Button(300, 470, Assets.button, "Main menu");
     private int backButtonXPos;
 
     public HighScoresState() {
@@ -20,6 +20,30 @@ public class HighScoresState extends State {
         backButtonXPos = -220;
         backButton.setX(backButtonXPos);
 
+    }
+
+    public int getRow() {
+        return row;
+    }
+
+    public void setRow(int row) {
+        this.row = row;
+    }
+
+    public int getBackButtonXPos() {
+        return backButtonXPos;
+    }
+
+    public void setBackButtonXPos(int backButtonXPos) {
+        this.backButtonXPos = backButtonXPos;
+    }
+
+    public static int getRowHeight() {
+        return ROW_HEIGHT;
+    }
+
+    public static Button getBackButton() {
+        return backButton;
     }
 
     @Override

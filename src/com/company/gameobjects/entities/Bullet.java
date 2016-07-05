@@ -6,8 +6,8 @@ import com.company.gamestates.GameState;
 
 public class Bullet extends GameObject {
 
-    private int bulletStrength;
     private static final int speedMultiplier = 5;
+    private int bulletStrength;
 
     public Bullet(int x, int y, int strengthMultiplier) {
         super(x, y, Assets.bullet, speedMultiplier);
@@ -33,7 +33,7 @@ public class Bullet extends GameObject {
         this.setY(this.getY() - this.getSpeed() * speedMultiplier);
 
         if (this.getY() == 0) {
-            GameState.bulletsList.remove(this);
+            GameState.getBulletsList().remove(this);
         }
     }
 
