@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Diagram>
   <ID>JAVA</ID>
-  <OriginalElement>com.company.game.AbstractObjects.Enemy</OriginalElement>
+  <OriginalElement>Enemy</OriginalElement>
   <nodes>
-    <node x="153.0" y="0.0">com.company.gameObjectsInterfaces.Updateable</node>
-    <node x="0.0" y="0.0">com.company.gameObjectsInterfaces.Displayable</node>
-    <node x="101.25" y="164.0">com.company.game.AbstractObjects.Enemy</node>
-    <node x="78.75" y="82.0">com.company.game.AbstractObjects.GameObject</node>
+    <node x="153.0" y="0.0">com.company.interfaces.Updateable</node>
+    <node x="0.0" y="0.0">com.company.interfaces.Displayable</node>
+    <node x="101.25" y="164.0">Enemy</node>
+    <node x="78.75" y="82.0">GameObject</node>
   </nodes>
   <notes />
   <edges>
-    <edge source="com.company.game.AbstractObjects.Enemy" target="com.company.game.AbstractObjects.GameObject">
+    <edge source="Enemy" target="GameObject">
       <point x="0.0" y="-16.0" />
       <point x="0.0" y="16.0" />
     </edge>
-    <edge source="com.company.game.AbstractObjects.GameObject" target="com.company.gameObjectsInterfaces.Displayable">
+    <edge source="GameObject" target="com.company.interfaces.Displayable">
       <point x="-31.0" y="-16.0" />
       <point x="109.75" y="57.0" />
       <point x="66.5" y="57.0" />
       <point x="0.0" y="16.0" />
     </edge>
-    <edge source="com.company.game.AbstractObjects.GameObject" target="com.company.gameObjectsInterfaces.Updateable">
+    <edge source="GameObject" target="com.company.interfaces.Updateable">
       <point x="31.0" y="-16.0" />
       <point x="171.75" y="57.0" />
       <point x="215.0" y="57.0" />
@@ -29,7 +29,7 @@
   </edges>
   <settings layout="Hierarchic Group" zoom="1.0" x="138.5" y="98.0" />
   <SelectedNodes>
-    <node>com.company.game.AbstractObjects.Enemy</node>
+    <node>Enemy</node>
   </SelectedNodes>
   <Categories />
   <SCOPE>All</SCOPE>

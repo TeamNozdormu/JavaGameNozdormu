@@ -19,7 +19,6 @@ public class ChooseSideState extends State {
     public static Button getBackButton() {
         return backButton;
     }
-
     public Rectangle getArcherButton() {
         return archerButton;
     }

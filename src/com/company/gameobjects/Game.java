@@ -24,6 +24,8 @@ public class Game implements Runnable {
     private State gameOverState;
     private State highScoreState;
     private State chooseSideState;
+    private State IntroState;
+    private State IntroTaskState;
 
     public GameMap map;
 
@@ -50,6 +52,8 @@ public class Game implements Runnable {
         this.gameOverState = new GameOverState();
         this.highScoreState = new HighScoresState();
         this.chooseSideState = new ChooseSideState();
+        this.IntroState = new IntroState();
+        this.IntroTaskState = new IntroTaskState();
         StateManager.setCurrentState(this.menuState);
     }
 

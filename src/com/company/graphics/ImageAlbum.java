@@ -15,6 +15,8 @@ public enum ImageAlbum {
     Background("/Backgrounds/OrtogonalMap.png"),
     Live("/Interface/Life.png"),
     GameOver("/Backgrounds/Background.jpg"),
+    Intro("/Backgrounds/Intro.png"),
+    IntroTask("/Backgrounds/YseraIntro.png"),
     HighScores("/Backgrounds/Background.jpg"),
     Explosion("/InGame/ArcherDeath.png"),
     ArcherDeath("/InGame/ArcherDeath.png"),
