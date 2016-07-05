@@ -1,4 +1,4 @@
-package com.company.screenStates;
+package com.company.gamestates;
 
 public class StateManager {
 

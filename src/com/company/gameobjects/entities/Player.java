@@ -1,10 +1,10 @@
-package com.company.game.concreteObjects;
+package com.company.gameobjects.entities;
 
-import com.company.Settings.PlayerSettings;
-import com.company.game.AbstractObjects.Bonus;
-import com.company.game.AbstractObjects.GameObject;
+import com.company.constants.PlayerSettings;
+import com.company.gameobjects.base.Bonus;
+import com.company.gameobjects.base.GameObject;
 import com.company.graphics.Assets;
-import com.company.screenStates.GameState;
+import com.company.gamestates.GameState;
 
 import java.awt.image.BufferedImage;
 

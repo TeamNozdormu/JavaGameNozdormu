@@ -1,4 +1,4 @@
-package com.company.gameObjectsInterfaces;
+package com.company.interfaces;
 
 import java.awt.*;
 

@@ -1,6 +1,6 @@
 package com.company;
 
-import com.company.game.Game;
+import com.company.gameobjects.Game;
 
 public class Main {
     public static void main(String[] args) {

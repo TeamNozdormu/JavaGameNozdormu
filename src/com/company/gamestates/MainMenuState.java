@@ -1,6 +1,6 @@
-package com.company.screenStates;
+package com.company.gamestates;
 
-import com.company.game.concreteObjects.Button;
+import com.company.gameobjects.entities.Button;
 import com.company.graphics.Assets;
 
 import java.awt.*;

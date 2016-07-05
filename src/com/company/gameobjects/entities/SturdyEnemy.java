@@ -1,6 +1,6 @@
-package com.company.game.concreteObjects;
+package com.company.gameobjects.entities;
 
-import com.company.game.AbstractObjects.Enemy;
+import com.company.gameobjects.base.Enemy;
 import com.company.graphics.Assets;
 
 public class SturdyEnemy extends Enemy {

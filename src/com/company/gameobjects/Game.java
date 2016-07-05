@@ -1,11 +1,11 @@
-package com.company.game;
+package com.company.gameobjects;
 
-import com.company.Settings.GameSettings;
+import com.company.constants.GameSettings;
+import com.company.eventhandlers.KeyboardInput;
+import com.company.eventhandlers.MouseInput;
+import com.company.gamestates.*;
 import com.company.graphics.Display;
-import com.company.eventHandlers.KeyboardInput;
-import com.company.eventHandlers.MouseInput;
 import com.company.graphics.GameMap;
-import com.company.screenStates.*;
 
 import java.awt.*;
 import java.awt.image.BufferStrategy;

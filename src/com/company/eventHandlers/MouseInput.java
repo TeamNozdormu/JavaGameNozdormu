@@ -1,7 +1,7 @@
-package com.company.eventHandlers;
+package com.company.eventhandlers;
 
+import com.company.gamestates.*;
 import com.company.graphics.Display;
-import com.company.screenStates.*;
 
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;

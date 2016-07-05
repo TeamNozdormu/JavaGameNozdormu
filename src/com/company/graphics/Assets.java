@@ -1,6 +1,6 @@
 package com.company.graphics;
 
-import com.company.eventHandlers.MouseInput;
+import com.company.eventhandlers.MouseInput;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;

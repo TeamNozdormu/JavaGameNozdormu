@@ -1,8 +1,7 @@
-package com.company.game.AbstractObjects;
+package com.company.gameobjects.base;
 
-import com.company.gameObjectsInterfaces.Displayable;
-import com.company.gameObjectsInterfaces.Updateable;
-import com.company.graphics.ImageLoader;
+import com.company.interfaces.Displayable;
+import com.company.interfaces.Updateable;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -12,7 +11,7 @@ import java.awt.image.BufferedImage;
 
 public abstract class GameObject implements Displayable, Updateable {
 
-    //TODO: implement the basic fields of all obects in the game
+    //TODO: implement the basic fields of all obects in the gameobjects
     private int x;
     private int y;
     private int speed;

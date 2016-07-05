@@ -1,4 +1,4 @@
-package com.company.Settings;
+package com.company.constants;
 
 public class PlayerSettings {
     public final static int PLAYER_INITIAL_NUMBER_OF_LIVES = 3;

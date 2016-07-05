@@ -1,8 +1,8 @@
-package com.company.game.concreteObjects;
+package com.company.gameobjects.entities;
 
-import com.company.game.AbstractObjects.GameObject;
+import com.company.gameobjects.base.GameObject;
 import com.company.graphics.Assets;
-import com.company.screenStates.GameState;
+import com.company.gamestates.GameState;
 
 public class Bullet extends GameObject {
 

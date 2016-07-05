@@ -1,7 +1,7 @@
-package com.company.screenStates;
+package com.company.gamestates;
 
-import com.company.gameObjectsInterfaces.Displayable;
-import com.company.gameObjectsInterfaces.Updateable;
+import com.company.interfaces.Displayable;
+import com.company.interfaces.Updateable;
 
 import java.awt.*;
 

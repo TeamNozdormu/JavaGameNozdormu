@@ -1,7 +1,7 @@
-package com.company.game.concreteObjects;
+package com.company.gameobjects.entities;
 
-import com.company.game.AbstractObjects.GameObject;
-import com.company.gameObjectsInterfaces.Displayable;
+import com.company.gameobjects.base.GameObject;
+import com.company.interfaces.Displayable;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;

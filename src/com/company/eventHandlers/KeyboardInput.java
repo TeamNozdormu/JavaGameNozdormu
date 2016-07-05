@@ -1,13 +1,13 @@
-package com.company.eventHandlers;
+package com.company.eventhandlers;
 
-import com.company.game.Game;
-import com.company.game.concreteObjects.Player;
+import com.company.gameobjects.Game;
+import com.company.gameobjects.entities.Player;
 import com.company.graphics.Assets;
 import com.company.graphics.Display;
-import com.company.screenStates.GameOverState;
-import com.company.screenStates.GameState;
-import com.company.screenStates.MainMenuState;
-import com.company.screenStates.StateManager;
+import com.company.gamestates.GameOverState;
+import com.company.gamestates.GameState;
+import com.company.gamestates.MainMenuState;
+import com.company.gamestates.StateManager;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;

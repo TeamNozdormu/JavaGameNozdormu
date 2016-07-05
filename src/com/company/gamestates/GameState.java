@@ -1,26 +1,19 @@
-package com.company.screenStates;
+package com.company.gamestates;
 
-import com.company.Settings.GameSettings;
-import com.company.Settings.PlayerSettings;
-import com.company.eventHandlers.MouseInput;
-import com.company.eventHandlers.PlayMusic;
-import com.company.game.AbstractObjects.Bonus;
-import com.company.game.AbstractObjects.Enemy;
-import com.company.game.Game;
-import com.company.game.concreteObjects.Bullet;
-import com.company.game.concreteObjects.EasyEnemy;
-import com.company.game.concreteObjects.Player;
-import com.company.game.concreteObjects.SturdyEnemy;
-import com.company.gameObjectsInterfaces.Displayable;
+import com.company.constants.PlayerSettings;
+import com.company.eventhandlers.MouseInput;
+import com.company.eventhandlers.PlayMusic;
+import com.company.gameobjects.base.Bonus;
+import com.company.gameobjects.base.Enemy;
+import com.company.gameobjects.entities.Bullet;
+import com.company.gameobjects.entities.EasyEnemy;
+import com.company.gameobjects.entities.Player;
+import com.company.gameobjects.entities.SturdyEnemy;
+import com.company.interfaces.Displayable;
 import com.company.graphics.Assets;
-import com.company.graphics.Field;
-import com.company.graphics.GameMap;
 
 import java.awt.*;
 import java.awt.Font;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
 import java.util.*;
 import java.util.List;
 

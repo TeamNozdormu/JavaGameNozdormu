@@ -1,4 +1,4 @@
-package com.company.screenStates;
+package com.company.gamestates;
 
 import java.awt.*;
 
@@ -9,7 +9,7 @@ public class SettingsState extends State{
 
     }
 
-    //TODO: Display controls of the game and the basic idea of the game
+    //TODO: Display controls of the gameobjects and the basic idea of the gameobjects
     @Override
     public void display(Graphics g) {
 
