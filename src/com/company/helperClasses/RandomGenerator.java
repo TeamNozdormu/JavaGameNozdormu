@@ -1,4 +1,4 @@
-package com.company.helperClasses;
+package com.company.helperclasses;
 
 import java.util.Random;
 

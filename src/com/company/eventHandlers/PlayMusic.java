@@ -1,16 +1,15 @@
-package com.company.eventHandlers;
+package com.company.eventhandlers;
 
 import javax.sound.sampled.*;
 
 public class PlayMusic {
-
-    private Clip clip;
-
     // Change file name to match yours, of course
     public static PlayMusic empire = new PlayMusic("/Sounds/SithEmpireMusic.wav");
     public static PlayMusic rebels = new PlayMusic("/Sounds/RebelsMusic.wav");
     public static PlayMusic fire = new PlayMusic("/Sounds/FireBall.wav");
     public static PlayMusic boom = new PlayMusic("/Sounds/Explosion.wav");
+
+    private Clip clip;
 
     public PlayMusic(String fileName) {
         try {

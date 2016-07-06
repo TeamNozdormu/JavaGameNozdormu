@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Diagram>
   <ID>JAVA</ID>
-  <OriginalElement>com.company.screenStates.GameOverState</OriginalElement>
+  <OriginalElement>GameOverState</OriginalElement>
   <nodes>
-    <node x="87.25" y="164.0">com.company.screenStates.GameOverState</node>
-    <node x="42.25" y="82.0">com.company.screenStates.State</node>
-    <node x="0.0" y="0.0">com.company.gameObjectsInterfaces.Updateable</node>
-    <node x="144.0" y="0.0">com.company.gameObjectsInterfaces.Displayable</node>
+    <node x="87.25" y="164.0">GameOverState</node>
+    <node x="42.25" y="82.0">State</node>
+    <node x="0.0" y="0.0">com.company.interfaces.Updateable</node>
+    <node x="144.0" y="0.0">com.company.interfaces.Displayable</node>
   </nodes>
   <notes />
   <edges>
-    <edge source="com.company.screenStates.State" target="com.company.gameObjectsInterfaces.Updateable">
+    <edge source="State" target="com.company.interfaces.Updateable">
       <point x="-19.75" y="-16.0" />
       <point x="0.0" y="16.0" />
     </edge>
-    <edge source="com.company.screenStates.GameOverState" target="com.company.gameObjectsInterfaces.Displayable">
+    <edge source="GameOverState" target="com.company.interfaces.Displayable">
       <point x="37.75" y="-16.0" />
       <point x="200.5" y="139.0" />
       <point x="243.75" y="139.0" />
       <point x="33.24999999999999" y="16.0" />
     </edge>
-    <edge source="com.company.screenStates.State" target="com.company.gameObjectsInterfaces.Displayable">
+    <edge source="State" target="com.company.interfaces.Displayable">
       <point x="19.75" y="-16.0" />
       <point x="101.5" y="57.0" />
       <point x="177.25" y="57.0" />
       <point x="-33.25" y="16.0" />
     </edge>
-    <edge source="com.company.screenStates.GameOverState" target="com.company.screenStates.State">
+    <edge source="GameOverState" target="State">
       <point x="-37.75" y="-16.0" />
       <point x="125.0" y="139.0" />
       <point x="81.75" y="139.0" />
@@ -35,7 +35,7 @@
   </edges>
   <settings layout="Hierarchic Group" zoom="1.0" x="138.5" y="98.0" />
   <SelectedNodes>
-    <node>com.company.screenStates.GameOverState</node>
+    <node>GameOverState</node>
   </SelectedNodes>
   <Categories />
   <SCOPE>All</SCOPE>

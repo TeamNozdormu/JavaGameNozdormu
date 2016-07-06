@@ -1,6 +1,6 @@
 package com.company.graphics;
 
-import com.company.eventHandlers.MouseInput;
+import com.company.eventhandlers.MouseInput;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -22,6 +22,8 @@ public class Assets {
     public static BufferedImage highScoresBackground;
     public static BufferedImage live;
     public static BufferedImage gameover;
+    public static BufferedImage intro;
+    public static BufferedImage introTask;
     public static BufferedImage chooseSide;
     public static SpriteSheet explosion;
     public static SpriteSheet die;
@@ -57,6 +59,8 @@ public class Assets {
         doubleDamageBonus = ImageLoader.loadImage(ImageAlbum.DoubleDamageBonus.getPath());
         highScoresBackground = ImageLoader.loadImage(ImageAlbum.HighScores.getPath());
         gameover = ImageLoader.loadImage(ImageAlbum.GameOver.getPath());
+        intro = ImageLoader.loadImage(ImageAlbum.Intro.getPath());
+        introTask = ImageLoader.loadImage(ImageAlbum.IntroTask.getPath());
 //        explosion = new SpriteSheet(ImageLoader.loadImage(ImageAlbum.ArcherDeath.getPath()), 100, 100);
 
         chooseSide = ImageLoader.loadImage(ImageAlbum.ChooseClass.getPath());

@@ -1,16 +1,18 @@
-package com.company.eventHandlers;
+package com.company.eventhandlers;
 
-import com.company.game.Game;
-import com.company.game.concreteObjects.Player;
+import com.company.gameobjects.Game;
+import com.company.gameobjects.entities.Player;
 import com.company.graphics.Assets;
 import com.company.graphics.Display;
-import com.company.screenStates.GameOverState;
-import com.company.screenStates.GameState;
-import com.company.screenStates.MainMenuState;
-import com.company.screenStates.StateManager;
+import com.company.gamestates.GameOverState;
+import com.company.gamestates.GameState;
+import com.company.gamestates.MainMenuState;
+import com.company.gamestates.StateManager;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+
+import static com.company.gameobjects.entities.Player.isMovingLeft;
 
 public class KeyboardInput implements KeyListener {
 
@@ -35,60 +37,55 @@ public class KeyboardInput implements KeyListener {
     }
 
     public void keyPressed(KeyEvent e) {
-
         int key = e.getKeyCode();
 
         if (key == KeyEvent.VK_RIGHT) {
             Player.isMovingRight = true;
         } else if (key == KeyEvent.VK_LEFT) {
-            Player.isMovingLeft = true;
+            isMovingLeft = true;
         } else if (key == KeyEvent.VK_UP) {
-            GameState.player.isMovingUp = true;
+            GameState.getPlayer().isMovingUp = true;
         } else if (key == KeyEvent.VK_DOWN) {
-            GameState.player.isMovingDown = true;
+            GameState.getPlayer().isMovingDown = true;
         } else if (key == KeyEvent.VK_BACK_SPACE) {
 
         }
 
-        if (key == KeyEvent.VK_SPACE && GameState.player.isFiring == false) {
-            GameState.player.isFiring = true;
+        if (key == KeyEvent.VK_SPACE && GameState.getPlayer().isFiring == false) {
+            GameState.getPlayer().isFiring = true;
             PlayMusic.fire.play();
         }
-
     }
 
     public void keyReleased(KeyEvent e) {
-
         int key = e.getKeyCode();
 
         if (key == KeyEvent.VK_RIGHT) {
-            GameState.player.isMovingRight = false;
+            GameState.getPlayer().isMovingRight = false;
         } else if (key == KeyEvent.VK_LEFT) {
-            GameState.player.isMovingLeft = false;
+            GameState.getPlayer().isMovingLeft = false;
         } else if (key == KeyEvent.VK_UP) {
-            GameState.player.isMovingUp = false;
+            GameState.getPlayer().isMovingUp = false;
         } else if (key == KeyEvent.VK_DOWN) {
-            GameState.player.isMovingDown = false;
+            GameState.getPlayer().isMovingDown = false;
         } else if (key == KeyEvent.VK_BACK_SPACE) {
 
         }
 
-        if (key == KeyEvent.VK_SPACE && GameState.player.isFiring == true) {
-            GameState.player.isFiring = false;
+        if (key == KeyEvent.VK_SPACE && GameState.getPlayer().isFiring == true) {
+            GameState.getPlayer().isFiring = false;
         }
         if (StateManager.getCurrentState() instanceof GameOverState) {
-            if (key>='A' && key<='Z' && GameOverState.sb.length() < 14) {
-                GameOverState.sb.append((char) key);
-            } else if (key == KeyEvent.VK_BACK_SPACE && GameOverState.sb.length() > 0) {
-                GameOverState.sb.deleteCharAt(GameOverState.sb.length() - 1);
-            } else if (key == KeyEvent.VK_ENTER && GameOverState.sb.length() > 0) {
-                GameState.player.setPlayerName(GameOverState.sb.toString());
-                GameOverState.sb.setLength(0);
-                Assets.savingHighScores(GameState.player.getPlayerName(), GameState.score);
+            if (key>='A' && key<='Z' && GameOverState.getSb().length() < 14) {
+                GameOverState.getSb().append((char) key);
+            } else if (key == KeyEvent.VK_BACK_SPACE && GameOverState.getSb().length() > 0) {
+                GameOverState.getSb().deleteCharAt(GameOverState.getSb().length() - 1);
+            } else if (key == KeyEvent.VK_ENTER && GameOverState.getSb().length() > 0) {
+                GameState.getPlayer().setPlayerName(GameOverState.getSb().toString());
+                GameOverState.getSb().setLength(0);
+                Assets.savingHighScores(GameState.getPlayer().getPlayerName(), GameState.getScore());
                 StateManager.setCurrentState(new MainMenuState());
             }
         }
-
     }
-
 }

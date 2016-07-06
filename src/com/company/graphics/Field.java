@@ -7,6 +7,12 @@ public class Field {
     private int startY;
     private BufferedImage picture;
 
+    public Field(int x, int y, BufferedImage fieldPicture) {
+        this.setX(x);
+        this.setY(y);
+        this.setPicture(fieldPicture);
+    }
+
     public int getX() {
         return this.startX;
     }
@@ -29,11 +35,5 @@ public class Field {
 
     private void setPicture(BufferedImage picture) {
         this.picture = picture;
-    }
-
-    public Field(int x, int y, BufferedImage fieldPicture) {
-        this.setX(x);
-        this.setY(y);
-        this.setPicture(fieldPicture);
     }
 }

@@ -2,7 +2,7 @@ package com.company.graphics;
 
 public enum ImageAlbum {
 
-    //If you add another object to the game you must insert it in the enumeration here in order to get it's path
+    //If you add another object to the gameobjects you must insert it in the enumeration here in order to get it's path
     ArcherPlayer("/Characters/ArcherIdle.png"),
     ArcherPlayerL("/Characters/ArcherIdleLeft.png"),
     ArcherPlayerR("/Characters/ArcherIdleRight.png"),
@@ -15,6 +15,8 @@ public enum ImageAlbum {
     Background("/Backgrounds/OrtogonalMap.png"),
     Live("/Interface/Life.png"),
     GameOver("/Backgrounds/Background.jpg"),
+    Intro("/Backgrounds/Intro.png"),
+    IntroTask("/Backgrounds/YseraIntro.png"),
     HighScores("/Backgrounds/Background.jpg"),
     Explosion("/InGame/ArcherDeath.png"),
     ArcherDeath("/InGame/ArcherDeath.png"),
