@@ -16,6 +16,7 @@ public class Player extends GameObject  {
             isMovingDown = false,
             isFiring = false;
 
+    private static int level = 1;
     private int numberOfLives;
     private String playerName;
     private int score;
@@ -28,51 +29,11 @@ public class Player extends GameObject  {
         this.setPlayerName(name);
         this.setNumberOfLives(PlayerSettings.PLAYER_INITIAL_NUMBER_OF_LIVES);
         this.setScore(PlayerSettings.PLAYER_DEFAULT_SCORES);
+      //  this.inceraseLevel();
     }
 
     public Player(BufferedImage bufferedImage) {
         super(bufferedImage);
-    }
-
-    @Override
-    public void update() {
-
-        //TODO problem with replace with getter and setter
-        if(this.timeForBonus > 0) {
-            this.timeForBonus--;
-        } else if(this.currentBonus != null && this.timeForBonus == 0) {
-            this.currentBonus = null;
-        } else {
-            this.currentBonus = null;
-            this.timeForBonus = 0;
-        }
-
-        this.getColliderBox().setBounds(this.getX(), this.getY(),
-                this.getObjectIcon().getWidth(), this.getObjectIcon().getHeight());
-
-        if (isMovingRight && this.getX() + this.getSpeed() <= 730) {
-            this.setX(this.getX() + this.getSpeed());
-        }
-        if (isMovingLeft && this.getX() + this.getSpeed() >= 0) {
-            this.setX(this.getX() - this.getSpeed());
-        }
-        if (isMovingDown && this.getY() + this.getSpeed() < 520) {
-            this.setY(this.getY() + this.getSpeed());
-        }
-        if (isMovingUp && this.getY() - this.getSpeed() >= 0) {
-            this.setY(this.getY() - this.getSpeed());
-        }
-
-        if (isFiring) {
-            if(this.getCurrentBonus() != null){
-                GameState.getBulletsList().add(new Bullet(this.getX() + 16, this.getY(), this.getCurrentBonus().getMultiplierForDamage()));
-            } else {
-                GameState.getBulletsList().add(new Bullet(this.getX() + 16, this.getY(), 1));
-            }
-
-            isFiring = false;
-        }
-
     }
 
     public int getTimeForBonus() {
@@ -116,7 +77,56 @@ public class Player extends GameObject  {
         this.setTimeForBonus(bonus.getBonusDuration());
     }
 
+    public static int getLevel() {
+        return level;
+    }
+
+    public static void inceraseLevel() {
+        level++;
+    }
+
     public Bonus getCurrentBonus() {
         return this.currentBonus;
+    }
+
+    @Override
+    public void update() {
+
+        //TODO problem with replace with getter and setter
+        if(this.timeForBonus > 0) {
+            this.timeForBonus--;
+        } else if(this.currentBonus != null && this.timeForBonus == 0) {
+            this.currentBonus = null;
+        } else {
+            this.currentBonus = null;
+            this.timeForBonus = 0;
+        }
+
+        this.getColliderBox().setBounds(this.getX(), this.getY(),
+                this.getObjectIcon().getWidth(), this.getObjectIcon().getHeight());
+
+        if (isMovingRight && this.getX() + this.getSpeed() <= 730) {
+            this.setX(this.getX() + this.getSpeed());
+        }
+        if (isMovingLeft && this.getX() + this.getSpeed() >= 0) {
+            this.setX(this.getX() - this.getSpeed());
+        }
+        if (isMovingDown && this.getY() + this.getSpeed() < 520) {
+            this.setY(this.getY() + this.getSpeed());
+        }
+        if (isMovingUp && this.getY() - this.getSpeed() >= 0) {
+            this.setY(this.getY() - this.getSpeed());
+        }
+
+        if (isFiring) {
+            if(this.getCurrentBonus() != null){
+                GameState.getBulletsList().add(new Bullet(this.getX() + 16, this.getY(), this.getCurrentBonus().getMultiplierForDamage()));
+            } else {
+                GameState.getBulletsList().add(new Bullet(this.getX() + 16, this.getY(), 1));
+            }
+
+            isFiring = false;
+        }
+
     }
 }

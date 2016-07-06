@@ -3,9 +3,8 @@ package com.company.eventHandlers;
 import javax.sound.sampled.*;
 
 public class PlayMusic {
-    // Change file name to match yours, of course
-    public static PlayMusic empire = new PlayMusic("/Sounds/SithEmpireMusic.wav");
-    public static PlayMusic rebels = new PlayMusic("/Sounds/RebelsMusic.wav");
+    public static PlayMusic archer = new PlayMusic("/Sounds/SithEmpireMusic.wav");
+    public static PlayMusic mage = new PlayMusic("/Sounds/RebelsMusic.wav");
     public static PlayMusic fire = new PlayMusic("/Sounds/FireBall.wav");
     public static PlayMusic boom = new PlayMusic("/Sounds/Explosion.wav");
 

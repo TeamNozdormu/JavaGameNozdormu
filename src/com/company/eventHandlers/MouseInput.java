@@ -46,7 +46,7 @@ public class MouseInput implements MouseListener {
             //Archer Button
             if (mouseX >= 50 && mouseX <= 350) {
                 if (mouseY >= 300 && mouseY <= 400) {
-                    PlayMusic.empire.loop();
+                    PlayMusic.archer.loop();
                     isMage = false;
                     // StateManager.setCurrentState(new GameState());
                     StateManager.setCurrentState(new IntroState());
@@ -56,7 +56,7 @@ public class MouseInput implements MouseListener {
             //Mage Button
             if (mouseX >= 450 && mouseX <= 750) {
                 if (mouseY >= 300 && mouseY <= 400) {
-                    PlayMusic.rebels.loop();
+                    PlayMusic.mage.loop();
                     isMage = true;
                     //    StateManager.setCurrentState(new GameState());
                     StateManager.setCurrentState(new IntroState());
@@ -70,13 +70,9 @@ public class MouseInput implements MouseListener {
                 //Next
                 if (mouseX >= 450 ) {
                     if (mouseY >= 550 ) {
-                        PlayMusic.empire.loop();
+                        PlayMusic.archer.loop();
                         StateManager.setCurrentState(new IntroTaskState());
                     }
-                }
-
-                if(ChooseSideState.getBackButton().getColliderBox().contains(mouseX, mouseY)) {
-                    StateManager.setCurrentState(new MainMenuState());
                 }
         }
 
@@ -84,13 +80,22 @@ public class MouseInput implements MouseListener {
             //Next, start game
             if (mouseX >= 250 && mouseX <= 560) {
                 if (mouseY >= 520 && mouseY <= 600) {
-                    PlayMusic.empire.loop();
+                    PlayMusic.archer.loop();
                     StateManager.setCurrentState(new GameState());
                 }
             }
+        }
 
-            if(ChooseSideState.getBackButton().getColliderBox().contains(mouseX, mouseY)) {
-                StateManager.setCurrentState(new MainMenuState());
+        //gain level
+        else if(StateManager.getCurrentState() instanceof GainLevelState) {
+            //Next, start game
+            if (mouseX >= 250 && mouseX <= 560) {
+                if (mouseY >= 520 && mouseY <= 600) {
+                    PlayMusic.archer.loop();
+
+                    StateManager.setCurrentState(new GameState());
+
+                }
             }
         }
         // HighScores

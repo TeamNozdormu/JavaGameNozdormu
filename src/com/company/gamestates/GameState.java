@@ -9,13 +9,13 @@ import com.company.gameobjects.entities.Bullet;
 import com.company.gameobjects.entities.EasyEnemy;
 import com.company.gameobjects.entities.Player;
 import com.company.gameobjects.entities.SturdyEnemy;
-import com.company.interfaces.Displayable;
 import com.company.graphics.Assets;
+import com.company.interfaces.Displayable;
 
 import java.awt.*;
-import java.awt.Font;
-import java.util.*;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Random;
 
 public class GameState extends State implements Displayable {
 
@@ -30,9 +30,15 @@ public class GameState extends State implements Displayable {
     private boolean explode;
     private int cropX, cropY;
     private int cropXMonster=0, cropYMonster=0;
+    private static boolean isLevelGained;
 
     public GameState() {
-        score = 0;
+        if (!this.isLevelGained) {
+            this.score = 0;
+        } else  {
+            this.isLevelGained = false;
+        }
+
         init();
         this.bulletsList = new LinkedList<>();
         this.player = new Player(
@@ -72,6 +78,14 @@ public class GameState extends State implements Displayable {
 
     public void setRnd(Random rnd) {
         this.rnd = rnd;
+    }
+
+    public static boolean isLevelGained() {
+        return isLevelGained;
+    }
+
+    public static void setLevelGained(boolean levelGained) {
+        isLevelGained = levelGained;
     }
 
     public long getLastTimeMissed() {
@@ -197,19 +211,39 @@ public class GameState extends State implements Displayable {
         // Player Ends Playing
         if(player.getNumberOfLives() == 0) {
             if (MouseInput.isMage) {
-                PlayMusic.rebels.stop();
+                PlayMusic.mage.stop();
             } else {
-                PlayMusic.empire.stop();
+                PlayMusic.archer.stop();
             }
+            PlayMusic.fire.stop();
 
             StateManager.setCurrentState(new GameOverState());
+        }
+
+        //player gains level
+        if(this.score >= 300 * player.getLevel()) {
+            if (MouseInput.isMage) {
+                PlayMusic.mage.stop();
+            } else {
+                PlayMusic.archer.stop();
+            }
+            if (MouseInput.isMage) {
+                PlayMusic.mage.stop();
+            } else {
+                PlayMusic.archer.stop();
+            }
+            PlayMusic.fire.stop();
+
+            player.inceraseLevel();
+            this.isLevelGained = true;
+
+            StateManager.setCurrentState(new GainLevelState());
         }
 
         if (explode) {
             cropX++;
 
             if (cropX >= 6) {
-                //cropY++;
                 cropX = 0;
                 explode = false;
                 enemiesList.clear();
@@ -284,7 +318,6 @@ public class GameState extends State implements Displayable {
         }
 
         if (explode) {
-           // g.drawImage(Assets.explosion.crop(cropX, cropY), player.getX() - 20, player.getY(), null);
            g.drawImage(Assets.die.crop(cropX, cropY), player.getX(), player.getY(), null);
         }
     }

@@ -24,6 +24,7 @@ public class Assets {
     public static BufferedImage intro;
     public static BufferedImage introTask;
     public static BufferedImage chooseSide;
+    public static BufferedImage gainLevel;
     public static SpriteSheet explosion;
     public static SpriteSheet die;
     public static BufferedImage mainMenuBackground;
@@ -60,7 +61,7 @@ public class Assets {
         gameover = ImageLoader.loadImage(ImageAlbum.GameOver.getPath());
         intro = ImageLoader.loadImage(ImageAlbum.Intro.getPath());
         introTask = ImageLoader.loadImage(ImageAlbum.IntroTask.getPath());
-//        explosion = new SpriteSheet(ImageLoader.loadImage(ImageAlbum.ArcherDeath.getPath()), 100, 100);
+        gainLevel = ImageLoader.loadImage(ImageAlbum.LevelGained.getPath());
 
         chooseSide = ImageLoader.loadImage(ImageAlbum.ChooseClass.getPath());
         mainMenuBackground = ImageLoader.loadImage(ImageAlbum.MainMenu.getPath());
