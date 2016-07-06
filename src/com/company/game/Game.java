@@ -1,9 +1,9 @@
 package com.company.game;
 
 import com.company.Settings.GameSettings;
-import com.company.graphics.Display;
 import com.company.eventHandlers.KeyboardInput;
 import com.company.eventHandlers.MouseInput;
+import com.company.graphics.Display;
 import com.company.graphics.GameMap;
 import com.company.screenStates.*;
 
@@ -44,7 +44,7 @@ public class Game implements Runnable {
                 GameSettings.GAME_WIDTH,
                 GameSettings.GAME_HEIGHT);
         this.keyboardInput = new KeyboardInput(this, this.display);
-        this.mouseInput =new MouseInput(this.display);
+        this.mouseInput = new MouseInput(this.display);
         this.gameState = new GameState();
         this.menuState = new MainMenuState();
         this.gameOverState = new GameOverState();
@@ -67,7 +67,7 @@ public class Game implements Runnable {
 
         g.clearRect(0, 0, GameSettings.GAME_WIDTH, GameSettings.GAME_HEIGHT);
 
-        if(StateManager.getCurrentState() != null) {
+        if (StateManager.getCurrentState() != null) {
             StateManager.getCurrentState().display(g);
         }
 
@@ -77,7 +77,7 @@ public class Game implements Runnable {
     }
 
     public void update() {
-        if(StateManager.getCurrentState() != null) {
+        if (StateManager.getCurrentState() != null) {
             StateManager.getCurrentState().update();
         }
     }
@@ -121,7 +121,7 @@ public class Game implements Runnable {
 
         while (this.isRunning) {
             now = System.nanoTime();
-            delta += (now-lastTime) / timePerTick;
+            delta += (now - lastTime) / timePerTick;
             timer += now - lastTime;
             lastTime = now;
 
