@@ -19,7 +19,6 @@ public class HighScoresState extends State {
         Assets.loadingHighScores();
         backButtonXPos = -220;
         backButton.setX(backButtonXPos);
-
     }
 
     public int getRow() {
@@ -53,7 +52,6 @@ public class HighScoresState extends State {
             backButtonXPos += 10;
             backButton.setX(backButtonXPos);
         }
-
     }
 
     @Override

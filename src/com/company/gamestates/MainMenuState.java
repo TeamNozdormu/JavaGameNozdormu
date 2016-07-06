@@ -25,7 +25,6 @@ public class MainMenuState extends State {
         playButton.setX(playButtonXPos);
         highScoreButton.setX(highScoresButtonXPos);
         quitButton.setX(quitButtonXPos);
-
     }
 
     public static Button getPlayButton() {
@@ -101,7 +100,6 @@ public class MainMenuState extends State {
         playButton.update();
         highScoreButton.update();
         quitButton.update();
-
     }
 
     public void display(Graphics g) {
@@ -121,6 +119,5 @@ public class MainMenuState extends State {
         highScoreButton.display(g);
         g.drawImage(Assets.buttonBar, -185, quitButton.getY() + 35, null);
         quitButton.display(g);
-
     }
 }

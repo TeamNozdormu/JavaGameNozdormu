@@ -1,4 +1,4 @@
-package com.company.eventhandlers;
+package com.company.eventHandlers;
 
 import com.company.gameobjects.Game;
 import com.company.gameobjects.entities.Player;

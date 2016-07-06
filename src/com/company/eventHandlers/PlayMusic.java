@@ -1,4 +1,4 @@
-package com.company.eventhandlers;
+package com.company.eventHandlers;
 
 import javax.sound.sampled.*;
 

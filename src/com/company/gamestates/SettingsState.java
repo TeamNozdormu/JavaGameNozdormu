@@ -14,5 +14,4 @@ public class SettingsState extends State{
     public void display(Graphics g) {
 
     }
-
 }

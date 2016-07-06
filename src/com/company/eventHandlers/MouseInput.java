@@ -1,4 +1,4 @@
-package com.company.eventhandlers;
+package com.company.eventHandlers;
 
 import com.company.gamestates.*;
 import com.company.graphics.Display;

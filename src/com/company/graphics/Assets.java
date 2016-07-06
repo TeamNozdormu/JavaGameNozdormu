@@ -1,6 +1,6 @@
 package com.company.graphics;
 
-import com.company.eventhandlers.MouseInput;
+import com.company.eventHandlers.MouseInput;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -12,7 +12,6 @@ public class Assets {
 
     public static BufferedImage background;
     public static BufferedImage player;
-
     public static BufferedImage bullet;
     public static BufferedImage easyEnemyInit;
     public static SpriteSheet easyEnemy;
@@ -32,12 +31,12 @@ public class Assets {
     public static BufferedImage buttonBar;
     public static BufferedImage[] sprites = new BufferedImage[4];
 
-    private static SortedMap<String, Integer> scores;
     public static Map<String, Integer> highScores;
     public static int lowestScore;
 
-    public static void init() {
+    private static SortedMap<String, Integer> scores;
 
+    public static void init() {
         background = ImageLoader.loadImage(ImageAlbum.Background.getPath());
 
         if (MouseInput.isMage) {
@@ -76,7 +75,6 @@ public class Assets {
         } catch (IOException | FontFormatException e) {
             //TODO Handle exception
         }
-
     }
 
     public static void loadingHighScores() {

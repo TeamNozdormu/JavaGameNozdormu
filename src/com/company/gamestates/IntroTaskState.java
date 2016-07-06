@@ -4,9 +4,6 @@ import com.company.graphics.Assets;
 
 import java.awt.*;
 
-/**
- * Created by Tedi.Noji on 7/5/2016.
- */
 public class IntroTaskState extends State {
 
     @Override

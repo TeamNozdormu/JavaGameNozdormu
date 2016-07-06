@@ -1,8 +1,8 @@
 package com.company.gamestates;
 
 import com.company.constants.PlayerSettings;
-import com.company.eventhandlers.MouseInput;
-import com.company.eventhandlers.PlayMusic;
+import com.company.eventHandlers.MouseInput;
+import com.company.eventHandlers.PlayMusic;
 import com.company.gameobjects.base.Bonus;
 import com.company.gameobjects.base.Enemy;
 import com.company.gameobjects.entities.Bullet;
