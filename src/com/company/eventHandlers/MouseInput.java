@@ -31,7 +31,7 @@ public class MouseInput implements MouseListener {
 
             //High Scores Button
             if (MainMenuState.getHighScoreButton().getColliderBox().contains(mouseX, mouseY)) {
-                StateManager.setCurrentState(new HighScoresState());
+                StateManager.setCurrentState(new HighScoresState("Descending"));
             }
 
             //Quit Button
@@ -103,6 +103,8 @@ public class MouseInput implements MouseListener {
             // Back Button
             if(HighScoresState.getBackButton().getColliderBox().contains(mouseX, mouseY)) {
                 StateManager.setCurrentState(new MainMenuState());
+            } else if (HighScoresState.getReverseButton().getColliderBox().contains(mouseX, mouseY)) {
+            	((HighScoresState) StateManager.getCurrentState()).reverseOrder();
             }
         }
     }
