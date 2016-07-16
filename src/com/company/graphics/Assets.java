@@ -112,6 +112,43 @@ public class Assets {
             lowestScore = list.get(list.size() - 1).getValue();
         }
     }
+    
+    public static void loadHighScoresAscending() {
+    	// TODO: refactor the code, so that we avoid code repetition
+    	// (loadHighScores and loadHighScoresAscending)
+    	
+    	scores = new TreeMap<>();
+        highScores = new LinkedHashMap<>();
+        List<Map.Entry<String, Integer>> list;
+
+        try (BufferedReader fileReader = new BufferedReader(new FileReader("res\\highScores.txt"))) {
+            String line = fileReader.readLine();
+            String[] tokens;
+
+            while (line != null) {
+                tokens = line.split("\\s+");
+                scores.put(tokens[0], Integer.parseInt(tokens[1]));
+                line = fileReader.readLine();
+            }
+        } catch (IOException ioex) {
+            System.err.println("Cannot read the file");
+        }
+
+        list = new ArrayList<>(scores.entrySet());
+        Collections.sort(list, (a, b) -> a.getValue().compareTo(b.getValue()));
+
+        if (list.size() > 10) {
+            list.subList(0, 10);
+        }
+
+        for (Map.Entry<String, Integer> entry : list) {
+            highScores.put(entry.getKey(), entry.getValue());
+        }
+
+        if (list.size() > 0) {
+            lowestScore = list.get(list.size() - 1).getValue();
+        }
+    }
 
     public static void savingHighScores(String name, int score) {
         if (score > lowestScore || highScores.size() < 10) {
