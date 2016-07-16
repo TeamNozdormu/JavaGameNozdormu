@@ -11,14 +11,26 @@ public class HighScoresState extends State {
 
     private static final int ROW_HEIGHT = 35;
     private int row = 0;
-    private static Button backButton = new Button(300, 470, Assets.button, "Main menu");
+    //private static Button backButton = new Button(300, 470, Assets.button, "Main menu");
+    private static Button backButton = new Button(100, 470, Assets.button, "Main menu");
+    private static Button reverse = new Button(400, 470, Assets.button, "Reverse");
     private int backButtonXPos;
+    private int reverseButtonXPos;
+    private String currentSortingOrder;
 
-    public HighScoresState() {
-
-        Assets.loadingHighScores();
+    public HighScoresState(String order) {
+    	this.setCurrentSortingOrder(order);
+    	
+    	if (this.getCurrentSortingOrder().equals("Descending")) {
+			Assets.loadingHighScores();
+		} else if (this.getCurrentSortingOrder().equals("Ascending")) {
+			Assets.loadHighScoresAscending();
+		}
+    	
         backButtonXPos = -220;
+        reverseButtonXPos = -220;
         backButton.setX(backButtonXPos);
+        reverse.setX(reverseButtonXPos);
     }
 
     public int getRow() {
@@ -36,6 +48,14 @@ public class HighScoresState extends State {
     public void setBackButtonXPos(int backButtonXPos) {
         this.backButtonXPos = backButtonXPos;
     }
+    
+    public String getCurrentSortingOrder() {
+    	return this.currentSortingOrder;
+    }
+    
+    private void setCurrentSortingOrder(String order) {
+    	this.currentSortingOrder = order;
+    }
 
     public static int getRowHeight() {
         return ROW_HEIGHT;
@@ -44,13 +64,32 @@ public class HighScoresState extends State {
     public static Button getBackButton() {
         return backButton;
     }
+    
+    public static Button getReverseButton() {
+    	return reverse;
+    }
+    
+    public void reverseOrder() {
+    	if (this.currentSortingOrder.equals("Ascending")) {
+			this.currentSortingOrder = "Descending";
+			Assets.loadingHighScores();
+		} else if (this.currentSortingOrder.equals("Descending")) {
+			this.currentSortingOrder = "Ascending";
+			Assets.loadHighScoresAscending();
+		}
+    }
 
     @Override
     public void update() {
 
-        if(backButtonXPos < 300) {
+        if(backButtonXPos < 100) {
             backButtonXPos += 10;
             backButton.setX(backButtonXPos);
+        }
+        
+        if(reverseButtonXPos < 400) {
+        	reverseButtonXPos += 10;
+        	reverse.setX(reverseButtonXPos);
         }
     }
 
@@ -82,7 +121,9 @@ public class HighScoresState extends State {
         row = 0;
         g.setColor(Color.GREEN);
         g.drawImage(Assets.buttonBar, -20, backButton.getY() + 35, null);
+        g.drawImage(Assets.buttonBar, -20, reverse.getY() + 35, null);
         backButton.display(g);
+        reverse.display(g);
 
     }
 
