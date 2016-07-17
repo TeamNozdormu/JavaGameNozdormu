@@ -19,6 +19,7 @@ public class ChooseSideState extends State {
     public static Button getBackButton() {
         return backButton;
     }
+
     public Rectangle getArcherButton() {
         return archerButton;
     }
@@ -35,6 +36,8 @@ public class ChooseSideState extends State {
         this.mageButton = mageButton;
     }
 
+
+
     @Override
     public void update() {
 
@@ -49,7 +52,5 @@ public class ChooseSideState extends State {
         g2d.draw(archerButton);
         g2d.draw(mageButton);
         backButton.display(g);
-
     }
-
 }

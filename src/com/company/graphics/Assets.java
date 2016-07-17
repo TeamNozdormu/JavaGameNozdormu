@@ -10,6 +10,7 @@ import java.util.List;
 
 public class Assets {
 
+    public static BufferedImage backgroundDifficulty;
     public static BufferedImage background;
     public static BufferedImage player;
     public static BufferedImage bullet;
@@ -40,15 +41,39 @@ public class Assets {
     public static void init() {
         background = ImageLoader.loadImage(ImageAlbum.Background.getPath());
 
-        if (MouseInput.isMage) {
-            player = (ImageLoader.loadImage(ImageAlbum.MagePlayer.getPath()));
-            bullet = ImageLoader.loadImage(ImageAlbum.FireBall.getPath());
-            die = new SpriteSheet(ImageLoader.loadImage(ImageAlbum.MageDeath.getPath()), 64, 64);
-        } else {
-            player = ImageLoader.loadImage(ImageAlbum.ArcherPlayer.getPath());
-            bullet = ImageLoader.loadImage(ImageAlbum.Arrow.getPath());
-            die = new SpriteSheet(ImageLoader.loadImage(ImageAlbum.ArcherDeath.getPath()), 66, 59);
-        }
+      //  if(MouseInput.isEasyBotton) {
+            if (MouseInput.isMage) {
+                player = (ImageLoader.loadImage(ImageAlbum.MagePlayer.getPath()));
+                bullet = ImageLoader.loadImage(ImageAlbum.FireBall.getPath());
+                die = new SpriteSheet(ImageLoader.loadImage(ImageAlbum.MageDeath.getPath()), 64, 64);
+            } else {
+                player = ImageLoader.loadImage(ImageAlbum.ArcherPlayer.getPath());
+                bullet = ImageLoader.loadImage(ImageAlbum.Arrow.getPath());
+                die = new SpriteSheet(ImageLoader.loadImage(ImageAlbum.ArcherDeath.getPath()), 66, 59);
+            }
+      //  }else if(MouseInput.isMediumBotton) {
+
+            if (MouseInput.isMage) {
+                player = (ImageLoader.loadImage(ImageAlbum.MagePlayer.getPath()));
+                bullet = ImageLoader.loadImage(ImageAlbum.FireBall.getPath());
+                die = new SpriteSheet(ImageLoader.loadImage(ImageAlbum.MageDeath.getPath()), 64, 64);
+            } else {
+                player = ImageLoader.loadImage(ImageAlbum.ArcherPlayer.getPath());
+                bullet = ImageLoader.loadImage(ImageAlbum.Arrow.getPath());
+                die = new SpriteSheet(ImageLoader.loadImage(ImageAlbum.ArcherDeath.getPath()), 66, 59);
+            }
+     //  }else if(MouseInput.isHardBotton) {
+
+            if (MouseInput.isMage) {
+                player = (ImageLoader.loadImage(ImageAlbum.MagePlayer.getPath()));
+                bullet = ImageLoader.loadImage(ImageAlbum.FireBall.getPath());
+                die = new SpriteSheet(ImageLoader.loadImage(ImageAlbum.MageDeath.getPath()), 64, 64);
+            } else {
+                player = ImageLoader.loadImage(ImageAlbum.ArcherPlayer.getPath());
+                bullet = ImageLoader.loadImage(ImageAlbum.Arrow.getPath());
+                die = new SpriteSheet(ImageLoader.loadImage(ImageAlbum.ArcherDeath.getPath()), 66, 59);
+            }
+    //    }
 
         easyEnemy = new SpriteSheet(ImageLoader.loadImage(ImageAlbum.EasyEnemy.getPath()), 97, 56);
         easyEnemyInit = easyEnemy.crop(1, 0);
@@ -63,7 +88,11 @@ public class Assets {
         introTask = ImageLoader.loadImage(ImageAlbum.IntroTask.getPath());
         gainLevel = ImageLoader.loadImage(ImageAlbum.LevelGained.getPath());
 
+
         chooseSide = ImageLoader.loadImage(ImageAlbum.ChooseClass.getPath());
+
+        backgroundDifficulty = ImageLoader.loadImage(ImageAlbum.BackgroundDifficulty.getPath());
+
         mainMenuBackground = ImageLoader.loadImage(ImageAlbum.MainMenu.getPath());
         button = ImageLoader.loadImage(ImageAlbum.Button.getPath());
         buttonBar = ImageLoader.loadImage(ImageAlbum.ButtonSlider.getPath());

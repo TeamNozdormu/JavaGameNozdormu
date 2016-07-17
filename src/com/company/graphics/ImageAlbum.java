@@ -3,6 +3,7 @@ package com.company.graphics;
 public enum ImageAlbum {
 
     //If you add another object to the gameobjects you must insert it in the enumeration here in order to get it's path
+    BackgroundDifficulty("/Backgrounds/DifficultyBackground.png"),
     ArcherPlayer("/Characters/ArcherIdle.png"),
     ArcherPlayerL("/Characters/ArcherIdleLeft.png"),
     ArcherPlayerR("/Characters/ArcherIdleRight.png"),
