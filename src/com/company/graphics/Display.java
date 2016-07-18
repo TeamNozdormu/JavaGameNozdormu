@@ -22,7 +22,7 @@ public class Display {
         return this.width;
     }
 
-    public void setWidth(int width) {
+    private void setWidth(int width) {
         this.width = width;
     }
 
@@ -30,7 +30,7 @@ public class Display {
         return this.height;
     }
 
-    public void setHeight(int height) {
+    private void setHeight(int height) {
         this.height = height;
     }
 
@@ -38,7 +38,7 @@ public class Display {
         return this.title;
     }
 
-    public void setTitle(String title) {
+    private void setTitle(String title) {
         this.title = title;
     }
 
@@ -46,7 +46,7 @@ public class Display {
         return this.canvas;
     }
 
-    public void setCanvas(Canvas canvas) {
+    private void setCanvas(Canvas canvas) {
         this.canvas = canvas;
     }
 
@@ -54,7 +54,7 @@ public class Display {
         return this.frame;
     }
 
-    public void setFrame(JFrame frame) {
+    private void setFrame(JFrame frame) {
         this.frame = frame;
     }
 

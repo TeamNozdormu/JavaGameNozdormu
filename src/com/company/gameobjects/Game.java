@@ -49,7 +49,7 @@ public class Game implements Runnable {
         this.gameState = new GameState();
         this.menuState = new MainMenuState();
         this.gameOverState = new GameOverState();
-        this.highScoreState = new HighScoresState();
+        this.highScoreState = new HighScoresState("Descending");
         this.chooseSideState = new ChooseSideState();
         this.IntroState = new IntroState();
         this.IntroTaskState = new IntroTaskState();

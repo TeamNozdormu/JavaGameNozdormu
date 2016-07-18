@@ -1,13 +1,12 @@
 package com.company.gameobjects.base;
 
 import com.company.gameobjects.entities.DoubleDamageBonus;
+import com.company.helperClasses.RandomGenerator;
 import com.company.gamestates.GameState;
-import com.company.helperclasses.RandomGenerator;
 
 import java.awt.image.BufferedImage;
 
 public abstract class Enemy extends GameObject {
-
     public static int passed = 0;
     private int health;
     private int pointsForPlayer;
@@ -74,8 +73,7 @@ public abstract class Enemy extends GameObject {
             }
 
             if (GameState.getPlayer().getCurrentBonus() != null) {
-                GameState.score += this.getPointsForPlayer() * GameState.getPlayer().getCurrentBonus()
-                        .getMultiplierForScore();
+                GameState.score += this.getPointsForPlayer() * GameState.getPlayer().getCurrentBonus().getMultiplierForScore();
             } else {
                 GameState.score += this.getPointsForPlayer();
             }

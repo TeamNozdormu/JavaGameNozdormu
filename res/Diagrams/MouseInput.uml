@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Diagram>
   <ID>JAVA</ID>
-  <OriginalElement>com.company.eventhandlers.MouseInput</OriginalElement>
+  <OriginalElement>com.company.eventHandlers.MouseInput</OriginalElement>
   <nodes>
     <node x="0.0" y="0.0">java.util.EventListener</node>
-    <node x="13.5" y="164.0">com.company.eventhandlers.MouseInput</node>
+    <node x="13.5" y="164.0">com.company.eventHandlers.MouseInput</node>
     <node x="0.0" y="82.0">java.awt.event.MouseListener</node>
   </nodes>
   <notes />
@@ -13,14 +13,14 @@
       <point x="0.0" y="-16.0" />
       <point x="0.0" y="16.0" />
     </edge>
-    <edge source="com.company.eventhandlers.MouseInput" target="java.awt.event.MouseListener">
+    <edge source="com.company.eventHandlers.MouseInput" target="java.awt.event.MouseListener">
       <point x="0.0" y="-16.0" />
       <point x="0.0" y="16.0" />
     </edge>
   </edges>
   <settings layout="Hierarchic Group" zoom="1.0" x="75.5" y="98.0" />
   <SelectedNodes>
-    <node>com.company.eventhandlers.MouseInput</node>
+    <node>com.company.eventHandlers.MouseInput</node>
   </SelectedNodes>
   <Categories />
   <SCOPE>All</SCOPE>

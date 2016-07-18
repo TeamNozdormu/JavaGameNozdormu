@@ -3,13 +3,12 @@ package com.company.gameobjects.entities;
 import com.company.constants.PlayerSettings;
 import com.company.gameobjects.base.Bonus;
 import com.company.gameobjects.base.GameObject;
-import com.company.gamestates.GameState;
 import com.company.graphics.Assets;
+import com.company.gamestates.GameState;
 
 import java.awt.image.BufferedImage;
 
-public class Player extends GameObject {
-
+public class Player extends GameObject  {
     public static boolean
             isMovingLeft = false,
             isMovingRight = false,
@@ -17,6 +16,7 @@ public class Player extends GameObject {
             isMovingDown = false,
             isFiring = false;
 
+    private static int level = 1;
     private int numberOfLives;
     private String playerName;
     private int score;
@@ -29,19 +29,73 @@ public class Player extends GameObject {
         this.setPlayerName(name);
         this.setNumberOfLives(PlayerSettings.PLAYER_INITIAL_NUMBER_OF_LIVES);
         this.setScore(PlayerSettings.PLAYER_DEFAULT_SCORES);
+      //  this.inceraseLevel();
     }
 
     public Player(BufferedImage bufferedImage) {
         super(bufferedImage);
     }
 
+    public int getTimeForBonus() {
+        return this.timeForBonus;
+    }
+
+    public void setTimeForBonus(int timeForBonus) {
+        this.timeForBonus = timeForBonus;
+    }
+
+    public void addToScore(int points) {
+        this.score += points;
+    }
+
+    public void setNumberOfLives(int numberOfLives) {
+        this.numberOfLives = numberOfLives;
+    }
+
+    public int getScore() {
+        return this.score;
+    }
+
+    public void setScore(int score) {
+        this.score = score;
+    }
+
+    public String getPlayerName() {
+        return this.playerName;
+    }
+
+    public int getNumberOfLives() {
+        return this.numberOfLives;
+    }
+
+    public void setPlayerName(String playerName) {
+        this.playerName = playerName;
+    }
+
+    public void setCurrentBonus(Bonus bonus) {
+        this.currentBonus = bonus;
+        this.setTimeForBonus(bonus.getBonusDuration());
+    }
+
+    public static int getLevel() {
+        return level;
+    }
+
+    public static void inceraseLevel() {
+        level++;
+    }
+
+    public Bonus getCurrentBonus() {
+        return this.currentBonus;
+    }
+
     @Override
     public void update() {
 
         //TODO problem with replace with getter and setter
-        if (this.timeForBonus > 0) {
+        if(this.timeForBonus > 0) {
             this.timeForBonus--;
-        } else if (this.currentBonus != null && this.timeForBonus == 0) {
+        } else if(this.currentBonus != null && this.timeForBonus == 0) {
             this.currentBonus = null;
         } else {
             this.currentBonus = null;
@@ -65,9 +119,8 @@ public class Player extends GameObject {
         }
 
         if (isFiring) {
-            if (this.getCurrentBonus() != null) {
-                GameState.getBulletsList().add(new Bullet(this.getX() + 16, this.getY(), this.getCurrentBonus()
-                        .getMultiplierForDamage()));
+            if(this.getCurrentBonus() != null){
+                GameState.getBulletsList().add(new Bullet(this.getX() + 16, this.getY(), this.getCurrentBonus().getMultiplierForDamage()));
             } else {
                 GameState.getBulletsList().add(new Bullet(this.getX() + 16, this.getY(), 1));
             }
@@ -75,50 +128,5 @@ public class Player extends GameObject {
             isFiring = false;
         }
 
-    }
-
-    public int getTimeForBonus() {
-        return this.timeForBonus;
-    }
-
-    public void setTimeForBonus(int timeForBonus) {
-        this.timeForBonus = timeForBonus;
-    }
-
-    public void addToScore(int points) {
-        this.score += points;
-    }
-
-    public int getScore() {
-        return this.score;
-    }
-
-    public void setScore(int score) {
-        this.score = score;
-    }
-
-    public String getPlayerName() {
-        return this.playerName;
-    }
-
-    public void setPlayerName(String playerName) {
-        this.playerName = playerName;
-    }
-
-    public int getNumberOfLives() {
-        return this.numberOfLives;
-    }
-
-    public void setNumberOfLives(int numberOfLives) {
-        this.numberOfLives = numberOfLives;
-    }
-
-    public Bonus getCurrentBonus() {
-        return this.currentBonus;
-    }
-
-    public void setCurrentBonus(Bonus bonus) {
-        this.currentBonus = bonus;
-        this.setTimeForBonus(bonus.getBonusDuration());
     }
 }

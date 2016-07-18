@@ -17,7 +17,5 @@ public class ImageLoader {
         }
 
         return null;
-
     }
-
 }
