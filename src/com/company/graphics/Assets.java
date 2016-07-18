@@ -1,6 +1,6 @@
 package com.company.graphics;
 
-import com.company.eventhandlers.MouseInput;
+import com.company.eventHandlers.MouseInput;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -31,10 +31,9 @@ public class Assets {
     public static BufferedImage button;
     public static BufferedImage buttonBar;
     public static BufferedImage[] sprites = new BufferedImage[4];
-
-    private static SortedMap<String, Integer> scores;
     public static Map<String, Integer> highScores;
     public static int lowestScore;
+    private static SortedMap<String, Integer> scores;
 
     public static void init() {
 

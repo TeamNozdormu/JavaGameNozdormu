@@ -3,6 +3,7 @@ package com.company.graphics;
 import java.awt.image.BufferedImage;
 
 public class Field {
+
     private int startX;
     private int startY;
     private BufferedImage picture;

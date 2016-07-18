@@ -1,8 +1,8 @@
 package com.company.gameobjects.entities;
 
 import com.company.gameobjects.base.GameObject;
-import com.company.graphics.Assets;
 import com.company.gamestates.GameState;
+import com.company.graphics.Assets;
 
 public class Bullet extends GameObject {
 
@@ -14,16 +14,16 @@ public class Bullet extends GameObject {
         this.setBulletStrength(1 * strengthMultiplier);
     }
 
+    public static int getSpeedMultiplier() {
+        return speedMultiplier;
+    }
+
     public int getBulletStrength() {
         return this.bulletStrength;
     }
 
     public void setBulletStrength(int bulletStrength) {
         this.bulletStrength = bulletStrength;
-    }
-
-    public static int getSpeedMultiplier() {
-        return speedMultiplier;
     }
 
     @Override

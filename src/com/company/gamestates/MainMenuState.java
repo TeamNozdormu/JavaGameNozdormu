@@ -87,13 +87,13 @@ public class MainMenuState extends State {
     @Override
     public void update() {
 
-        if(playButtonXPos < 90) {
+        if (playButtonXPos < 90) {
             playButtonXPos += 10;
             playButton.setX(playButtonXPos);
         } else if (highScoresButtonXPos < 90) {
             highScoresButtonXPos += 10;
             highScoreButton.setX(highScoresButtonXPos);
-        } else if(quitButtonXPos < 90) {
+        } else if (quitButtonXPos < 90) {
             quitButtonXPos += 10;
             quitButton.setX(quitButtonXPos);
         }

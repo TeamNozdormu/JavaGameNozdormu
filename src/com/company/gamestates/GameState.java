@@ -1,21 +1,21 @@
 package com.company.gamestates;
 
 import com.company.constants.PlayerSettings;
-import com.company.eventhandlers.MouseInput;
-import com.company.eventhandlers.PlayMusic;
+import com.company.eventHandlers.MouseInput;
+import com.company.eventHandlers.PlayMusic;
 import com.company.gameobjects.base.Bonus;
 import com.company.gameobjects.base.Enemy;
 import com.company.gameobjects.entities.Bullet;
 import com.company.gameobjects.entities.EasyEnemy;
 import com.company.gameobjects.entities.Player;
 import com.company.gameobjects.entities.SturdyEnemy;
-import com.company.interfaces.Displayable;
 import com.company.graphics.Assets;
+import com.company.interfaces.Displayable;
 
 import java.awt.*;
-import java.awt.Font;
-import java.util.*;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Random;
 
 public class GameState extends State implements Displayable {
 
@@ -29,7 +29,7 @@ public class GameState extends State implements Displayable {
     private int enemyTypes = 1;
     private boolean explode;
     private int cropX, cropY;
-    private int cropXMonster=0, cropYMonster=0;
+    private int cropXMonster = 0, cropYMonster = 0;
 
     public GameState() {
         score = 0;
@@ -62,7 +62,7 @@ public class GameState extends State implements Displayable {
         return bonusList;
     }
 
-    public static  int getScore() {
+    public static int getScore() {
         return score;
     }
 
@@ -146,12 +146,12 @@ public class GameState extends State implements Displayable {
     @Override
     public void update() {
 
-        if(!explode) {
+        if (!explode) {
             player.update();
         }
 
         //if player misses three enemies loses one live
-        if(Enemy.passed >= 3){
+        if (Enemy.passed >= 3) {
             player.setNumberOfLives(player.getNumberOfLives() - 1);
             lastTimeMissed = System.currentTimeMillis();
             Enemy.passed = 0;
@@ -168,7 +168,7 @@ public class GameState extends State implements Displayable {
 
         for (int i = 0; i < enemiesList.size(); i++) {
 
-            if(player.collide(enemiesList.get(i).getColliderBox())) {
+            if (player.collide(enemiesList.get(i).getColliderBox())) {
                 player.setNumberOfLives(player.getNumberOfLives() - 1);
                 explode = true;
                 PlayMusic.boom.play();
@@ -177,7 +177,7 @@ public class GameState extends State implements Displayable {
                 break;
             }
 
-            if(!explode) {
+            if (!explode) {
                 enemiesList.get(i).update();
             }
         }
@@ -195,7 +195,7 @@ public class GameState extends State implements Displayable {
         }
 
         // Player Ends Playing
-        if(player.getNumberOfLives() == 0) {
+        if (player.getNumberOfLives() == 0) {
             if (MouseInput.isMage) {
                 PlayMusic.rebels.stop();
             } else {
@@ -236,15 +236,15 @@ public class GameState extends State implements Displayable {
         g.drawImage(Assets.background, 0, 0, null);
 
 
-        if(player.getCurrentBonus() != null){
+        if (player.getCurrentBonus() != null) {
             g.drawImage(player.getCurrentBonus().getObjectIcon(), 730, 530, null);
         }
 
-        if (!explode){
+        if (!explode) {
             player.display(g);
         }
 
-        for(int i = 0; i < bonusList.size(); i++){
+        for (int i = 0; i < bonusList.size(); i++) {
             bonusList.get(i).display(g);
         }
 
@@ -253,15 +253,17 @@ public class GameState extends State implements Displayable {
         }
 
         for (int i = 0; i < enemiesList.size(); i++) {
-           // enemiesList.get(i).display(g);
-            if (enemiesList.get(i).getPointsForPlayer()==5){
-                g.drawImage(Assets.easyEnemy.crop(cropXMonster, cropYMonster), enemiesList.get(i).getX() - 20, enemiesList.get(i).getY(), null);
+            // enemiesList.get(i).display(g);
+            if (enemiesList.get(i).getPointsForPlayer() == 5) {
+                g.drawImage(Assets.easyEnemy.crop(cropXMonster, cropYMonster), enemiesList.get(i).getX() - 20,
+                        enemiesList.get(i).getY(), null);
             } else {
-                g.drawImage(Assets.sturdyEnemy.crop(cropXMonster, cropYMonster), enemiesList.get(i).getX() - 20, enemiesList.get(i).getY(), null);
+                g.drawImage(Assets.sturdyEnemy.crop(cropXMonster, cropYMonster), enemiesList.get(i).getX() - 20,
+                        enemiesList.get(i).getY(), null);
             }
 
-            cropXMonster+=1;
-            if (cropXMonster>=4){
+            cropXMonster += 1;
+            if (cropXMonster >= 4) {
                 cropXMonster = 0;
             }
 
@@ -278,14 +280,14 @@ public class GameState extends State implements Displayable {
 
         now = System.currentTimeMillis();
 
-        if (now-lastTimeMissed < 3000) {
+        if (now - lastTimeMissed < 3000) {
             g.setFont(new Font("redensek", Font.CENTER_BASELINE, 50));
             g.drawString("You've missed three enemies", 50, 200);
         }
 
         if (explode) {
-           // g.drawImage(Assets.explosion.crop(cropX, cropY), player.getX() - 20, player.getY(), null);
-           g.drawImage(Assets.die.crop(cropX, cropY), player.getX(), player.getY(), null);
+            // g.drawImage(Assets.explosion.crop(cropX, cropY), player.getX() - 20, player.getY(), null);
+            g.drawImage(Assets.die.crop(cropX, cropY), player.getX(), player.getY(), null);
         }
     }
 }

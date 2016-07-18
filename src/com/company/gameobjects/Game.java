@@ -1,8 +1,8 @@
 package com.company.gameobjects;
 
 import com.company.constants.GameSettings;
-import com.company.eventhandlers.KeyboardInput;
-import com.company.eventhandlers.MouseInput;
+import com.company.eventHandlers.KeyboardInput;
+import com.company.eventHandlers.MouseInput;
 import com.company.gamestates.*;
 import com.company.graphics.Display;
 import com.company.graphics.GameMap;
@@ -12,6 +12,7 @@ import java.awt.image.BufferStrategy;
 
 public class Game implements Runnable {
 
+    public GameMap map;
     private Display display;
     private boolean isRunning = false;
     private MouseInput mouseInput;
@@ -26,8 +27,6 @@ public class Game implements Runnable {
     private State chooseSideState;
     private State IntroState;
     private State IntroTaskState;
-
-    public GameMap map;
 
     public boolean isRunning() {
         return this.isRunning;
@@ -46,7 +45,7 @@ public class Game implements Runnable {
                 GameSettings.GAME_WIDTH,
                 GameSettings.GAME_HEIGHT);
         this.keyboardInput = new KeyboardInput(this, this.display);
-        this.mouseInput =new MouseInput(this.display);
+        this.mouseInput = new MouseInput(this.display);
         this.gameState = new GameState();
         this.menuState = new MainMenuState();
         this.gameOverState = new GameOverState();
@@ -71,7 +70,7 @@ public class Game implements Runnable {
 
         g.clearRect(0, 0, GameSettings.GAME_WIDTH, GameSettings.GAME_HEIGHT);
 
-        if(StateManager.getCurrentState() != null) {
+        if (StateManager.getCurrentState() != null) {
             StateManager.getCurrentState().display(g);
         }
 
@@ -81,7 +80,7 @@ public class Game implements Runnable {
     }
 
     public void update() {
-        if(StateManager.getCurrentState() != null) {
+        if (StateManager.getCurrentState() != null) {
             StateManager.getCurrentState().update();
         }
     }
@@ -125,7 +124,7 @@ public class Game implements Runnable {
 
         while (this.isRunning) {
             now = System.nanoTime();
-            delta += (now-lastTime) / timePerTick;
+            delta += (now - lastTime) / timePerTick;
             timer += now - lastTime;
             lastTime = now;
 

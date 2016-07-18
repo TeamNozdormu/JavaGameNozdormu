@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.TreeMap;
 
 public class GameMap {
+
     private int width;
     private int height;
     private TreeMap<String, Field> map;
@@ -56,8 +57,8 @@ public class GameMap {
     }
 
     private void generationFields() {
-        for (int row = 0; row < this.getWidth(); row+=20) {
-            for (int coll = 0; coll < this.getHeight(); coll+=20) {
+        for (int row = 0; row < this.getWidth(); row += 20) {
+            for (int coll = 0; coll < this.getHeight(); coll += 20) {
                 BufferedImage fieldPicture = ImageLoader.loadImage(ImageAlbum.Field.getPath());
                 Field field = new Field(row, coll, fieldPicture);
                 this.getFields().add(field);

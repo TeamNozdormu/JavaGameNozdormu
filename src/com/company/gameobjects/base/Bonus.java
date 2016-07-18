@@ -1,7 +1,7 @@
 package com.company.gameobjects.base;
 
-import com.company.graphics.Assets;
 import com.company.gamestates.GameState;
+import com.company.graphics.Assets;
 
 import java.awt.image.BufferedImage;
 
@@ -28,10 +28,12 @@ public abstract class Bonus extends GameObject {
     public int getMultiplierForDamage() {
         return this.multiplierForDamage;
     }
-    public int getMultiplierForScore(){
+
+    public int getMultiplierForScore() {
         return this.multiplierForScore;
     }
-    public int getBonusDuration(){
+
+    public int getBonusDuration() {
         return this.bonusDuration;
     }
 

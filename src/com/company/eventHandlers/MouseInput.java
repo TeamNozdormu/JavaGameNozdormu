@@ -1,4 +1,4 @@
-package com.company.eventhandlers;
+package com.company.eventHandlers;
 
 import com.company.gamestates.*;
 import com.company.graphics.Display;
@@ -7,6 +7,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 public class MouseInput implements MouseListener {
+
     public static boolean isMage;
 
     public MouseInput(Display display) {
@@ -23,9 +24,9 @@ public class MouseInput implements MouseListener {
         int mouseX = e.getX();
         int mouseY = e.getY();
 
-        if(StateManager.getCurrentState() instanceof MainMenuState) {
+        if (StateManager.getCurrentState() instanceof MainMenuState) {
             //Play Button
-            if(MainMenuState.getPlayButton().getColliderBox().contains(mouseX, mouseY)){
+            if (MainMenuState.getPlayButton().getColliderBox().contains(mouseX, mouseY)) {
                 StateManager.setCurrentState(new ChooseSideState());
             }
 
@@ -41,8 +42,7 @@ public class MouseInput implements MouseListener {
                 // TODO: Saving to file
                 System.exit(0);
             }
-        }
-        else if(StateManager.getCurrentState() instanceof ChooseSideState) {
+        } else if (StateManager.getCurrentState() instanceof ChooseSideState) {
             //Archer Button
             if (mouseX >= 50 && mouseX <= 350) {
                 if (mouseY >= 300 && mouseY <= 400) {
@@ -65,22 +65,19 @@ public class MouseInput implements MouseListener {
             if (ChooseSideState.getBackButton().getColliderBox().contains(mouseX, mouseY)) {
                 StateManager.setCurrentState(new MainMenuState());
             }
-        }
-            else if(StateManager.getCurrentState() instanceof IntroState) {
-                //Next
-                if (mouseX >= 450 ) {
-                    if (mouseY >= 550 ) {
-                        PlayMusic.empire.loop();
-                        StateManager.setCurrentState(new IntroTaskState());
-                    }
+        } else if (StateManager.getCurrentState() instanceof IntroState) {
+            //Next
+            if (mouseX >= 450) {
+                if (mouseY >= 550) {
+                    PlayMusic.empire.loop();
+                    StateManager.setCurrentState(new IntroTaskState());
                 }
+            }
 
-                if(ChooseSideState.getBackButton().getColliderBox().contains(mouseX, mouseY)) {
-                    StateManager.setCurrentState(new MainMenuState());
-                }
-        }
-
-        else if(StateManager.getCurrentState() instanceof IntroTaskState) {
+            if (ChooseSideState.getBackButton().getColliderBox().contains(mouseX, mouseY)) {
+                StateManager.setCurrentState(new MainMenuState());
+            }
+        } else if (StateManager.getCurrentState() instanceof IntroTaskState) {
             //Next, start game
             if (mouseX >= 250 && mouseX <= 560) {
                 if (mouseY >= 520 && mouseY <= 600) {
@@ -89,14 +86,14 @@ public class MouseInput implements MouseListener {
                 }
             }
 
-            if(ChooseSideState.getBackButton().getColliderBox().contains(mouseX, mouseY)) {
+            if (ChooseSideState.getBackButton().getColliderBox().contains(mouseX, mouseY)) {
                 StateManager.setCurrentState(new MainMenuState());
             }
         }
         // HighScores
-        if(StateManager.getCurrentState() instanceof HighScoresState) {
+        if (StateManager.getCurrentState() instanceof HighScoresState) {
             // Back Button
-            if(HighScoresState.getBackButton().getColliderBox().contains(mouseX, mouseY)) {
+            if (HighScoresState.getBackButton().getColliderBox().contains(mouseX, mouseY)) {
                 StateManager.setCurrentState(new MainMenuState());
             }
         }

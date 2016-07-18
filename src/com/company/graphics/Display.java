@@ -11,6 +11,13 @@ public class Display {
     private JFrame frame;
     private Canvas canvas;
 
+    public Display(String title, int width, int height) {
+        this.setTitle(title);
+        this.setWidth(width);
+        this.setHeight(height);
+        initDisplay();
+    }
+
     public int getWidth() {
         return this.width;
     }
@@ -49,13 +56,6 @@ public class Display {
 
     public void setFrame(JFrame frame) {
         this.frame = frame;
-    }
-
-    public Display(String title, int width, int height) {
-        this.setTitle(title);
-        this.setWidth(width);
-        this.setHeight(height);
-        initDisplay();
     }
 
     private void initDisplay() {

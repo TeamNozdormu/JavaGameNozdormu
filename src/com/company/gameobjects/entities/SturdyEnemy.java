@@ -4,6 +4,7 @@ import com.company.gameobjects.base.Enemy;
 import com.company.graphics.Assets;
 
 public class SturdyEnemy extends Enemy {
+
     private static final int HEALTH = 2;
     private static final int POINTS_FOR_PLAYER = 10;
     private static final int speedMultiplier = 4;

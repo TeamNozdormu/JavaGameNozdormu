@@ -24,11 +24,11 @@ public abstract class GameObject implements Displayable, Updateable {
         this.setSpeed(speedMultiplier);
         this.setObjectIcon(gameObjectIcon);
         this.setColliderBox(new Rectangle(
-                this.x,
-                this.y,
-                this.gameObjectIcon.getWidth(),
-                this.gameObjectIcon.getHeight()
-            )
+                        this.x,
+                        this.y,
+                        this.gameObjectIcon.getWidth(),
+                        this.gameObjectIcon.getHeight()
+                )
         );
     }
 
@@ -40,8 +40,16 @@ public abstract class GameObject implements Displayable, Updateable {
         return this.x;
     }
 
+    public void setX(int x) {
+        this.x = x;
+    }
+
     public int getY() {
         return this.y;
+    }
+
+    public void setY(int y) {
+        this.y = y;
     }
 
     public BufferedImage getObjectIcon() {
@@ -50,14 +58,6 @@ public abstract class GameObject implements Displayable, Updateable {
 
     public void setObjectIcon(BufferedImage gameObjectIcon) {
         this.gameObjectIcon = gameObjectIcon;
-    }
-
-    public void setY(int y) {
-        this.y = y;
-    }
-
-    public void setX(int x) {
-        this.x = x;
     }
 
     public int getSpeed() {

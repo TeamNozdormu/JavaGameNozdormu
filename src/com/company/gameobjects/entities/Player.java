@@ -3,12 +3,13 @@ package com.company.gameobjects.entities;
 import com.company.constants.PlayerSettings;
 import com.company.gameobjects.base.Bonus;
 import com.company.gameobjects.base.GameObject;
-import com.company.graphics.Assets;
 import com.company.gamestates.GameState;
+import com.company.graphics.Assets;
 
 import java.awt.image.BufferedImage;
 
-public class Player extends GameObject  {
+public class Player extends GameObject {
+
     public static boolean
             isMovingLeft = false,
             isMovingRight = false,
@@ -38,9 +39,9 @@ public class Player extends GameObject  {
     public void update() {
 
         //TODO problem with replace with getter and setter
-        if(this.timeForBonus > 0) {
+        if (this.timeForBonus > 0) {
             this.timeForBonus--;
-        } else if(this.currentBonus != null && this.timeForBonus == 0) {
+        } else if (this.currentBonus != null && this.timeForBonus == 0) {
             this.currentBonus = null;
         } else {
             this.currentBonus = null;
@@ -64,8 +65,9 @@ public class Player extends GameObject  {
         }
 
         if (isFiring) {
-            if(this.getCurrentBonus() != null){
-                GameState.getBulletsList().add(new Bullet(this.getX() + 16, this.getY(), this.getCurrentBonus().getMultiplierForDamage()));
+            if (this.getCurrentBonus() != null) {
+                GameState.getBulletsList().add(new Bullet(this.getX() + 16, this.getY(), this.getCurrentBonus()
+                        .getMultiplierForDamage()));
             } else {
                 GameState.getBulletsList().add(new Bullet(this.getX() + 16, this.getY(), 1));
             }
@@ -87,10 +89,6 @@ public class Player extends GameObject  {
         this.score += points;
     }
 
-    public void setNumberOfLives(int numberOfLives) {
-        this.numberOfLives = numberOfLives;
-    }
-
     public int getScore() {
         return this.score;
     }
@@ -103,20 +101,24 @@ public class Player extends GameObject  {
         return this.playerName;
     }
 
+    public void setPlayerName(String playerName) {
+        this.playerName = playerName;
+    }
+
     public int getNumberOfLives() {
         return this.numberOfLives;
     }
 
-    public void setPlayerName(String playerName) {
-        this.playerName = playerName;
+    public void setNumberOfLives(int numberOfLives) {
+        this.numberOfLives = numberOfLives;
+    }
+
+    public Bonus getCurrentBonus() {
+        return this.currentBonus;
     }
 
     public void setCurrentBonus(Bonus bonus) {
         this.currentBonus = bonus;
         this.setTimeForBonus(bonus.getBonusDuration());
-    }
-
-    public Bonus getCurrentBonus() {
-        return this.currentBonus;
     }
 }

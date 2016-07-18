@@ -1,8 +1,11 @@
-package com.company.eventhandlers;
+package com.company.eventHandlers;
 
-import javax.sound.sampled.*;
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
 
 public class PlayMusic {
+
     // Change file name to match yours, of course
     public static PlayMusic empire = new PlayMusic("/Sounds/SithEmpireMusic.wav");
     public static PlayMusic rebels = new PlayMusic("/Sounds/RebelsMusic.wav");
