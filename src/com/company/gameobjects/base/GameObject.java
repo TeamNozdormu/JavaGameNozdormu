@@ -56,7 +56,7 @@ public abstract class GameObject implements Displayable, Updateable {
         return this.gameObjectIcon;
     }
 
-    public void setObjectIcon(BufferedImage gameObjectIcon) {
+    private void setObjectIcon(BufferedImage gameObjectIcon) {
         this.gameObjectIcon = gameObjectIcon;
     }
 

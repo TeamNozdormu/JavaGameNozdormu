@@ -6,6 +6,7 @@ import com.company.interfaces.Displayable;
 import java.awt.*;
 
 public class GainLevelState extends State implements Displayable {
+
     @Override
     public void update() {
 

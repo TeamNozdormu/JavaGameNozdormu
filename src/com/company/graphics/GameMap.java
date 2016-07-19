@@ -15,8 +15,8 @@ public class GameMap {
     public GameMap(int width, int height) {
         this.setWidth(width);
         this.setHeight(height);
-        fields = new LinkedList<>();
-        map = new TreeMap<>();
+        this.fields = new LinkedList<>();
+        this.map = new TreeMap<>();
         this.init();
     }
 
@@ -37,11 +37,11 @@ public class GameMap {
     }
 
     public List<Field> getFields() {
-       return this.fields;
+        return this.fields;
     }
 
     public TreeMap<String, Field> getMap() {
-       return this.map;
+        return this.map;
     }
 
     private void init() {
