@@ -13,7 +13,7 @@ public enum ImageAlbum {
     DoubleDamageBonus("/InGame/x2Bonus.png"),
     Arrow("/InGame/Arrow.png"),
     FireBall("/InGame/FireBall.gif"),
-  //  Background("/Backgrounds/OrtogonalMap.png"),
+    //  Background("/Backgrounds/OrtogonalMap.png"),
     Background("/Backgrounds/Background1.png"),
     Live("/Interface/Life.png"),
     GameOver("/Backgrounds/Background.jpg"),

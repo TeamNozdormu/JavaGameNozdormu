@@ -5,7 +5,8 @@ import com.company.interfaces.Updateable;
 
 import java.awt.*;
 
-public abstract class State implements Displayable, Updateable{
+public abstract class State implements Displayable, Updateable {
+
     @Override
     public void display(Graphics g) {
 

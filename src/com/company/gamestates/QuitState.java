@@ -3,6 +3,7 @@ package com.company.gamestates;
 import java.awt.*;
 
 public class QuitState extends State {
+
     @Override
     public void update() {
 

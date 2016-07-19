@@ -1,8 +1,11 @@
 package com.company.eventHandlers;
 
-import javax.sound.sampled.*;
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
 
 public class PlayMusic {
+
     public static PlayMusic archer = new PlayMusic("/Sounds/SithEmpireMusic.wav");
     public static PlayMusic mage = new PlayMusic("/Sounds/RebelsMusic.wav");
     public static PlayMusic fire = new PlayMusic("/Sounds/FireBall.wav");
