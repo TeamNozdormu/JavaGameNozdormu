@@ -18,13 +18,13 @@ public class MainMenuState extends State {
     private int quitButtonXPos;
 
     public MainMenuState() {
+        this.setPlayButtonXPos(-220);
+        this.setHighScoresButtonXPos(-220);
+        this.setQuitButtonXPos(-220);
 
-        playButtonXPos = -220;
-        highScoresButtonXPos = -220;
-        quitButtonXPos = -220;
-        playButton.setX(playButtonXPos);
-        highScoreButton.setX(highScoresButtonXPos);
-        quitButton.setX(quitButtonXPos);
+        playButton.setX(this.getPlayButtonXPos());
+        highScoreButton.setX(this.getHighScoresButtonXPos());
+        quitButton.setX(this.getQuitButtonXPos());
     }
 
     public static Button getPlayButton() {
@@ -63,7 +63,7 @@ public class MainMenuState extends State {
         return playButtonXPos;
     }
 
-    public void setPlayButtonXPos(int playButtonXPos) {
+    private void setPlayButtonXPos(int playButtonXPos) {
         this.playButtonXPos = playButtonXPos;
     }
 
@@ -71,7 +71,7 @@ public class MainMenuState extends State {
         return highScoresButtonXPos;
     }
 
-    public void setHighScoresButtonXPos(int highScoresButtonXPos) {
+    private void setHighScoresButtonXPos(int highScoresButtonXPos) {
         this.highScoresButtonXPos = highScoresButtonXPos;
     }
 
@@ -79,22 +79,22 @@ public class MainMenuState extends State {
         return quitButtonXPos;
     }
 
-    public void setQuitButtonXPos(int quitButtonXPos) {
+    private void setQuitButtonXPos(int quitButtonXPos) {
         this.quitButtonXPos = quitButtonXPos;
     }
 
     @Override
     public void update() {
 
-        if (playButtonXPos < 90) {
-            playButtonXPos += 10;
-            playButton.setX(playButtonXPos);
-        } else if (highScoresButtonXPos < 90) {
-            highScoresButtonXPos += 10;
-            highScoreButton.setX(highScoresButtonXPos);
-        } else if (quitButtonXPos < 90) {
-            quitButtonXPos += 10;
-            quitButton.setX(quitButtonXPos);
+        if (this.getPlayButtonXPos() < 90) {
+            this.setPlayButtonXPos(this.getPlayButtonXPos() + 10);
+            playButton.setX(this.getPlayButtonXPos());
+        } else if (this.getHighScoresButtonXPos() < 90) {
+            this.setHighScoresButtonXPos(this.getHighScoresButtonXPos() + 10);
+            highScoreButton.setX(this.getHighScoresButtonXPos());
+        } else if (this.getQuitButtonXPos() < 90) {
+            this.setQuitButtonXPos(this.getQuitButtonXPos() + 10);
+            quitButton.setX(this.getQuitButtonXPos());
         }
 
         playButton.update();
