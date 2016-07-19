@@ -15,9 +15,7 @@ public class Assets {
     public static BufferedImage player;
     public static BufferedImage bullet;
     public static BufferedImage easyEnemyInit;
-    public static SpriteSheet easyEnemy;
     public static BufferedImage sturdyEnemyInit;
-    public static SpriteSheet sturdyEnemy;
     public static BufferedImage doubleDamageBonus;
     public static BufferedImage highScoresBackground;
     public static BufferedImage live;
@@ -26,12 +24,14 @@ public class Assets {
     public static BufferedImage introTask;
     public static BufferedImage chooseSide;
     public static BufferedImage gainLevel;
-    public static SpriteSheet explosion;
-    public static SpriteSheet die;
     public static BufferedImage mainMenuBackground;
     public static BufferedImage button;
     public static BufferedImage buttonBar;
     public static BufferedImage[] sprites = new BufferedImage[4];
+    public static SpriteSheet explosion;
+    public static SpriteSheet die;
+    public static SpriteSheet easyEnemy;
+    public static SpriteSheet sturdyEnemy;
 
     public static Map<String, Integer> highScores;
     public static int lowestScore;
@@ -41,45 +41,26 @@ public class Assets {
     public static void init() {
         background = ImageLoader.loadImage(ImageAlbum.Background.getPath());
 
-      //  if(MouseInput.isEasyBotton) {
-            if (MouseInput.isMage) {
-                player = (ImageLoader.loadImage(ImageAlbum.MagePlayer.getPath()));
-                bullet = ImageLoader.loadImage(ImageAlbum.FireBall.getPath());
-                die = new SpriteSheet(ImageLoader.loadImage(ImageAlbum.MageDeath.getPath()), 64, 64);
-            } else {
-                player = ImageLoader.loadImage(ImageAlbum.ArcherPlayer.getPath());
-                bullet = ImageLoader.loadImage(ImageAlbum.Arrow.getPath());
-                die = new SpriteSheet(ImageLoader.loadImage(ImageAlbum.ArcherDeath.getPath()), 66, 59);
-            }
-      //  }else if(MouseInput.isMediumBotton) {
+        //  if(MouseInput.isEasyBotton) {
+        if (MouseInput.isMage) {
+            player = (ImageLoader.loadImage(ImageAlbum.MagePlayer.getPath()));
+            bullet = ImageLoader.loadImage(ImageAlbum.FireBall.getPath());
+            die = new SpriteSheet(ImageLoader.loadImage(ImageAlbum.MageDeath.getPath()), 64, 64);
+        } else {
+            player = ImageLoader.loadImage(ImageAlbum.ArcherPlayer.getPath());
+            bullet = ImageLoader.loadImage(ImageAlbum.Arrow.getPath());
+            die = new SpriteSheet(ImageLoader.loadImage(ImageAlbum.ArcherDeath.getPath()), 66, 59);
+        }
+        //  }else if(MouseInput.isMediumBotton) {
 
-            if (MouseInput.isMage) {
-                player = (ImageLoader.loadImage(ImageAlbum.MagePlayer.getPath()));
-                bullet = ImageLoader.loadImage(ImageAlbum.FireBall.getPath());
-                die = new SpriteSheet(ImageLoader.loadImage(ImageAlbum.MageDeath.getPath()), 64, 64);
-            } else {
-                player = ImageLoader.loadImage(ImageAlbum.ArcherPlayer.getPath());
-                bullet = ImageLoader.loadImage(ImageAlbum.Arrow.getPath());
-                die = new SpriteSheet(ImageLoader.loadImage(ImageAlbum.ArcherDeath.getPath()), 66, 59);
-            }
-     //  }else if(MouseInput.isHardBotton) {
+        //  }else if(MouseInput.isHardBotton) {
 
-            if (MouseInput.isMage) {
-                player = (ImageLoader.loadImage(ImageAlbum.MagePlayer.getPath()));
-                bullet = ImageLoader.loadImage(ImageAlbum.FireBall.getPath());
-                die = new SpriteSheet(ImageLoader.loadImage(ImageAlbum.MageDeath.getPath()), 64, 64);
-            } else {
-                player = ImageLoader.loadImage(ImageAlbum.ArcherPlayer.getPath());
-                bullet = ImageLoader.loadImage(ImageAlbum.Arrow.getPath());
-                die = new SpriteSheet(ImageLoader.loadImage(ImageAlbum.ArcherDeath.getPath()), 66, 59);
-            }
-    //    }
+        //    }
 
         easyEnemy = new SpriteSheet(ImageLoader.loadImage(ImageAlbum.EasyEnemy.getPath()), 97, 56);
         easyEnemyInit = easyEnemy.crop(1, 0);
         sturdyEnemy = new SpriteSheet(ImageLoader.loadImage(ImageAlbum.SturdyEnemy.getPath()), 95, 98);
         sturdyEnemyInit = sturdyEnemy.crop(1, 0);
-
         live = ImageLoader.loadImage(ImageAlbum.Live.getPath());
         doubleDamageBonus = ImageLoader.loadImage(ImageAlbum.DoubleDamageBonus.getPath());
         highScoresBackground = ImageLoader.loadImage(ImageAlbum.HighScores.getPath());
@@ -87,12 +68,8 @@ public class Assets {
         intro = ImageLoader.loadImage(ImageAlbum.Intro.getPath());
         introTask = ImageLoader.loadImage(ImageAlbum.IntroTask.getPath());
         gainLevel = ImageLoader.loadImage(ImageAlbum.LevelGained.getPath());
-
-
         chooseSide = ImageLoader.loadImage(ImageAlbum.ChooseClass.getPath());
-
         backgroundDifficulty = ImageLoader.loadImage(ImageAlbum.BackgroundDifficulty.getPath());
-
         mainMenuBackground = ImageLoader.loadImage(ImageAlbum.MainMenu.getPath());
         button = ImageLoader.loadImage(ImageAlbum.Button.getPath());
         buttonBar = ImageLoader.loadImage(ImageAlbum.ButtonSlider.getPath());
@@ -141,12 +118,12 @@ public class Assets {
             lowestScore = list.get(list.size() - 1).getValue();
         }
     }
-    
+
     public static void loadHighScoresAscending() {
-    	// TODO: refactor the code, so that we avoid code repetition
-    	// (loadHighScores and loadHighScoresAscending)
-    	
-    	scores = new TreeMap<>();
+        // TODO: refactor the code, so that we avoid code repetition
+        // (loadHighScores and loadHighScoresAscending)
+
+        scores = new TreeMap<>();
         highScores = new LinkedHashMap<>();
         List<Map.Entry<String, Integer>> list;
 
