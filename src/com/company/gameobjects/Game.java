@@ -24,6 +24,7 @@ public class Game implements Runnable {
     private State menuState;
     private State gameOverState;
     private State highScoreState;
+    private State ChooseDifficulty;
     private State chooseSideState;
     private State IntroState;
     private State IntroTaskState;
@@ -50,6 +51,7 @@ public class Game implements Runnable {
         this.menuState = new MainMenuState();
         this.gameOverState = new GameOverState();
         this.highScoreState = new HighScoresState("Descending");
+        this.ChooseDifficulty = new ChooseDifficultyState();
         this.chooseSideState = new ChooseSideState();
         this.IntroState = new IntroState();
         this.IntroTaskState = new IntroTaskState();

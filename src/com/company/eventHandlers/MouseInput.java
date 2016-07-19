@@ -76,6 +76,10 @@ public class MouseInput implements MouseListener {
                     StateManager.setCurrentState(new ChooseSideState());
                 }
             }
+
+            if (ChooseDifficultyState.getBackButton().getColliderBox().contains(mouseX, mouseY)) {
+                StateManager.setCurrentState(new MainMenuState());
+            }
         } else if (StateManager.getCurrentState() instanceof ChooseSideState) {
             //Archer Button
             if (mouseX >= 50 && mouseX <= 350) {
@@ -97,7 +101,7 @@ public class MouseInput implements MouseListener {
                 }
             }
             if (ChooseSideState.getBackButton().getColliderBox().contains(mouseX, mouseY)) {
-                StateManager.setCurrentState(new MainMenuState());
+                StateManager.setCurrentState(new ChooseDifficultyState());
             }
         } else if (StateManager.getCurrentState() instanceof IntroState) {
             //Next

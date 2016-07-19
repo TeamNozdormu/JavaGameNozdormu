@@ -119,5 +119,5 @@ public class MainMenuState extends State {
         highScoreButton.display(g);
         g.drawImage(Assets.buttonBar, -185, quitButton.getY() + 35, null);
         quitButton.display(g);
-    }
-}
+        }
+        }
