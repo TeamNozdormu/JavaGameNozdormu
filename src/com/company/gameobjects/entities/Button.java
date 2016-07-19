@@ -24,7 +24,7 @@ public class Button extends GameObject implements Displayable {
     public void display(Graphics g) {
         g.drawImage(this.getObjectIcon(), this.getX(), this.getY(), null);
         g.drawString(name, this.getX() + (int) this.getColliderBox().getWidth() / 2 - g.getFontMetrics().stringWidth
-                (name) / 2 - 4,
+                        (name) / 2 - 4,
                 this.getY() + 40);
     }
 

@@ -6,8 +6,9 @@ import com.company.graphics.Assets;
 import java.awt.*;
 
 public class ChooseDifficultyState extends State {
-    private static Button backButtonn = new Button(300, 420, Assets.button, "Back");
-    private Rectangle easyButtor = new Rectangle(330, 210, 135, 50);
+
+    private static Button backButton = new Button(300, 420, Assets.button, "Back");
+    private Rectangle easyButton = new Rectangle(330, 210, 135, 50);
     private Rectangle mediumButton = new Rectangle(330, 275, 135, 50);
     private Rectangle hardButton = new Rectangle(330, 340, 135, 50);
 
@@ -16,15 +17,15 @@ public class ChooseDifficultyState extends State {
     }
 
     public static Button getBackButton() {
-        return backButtonn;
+        return backButton;
     }
 
-    public Rectangle getEasyButtor() {
-        return this.easyButtor;
+    public Rectangle getEasyButton() {
+        return this.easyButton;
     }
 
-    public void setEasyButtor(Rectangle easyButtor) {
-        this.easyButtor = easyButtor;
+    public void setEasyButton(Rectangle easyButton) {
+        this.easyButton = easyButton;
     }
 
     public Rectangle getMediumButton() {
@@ -55,9 +56,9 @@ public class ChooseDifficultyState extends State {
 
         g.setFont(new Font("Immortal", Font.PLAIN, 25));
         g.setColor(Color.orange);
-        g2d.draw(easyButtor);
+        g2d.draw(easyButton);
         g2d.draw(mediumButton);
         g2d.draw(hardButton);
-        backButtonn.display(g);
+        backButton.display(g);
     }
 }

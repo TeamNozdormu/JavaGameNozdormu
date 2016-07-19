@@ -37,7 +37,6 @@ public class ChooseSideState extends State {
     }
 
 
-
     @Override
     public void update() {
 
