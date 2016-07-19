@@ -156,6 +156,12 @@ public class GameState extends State implements Displayable {
         Assets.init();
     }
 
+    private void createSturdyEnemy(int numberOfSturdyEnemies) {
+        for (int i = 0; i < numberOfSturdyEnemies; i++) {
+            this.getEnemiesList().add(new SturdyEnemy(rnd.nextInt(725), -100));
+        }
+        this.setEnemyTypes(0);
+    }
 
     @Override
     public void update() {
@@ -196,16 +202,47 @@ public class GameState extends State implements Displayable {
             }
         }
 
-        //TODO from here change number of enemies
-        if (enemiesList.size() < 3) {
-            if (this.enemyTypes == 3) {
-                enemiesList.add(new SturdyEnemy(rnd.nextInt(725), -100));
-                this.enemyTypes = 0;
-            } else {
-                enemiesList.add((new EasyEnemy(rnd.nextInt(725), -100)));
-            }
+        //TODO from here change number of enemies when is level is up
+        if (Player.getLevel() == 1) {
+            if (this.getEnemiesList().size() < 3) {
+                if (this.enemyTypes == 3) {
+                    this.createSturdyEnemy(1);
+                } else {
+                    this.getEnemiesList().add((new EasyEnemy(rnd.nextInt(725), -100)));
+                }
 
-            this.enemyTypes++;
+                this.setEnemyTypes(this.getEnemyTypes() + 1);
+            }
+        } else if (Player.getLevel() == 2){
+            if (this.getEnemiesList().size() < 5) {
+                if (this.enemyTypes == 5) {
+                    this.createSturdyEnemy(2);
+                } else {
+                    this.getEnemiesList().add((new EasyEnemy(rnd.nextInt(725), -100)));
+                }
+
+                this.setEnemyTypes(this.getEnemyTypes() + 1);
+            }
+        } else if (Player.getLevel() == 3) {
+            if (this.getEnemiesList().size() < 8) {
+                if (this.getEnemyTypes() == 8) {
+                    this.createSturdyEnemy(3);
+                } else {
+                    this.getEnemiesList().add((new EasyEnemy(rnd.nextInt(725), -100)));
+                }
+
+                this.setEnemyTypes(this.getEnemyTypes() + 1);
+            }
+        } else {
+            if (this.getEnemiesList().size() < 11) {
+                if (this.getEnemyTypes() == 11) {
+                    this.createSturdyEnemy(4);
+                } else {
+                    this.getEnemiesList().add((new EasyEnemy(rnd.nextInt(725), -100)));
+                }
+
+                this.setEnemyTypes(this.getEnemyTypes() + 1);
+            }
         }
 
         // Player Ends Playing
@@ -227,14 +264,10 @@ public class GameState extends State implements Displayable {
             } else {
                 PlayMusic.archer.stop();
             }
-            if (MouseInput.isMage) {
-                PlayMusic.mage.stop();
-            } else {
-                PlayMusic.archer.stop();
-            }
+
             PlayMusic.fire.stop();
 
-            player.inceraseLevel();
+            Player.inceraseLevel();
             this.isLevelGained = true;
 
             StateManager.setCurrentState(new GainLevelState());

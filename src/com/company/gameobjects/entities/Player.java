@@ -30,7 +30,6 @@ public class Player extends GameObject {
         this.setPlayerName(name);
         this.setNumberOfLives(PlayerSettings.PLAYER_INITIAL_NUMBER_OF_LIVES);
         this.setScore(PlayerSettings.PLAYER_DEFAULT_SCORES);
-//        this.inceraseLevel();
     }
 
     public Player(BufferedImage bufferedImage) {
@@ -92,7 +91,6 @@ public class Player extends GameObject {
 
     @Override
     public void update() {
-
         //TODO problem with replace with getter and setter
         if (this.timeForBonus > 0) {
             this.timeForBonus--;
