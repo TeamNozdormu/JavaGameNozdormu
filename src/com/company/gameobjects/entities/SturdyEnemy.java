@@ -5,11 +5,9 @@ import com.company.graphics.Assets;
 
 public class SturdyEnemy extends Enemy {
 
-    private static final int HEALTH = 2;
     private static final int POINTS_FOR_PLAYER = 10;
-    private static final int speedMultiplier = 4;
 
-    public SturdyEnemy(int x, int y) {
-        super(x, y, HEALTH, Assets.sturdyEnemyInit, POINTS_FOR_PLAYER, speedMultiplier);
+    public SturdyEnemy(int x, int y, int healthPoints, int speedMultiplier) {
+        super(x, y, healthPoints, Assets.sturdyEnemyInit, POINTS_FOR_PLAYER, speedMultiplier);
     }
 }

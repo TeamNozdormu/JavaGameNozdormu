@@ -1,5 +1,6 @@
 package com.company.gamestates;
 
+import com.company.constants.GameSettings;
 import com.company.constants.PlayerSettings;
 import com.company.eventHandlers.MouseInput;
 import com.company.eventHandlers.PlayMusic;
@@ -8,24 +9,26 @@ import com.company.gameobjects.base.Enemy;
 import com.company.gameobjects.entities.Bullet;
 import com.company.gameobjects.entities.EasyEnemy;
 import com.company.gameobjects.entities.Player;
-import com.company.gameobjects.entities.SturdyEnemy;
+import com.company.gameobjects.factory.Factory;
 import com.company.graphics.Assets;
+import com.company.helperClasses.RandomGenerator;
 import com.company.interfaces.Displayable;
 
 import java.awt.*;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Random;
 
 public class GameState extends State implements Displayable {
 
+    private static final int LEVEL_POINTS = 300;
+    private static final int MISSED_ENEMIES = 3;
     public static int score;
     private static Player player;
     private static List<Enemy> enemiesList;
     private static List<Bullet> bulletsList;
     private static List<Bonus> bonusList;
+    private static Factory factory;
     private static boolean isLevelGained;
-    private Random rnd = new Random();
     private long lastTimeMissed, now;
     private int enemyTypes = 1;
     private boolean explode;
@@ -40,16 +43,17 @@ public class GameState extends State implements Displayable {
         }
 
         init();
-        this.bulletsList = new LinkedList<>();
-        this.player = new Player(
+        factory = new Factory();
+        bulletsList = new LinkedList<>();
+        player = new Player(
                 PlayerSettings.PLAYER_SET_X,
                 PlayerSettings.PLAYER_SET_Y,
                 PlayerSettings.PLAYER_DEFAULT_NAME,
                 PlayerSettings.PLAYER_DEFAULT_SPEED);
 
-        this.enemiesList = new LinkedList<>();
-        this.bonusList = new LinkedList<>();
-        enemiesList.add(new EasyEnemy(rnd.nextInt(725), -100));
+        enemiesList = new LinkedList<>();
+        bonusList = new LinkedList<>();
+        enemiesList.add(new EasyEnemy(RandomGenerator.getNextIntRandom(725), -100, 1, 2));
     }
 
     public static Player getPlayer() {
@@ -68,6 +72,10 @@ public class GameState extends State implements Displayable {
         return bonusList;
     }
 
+    private static Factory getFactory() {
+        return factory;
+    }
+
     public static int getScore() {
         return score;
     }
@@ -78,14 +86,6 @@ public class GameState extends State implements Displayable {
 
     public static void setLevelGained(boolean levelGained) {
         isLevelGained = levelGained;
-    }
-
-    public Random getRnd() {
-        return rnd;
-    }
-
-    public void setRnd(Random rnd) {
-        this.rnd = rnd;
     }
 
     public long getLastTimeMissed() {
@@ -156,13 +156,6 @@ public class GameState extends State implements Displayable {
         Assets.init();
     }
 
-    private void createSturdyEnemy(int numberOfSturdyEnemies) {
-        for (int i = 0; i < numberOfSturdyEnemies; i++) {
-            this.getEnemiesList().add(new SturdyEnemy(rnd.nextInt(725), -100));
-        }
-        this.setEnemyTypes(0);
-    }
-
     @Override
     public void update() {
 
@@ -171,7 +164,7 @@ public class GameState extends State implements Displayable {
         }
 
         //if player misses three enemies loses one live
-        if (Enemy.passed >= 3) {
+        if (Enemy.passed >= MISSED_ENEMIES) {
             player.setNumberOfLives(player.getNumberOfLives() - 1);
             lastTimeMissed = System.currentTimeMillis();
             Enemy.passed = 0;
@@ -203,47 +196,7 @@ public class GameState extends State implements Displayable {
         }
 
         //TODO from here change number of enemies when is level is up
-        if (Player.getLevel() == 1) {
-            if (this.getEnemiesList().size() < 3) {
-                if (this.enemyTypes == 3) {
-                    this.createSturdyEnemy(1);
-                } else {
-                    this.getEnemiesList().add((new EasyEnemy(rnd.nextInt(725), -100)));
-                }
-
-                this.setEnemyTypes(this.getEnemyTypes() + 1);
-            }
-        } else if (Player.getLevel() == 2){
-            if (this.getEnemiesList().size() < 5) {
-                if (this.enemyTypes == 5) {
-                    this.createSturdyEnemy(2);
-                } else {
-                    this.getEnemiesList().add((new EasyEnemy(rnd.nextInt(725), -100)));
-                }
-
-                this.setEnemyTypes(this.getEnemyTypes() + 1);
-            }
-        } else if (Player.getLevel() == 3) {
-            if (this.getEnemiesList().size() < 8) {
-                if (this.getEnemyTypes() == 8) {
-                    this.createSturdyEnemy(3);
-                } else {
-                    this.getEnemiesList().add((new EasyEnemy(rnd.nextInt(725), -100)));
-                }
-
-                this.setEnemyTypes(this.getEnemyTypes() + 1);
-            }
-        } else {
-            if (this.getEnemiesList().size() < 11) {
-                if (this.getEnemyTypes() == 11) {
-                    this.createSturdyEnemy(4);
-                } else {
-                    this.getEnemiesList().add((new EasyEnemy(rnd.nextInt(725), -100)));
-                }
-
-                this.setEnemyTypes(this.getEnemyTypes() + 1);
-            }
-        }
+        this.changeDifficulty();
 
         // Player Ends Playing
         if (player.getNumberOfLives() == 0) {
@@ -258,7 +211,7 @@ public class GameState extends State implements Displayable {
         }
 
         //player gains level
-        if (this.score >= 300 * player.getLevel()) {
+        if (this.score >= LEVEL_POINTS * player.getLevel()) {
             if (MouseInput.isMage) {
                 PlayMusic.mage.stop();
             } else {
@@ -354,6 +307,61 @@ public class GameState extends State implements Displayable {
 
         if (explode) {
             g.drawImage(Assets.die.crop(cropX, cropY), player.getX(), player.getY(), null);
+        }
+    }
+
+    private void createSturdyEnemy(int numberOfSturdyEnemies) {
+        for (int i = 0; i < numberOfSturdyEnemies; i++) {
+            getEnemiesList().add(getFactory().createSturdyEnemy(
+                    RandomGenerator.getNextIntRandom(GameSettings.GAME_WIDTH - 100),
+                    -100,
+                    RandomGenerator.getNextIntRandom(4),
+                    RandomGenerator.getNextIntRandom(6)));
+        }
+        this.setEnemyTypes(0);
+    }
+
+    private void changeDifficulty() {
+        if (Player.getLevel() == 1) {
+            if (getEnemiesList().size() < 3) {
+                if (this.enemyTypes == 3) {
+                    this.createSturdyEnemy(1);
+                } else {
+                    getEnemiesList().add(getFactory().createEasyEnemy(RandomGenerator.getNextIntRandom(725), -100, 1, 2));
+                }
+
+                this.setEnemyTypes(this.getEnemyTypes() + 1);
+            }
+        } else if (Player.getLevel() == 2){
+            if (getEnemiesList().size() < 5) {
+                if (this.enemyTypes == 5) {
+                    this.createSturdyEnemy(2);
+                } else {
+                    getEnemiesList().add(getFactory().createEasyEnemy(RandomGenerator.getNextIntRandom(725), -100, 1, 2));
+                }
+
+                this.setEnemyTypes(this.getEnemyTypes() + 1);
+            }
+        } else if (Player.getLevel() == 3) {
+            if (getEnemiesList().size() < 8) {
+                if (this.getEnemyTypes() == 8) {
+                    this.createSturdyEnemy(3);
+                } else {
+                    getEnemiesList().add(getFactory().createEasyEnemy(RandomGenerator.getNextIntRandom(725), -100, 1, 2));
+                }
+
+                this.setEnemyTypes(this.getEnemyTypes() + 1);
+            }
+        } else {
+            if (getEnemiesList().size() < 11) {
+                if (this.getEnemyTypes() == 11) {
+                    this.createSturdyEnemy(4);
+                } else {
+                    getEnemiesList().add(getFactory().createEasyEnemy(RandomGenerator.getNextIntRandom(725), -100, 1, 2));
+                }
+
+                this.setEnemyTypes(this.getEnemyTypes() + 1);
+            }
         }
     }
 }

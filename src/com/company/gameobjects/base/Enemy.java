@@ -81,7 +81,7 @@ public abstract class Enemy extends GameObject {
 
         if (this.getHealth() == 0) {
             GameState.getEnemiesList().remove(this);
-            double chanceToGenerateBonus = RandomGenerator.getNextRandom();
+            double chanceToGenerateBonus = RandomGenerator.getNextDoubleRandom();
 
             if (chanceToGenerateBonus > 0.8) {
                 GameState.getBonusList().add(new DoubleDamageBonus(this.getX(), this.getY()));
