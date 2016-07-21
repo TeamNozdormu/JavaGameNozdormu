@@ -310,58 +310,70 @@ public class GameState extends State implements Displayable {
         }
     }
 
-    private void createSturdyEnemy(int numberOfSturdyEnemies) {
-        for (int i = 0; i < numberOfSturdyEnemies; i++) {
-            getEnemiesList().add(getFactory().createSturdyEnemy(
-                    RandomGenerator.getNextIntRandom(GameSettings.GAME_WIDTH - 100),
-                    -100,
-                    RandomGenerator.getNextIntRandom(4),
-                    RandomGenerator.getNextIntRandom(6)));
-        }
-        this.setEnemyTypes(0);
-    }
-
     private void changeDifficulty() {
         if (Player.getLevel() == 1) {
             if (getEnemiesList().size() < 3) {
                 if (this.enemyTypes == 3) {
-                    this.createSturdyEnemy(1);
+                    this.createSturdyEnemy(Player.getLevel());
                 } else {
-                    getEnemiesList().add(getFactory().createEasyEnemy(RandomGenerator.getNextIntRandom(725), -100, 1, 2));
+                    this.addNewEasyEnemy();
                 }
 
                 this.setEnemyTypes(this.getEnemyTypes() + 1);
             }
-        } else if (Player.getLevel() == 2){
-            if (getEnemiesList().size() < 5) {
-                if (this.enemyTypes == 5) {
-                    this.createSturdyEnemy(2);
+        } else if (Player.getLevel() == 2) {
+            if (getEnemiesList().size() < 6) {
+                if (this.enemyTypes == 6) {
+                    this.createSturdyEnemy(Player.getLevel());
                 } else {
-                    getEnemiesList().add(getFactory().createEasyEnemy(RandomGenerator.getNextIntRandom(725), -100, 1, 2));
+                    this.addNewEasyEnemy();
                 }
 
                 this.setEnemyTypes(this.getEnemyTypes() + 1);
             }
         } else if (Player.getLevel() == 3) {
-            if (getEnemiesList().size() < 8) {
-                if (this.getEnemyTypes() == 8) {
-                    this.createSturdyEnemy(3);
+            if (getEnemiesList().size() < 9) {
+                if (this.getEnemyTypes() == 9) {
+                    this.createSturdyEnemy(Player.getLevel());
                 } else {
-                    getEnemiesList().add(getFactory().createEasyEnemy(RandomGenerator.getNextIntRandom(725), -100, 1, 2));
+                    this.addNewEasyEnemy();
                 }
 
                 this.setEnemyTypes(this.getEnemyTypes() + 1);
             }
         } else {
-            if (getEnemiesList().size() < 11) {
-                if (this.getEnemyTypes() == 11) {
-                    this.createSturdyEnemy(4);
+            if (getEnemiesList().size() < 12) {
+                if (this.getEnemyTypes() == 12) {
+                    this.createSturdyEnemy(Player.getLevel());
                 } else {
-                    getEnemiesList().add(getFactory().createEasyEnemy(RandomGenerator.getNextIntRandom(725), -100, 1, 2));
+                    this.addNewEasyEnemy();
                 }
 
                 this.setEnemyTypes(this.getEnemyTypes() + 1);
             }
         }
+    }
+
+    private void createSturdyEnemy(int numberOfSturdyEnemies) {
+        for (int i = 0; i < numberOfSturdyEnemies; i++) {
+            getEnemiesList()
+                    .add(getFactory()
+                            .createSturdyEnemy(
+                                    RandomGenerator.getNextIntRandom(GameSettings.GAME_WIDTH - 100),
+                                    -100,
+                                    RandomGenerator.getNextIntRandom(4),
+                                    RandomGenerator.getNextIntRandom(Player.getLevel() * 2)));
+        }
+        this.setEnemyTypes(0);
+    }
+
+    private void addNewEasyEnemy() {
+        getEnemiesList()
+                .add(getFactory()
+                        .createEasyEnemy(
+                                RandomGenerator.getNextIntRandom(GameSettings.GAME_WIDTH - 100),
+                                -100,
+                                1,
+                                2));
     }
 }
