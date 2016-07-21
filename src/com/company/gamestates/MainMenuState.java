@@ -1,5 +1,6 @@
 package com.company.gamestates;
 
+import com.company.constants.GameSettings;
 import com.company.gameobjects.entities.Button;
 import com.company.graphics.Assets;
 
@@ -106,10 +107,10 @@ public class MainMenuState extends State {
 
         g.drawImage(Assets.mainMenuBackground, 0, 0, null);
 
-        Font titleFont = new Font("redensek", Font.BOLD, 55);
+        Font titleFont = new Font("redensek", Font.BOLD, 45);
         g.setFont(titleFont);
-        g.setColor(Color.green);
-        g.drawString("Space Invasion!", 350, 100);
+        g.setColor(Color.GREEN);
+        g.drawString(GameSettings.GAME_NAME, 100, 100);
 
         Font buttonsFont = new Font("redensek", Font.BOLD, 33);
         g.setFont(buttonsFont);
@@ -119,5 +120,5 @@ public class MainMenuState extends State {
         highScoreButton.display(g);
         g.drawImage(Assets.buttonBar, -185, quitButton.getY() + 35, null);
         quitButton.display(g);
-        }
-        }
+    }
+}

@@ -25,28 +25,28 @@ public abstract class Bonus extends GameObject {
 
     }
 
-    private void setMultiplierForDamage(int multiplierForDamage) {
-        this.multiplierForDamage = multiplierForDamage;
-    }
-
-    private void setMultiplierForScore(int multiplierForScore) {
-        this.multiplierForScore = multiplierForScore;
-    }
-
-    private void setBonusDuration(int bonusDuration) {
-        this.bonusDuration = bonusDuration;
-    }
-
     public int getMultiplierForDamage() {
         return this.multiplierForDamage;
+    }
+
+    private void setMultiplierForDamage(int multiplierForDamage) {
+        this.multiplierForDamage = multiplierForDamage;
     }
 
     public int getMultiplierForScore() {
         return this.multiplierForScore;
     }
 
+    private void setMultiplierForScore(int multiplierForScore) {
+        this.multiplierForScore = multiplierForScore;
+    }
+
     public int getBonusDuration() {
         return this.bonusDuration;
+    }
+
+    private void setBonusDuration(int bonusDuration) {
+        this.bonusDuration = bonusDuration;
     }
 
     @Override

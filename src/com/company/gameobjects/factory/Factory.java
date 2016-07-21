@@ -8,7 +8,7 @@ import com.company.interfaces.Createable;
 /**
  * Created by ivanof on 7/20/16.
  */
-public class Factory implements Createable{
+public class Factory implements Createable {
 
     @Override
     public Enemy createEasyEnemy(int x, int y, int healthPoints, int speedMultiplier) {
@@ -16,7 +16,7 @@ public class Factory implements Createable{
     }
 
     @Override
-    public Enemy createSturdyEnemy(int x, int y, int healthPoints, int speedMultiplier){
+    public Enemy createSturdyEnemy(int x, int y, int healthPoints, int speedMultiplier) {
         return new SturdyEnemy(x, y, healthPoints, speedMultiplier);
     }
 

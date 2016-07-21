@@ -18,6 +18,7 @@ public class Player extends GameObject {
             isFiring = false;
 
     private static int level = 1;
+    private static int nextLevel = 300;
     private int numberOfLives;
     private String playerName;
     private int score;
@@ -38,6 +39,14 @@ public class Player extends GameObject {
 
     public static int getLevel() {
         return level;
+    }
+
+    public static int getNextLevel() {
+        return nextLevel;
+    }
+
+    public static void setNextLevel(int nextLevel) {
+        Player.nextLevel = nextLevel;
     }
 
     public static void inceraseLevel() {

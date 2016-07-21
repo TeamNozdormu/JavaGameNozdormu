@@ -24,20 +24,20 @@ public abstract class Enemy extends GameObject {
         this.setPointsForPlayer(pointsForPlayer);
     }
 
-    private void setHealth(int health) {
-        this.health = health;
-    }
-
-    private void setPointsForPlayer(int pointsForPlayer) {
-        this.pointsForPlayer = pointsForPlayer;
-    }
-
     public int getHealth() {
         return this.health;
     }
 
+    private void setHealth(int health) {
+        this.health = health;
+    }
+
     public int getPointsForPlayer() {
         return this.pointsForPlayer;
+    }
+
+    private void setPointsForPlayer(int pointsForPlayer) {
+        this.pointsForPlayer = pointsForPlayer;
     }
 
     @Override
