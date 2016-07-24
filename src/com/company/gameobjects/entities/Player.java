@@ -53,6 +53,10 @@ public class Player extends GameObject {
         level++;
     }
 
+    public static void setLevel(int level) {
+        Player.level = level;
+    }
+
     public int getTimeForBonus() {
         return this.timeForBonus;
     }
