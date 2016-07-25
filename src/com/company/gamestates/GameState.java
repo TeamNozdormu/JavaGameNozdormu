@@ -203,7 +203,6 @@ public class GameState extends State implements Displayable {
 
         if (explode) {
             cropX++;
-
             if (cropX >= 6) {
                 cropX = 0;
                 explode = false;
@@ -211,6 +210,17 @@ public class GameState extends State implements Displayable {
                 player.setX(350);
                 player.setY(500);
             }
+        }
+
+        //change difficulty
+        if (getEnemiesList().size() < Player.getLevel() * 3) {
+            if (this.getEnemyTypes() == Player.getLevel() * 3) {
+                this.createSturdyEnemies(Player.getLevel());
+            } else {
+                this.addNewEasyEnemy();
+            }
+
+            this.setEnemyTypes(this.getEnemyTypes() + 1);
         }
     }
 
@@ -326,7 +336,6 @@ public class GameState extends State implements Displayable {
     }
 
     private void increaseLevel() {
-
         if (this.score >= player.getNextLevel()) {
             player.setNextLevel(
                     LEVEL_POINTS * player.getLevel() +
@@ -343,17 +352,6 @@ public class GameState extends State implements Displayable {
             this.isLevelGained = true;
 
             StateManager.setCurrentState(new GainLevelState());
-        }
-
-        //change difficulty
-        if (getEnemiesList().size() < Player.getLevel() * 3) {
-            if (this.getEnemyTypes() == Player.getLevel() * 3) {
-                this.createSturdyEnemies(Player.getLevel());
-            } else {
-                this.addNewEasyEnemy();
-            }
-
-            this.setEnemyTypes(this.getEnemyTypes() + 1);
         }
     }
 }
