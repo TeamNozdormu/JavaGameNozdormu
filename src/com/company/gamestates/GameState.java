@@ -330,7 +330,7 @@ public class GameState extends State implements Displayable {
                 PlayMusic.archer.stop();
             }
             PlayMusic.fire.stop();
-
+            player.setLevel(1);
             StateManager.setCurrentState(new GameOverState());
         }
     }
