@@ -8,10 +8,9 @@ import java.awt.*;
 
 public class MainMenuState extends State {
 
-    //TODO: Display the menu with options and listen for the event clicked
-    private static Button playButton = new Button(-220, 300, Assets.button, "play");
-    private static Button highScoreButton = new Button(-220, 400, Assets.button, "High scores");
-    private static Button quitButton = new Button(-220, 500, Assets.button, "Quit");
+    private static Button playButton;
+    private static Button highScoreButton;
+    private static Button quitButton;
 
     private int currentSelection;
     private int playButtonXPos;
@@ -19,6 +18,10 @@ public class MainMenuState extends State {
     private int quitButtonXPos;
 
     public MainMenuState() {
+        MainMenuState.setPlayButton(new Button(-220, 300, Assets.button, "play"));
+        MainMenuState.setHighScoreButton(new Button(-220, 400, Assets.button, "High scores"));
+        MainMenuState.setQuitButton(new Button(-220, 500, Assets.button, "Quit"));
+
         this.setPlayButtonXPos(-220);
         this.setHighScoresButtonXPos(-220);
         this.setQuitButtonXPos(-220);
@@ -32,7 +35,7 @@ public class MainMenuState extends State {
         return playButton;
     }
 
-    public static void setPlayButton(Button playButton) {
+    private static void setPlayButton(Button playButton) {
         MainMenuState.playButton = playButton;
     }
 
@@ -40,7 +43,7 @@ public class MainMenuState extends State {
         return highScoreButton;
     }
 
-    public static void setHighScoreButton(Button highScoreButton) {
+    private static void setHighScoreButton(Button highScoreButton) {
         MainMenuState.highScoreButton = highScoreButton;
     }
 
@@ -48,7 +51,7 @@ public class MainMenuState extends State {
         return quitButton;
     }
 
-    public static void setQuitButton(Button quitButton) {
+    private static void setQuitButton(Button quitButton) {
         MainMenuState.quitButton = quitButton;
     }
 
@@ -56,7 +59,7 @@ public class MainMenuState extends State {
         return currentSelection;
     }
 
-    public void setCurrentSelection(int currentSelection) {
+    private void setCurrentSelection(int currentSelection) {
         this.currentSelection = currentSelection;
     }
 

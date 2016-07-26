@@ -7,10 +7,10 @@ import java.awt.*;
 
 public class GameOverState extends State implements Displayable {
 
-    private static StringBuilder sb = new StringBuilder();
+    private static StringBuilder stringBuilder = new StringBuilder();
 
-    public static StringBuilder getSb() {
-        return sb;
+    public static StringBuilder getStringBuilder() {
+        return stringBuilder;
     }
 
     @Override
@@ -29,7 +29,7 @@ public class GameOverState extends State implements Displayable {
         g.setFont(new Font("redensek", Font.PLAIN, 40));
         g.drawString("Please enter your name:", 190, 350);
         g.drawRect(260, 370, 280, 40);
-        g.drawString(sb.toString(), 265, 395);
+        g.drawString(GameOverState.getStringBuilder().toString(), 265, 395);
 
     }
 

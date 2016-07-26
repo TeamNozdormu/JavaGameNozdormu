@@ -8,23 +8,29 @@ import java.awt.*;
 public class ChooseSideState extends State {
 
     //TODO: Display the menu with options and listen for the event clicked
-    private static Button backButton = new Button(300, 480, Assets.button, "Back");
-    private Rectangle archerButton = new Rectangle(50, 300, 300, 100);
-    private Rectangle mageButton = new Rectangle(450, 300, 300, 100);
+    private static Button backButton;
+    private Rectangle archerButton;
+    private Rectangle mageButton;
 
     public ChooseSideState() {
-
+        ChooseSideState.setBackButton(new Button(300, 480, Assets.button, "Back"));
+        this.setArcherButton(new Rectangle(50, 300, 300, 100));
+        this.setMageButton(new Rectangle(450, 300, 300, 100));
     }
 
     public static Button getBackButton() {
         return backButton;
     }
 
+    private static void setBackButton(Button backButton) {
+        ChooseSideState.backButton = backButton;
+    }
+
     public Rectangle getArcherButton() {
         return archerButton;
     }
 
-    public void setArcherButton(Rectangle archerButton) {
+    private void setArcherButton(Rectangle archerButton) {
         this.archerButton = archerButton;
     }
 
@@ -32,7 +38,7 @@ public class ChooseSideState extends State {
         return mageButton;
     }
 
-    public void setMageButton(Rectangle mageButton) {
+    private void setMageButton(Rectangle mageButton) {
         this.mageButton = mageButton;
     }
 

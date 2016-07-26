@@ -8,48 +8,12 @@
   <component name="ChangeListManager">
     <list default="true" id="4d73af0a-f6fc-43f8-b58c-622065811e7f" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/Main.java" afterPath="$PROJECT_DIR$/src/com/company/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/constants/GameSettings.java" afterPath="$PROJECT_DIR$/src/com/company/constants/GameSettings.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/constants/PlayerSettings.java" afterPath="$PROJECT_DIR$/src/com/company/constants/PlayerSettings.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/eventHandlers/KeyboardInput.java" afterPath="$PROJECT_DIR$/src/com/company/eventHandlers/KeyboardInput.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/eventHandlers/MouseInput.java" afterPath="$PROJECT_DIR$/src/com/company/eventHandlers/MouseInput.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/eventHandlers/PlayMusic.java" afterPath="$PROJECT_DIR$/src/com/company/eventHandlers/PlayMusic.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/gameobjects/Game.java" afterPath="$PROJECT_DIR$/src/com/company/gameobjects/Game.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/gameobjects/base/Bonus.java" afterPath="$PROJECT_DIR$/src/com/company/gameobjects/base/Bonus.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/gameobjects/base/Enemy.java" afterPath="$PROJECT_DIR$/src/com/company/gameobjects/base/Enemy.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/gameobjects/base/GameObject.java" afterPath="$PROJECT_DIR$/src/com/company/gameobjects/base/GameObject.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/gameobjects/entities/Bullet.java" afterPath="$PROJECT_DIR$/src/com/company/gameobjects/entities/Bullet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/gameobjects/entities/Button.java" afterPath="$PROJECT_DIR$/src/com/company/gameobjects/entities/Button.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/gameobjects/entities/DoubleDamageBonus.java" afterPath="$PROJECT_DIR$/src/com/company/gameobjects/entities/DoubleDamageBonus.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/gameobjects/entities/EasyEnemy.java" afterPath="$PROJECT_DIR$/src/com/company/gameobjects/entities/EasyEnemy.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/gameobjects/entities/Player.java" afterPath="$PROJECT_DIR$/src/com/company/gameobjects/entities/Player.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/gameobjects/entities/SturdyEnemy.java" afterPath="$PROJECT_DIR$/src/com/company/gameobjects/entities/SturdyEnemy.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/gameobjects/factory/Factory.java" afterPath="$PROJECT_DIR$/src/com/company/gameobjects/factory/Factory.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/gamestates/ChooseClassState.java" afterPath="$PROJECT_DIR$/src/com/company/gamestates/ChooseClassState.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/gamestates/ChooseDifficultyState.java" afterPath="$PROJECT_DIR$/src/com/company/gamestates/ChooseDifficultyState.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/gamestates/ChooseSideState.java" afterPath="$PROJECT_DIR$/src/com/company/gamestates/ChooseSideState.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/gamestates/GainLevelState.java" afterPath="$PROJECT_DIR$/src/com/company/gamestates/GainLevelState.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/gamestates/GameOverState.java" afterPath="$PROJECT_DIR$/src/com/company/gamestates/GameOverState.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/gamestates/GameState.java" afterPath="$PROJECT_DIR$/src/com/company/gamestates/GameState.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/gamestates/HighScoresState.java" afterPath="$PROJECT_DIR$/src/com/company/gamestates/HighScoresState.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/gamestates/IntroState.java" afterPath="$PROJECT_DIR$/src/com/company/gamestates/IntroState.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/gamestates/IntroTaskState.java" afterPath="$PROJECT_DIR$/src/com/company/gamestates/IntroTaskState.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/gamestates/MainMenuState.java" afterPath="$PROJECT_DIR$/src/com/company/gamestates/MainMenuState.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/gamestates/QuitState.java" afterPath="$PROJECT_DIR$/src/com/company/gamestates/QuitState.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/gamestates/SettingsState.java" afterPath="$PROJECT_DIR$/src/com/company/gamestates/SettingsState.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/gamestates/State.java" afterPath="$PROJECT_DIR$/src/com/company/gamestates/State.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/gamestates/StateManager.java" afterPath="$PROJECT_DIR$/src/com/company/gamestates/StateManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/graphics/Assets.java" afterPath="$PROJECT_DIR$/src/com/company/graphics/Assets.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/graphics/Display.java" afterPath="$PROJECT_DIR$/src/com/company/graphics/Display.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/graphics/Field.java" afterPath="$PROJECT_DIR$/src/com/company/graphics/Field.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/graphics/GameMap.java" afterPath="$PROJECT_DIR$/src/com/company/graphics/GameMap.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/graphics/ImageAlbum.java" afterPath="$PROJECT_DIR$/src/com/company/graphics/ImageAlbum.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/graphics/ImageLoader.java" afterPath="$PROJECT_DIR$/src/com/company/graphics/ImageLoader.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/graphics/SpriteSheet.java" afterPath="$PROJECT_DIR$/src/com/company/graphics/SpriteSheet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/helperClasses/RandomGenerator.java" afterPath="$PROJECT_DIR$/src/com/company/helperClasses/RandomGenerator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/interfaces/Createable.java" afterPath="$PROJECT_DIR$/src/com/company/interfaces/Createable.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/interfaces/Displayable.java" afterPath="$PROJECT_DIR$/src/com/company/interfaces/Displayable.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/interfaces/Updateable.java" afterPath="$PROJECT_DIR$/src/com/company/interfaces/Updateable.java" />
     </list>
     <ignored path="JavaGameNozdormu.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -84,7 +48,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="GameState.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="GameState.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/company/gamestates/GameState.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="617">
@@ -92,26 +56,6 @@
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="92">
-              <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ChooseDifficultyState.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/company/gamestates/ChooseDifficultyState.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="18" column="60" selection-start-line="18" selection-start-column="60" selection-end-line="18" selection-end-column="60" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -151,17 +95,13 @@
         <option value="$PROJECT_DIR$/src/com/company/graphics/MapGame.java" />
         <option value="$PROJECT_DIR$/src/com/company/eventhandlers/PlayMusic.java" />
         <option value="$PROJECT_DIR$/src/com/company/eventhandlers/KeyboardInput.java" />
-        <option value="$PROJECT_DIR$/src/com/company/gamestates/GameOverState.java" />
         <option value="$PROJECT_DIR$/src/com/company/graphics/Field.java" />
         <option value="$PROJECT_DIR$/src/com/company/eventhandlers/MouseInput.java" />
         <option value="$PROJECT_DIR$/src/com/company/gamestates/State.java" />
-        <option value="$PROJECT_DIR$/src/com/company/eventHandlers/KeyboardInput.java" />
         <option value="$PROJECT_DIR$/src/com/company/graphics/ImageLoader.java" />
         <option value="$PROJECT_DIR$/src/com/company/graphics/SpriteSheet.java" />
         <option value="$PROJECT_DIR$/src/com/company/gamestates/IntroTaskState.java" />
         <option value="$PROJECT_DIR$/src/com/company/gamestates/IntroState.java" />
-        <option value="$PROJECT_DIR$/src/com/company/gamestates/HighScoresState.java" />
-        <option value="$PROJECT_DIR$/src/com/company/gamestates/QuitState.java" />
         <option value="$PROJECT_DIR$/src/com/company/constants/GameSettings.java" />
         <option value="$PROJECT_DIR$/src/com/company/graphics/Display.java" />
         <option value="$PROJECT_DIR$/src/com/company/gamestates/BosIntroState.java" />
@@ -169,7 +109,6 @@
         <option value="$PROJECT_DIR$/src/com/company/eventHandlers/PlayMusic.java" />
         <option value="$PROJECT_DIR$/src/com/company/Enums/Difficulty.java" />
         <option value="$PROJECT_DIR$/src/com/company/gamestates/ChooseClassState.java" />
-        <option value="$PROJECT_DIR$/src/com/company/gamestates/ChooseSideState.java" />
         <option value="$PROJECT_DIR$/src/com/company/constants/PlayerSettings.java" />
         <option value="$PROJECT_DIR$/src/com/company/graphics/GameMap.java" />
         <option value="$PROJECT_DIR$/src/com/company/graphics/Assets.java" />
@@ -182,7 +121,6 @@
         <option value="$PROJECT_DIR$/src/com/company/interfaces/Createable.java" />
         <option value="$PROJECT_DIR$/src/com/company/gameobjects/factory/Factory.java" />
         <option value="$PROJECT_DIR$/src/com/company/helperClasses/RandomGenerator.java" />
-        <option value="$PROJECT_DIR$/src/com/company/gamestates/MainMenuState.java" />
         <option value="$PROJECT_DIR$/src/com/company/gameobjects/base/Bonus.java" />
         <option value="$PROJECT_DIR$/src/com/company/gameobjects/entities/SturdyEnemy.java" />
         <option value="$PROJECT_DIR$/src/com/company/gameobjects/entities/EasyEnemy.java" />
@@ -192,6 +130,12 @@
         <option value="$PROJECT_DIR$/src/com/company/Main.java" />
         <option value="$PROJECT_DIR$/src/com/company/gamestates/SettingsState.java" />
         <option value="$PROJECT_DIR$/src/com/company/gamestates/ChooseDifficultyState.java" />
+        <option value="$PROJECT_DIR$/src/com/company/gamestates/ChooseSideState.java" />
+        <option value="$PROJECT_DIR$/src/com/company/gamestates/GameOverState.java" />
+        <option value="$PROJECT_DIR$/src/com/company/eventHandlers/KeyboardInput.java" />
+        <option value="$PROJECT_DIR$/src/com/company/gamestates/HighScoresState.java" />
+        <option value="$PROJECT_DIR$/src/com/company/gamestates/MainMenuState.java" />
+        <option value="$PROJECT_DIR$/src/com/company/gamestates/QuitState.java" />
       </list>
     </option>
   </component>
@@ -815,7 +759,7 @@
       <workItem from="1469118069638" duration="1583000" />
       <workItem from="1469353779169" duration="1271000" />
       <workItem from="1469461922882" duration="693000" />
-      <workItem from="1469505183710" duration="855000" />
+      <workItem from="1469505183710" duration="1465000" />
     </task>
     <task id="LOCAL-00001" summary="refactoring and split by regex">
       <created>1465958998240</created>
@@ -1097,11 +1041,18 @@
       <option name="project" value="LOCAL" />
       <updated>1469462469717</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="create and using getter and setter;&#10;update other all;">
+      <created>1469506077889</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1469506077889</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="79361000" />
+    <option name="totallyTimeSpent" value="79971000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1158,7 +1109,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="update all source, add res and refactoring" />
     <MESSAGE value="add res" />
     <MESSAGE value="update gitignore" />
     <MESSAGE value="create GameSetting class for all game settings" />
@@ -1183,7 +1133,8 @@
     <MESSAGE value="complete change difficulty system" />
     <MESSAGE value="complete all changes in difficulty system;&#10;add feature with ChooseDifficultyState change level;" />
     <MESSAGE value="update&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="update&#10;" />
+    <MESSAGE value="create and using getter and setter;&#10;update other all;" />
+    <option name="LAST_COMMIT_MESSAGE" value="create and using getter and setter;&#10;update other all;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1199,12 +1150,6 @@
           <line>125</line>
           <properties />
           <option name="timeStamp" value="13" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/company/gamestates/HighScoresState.java</url>
-          <line>70</line>
-          <properties />
-          <option name="timeStamp" value="26" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
@@ -1260,21 +1205,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/gamestates/State.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="7" column="55" selection-start-line="7" selection-start-column="55" selection-end-line="7" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/gamestates/GameOverState.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-50">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/gameobjects/entities/Button.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="92">
@@ -1295,14 +1225,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="25">
           <caret line="11" column="57" selection-start-line="11" selection-start-column="57" selection-end-line="11" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/eventHandlers/KeyboardInput.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
           <folding />
         </state>
       </provider>
@@ -1375,13 +1297,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/gamestates/MainMenuState.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="826">
-          <caret line="122" column="5" selection-start-line="122" selection-start-column="5" selection-end-line="122" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/res/Interface/Life.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -1425,14 +1340,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/gamestates/HighScoresState.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/eventHandlers/MouseInput.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="167">
@@ -1459,14 +1366,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/gamestates/StateManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="10" column="23" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/gameobjects/base/GameObject.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="617">
@@ -1480,75 +1379,6 @@
         <state relative-caret-position="23">
           <caret line="47" column="10" selection-start-line="47" selection-start-column="10" selection-end-line="47" selection-end-column="10" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/gamestates/GainLevelState.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/gamestates/ChooseSideState.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="10" column="25" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/gamestates/IntroState.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/gamestates/IntroTaskState.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="14" column="36" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="36" />
-          <folding>
-            <element signature="e#220#221#0" expanded="true" />
-            <element signature="e#277#278#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/gamestates/SettingsState.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="11" column="41" selection-start-line="11" selection-start-column="41" selection-end-line="11" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/gamestates/QuitState.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/gamestates/ChooseClassState.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="902">
-          <caret line="55" column="29" selection-start-line="55" selection-start-column="29" selection-end-line="55" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/gamestates/GameState.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="617">
-          <caret line="353" column="52" selection-start-line="353" selection-start-column="52" selection-end-line="353" selection-end-column="52" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1576,11 +1406,137 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/gamestates/ChooseDifficultyState.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="18" column="60" selection-start-line="18" selection-start-column="60" selection-end-line="18" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/gamestates/ChooseClassState.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="920">
+          <caret line="55" column="29" selection-start-line="55" selection-start-column="29" selection-end-line="55" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/gamestates/ChooseSideState.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="11" column="35" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="35" />
+          <folding>
+            <element signature="e#751#752#0" expanded="true" />
+            <element signature="e#806#807#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/gamestates/GainLevelState.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/gamestates/GameOverState.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="25" column="49" selection-start-line="25" selection-start-column="49" selection-end-line="25" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/gameobjects/Game.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-510">
-          <caret line="96" column="23" selection-start-line="96" selection-start-column="23" selection-end-line="96" selection-end-column="23" />
+        <state relative-caret-position="285">
+          <caret line="52" column="34" selection-start-line="52" selection-start-column="34" selection-end-line="52" selection-end-column="34" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/eventHandlers/KeyboardInput.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="227">
+          <caret line="77" column="70" selection-start-line="77" selection-start-column="70" selection-end-line="77" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/gamestates/HighScoresState.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1863">
+          <caret line="10" column="45" selection-start-line="10" selection-start-column="45" selection-end-line="10" selection-end-column="45" />
+          <folding>
+            <element signature="e#1392#1393#0" expanded="true" />
+            <element signature="e#1447#1448#0" expanded="true" />
+            <element signature="e#1501#1502#0" expanded="true" />
+            <element signature="e#1550#1551#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/gamestates/IntroState.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/gamestates/IntroTaskState.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="14" column="36" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="36" />
+          <folding>
+            <element signature="e#220#221#0" expanded="true" />
+            <element signature="e#277#278#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/gamestates/MainMenuState.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1375">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/gamestates/QuitState.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/gamestates/SettingsState.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="9" column="5" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/gamestates/State.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/gamestates/StateManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="10" column="23" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
+          <folding>
+            <element signature="e#237#238#0" expanded="true" />
+            <element signature="e#276#277#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1592,11 +1548,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/gamestates/ChooseDifficultyState.java">
+    <entry file="file://$PROJECT_DIR$/src/com/company/gamestates/GameState.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="18" column="60" selection-start-line="18" selection-start-column="60" selection-end-line="18" selection-end-column="60" />
-          <folding />
+        <state relative-caret-position="617">
+          <caret line="353" column="52" selection-start-line="353" selection-start-column="52" selection-end-line="353" selection-end-column="52" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

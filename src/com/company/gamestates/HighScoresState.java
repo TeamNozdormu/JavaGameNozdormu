@@ -9,9 +9,8 @@ import java.util.Map;
 public class HighScoresState extends State {
 
     private static final int ROW_HEIGHT = 35;
-    //private static Button backButton = new Button(300, 470, Assets.button, "Main menu");
-    private static Button backButton = new Button(100, 470, Assets.button, "Main menu");
-    private static Button reverse = new Button(400, 470, Assets.button, "Reverse");
+    private static Button backButton;
+    private static Button reverse;
     private int row = 0;
     private int backButtonXPos;
     private int reverseButtonXPos;
@@ -19,6 +18,8 @@ public class HighScoresState extends State {
 
     public HighScoresState(String order) {
         this.setCurrentSortingOrder(order);
+        HighScoresState.setBackButton(new Button(100, 470, Assets.button, "Main menu"));
+        HighScoresState.setReverse(new Button(400, 470, Assets.button, "Reverse"));
 
         if (this.getCurrentSortingOrder().equals("Descending")) {
             Assets.loadingHighScores();
@@ -42,6 +43,14 @@ public class HighScoresState extends State {
 
     public static Button getReverseButton() {
         return reverse;
+    }
+
+    private static void setBackButton(Button backButton) {
+        HighScoresState.backButton = backButton;
+    }
+
+    private static void setReverse(Button reverse) {
+        HighScoresState.reverse = reverse;
     }
 
     public int getRow() {

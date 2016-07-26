@@ -13,6 +13,4 @@ public class QuitState extends State {
     public void display(Graphics g) {
 
     }
-
-    //TODO: Display Credits?
 }

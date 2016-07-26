@@ -76,13 +76,13 @@ public class KeyboardInput implements KeyListener {
             GameState.getPlayer().isFiring = false;
         }
         if (StateManager.getCurrentState() instanceof GameOverState) {
-            if (key >= 'A' && key <= 'Z' && GameOverState.getSb().length() < 14) {
-                GameOverState.getSb().append((char) key);
-            } else if (key == KeyEvent.VK_BACK_SPACE && GameOverState.getSb().length() > 0) {
-                GameOverState.getSb().deleteCharAt(GameOverState.getSb().length() - 1);
-            } else if (key == KeyEvent.VK_ENTER && GameOverState.getSb().length() > 0) {
-                GameState.getPlayer().setPlayerName(GameOverState.getSb().toString());
-                GameOverState.getSb().setLength(0);
+            if (key >= 'A' && key <= 'Z' && GameOverState.getStringBuilder().length() < 14) {
+                GameOverState.getStringBuilder().append((char) key);
+            } else if (key == KeyEvent.VK_BACK_SPACE && GameOverState.getStringBuilder().length() > 0) {
+                GameOverState.getStringBuilder().deleteCharAt(GameOverState.getStringBuilder().length() - 1);
+            } else if (key == KeyEvent.VK_ENTER && GameOverState.getStringBuilder().length() > 0) {
+                GameState.getPlayer().setPlayerName(GameOverState.getStringBuilder().toString());
+                GameOverState.getStringBuilder().setLength(0);
                 Assets.savingHighScores(GameState.getPlayer().getPlayerName(), GameState.getScore());
                 StateManager.setCurrentState(new MainMenuState());
             }
