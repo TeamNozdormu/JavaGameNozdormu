@@ -7,24 +7,31 @@ import java.awt.*;
 
 public class ChooseDifficultyState extends State {
 
-    private static Button backButton = new Button(300, 420, Assets.button, "Back");
-    private Rectangle easyButton = new Rectangle(330, 210, 135, 50);
-    private Rectangle mediumButton = new Rectangle(330, 275, 135, 50);
-    private Rectangle hardButton = new Rectangle(330, 340, 135, 50);
+    private static Button backButton;
+    private Rectangle easyButton;
+    private Rectangle mediumButton;
+    private Rectangle hardButton;
 
     public ChooseDifficultyState() {
-
+        ChooseDifficultyState.setBackButton(new Button(300, 420, Assets.button, "Back"));
+        this.setEasyButton(new Rectangle(330, 210, 135, 50));
+        this.setMediumButton(new Rectangle(330, 275, 135, 50));
+        this.setHardButton(new Rectangle(330, 340, 135, 50));
     }
 
     public static Button getBackButton() {
         return backButton;
     }
 
+    private static void setBackButton(Button backButton) {
+        ChooseDifficultyState.backButton = backButton;
+    }
+
     public Rectangle getEasyButton() {
         return this.easyButton;
     }
 
-    public void setEasyButton(Rectangle easyButton) {
+    private void setEasyButton(Rectangle easyButton) {
         this.easyButton = easyButton;
     }
 
@@ -32,7 +39,7 @@ public class ChooseDifficultyState extends State {
         return mediumButton;
     }
 
-    public void setMediumButton(Rectangle mediumButton) {
+    private void setMediumButton(Rectangle mediumButton) {
         this.mediumButton = mediumButton;
     }
 
@@ -40,7 +47,7 @@ public class ChooseDifficultyState extends State {
         return this.hardButton;
     }
 
-    public void setHardButton(Rectangle hardButton) {
+    private void setHardButton(Rectangle hardButton) {
         this.hardButton = hardButton;
     }
 

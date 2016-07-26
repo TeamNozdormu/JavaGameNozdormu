@@ -8,7 +8,48 @@
   <component name="ChangeListManager">
     <list default="true" id="4d73af0a-f6fc-43f8-b58c-622065811e7f" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/Main.java" afterPath="$PROJECT_DIR$/src/com/company/Main.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/constants/GameSettings.java" afterPath="$PROJECT_DIR$/src/com/company/constants/GameSettings.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/constants/PlayerSettings.java" afterPath="$PROJECT_DIR$/src/com/company/constants/PlayerSettings.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/eventHandlers/KeyboardInput.java" afterPath="$PROJECT_DIR$/src/com/company/eventHandlers/KeyboardInput.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/eventHandlers/MouseInput.java" afterPath="$PROJECT_DIR$/src/com/company/eventHandlers/MouseInput.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/eventHandlers/PlayMusic.java" afterPath="$PROJECT_DIR$/src/com/company/eventHandlers/PlayMusic.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/gameobjects/Game.java" afterPath="$PROJECT_DIR$/src/com/company/gameobjects/Game.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/gameobjects/base/Bonus.java" afterPath="$PROJECT_DIR$/src/com/company/gameobjects/base/Bonus.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/gameobjects/base/Enemy.java" afterPath="$PROJECT_DIR$/src/com/company/gameobjects/base/Enemy.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/gameobjects/base/GameObject.java" afterPath="$PROJECT_DIR$/src/com/company/gameobjects/base/GameObject.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/gameobjects/entities/Bullet.java" afterPath="$PROJECT_DIR$/src/com/company/gameobjects/entities/Bullet.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/gameobjects/entities/Button.java" afterPath="$PROJECT_DIR$/src/com/company/gameobjects/entities/Button.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/gameobjects/entities/DoubleDamageBonus.java" afterPath="$PROJECT_DIR$/src/com/company/gameobjects/entities/DoubleDamageBonus.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/gameobjects/entities/EasyEnemy.java" afterPath="$PROJECT_DIR$/src/com/company/gameobjects/entities/EasyEnemy.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/gameobjects/entities/Player.java" afterPath="$PROJECT_DIR$/src/com/company/gameobjects/entities/Player.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/gameobjects/entities/SturdyEnemy.java" afterPath="$PROJECT_DIR$/src/com/company/gameobjects/entities/SturdyEnemy.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/gameobjects/factory/Factory.java" afterPath="$PROJECT_DIR$/src/com/company/gameobjects/factory/Factory.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/gamestates/ChooseClassState.java" afterPath="$PROJECT_DIR$/src/com/company/gamestates/ChooseClassState.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/gamestates/ChooseDifficultyState.java" afterPath="$PROJECT_DIR$/src/com/company/gamestates/ChooseDifficultyState.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/gamestates/ChooseSideState.java" afterPath="$PROJECT_DIR$/src/com/company/gamestates/ChooseSideState.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/gamestates/GainLevelState.java" afterPath="$PROJECT_DIR$/src/com/company/gamestates/GainLevelState.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/gamestates/GameOverState.java" afterPath="$PROJECT_DIR$/src/com/company/gamestates/GameOverState.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/gamestates/GameState.java" afterPath="$PROJECT_DIR$/src/com/company/gamestates/GameState.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/gamestates/HighScoresState.java" afterPath="$PROJECT_DIR$/src/com/company/gamestates/HighScoresState.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/gamestates/IntroState.java" afterPath="$PROJECT_DIR$/src/com/company/gamestates/IntroState.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/gamestates/IntroTaskState.java" afterPath="$PROJECT_DIR$/src/com/company/gamestates/IntroTaskState.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/gamestates/MainMenuState.java" afterPath="$PROJECT_DIR$/src/com/company/gamestates/MainMenuState.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/gamestates/QuitState.java" afterPath="$PROJECT_DIR$/src/com/company/gamestates/QuitState.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/gamestates/SettingsState.java" afterPath="$PROJECT_DIR$/src/com/company/gamestates/SettingsState.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/gamestates/State.java" afterPath="$PROJECT_DIR$/src/com/company/gamestates/State.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/gamestates/StateManager.java" afterPath="$PROJECT_DIR$/src/com/company/gamestates/StateManager.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/graphics/Assets.java" afterPath="$PROJECT_DIR$/src/com/company/graphics/Assets.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/graphics/Display.java" afterPath="$PROJECT_DIR$/src/com/company/graphics/Display.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/graphics/Field.java" afterPath="$PROJECT_DIR$/src/com/company/graphics/Field.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/graphics/GameMap.java" afterPath="$PROJECT_DIR$/src/com/company/graphics/GameMap.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/graphics/ImageAlbum.java" afterPath="$PROJECT_DIR$/src/com/company/graphics/ImageAlbum.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/graphics/ImageLoader.java" afterPath="$PROJECT_DIR$/src/com/company/graphics/ImageLoader.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/graphics/SpriteSheet.java" afterPath="$PROJECT_DIR$/src/com/company/graphics/SpriteSheet.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/helperClasses/RandomGenerator.java" afterPath="$PROJECT_DIR$/src/com/company/helperClasses/RandomGenerator.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/interfaces/Createable.java" afterPath="$PROJECT_DIR$/src/com/company/interfaces/Createable.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/interfaces/Displayable.java" afterPath="$PROJECT_DIR$/src/com/company/interfaces/Displayable.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/interfaces/Updateable.java" afterPath="$PROJECT_DIR$/src/com/company/interfaces/Updateable.java" />
     </list>
     <ignored path="JavaGameNozdormu.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -43,14 +84,34 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="GameState.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="GameState.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/gamestates/GameState.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="778">
-              <caret line="223" column="9" selection-start-line="223" selection-start-column="9" selection-end-line="223" selection-end-column="9" />
+            <state relative-caret-position="617">
+              <caret line="353" column="52" selection-start-line="353" selection-start-column="52" selection-end-line="353" selection-end-column="52" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="92">
+              <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ChooseDifficultyState.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/company/gamestates/ChooseDifficultyState.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="345">
+              <caret line="18" column="60" selection-start-line="18" selection-start-column="60" selection-end-line="18" selection-end-column="60" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -80,8 +141,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/src/com/company/Main.java" />
         <option value="$PROJECT_DIR$/src/com/company/game/concreteObjects/Player.java" />
         <option value="$PROJECT_DIR$/src/com/company/screenStates/ChooseSideState.java" />
         <option value="$PROJECT_DIR$/src/com/company/screenStates/GameState.java" />
@@ -96,7 +155,6 @@
         <option value="$PROJECT_DIR$/src/com/company/graphics/Field.java" />
         <option value="$PROJECT_DIR$/src/com/company/eventhandlers/MouseInput.java" />
         <option value="$PROJECT_DIR$/src/com/company/gamestates/State.java" />
-        <option value="$PROJECT_DIR$/src/com/company/gamestates/SettingsState.java" />
         <option value="$PROJECT_DIR$/src/com/company/eventHandlers/KeyboardInput.java" />
         <option value="$PROJECT_DIR$/src/com/company/graphics/ImageLoader.java" />
         <option value="$PROJECT_DIR$/src/com/company/graphics/SpriteSheet.java" />
@@ -117,7 +175,6 @@
         <option value="$PROJECT_DIR$/src/com/company/graphics/Assets.java" />
         <option value="$PROJECT_DIR$/src/com/company/gameobjects/entities/Bullet.java" />
         <option value="$PROJECT_DIR$/src/com/company/gameobjects/base/GameObject.java" />
-        <option value="$PROJECT_DIR$/src/com/company/gamestates/ChooseDifficultyState.java" />
         <option value="$PROJECT_DIR$/src/com/company/eventHandlers/MouseInput.java" />
         <option value="$PROJECT_DIR$/src/com/company/gameobjects/Game.java" />
         <option value="$PROJECT_DIR$/src/com/company/gameobjects/base/Enemy.java" />
@@ -131,6 +188,10 @@
         <option value="$PROJECT_DIR$/src/com/company/gameobjects/entities/EasyEnemy.java" />
         <option value="$PROJECT_DIR$/src/com/company/gameobjects/entities/Player.java" />
         <option value="$PROJECT_DIR$/src/com/company/gamestates/GameState.java" />
+        <option value="$PROJECT_DIR$/src/bg/softuni/nozdormu/gameobjects/Game.java" />
+        <option value="$PROJECT_DIR$/src/com/company/Main.java" />
+        <option value="$PROJECT_DIR$/src/com/company/gamestates/SettingsState.java" />
+        <option value="$PROJECT_DIR$/src/com/company/gamestates/ChooseDifficultyState.java" />
       </list>
     </option>
   </component>
@@ -169,6 +230,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -238,202 +301,12 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="helperClasses" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="JavaGameNozdormu" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="JavaGameNozdormu" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="company" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="graphics" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="JavaGameNozdormu" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="JavaGameNozdormu" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="company" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="gamestates" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="JavaGameNozdormu" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="JavaGameNozdormu" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="company" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gameobjects" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="JavaGameNozdormu" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="JavaGameNozdormu" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="company" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gameobjects" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="factory" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="JavaGameNozdormu" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="JavaGameNozdormu" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="company" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gameobjects" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="entities" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="JavaGameNozdormu" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="JavaGameNozdormu" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="company" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gameobjects" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="base" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="JavaGameNozdormu" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="JavaGameNozdormu" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="company" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="eventHandlers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="JavaGameNozdormu" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="JavaGameNozdormu" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="company" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="constants" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -941,7 +814,8 @@
       <workItem from="1469069117067" duration="6934000" />
       <workItem from="1469118069638" duration="1583000" />
       <workItem from="1469353779169" duration="1271000" />
-      <workItem from="1469461922882" duration="528000" />
+      <workItem from="1469461922882" duration="693000" />
+      <workItem from="1469505183710" duration="855000" />
     </task>
     <task id="LOCAL-00001" summary="refactoring and split by regex">
       <created>1465958998240</created>
@@ -1216,11 +1090,18 @@
       <option name="project" value="LOCAL" />
       <updated>1469076032301</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="update&#10;">
+      <created>1469462469717</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1469462469717</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="78341000" />
+    <option name="totallyTimeSpent" value="79361000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1277,7 +1158,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="update&#10;" />
     <MESSAGE value="update all source, add res and refactoring" />
     <MESSAGE value="add res" />
     <MESSAGE value="update gitignore" />
@@ -1302,7 +1182,8 @@
     <MESSAGE value="create factory for monster and using RandomGenerator" />
     <MESSAGE value="complete change difficulty system" />
     <MESSAGE value="complete all changes in difficulty system;&#10;add feature with ChooseDifficultyState change level;" />
-    <option name="LAST_COMMIT_MESSAGE" value="complete all changes in difficulty system;&#10;add feature with ChooseDifficultyState change level;" />
+    <MESSAGE value="update&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="update&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1320,14 +1201,8 @@
           <option name="timeStamp" value="13" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/company/Main.java</url>
-          <line>8</line>
-          <properties />
-          <option name="timeStamp" value="24" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/company/gamestates/HighScoresState.java</url>
-          <line>71</line>
+          <line>70</line>
           <properties />
           <option name="timeStamp" value="26" />
         </line-breakpoint>
@@ -1344,16 +1219,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/res/Backgrounds/GrassField.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/Backgrounds/GameOver.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/res/Backgrounds/DifficultyBackground.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -1379,14 +1244,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/eventHandlers/PlayMusic.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="100">
@@ -1400,13 +1257,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="92">
           <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/interfaces/Updateable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -1445,30 +1295,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="25">
           <caret line="11" column="57" selection-start-line="11" selection-start-column="57" selection-end-line="11" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/gamestates/ChooseSideState.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-259">
-          <caret line="10" column="25" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/gameobjects/Game.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="575">
-          <caret line="53" column="31" selection-start-line="53" selection-start-column="31" selection-end-line="53" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/gamestates/IntroState.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
           <folding />
         </state>
       </provider>
@@ -1538,13 +1364,6 @@
         <state relative-caret-position="1408">
           <caret line="76" column="57" selection-start-line="76" selection-start-column="57" selection-end-line="76" selection-end-column="57" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/gamestates/SettingsState.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -1640,70 +1459,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/gamestates/GainLevelState.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="15" column="33" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="33" />
-          <folding>
-            <element signature="e#286#287#0" expanded="false" />
-            <element signature="e#343#344#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/gamestates/ChooseClassState.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="55" column="29" selection-start-line="55" selection-start-column="29" selection-end-line="55" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/gamestates/ChooseDifficultyState.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-425">
-          <caret line="7" column="32" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/gameobjects/entities/Player.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-425">
-          <caret line="47" column="10" selection-start-line="47" selection-start-column="10" selection-end-line="47" selection-end-column="10" />
-          <folding>
-            <element signature="e#1335#1336#0" expanded="false" />
-            <element signature="e#1379#1380#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/gamestates/IntroTaskState.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="14" column="36" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="36" />
-          <folding>
-            <element signature="e#220#221#0" expanded="false" />
-            <element signature="e#277#278#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/gamestates/QuitState.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/gamestates/StateManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="184">
           <caret line="10" column="23" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
-          <folding>
-            <element signature="e#237#238#0" expanded="false" />
-            <element signature="e#276#277#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1715,13 +1475,128 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/gameobjects/entities/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="47" column="10" selection-start-line="47" selection-start-column="10" selection-end-line="47" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/gamestates/GainLevelState.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/gamestates/ChooseSideState.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="10" column="25" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/gamestates/IntroState.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/gamestates/IntroTaskState.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="14" column="36" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="36" />
+          <folding>
+            <element signature="e#220#221#0" expanded="true" />
+            <element signature="e#277#278#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/gamestates/SettingsState.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="11" column="41" selection-start-line="11" selection-start-column="41" selection-end-line="11" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/gamestates/QuitState.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/gamestates/ChooseClassState.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="902">
+          <caret line="55" column="29" selection-start-line="55" selection-start-column="29" selection-end-line="55" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/gamestates/GameState.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="778">
-          <caret line="223" column="9" selection-start-line="223" selection-start-column="9" selection-end-line="223" selection-end-column="9" />
+        <state relative-caret-position="617">
+          <caret line="353" column="52" selection-start-line="353" selection-start-column="52" selection-end-line="353" selection-end-column="52" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/awt/Graphics.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="78">
+          <caret line="1156" column="25" selection-start-line="1156" selection-start-column="25" selection-end-line="1156" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/interfaces/Updateable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="4" column="9" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/lang/Thread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="695" column="29" selection-start-line="695" selection-start-column="29" selection-end-line="695" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/gameobjects/Game.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-510">
+          <caret line="96" column="23" selection-start-line="96" selection-start-column="23" selection-end-line="96" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/gamestates/ChooseDifficultyState.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="18" column="60" selection-start-line="18" selection-start-column="60" selection-end-line="18" selection-end-column="60" />
+          <folding />
         </state>
       </provider>
     </entry>

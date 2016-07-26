@@ -9,7 +9,7 @@ public class SettingsState extends State {
 
     }
 
-    //TODO: Display controls of the gameobjects and the basic idea of the gameobjects
+    //TODO: Display controls of the game objects and the basic idea of the gameobjects
     @Override
     public void display(Graphics g) {
 
