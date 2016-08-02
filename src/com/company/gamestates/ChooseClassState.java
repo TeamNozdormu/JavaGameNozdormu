@@ -9,34 +9,35 @@ public class ChooseClassState extends State {
 
     private static Button backButton = new Button(300, 480, Assets.button, "Back");
     //TODO: Display the menu with options and listen for the event clicked
-    private Rectangle archerButtor = new Rectangle(50, 300, 300, 100);
-    private Rectangle mageButton = new Rectangle(450, 300, 300, 100);
+    private Rectangle archerButton;
+    private Rectangle mageButton;
 
     public ChooseClassState() {
-
+        this.setArcherButton(new Rectangle(50, 300, 300, 100));
+        this.setMageButton(new Rectangle(450, 300, 300, 100));
     }
 
     public static Button getBackButton() {
         return backButton;
     }
 
-    public static void setBackButton(Button backButton) {
+    private static void setBackButton(Button backButton) {
         ChooseClassState.backButton = backButton;
     }
 
-    public Rectangle getArcherButtor() {
-        return archerButtor;
+    public Rectangle getArcherButton() {
+        return this.archerButton;
     }
 
-    public void setArcherButtor(Rectangle archerButtor) {
-        this.archerButtor = archerButtor;
+    private void setArcherButton(Rectangle archerButton) {
+        this.archerButton = archerButton;
     }
 
     public Rectangle getMageButton() {
-        return mageButton;
+        return this.mageButton;
     }
 
-    public void setMageButton(Rectangle mageButton) {
+    private void setMageButton(Rectangle mageButton) {
         this.mageButton = mageButton;
     }
 
@@ -52,7 +53,7 @@ public class ChooseClassState extends State {
 
         g.setFont(new Font("Immortal", Font.PLAIN, 25));
         g.setColor(Color.white);
-        g2d.draw(archerButtor);
+        g2d.draw(archerButton);
         g2d.draw(mageButton);
         backButton.display(g);
     }

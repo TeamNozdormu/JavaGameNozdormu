@@ -9,6 +9,7 @@ public class SturdyEnemy extends Enemy {
     private static final int POINTS_FOR_PLAYER = 20;
 
     public SturdyEnemy(int x, int y, int healthPoints, int speedMultiplier) {
-        super(x, y, healthPoints, Assets.sturdyEnemyInit, RandomGenerator.getNextIntRandom(POINTS_FOR_PLAYER), speedMultiplier);
+        super(x, y, healthPoints, Assets.sturdyEnemyInit, RandomGenerator.getNextIntRandom(POINTS_FOR_PLAYER),
+                speedMultiplier);
     }
 }

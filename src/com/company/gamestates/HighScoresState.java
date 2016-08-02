@@ -41,12 +41,12 @@ public class HighScoresState extends State {
         return backButton;
     }
 
-    public static Button getReverseButton() {
-        return reverse;
-    }
-
     private static void setBackButton(Button backButton) {
         HighScoresState.backButton = backButton;
+    }
+
+    public static Button getReverseButton() {
+        return reverse;
     }
 
     private static void setReverse(Button reverse) {

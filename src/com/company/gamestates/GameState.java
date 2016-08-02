@@ -45,7 +45,8 @@ public class GameState extends State implements Displayable {
         init();
         factory = new Factory();
         bulletsList = new LinkedList<>();
-        player = new Player(PlayerSettings.PLAYER_SET_X, PlayerSettings.PLAYER_SET_Y, PlayerSettings.PLAYER_DEFAULT_NAME, PlayerSettings.PLAYER_DEFAULT_SPEED);
+        player = new Player(PlayerSettings.PLAYER_SET_X, PlayerSettings.PLAYER_SET_Y, PlayerSettings
+                .PLAYER_DEFAULT_NAME, PlayerSettings.PLAYER_DEFAULT_SPEED);
         enemiesList = new LinkedList<>();
         bonusList = new LinkedList<>();
         enemiesList.add(new EasyEnemy(RandomGenerator.getNextIntRandom(725), -100, 1, 2));
@@ -279,7 +280,7 @@ public class GameState extends State implements Displayable {
         g.drawString(String.format("Monster to kill: %d", (MISSED_ENEMIES - Enemy.passed)), 500, 200);
 
         for (int i = 0; i < player.getNumberOfLives(); i++) {
-            g.drawImage(Assets.live, 660 + i * 35, 1 ,  null);
+            g.drawImage(Assets.live, 660 + i * 35, 1, null);
         }
 
         now = System.currentTimeMillis();

@@ -33,6 +33,10 @@ public class Game implements Runnable {
         return this.isRunning;
     }
 
+    public void setRunning(boolean running) {
+        this.isRunning = running;
+    }
+
     private GameMap getMap() {
         return this.map;
     }
@@ -151,10 +155,6 @@ public class Game implements Runnable {
 
     private void setIntroTaskState(State introTaskState) {
         IntroTaskState = introTaskState;
-    }
-
-    public void setRunning(boolean running) {
-        this.isRunning = running;
     }
 
     private void init() {
