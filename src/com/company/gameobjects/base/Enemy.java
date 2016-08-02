@@ -51,10 +51,12 @@ public abstract class Enemy extends GameObject {
 
         if (this.getHealth() > 0) {
         	moveEnemy();
+        	handleCollisionWithBullets();
         }
 
         if (this.getHealth() == 0) {
-        	removeKilledEnemyAndGenerateBonus();
+        	removeEnemy();
+        	generateBonus();
         }
     }
 
@@ -69,11 +71,13 @@ public abstract class Enemy extends GameObject {
 
         //enemy is outside the window
         if (this.getY() > 650) {
-            GameState.getEnemiesList().remove(this);
+            removeEnemy();
             passed++;
         }
+	}
 
-        for (int i = 0; i < GameState.getBulletsList().size(); i++) {
+	private void handleCollisionWithBullets() {
+		for (int i = 0; i < GameState.getBulletsList().size(); i++) {
             if (this.collide(GameState.getBulletsList().get(i).getColliderBox())) {
                 this.health -= GameState.getBulletsList().get(i).getBulletStrength();
                 if (this.health < 0) {
@@ -87,10 +91,13 @@ public abstract class Enemy extends GameObject {
             }
         }
 	}
-
-	private void removeKilledEnemyAndGenerateBonus() {
+	
+	private void removeEnemy() {
 		GameState.getEnemiesList().remove(this);
-        double chanceToGenerateBonus = RandomGenerator.getNextDoubleRandom();
+	}
+	
+	private void generateBonus() {
+		double chanceToGenerateBonus = RandomGenerator.getNextDoubleRandom();
 
         if (chanceToGenerateBonus > 0.8) {
             GameState.getBonusList().add(new DoubleDamageBonus(this.getX(), this.getY()));
