@@ -1,7 +1,7 @@
 package com.company.gameobjects.entities;
 
 import com.company.gameobjects.base.Enemy;
-import com.company.graphics.Assets;
+import com.company.graphics.utililies.Assets;
 
 public class EasyEnemy extends Enemy {
 

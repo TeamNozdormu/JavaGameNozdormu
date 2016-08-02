@@ -10,7 +10,7 @@ import com.company.gameobjects.entities.Bullet;
 import com.company.gameobjects.entities.EasyEnemy;
 import com.company.gameobjects.entities.Player;
 import com.company.gameobjects.factory.Factory;
-import com.company.graphics.Assets;
+import com.company.graphics.utililies.Assets;
 import com.company.helperClasses.RandomGenerator;
 import com.company.interfaces.Displayable;
 
