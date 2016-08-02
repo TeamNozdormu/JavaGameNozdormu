@@ -36,21 +36,16 @@ public class GameState extends State implements Displayable {
     private int cropXMonster = 0, cropYMonster = 0;
 
     public GameState() {
-        if (!this.isLevelGained) {
+        if (!isLevelGained) {
             this.score = 0;
         } else {
-            this.isLevelGained = false;
+            isLevelGained = false;
         }
 
         init();
         factory = new Factory();
         bulletsList = new LinkedList<>();
-        player = new Player(
-                PlayerSettings.PLAYER_SET_X,
-                PlayerSettings.PLAYER_SET_Y,
-                PlayerSettings.PLAYER_DEFAULT_NAME,
-                PlayerSettings.PLAYER_DEFAULT_SPEED);
-
+        player = new Player(PlayerSettings.PLAYER_SET_X, PlayerSettings.PLAYER_SET_Y, PlayerSettings.PLAYER_DEFAULT_NAME, PlayerSettings.PLAYER_DEFAULT_SPEED);
         enemiesList = new LinkedList<>();
         bonusList = new LinkedList<>();
         enemiesList.add(new EasyEnemy(RandomGenerator.getNextIntRandom(725), -100, 1, 2));

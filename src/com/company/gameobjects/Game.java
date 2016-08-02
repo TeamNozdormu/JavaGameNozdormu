@@ -34,7 +34,7 @@ public class Game implements Runnable {
     }
 
     private GameMap getMap() {
-        return map;
+        return this.map;
     }
 
     private void setMap(GameMap map) {
@@ -42,7 +42,7 @@ public class Game implements Runnable {
     }
 
     private Display getDisplay() {
-        return display;
+        return this.display;
     }
 
     private void setDisplay(Display display) {
@@ -50,7 +50,7 @@ public class Game implements Runnable {
     }
 
     private MouseInput getMouseInput() {
-        return mouseInput;
+        return this.mouseInput;
     }
 
     private void setMouseInput(MouseInput mouseInput) {
@@ -58,7 +58,7 @@ public class Game implements Runnable {
     }
 
     private Thread getThread() {
-        return thread;
+        return this.thread;
     }
 
     private void setThread(Thread thread) {
@@ -66,7 +66,7 @@ public class Game implements Runnable {
     }
 
     private KeyboardInput getKeyboardInput() {
-        return keyboardInput;
+        return this.keyboardInput;
     }
 
     private void setKeyboardInput(KeyboardInput keyboardInput) {
@@ -74,7 +74,7 @@ public class Game implements Runnable {
     }
 
     private BufferStrategy getBufferStrategy() {
-        return bufferStrategy;
+        return this.bufferStrategy;
     }
 
     private void setBufferStrategy(BufferStrategy bufferStrategy) {
@@ -82,7 +82,7 @@ public class Game implements Runnable {
     }
 
     private Graphics getGraphics() {
-        return graphics;
+        return this.graphics;
     }
 
     private void setGraphics(Graphics graphics) {
@@ -90,7 +90,7 @@ public class Game implements Runnable {
     }
 
     private State getGameState() {
-        return gameState;
+        return this.gameState;
     }
 
     private void setGameState(State gameState) {
@@ -98,7 +98,7 @@ public class Game implements Runnable {
     }
 
     private State getMenuState() {
-        return menuState;
+        return this.menuState;
     }
 
     private void setMenuState(State menuState) {
@@ -106,7 +106,7 @@ public class Game implements Runnable {
     }
 
     private State getGameOverState() {
-        return gameOverState;
+        return this.gameOverState;
     }
 
     private void setGameOverState(State gameOverState) {
@@ -114,7 +114,7 @@ public class Game implements Runnable {
     }
 
     private State getHighScoreState() {
-        return highScoreState;
+        return this.highScoreState;
     }
 
     private void setHighScoreState(State highScoreState) {
@@ -122,7 +122,7 @@ public class Game implements Runnable {
     }
 
     private State getChooseDifficulty() {
-        return ChooseDifficulty;
+        return this.ChooseDifficulty;
     }
 
     private void setChooseDifficulty(State chooseDifficulty) {
@@ -130,7 +130,7 @@ public class Game implements Runnable {
     }
 
     private State getChooseSideState() {
-        return chooseSideState;
+        return this.chooseSideState;
     }
 
     private void setChooseSideState(State chooseSideState) {
@@ -138,7 +138,7 @@ public class Game implements Runnable {
     }
 
     private State getIntroState() {
-        return IntroState;
+        return this.IntroState;
     }
 
     private void setIntroState(State introState) {
@@ -146,7 +146,7 @@ public class Game implements Runnable {
     }
 
     private State getIntroTaskState() {
-        return IntroTaskState;
+        return this.IntroTaskState;
     }
 
     private void setIntroTaskState(State introTaskState) {
