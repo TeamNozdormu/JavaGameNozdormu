@@ -1,6 +1,8 @@
-package com.company.graphics;
+package com.company.graphics.utililies;
 
 import com.company.eventHandlers.MouseInput;
+import com.company.graphics.ImageLoader;
+import com.company.graphics.SpriteSheet;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -28,7 +30,6 @@ public class Assets {
     public static BufferedImage button;
     public static BufferedImage buttonBar;
     public static BufferedImage[] sprites = new BufferedImage[4];
-    public static SpriteSheet explosion;
     public static SpriteSheet die;
     public static SpriteSheet easyEnemy;
     public static SpriteSheet sturdyEnemy;
@@ -84,8 +85,7 @@ public class Assets {
         }
     }
 
-    public static void loadingHighScores() {
-
+    public static void loadingHighScores(String order) {
         scores = new TreeMap<>();
         highScores = new LinkedHashMap<>();
         List<Map.Entry<String, Integer>> list;
@@ -104,44 +104,12 @@ public class Assets {
         }
 
         list = new ArrayList<>(scores.entrySet());
-        Collections.sort(list, (a, b) -> b.getValue().compareTo(a.getValue()));
 
-        if (list.size() > 10) {
-            list.subList(0, 10);
+        if (order.equalsIgnoreCase("ascending")) {
+            Collections.sort(list, (a, b) -> a.getValue().compareTo(b.getValue()));
+        } else {
+            Collections.sort(list, (a, b) -> b.getValue().compareTo(a.getValue()));
         }
-
-        for (Map.Entry<String, Integer> entry : list) {
-            highScores.put(entry.getKey(), entry.getValue());
-        }
-
-        if (list.size() > 0) {
-            lowestScore = list.get(list.size() - 1).getValue();
-        }
-    }
-
-    public static void loadHighScoresAscending() {
-        // TODO: refactor the code, so that we avoid code repetition
-        // (loadHighScores and loadHighScoresAscending)
-
-        scores = new TreeMap<>();
-        highScores = new LinkedHashMap<>();
-        List<Map.Entry<String, Integer>> list;
-
-        try (BufferedReader fileReader = new BufferedReader(new FileReader("res\\highScores.txt"))) {
-            String line = fileReader.readLine();
-            String[] tokens;
-
-            while (line != null) {
-                tokens = line.split("\\s+");
-                scores.put(tokens[0], Integer.parseInt(tokens[1]));
-                line = fileReader.readLine();
-            }
-        } catch (IOException ioex) {
-            System.err.println("Cannot read the file");
-        }
-
-        list = new ArrayList<>(scores.entrySet());
-        Collections.sort(list, (a, b) -> a.getValue().compareTo(b.getValue()));
 
         if (list.size() > 10) {
             list.subList(0, 10);

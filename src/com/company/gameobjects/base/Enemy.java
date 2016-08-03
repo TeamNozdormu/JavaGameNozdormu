@@ -50,49 +50,64 @@ public abstract class Enemy extends GameObject {
         );
 
         if (this.getHealth() > 0) {
-            this.getColliderBox().setBounds(
-                    this.getX(),
-                    this.getY(),
-                    this.getObjectIcon().getWidth(),
-                    this.getObjectIcon().getHeight()
-            );
-            this.setY(this.getY() + this.getSpeed());
-
-            //enemy is outside the window
-            if (this.getY() > 650) {
-                GameState.getEnemiesList().remove(this);
-                passed++;
-            }
-
-            for (int i = 0; i < GameState.getBulletsList().size(); i++) {
-                if (this.collide(GameState.getBulletsList().get(i).getColliderBox())) {
-                    this.health -= GameState.getBulletsList().get(i).getBulletStrength();
-                    if (this.health < 0) {
-                        this.health = 0;
-                        if (GameState.getPlayer().getCurrentBonus() != null) {
-                            this.pointsForPlayer *= GameState.getPlayer().getCurrentBonus().getMultiplierForScore();
-                        }
-                    }
-
-                    GameState.getBulletsList().remove(i);
-                }
-            }
+        	moveEnemy();
+        	handleCollisionWithBullets();
         }
 
         if (this.getHealth() == 0) {
-            GameState.getEnemiesList().remove(this);
-            double chanceToGenerateBonus = RandomGenerator.getNextDoubleRandom();
-
-            if (chanceToGenerateBonus > 0.8) {
-                GameState.getBonusList().add(new DoubleDamageBonus(this.getX(), this.getY()));
-            }
-
-            if (GameState.getPlayer().getCurrentBonus() != null) {
-                GameState.score += this.getPointsForPlayer() * GameState.getPlayer().getCurrentBonus()
-                        .getMultiplierForScore();
-            } else {
-                GameState.score += this.getPointsForPlayer();
-            }
+        	removeEnemy();
+        	generateBonus();
         }
     }
+
+	private void moveEnemy() {
+		this.getColliderBox().setBounds(
+                this.getX(),
+                this.getY(),
+                this.getObjectIcon().getWidth(),
+                this.getObjectIcon().getHeight()
+        );
+        this.setY(this.getY() + this.getSpeed());
+
+        //enemy is outside the window
+        if (this.getY() > 650) {
+            removeEnemy();
+            passed++;
+        }
+	}
+
+	private void handleCollisionWithBullets() {
+		for (int i = 0; i < GameState.getBulletsList().size(); i++) {
+            if (this.collide(GameState.getBulletsList().get(i).getColliderBox())) {
+                this.health -= GameState.getBulletsList().get(i).getBulletStrength();
+                if (this.health < 0) {
+                    this.health = 0;
+                    if (GameState.getPlayer().getCurrentBonus() != null) {
+                        this.pointsForPlayer *= GameState.getPlayer().getCurrentBonus().getMultiplierForScore();
+                    }
+                }
+
+                GameState.getBulletsList().remove(i);
+            }
+        }
+	}
+	
+	private void removeEnemy() {
+		GameState.getEnemiesList().remove(this);
+	}
+	
+	private void generateBonus() {
+		double chanceToGenerateBonus = RandomGenerator.getNextDoubleRandom();
+
+        if (chanceToGenerateBonus > 0.8) {
+            GameState.getBonusList().add(new DoubleDamageBonus(this.getX(), this.getY()));
+        }
+
+        if (GameState.getPlayer().getCurrentBonus() != null) {
+            GameState.score += this.getPointsForPlayer() * GameState.getPlayer().getCurrentBonus()
+                    .getMultiplierForScore();
+        } else {
+            GameState.score += this.getPointsForPlayer();
+        }
+	}
 }

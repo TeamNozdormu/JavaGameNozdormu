@@ -6,7 +6,7 @@ import com.company.gamestates.GameOverState;
 import com.company.gamestates.GameState;
 import com.company.gamestates.MainMenuState;
 import com.company.gamestates.StateManager;
-import com.company.graphics.Assets;
+import com.company.graphics.utililies.Assets;
 import com.company.graphics.Display;
 
 import java.awt.event.KeyEvent;

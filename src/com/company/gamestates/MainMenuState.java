@@ -2,7 +2,7 @@ package com.company.gamestates;
 
 import com.company.constants.GameSettings;
 import com.company.gameobjects.entities.Button;
-import com.company.graphics.Assets;
+import com.company.graphics.utililies.Assets;
 
 import java.awt.*;
 

@@ -1,6 +1,6 @@
 package com.company.gamestates;
 
-import com.company.graphics.Assets;
+import com.company.graphics.utililies.Assets;
 import com.company.interfaces.Displayable;
 
 import java.awt.*;

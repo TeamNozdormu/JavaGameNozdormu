@@ -4,7 +4,7 @@ import com.company.constants.PlayerSettings;
 import com.company.gameobjects.base.Bonus;
 import com.company.gameobjects.base.GameObject;
 import com.company.gamestates.GameState;
-import com.company.graphics.Assets;
+import com.company.graphics.utililies.Assets;
 
 import java.awt.image.BufferedImage;
 
@@ -114,26 +114,11 @@ public class Player extends GameObject {
             this.timeForBonus = 0;
         }
 
-        this.getColliderBox().setBounds(
-                this.getX(),
-                this.getY(),
-                this.getObjectIcon().getWidth(),
-                this.getObjectIcon().getHeight()
-        );
+        movePlayer();
+        handleFireAction();
+    }
 
-        if (isMovingRight && this.getX() + this.getSpeed() <= 730) {
-            this.setX(this.getX() + this.getSpeed());
-        }
-        if (isMovingLeft && this.getX() + this.getSpeed() >= 0) {
-            this.setX(this.getX() - this.getSpeed());
-        }
-        if (isMovingDown && this.getY() + this.getSpeed() < 520) {
-            this.setY(this.getY() + this.getSpeed());
-        }
-        if (isMovingUp && this.getY() - this.getSpeed() >= 0) {
-            this.setY(this.getY() - this.getSpeed());
-        }
-
+	private void handleFireAction() {
         if (isFiring) {
             if (this.getCurrentBonus() != null) {
                 GameState.getBulletsList().add(
@@ -155,6 +140,27 @@ public class Player extends GameObject {
 
             isFiring = false;
         }
+	}
 
-    }
+	private void movePlayer() {
+		this.getColliderBox().setBounds(
+                this.getX(),
+                this.getY(),
+                this.getObjectIcon().getWidth(),
+                this.getObjectIcon().getHeight()
+        );
+
+        if (isMovingRight && this.getX() + this.getSpeed() <= 730) {
+            this.setX(this.getX() + this.getSpeed());
+        }
+        if (isMovingLeft && this.getX() + this.getSpeed() >= 0) {
+            this.setX(this.getX() - this.getSpeed());
+        }
+        if (isMovingDown && this.getY() + this.getSpeed() < 520) {
+            this.setY(this.getY() + this.getSpeed());
+        }
+        if (isMovingUp && this.getY() - this.getSpeed() >= 0) {
+            this.setY(this.getY() - this.getSpeed());
+        }
+	}
 }

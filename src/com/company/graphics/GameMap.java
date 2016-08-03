@@ -1,5 +1,7 @@
 package com.company.graphics;
 
+import com.company.graphics.utililies.ImageAlbum;
+
 import java.awt.image.BufferedImage;
 import java.util.LinkedList;
 import java.util.List;

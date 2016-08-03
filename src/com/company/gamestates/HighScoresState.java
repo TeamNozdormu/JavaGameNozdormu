@@ -1,7 +1,7 @@
 package com.company.gamestates;
 
 import com.company.gameobjects.entities.Button;
-import com.company.graphics.Assets;
+import com.company.graphics.utililies.Assets;
 
 import java.awt.*;
 import java.util.Map;
@@ -21,11 +21,7 @@ public class HighScoresState extends State {
         HighScoresState.setBackButton(new Button(100, 470, Assets.button, "Main menu"));
         HighScoresState.setReverse(new Button(400, 470, Assets.button, "Reverse"));
 
-        if (this.getCurrentSortingOrder().equals("Descending")) {
-            Assets.loadingHighScores();
-        } else if (this.getCurrentSortingOrder().equals("Ascending")) {
-            Assets.loadHighScoresAscending();
-        }
+        Assets.loadingHighScores(this.getCurrentSortingOrder());
 
         backButtonXPos = -220;
         reverseButtonXPos = -220;
@@ -80,11 +76,11 @@ public class HighScoresState extends State {
     public void reverseOrder() {
         if (this.currentSortingOrder.equals("Ascending")) {
             this.currentSortingOrder = "Descending";
-            Assets.loadingHighScores();
         } else if (this.currentSortingOrder.equals("Descending")) {
             this.currentSortingOrder = "Ascending";
-            Assets.loadHighScoresAscending();
         }
+
+        Assets.loadingHighScores(this.getCurrentSortingOrder());
     }
 
     @Override

@@ -1,7 +1,7 @@
 package com.company.gameobjects.entities;
 
 import com.company.gameobjects.base.Bonus;
-import com.company.graphics.Assets;
+import com.company.graphics.utililies.Assets;
 
 public class DoubleDamageBonus extends Bonus {
 
