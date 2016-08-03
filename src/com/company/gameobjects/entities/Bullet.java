@@ -1,7 +1,7 @@
 package com.company.gameobjects.entities;
 
 import com.company.gameobjects.base.GameObject;
-import com.company.gamestates.GameState;
+import com.company.gamestates.gameplayStates.GameState;
 import com.company.graphics.utililies.Assets;
 
 public class Bullet extends GameObject {

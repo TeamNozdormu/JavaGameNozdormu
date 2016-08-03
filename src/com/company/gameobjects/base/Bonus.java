@@ -1,6 +1,6 @@
 package com.company.gameobjects.base;
 
-import com.company.gamestates.GameState;
+import com.company.gamestates.gameplayStates.GameState;
 import com.company.graphics.utililies.Assets;
 
 import java.awt.image.BufferedImage;

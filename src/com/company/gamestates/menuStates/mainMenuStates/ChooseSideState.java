@@ -1,18 +1,20 @@
-package com.company.gamestates;
+package com.company.gamestates.menuStates.mainMenuStates;
 
 import com.company.gameobjects.entities.Button;
+import com.company.gamestates.State;
 import com.company.graphics.utililies.Assets;
 
 import java.awt.*;
 
-public class ChooseClassState extends State {
+public class ChooseSideState extends State {
 
-    private static Button backButton = new Button(300, 480, Assets.button, "Back");
     //TODO: Display the menu with options and listen for the event clicked
+    private static Button backButton;
     private Rectangle archerButton;
     private Rectangle mageButton;
 
-    public ChooseClassState() {
+    public ChooseSideState() {
+        ChooseSideState.setBackButton(new Button(300, 480, Assets.button, "Back"));
         this.setArcherButton(new Rectangle(50, 300, 300, 100));
         this.setMageButton(new Rectangle(450, 300, 300, 100));
     }
@@ -22,11 +24,11 @@ public class ChooseClassState extends State {
     }
 
     private static void setBackButton(Button backButton) {
-        ChooseClassState.backButton = backButton;
+        ChooseSideState.backButton = backButton;
     }
 
     public Rectangle getArcherButton() {
-        return this.archerButton;
+        return archerButton;
     }
 
     private void setArcherButton(Rectangle archerButton) {
@@ -34,12 +36,13 @@ public class ChooseClassState extends State {
     }
 
     public Rectangle getMageButton() {
-        return this.mageButton;
+        return mageButton;
     }
 
     private void setMageButton(Rectangle mageButton) {
         this.mageButton = mageButton;
     }
+
 
     @Override
     public void update() {
@@ -47,15 +50,13 @@ public class ChooseClassState extends State {
     }
 
     public void display(Graphics g) {
-
         g.drawImage(Assets.chooseSide, 0, 0, null);
         Graphics2D g2d = (Graphics2D) g;
 
-        g.setFont(new Font("Immortal", Font.PLAIN, 25));
-        g.setColor(Color.white);
+        g.setFont(new Font("redensek", Font.PLAIN, 40));
+        g.setColor(Color.GREEN);
         g2d.draw(archerButton);
         g2d.draw(mageButton);
         backButton.display(g);
     }
-
 }

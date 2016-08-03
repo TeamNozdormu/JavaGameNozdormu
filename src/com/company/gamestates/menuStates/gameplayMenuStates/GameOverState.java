@@ -1,5 +1,6 @@
-package com.company.gamestates;
+package com.company.gamestates.menuStates.gameplayMenuStates;
 
+import com.company.gamestates.State;
 import com.company.graphics.utililies.Assets;
 import com.company.interfaces.Displayable;
 

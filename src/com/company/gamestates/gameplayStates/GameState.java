@@ -1,4 +1,4 @@
-package com.company.gamestates;
+package com.company.gamestates.gameplayStates;
 
 import com.company.constants.GameSettings;
 import com.company.constants.PlayerSettings;
@@ -10,6 +10,10 @@ import com.company.gameobjects.entities.Bullet;
 import com.company.gameobjects.entities.EasyEnemy;
 import com.company.gameobjects.entities.Player;
 import com.company.gameobjects.factory.Factory;
+import com.company.gamestates.State;
+import com.company.gamestates.StateManager;
+import com.company.gamestates.menuStates.gameplayMenuStates.GainLevelState;
+import com.company.gamestates.menuStates.gameplayMenuStates.GameOverState;
 import com.company.graphics.utililies.Assets;
 import com.company.helperClasses.RandomGenerator;
 import com.company.interfaces.Displayable;

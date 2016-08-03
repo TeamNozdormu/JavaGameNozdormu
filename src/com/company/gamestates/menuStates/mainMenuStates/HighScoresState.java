@@ -1,6 +1,7 @@
-package com.company.gamestates;
+package com.company.gamestates.menuStates.mainMenuStates;
 
 import com.company.gameobjects.entities.Button;
+import com.company.gamestates.State;
 import com.company.graphics.utililies.Assets;
 
 import java.awt.*;

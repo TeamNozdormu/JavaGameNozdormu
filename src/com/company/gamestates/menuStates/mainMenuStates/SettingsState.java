@@ -1,6 +1,8 @@
-package com.company.gamestates;
+package com.company.gamestates.menuStates.mainMenuStates;
 
 import java.awt.*;
+
+import com.company.gamestates.State;
 
 public class SettingsState extends State {
 
