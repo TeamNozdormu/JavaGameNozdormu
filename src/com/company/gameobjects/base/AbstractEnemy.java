@@ -1,18 +1,19 @@
 package com.company.gameobjects.base;
 
+import com.company.gameobjects.interfaces.Enemy;
 import com.company.gameobjects.utilities.DoubleDamageBonus;
 import com.company.gamestates.GameStateImpl;
 import com.company.utilities.RandomGenerator;
 
 import java.awt.image.BufferedImage;
 
-public abstract class Enemy extends GameObject {
+public abstract class AbstractEnemy extends AbstractGameObject implements Enemy {
 
     public static int passed = 0;
     private int health;
     private int pointsForPlayer;
 
-    public Enemy(
+    public AbstractEnemy(
             int x,
             int y,
             int health,

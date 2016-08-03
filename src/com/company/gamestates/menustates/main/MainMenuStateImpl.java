@@ -22,7 +22,7 @@ public class MainMenuStateImpl extends AbstractState implements MainMenuState {
     public MainMenuStateImpl() {
         MainMenuStateImpl.setPlayButton(new Button(-220, 300, Assets.button, "play"));
         MainMenuStateImpl.setHighScoreButton(new Button(-220, 400, Assets.button, "High scores"));
-        MainMenuStateImpl.setQuitButton(new Button(-220, 500, Assets.button, "Quit"));
+        MainMenuStateImpl.setQuitButton(new com.company.gameobjects.entities.Button(-220, 500, Assets.button, "Quit"));
 
         this.setPlayButtonXPos(-220);
         this.setHighScoresButtonXPos(-220);

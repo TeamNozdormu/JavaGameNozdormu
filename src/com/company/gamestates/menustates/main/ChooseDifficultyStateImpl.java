@@ -21,7 +21,7 @@ public class ChooseDifficultyStateImpl extends AbstractState implements ChooseDi
         this.setHardButton(new Rectangle(330, 340, 135, 50));
     }
 
-    public static Button getBackButton() {
+    public static com.company.gameobjects.entities.Button getBackButton() {
         return backButton;
     }
 

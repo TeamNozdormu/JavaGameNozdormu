@@ -21,7 +21,7 @@ public class HighScoresStateImpl extends AbstractState implements HighScoresStat
     public HighScoresStateImpl(String order) {
         this.setCurrentSortingOrder(order);
         HighScoresStateImpl.setBackButton(new Button(100, 470, Assets.button, "Main menu"));
-        HighScoresStateImpl.setReverse(new Button(400, 470, Assets.button, "Reverse"));
+        HighScoresStateImpl.setReverse(new com.company.gameobjects.entities.Button(400, 470, Assets.button, "Reverse"));
 
         Assets.loadingHighScores(this.getCurrentSortingOrder());
 

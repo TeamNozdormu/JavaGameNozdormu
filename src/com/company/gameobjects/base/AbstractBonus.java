@@ -1,23 +1,24 @@
 package com.company.gameobjects.base;
 
+import com.company.gameobjects.interfaces.Bonus;
 import com.company.gamestates.GameStateImpl;
 import com.company.graphics.utililies.Assets;
 
 import java.awt.image.BufferedImage;
 
-public abstract class Bonus extends GameObject {
+public abstract class AbstractBonus extends AbstractGameObject implements Bonus {
 
     private int multiplierForDamage;
     private int multiplierForScore;
     private int bonusDuration;
 
-    public Bonus(int x,
-                 int y,
-                 BufferedImage gameObjectIcon,
-                 int damageMultiplier,
-                 int speedMultiplier,
-                 int multiplierForScore,
-                 int bonusDuration) {
+    public AbstractBonus(int x,
+                         int y,
+                         BufferedImage gameObjectIcon,
+                         int damageMultiplier,
+                         int speedMultiplier,
+                         int multiplierForScore,
+                         int bonusDuration) {
         super(x, y, Assets.doubleDamageBonus, speedMultiplier);
         this.setMultiplierForDamage(damageMultiplier);
         this.setMultiplierForScore(multiplierForScore);

@@ -1,14 +1,15 @@
 package com.company.gameobjects.entities;
 
-import com.company.gameobjects.base.GameObject;
+import com.company.gameobjects.base.AbstractGameObject;
+import com.company.gameobjects.interfaces.Bullet;
 import com.company.gameobjects.utilities.GameObjectConstants;
 import com.company.gamestates.GameStateImpl;
 import com.company.graphics.utililies.Assets;
 
-public class Bullet extends GameObject {
+public class BulletImpl extends AbstractGameObject implements Bullet {
     private int bulletStrength;
 
-    public Bullet(int x, int y, int strengthMultiplier) {
+    public BulletImpl(int x, int y, int strengthMultiplier) {
         super(x, y, Assets.bullet, GameObjectConstants.BULLET_SPEED_MULTIPLIER);
         this.setBulletStrength(1 * strengthMultiplier);
     }

@@ -2,11 +2,11 @@ package com.company.gamestates;
 
 import com.company.eventhandlers.utilities.MouseInput;
 import com.company.eventhandlers.utilities.PlayMusic;
-import com.company.gameobjects.base.Bonus;
-import com.company.gameobjects.base.Enemy;
-import com.company.gameobjects.entities.Bullet;
+import com.company.gameobjects.base.AbstractBonus;
+import com.company.gameobjects.base.AbstractEnemy;
+import com.company.gameobjects.entities.BulletImpl;
 import com.company.gameobjects.entities.EasyEnemy;
-import com.company.gameobjects.entities.Player;
+import com.company.gameobjects.entities.PlayerImpl;
 import com.company.gameobjects.factory.Factory;
 import com.company.gamestates.interfaces.GameState;
 import com.company.gamestates.menustates.gameplay.GainLevelState;
@@ -27,10 +27,10 @@ public class GameStateImpl extends AbstractState implements GameState, Displayab
     private static int LEVEL_POINTS;
     private static final int MISSED_ENEMIES = 3;
     public static int score;
-    private static Player player;
-    private static List<Enemy> enemiesList;
-    private static List<Bullet> bulletsList;
-    private static List<Bonus> bonusList;
+    private static PlayerImpl player;
+    private static List<AbstractEnemy> enemiesList;
+    private static List<BulletImpl> bulletsList;
+    private static List<AbstractBonus> bonusList;
     private static Factory factory;
     private static boolean isLevelGained;
     private long lastTimeMissed, now;
@@ -49,7 +49,7 @@ public class GameStateImpl extends AbstractState implements GameState, Displayab
         init();
         factory = new Factory();
         bulletsList = new LinkedList<>();
-        player = new Player(PlayerSettings.PLAYER_SET_X, PlayerSettings.PLAYER_SET_Y, PlayerSettings
+        player = new PlayerImpl(PlayerSettings.PLAYER_SET_X, PlayerSettings.PLAYER_SET_Y, PlayerSettings
                 .PLAYER_DEFAULT_NAME, PlayerSettings.PLAYER_DEFAULT_SPEED, LEVEL_POINTS);
         enemiesList = new LinkedList<>();
         bonusList = new LinkedList<>();
@@ -65,19 +65,19 @@ public class GameStateImpl extends AbstractState implements GameState, Displayab
 
     }
 
-    public static Player getPlayer() {
+    public static PlayerImpl getPlayer() {
         return player;
     }
 
-    public static List<Enemy> getEnemiesList() {
+    public static List<AbstractEnemy> getEnemiesList() {
         return enemiesList;
     }
 
-    public static List<Bullet> getBulletsList() {
+    public static List<BulletImpl> getBulletsList() {
         return bulletsList;
     }
 
-    public static List<Bonus> getBonusList() {
+    public static List<AbstractBonus> getBonusList() {
         return bonusList;
     }
 
@@ -173,10 +173,10 @@ public class GameStateImpl extends AbstractState implements GameState, Displayab
         }
 
         //if player misses three enemies loses one live
-        if (Enemy.passed >= MISSED_ENEMIES) {
+        if (AbstractEnemy.passed >= MISSED_ENEMIES) {
             player.setNumberOfLives(player.getNumberOfLives() - 1);
             lastTimeMissed = System.currentTimeMillis();
-            Enemy.passed = 0;
+            AbstractEnemy.passed = 0;
             enemiesList.clear();
         }
 
@@ -207,7 +207,7 @@ public class GameStateImpl extends AbstractState implements GameState, Displayab
         //player gains level
         this.increaseLevel();
 
-        // Player Ends Playing
+        // PlayerImpl Ends Playing
         this.gameOver();
 
         if (explode) {
@@ -279,7 +279,7 @@ public class GameStateImpl extends AbstractState implements GameState, Displayab
         g.drawString(String.format("Score: %d", this.score), 560, 110);
         g.drawString("Lives: ", 560, 140);
         g.drawString(String.format("Monsters: %d", getEnemiesList().size()), 560, 170);
-        g.drawString(String.format("Monster to kill: %d", (MISSED_ENEMIES - Enemy.passed)), 500, 200);
+        g.drawString(String.format("Monster to kill: %d", (MISSED_ENEMIES - AbstractEnemy.passed)), 500, 200);
 
         for (int i = 0; i < player.getNumberOfLives(); i++) {
             g.drawImage(Assets.live, 660 + i * 35, 1, null);

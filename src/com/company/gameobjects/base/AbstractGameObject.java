@@ -1,5 +1,6 @@
 package com.company.gameobjects.base;
 
+import com.company.gameobjects.interfaces.GameObject;
 import com.company.interfaces.Displayable;
 import com.company.interfaces.Updateable;
 
@@ -9,7 +10,7 @@ import java.awt.image.BufferedImage;
 //Note: If you extend the class and want to push the path from the child
 //      you must add it's path to the ImageAlbum and take it from there in the concrete child class.
 
-public abstract class GameObject implements Displayable, Updateable {
+public abstract class AbstractGameObject implements GameObject, Displayable, Updateable {
 
     private int x;
     private int y;
@@ -17,7 +18,7 @@ public abstract class GameObject implements Displayable, Updateable {
     private Rectangle colliderBox;
     private BufferedImage gameObjectIcon;
 
-    public GameObject(int x, int y, BufferedImage gameObjectIcon, int speedMultiplier) {
+    public AbstractGameObject(int x, int y, BufferedImage gameObjectIcon, int speedMultiplier) {
         this.setX(x);
         this.setY(y);
         this.setSpeed(speedMultiplier);
@@ -31,7 +32,7 @@ public abstract class GameObject implements Displayable, Updateable {
         );
     }
 
-    public GameObject(BufferedImage bufferedImage) {
+    public AbstractGameObject(BufferedImage bufferedImage) {
 
     }
 

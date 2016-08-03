@@ -1,14 +1,15 @@
 package com.company.gameobjects.entities;
 
+import com.company.gameobjects.interfaces.Player;
 import com.company.gamestates.GameStateImpl;
 import com.company.utilities.PlayerSettings;
-import com.company.gameobjects.base.Bonus;
-import com.company.gameobjects.base.GameObject;
+import com.company.gameobjects.base.AbstractBonus;
+import com.company.gameobjects.base.AbstractGameObject;
 import com.company.graphics.utililies.Assets;
 
 import java.awt.image.BufferedImage;
 
-public class Player extends GameObject {
+public class PlayerImpl extends AbstractGameObject implements Player {
 
     public static boolean
             isMovingLeft = false,
@@ -21,17 +22,17 @@ public class Player extends GameObject {
     private int numberOfLives;
     private String playerName;
     private int score;
-    private Bonus currentBonus;
+    private AbstractBonus currentBonus;
     private int timeForBonus;
 
-    public Player(int x, int y, String name, int speed, int nextLevel) {
+    public PlayerImpl(int x, int y, String name, int speed, int nextLevel) {
         super(x, y, Assets.player, speed);
         this.setPlayerName(name);
         this.setNumberOfLives(PlayerSettings.PLAYER_INITIAL_NUMBER_OF_LIVES);
         this.setScore(PlayerSettings.PLAYER_DEFAULT_SCORES);
     }
 
-    public Player(BufferedImage bufferedImage) {
+    public PlayerImpl(BufferedImage bufferedImage) {
         super(bufferedImage);
     }
 
@@ -40,7 +41,7 @@ public class Player extends GameObject {
     }
 
     public static void setLevel(int level) {
-        Player.level = level;
+        PlayerImpl.level = level;
     }
 
     public static void inceraseLevel() {
@@ -83,11 +84,11 @@ public class Player extends GameObject {
         this.numberOfLives = numberOfLives;
     }
 
-    public Bonus getCurrentBonus() {
+    public AbstractBonus getCurrentBonus() {
         return this.currentBonus;
     }
 
-    public void setCurrentBonus(Bonus bonus) {
+    public void setCurrentBonus(AbstractBonus bonus) {
         this.currentBonus = bonus;
         this.setTimeForBonus(bonus.getBonusDuration());
     }
@@ -111,7 +112,7 @@ public class Player extends GameObject {
         if (isFiring) {
             if (this.getCurrentBonus() != null) {
                 GameStateImpl.getBulletsList().add(
-                        new Bullet(
+                        new BulletImpl(
                                 this.getX() + 16,
                                 this.getY(),
                                 this.getCurrentBonus().getMultiplierForDamage()
@@ -119,7 +120,7 @@ public class Player extends GameObject {
                 );
             } else {
                 GameStateImpl.getBulletsList().add(
-                        new Bullet(
+                        new BulletImpl(
                                 this.getX() + 16,
                                 this.getY(),
                                 1

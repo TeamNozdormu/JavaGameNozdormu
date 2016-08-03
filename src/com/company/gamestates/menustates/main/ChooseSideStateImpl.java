@@ -15,7 +15,7 @@ public class ChooseSideStateImpl extends AbstractState implements ChooseSideStat
     private Rectangle mageButton;
 
     public ChooseSideStateImpl() {
-        ChooseSideStateImpl.setBackButton(new Button(300, 480, Assets.button, "Back"));
+        ChooseSideStateImpl.setBackButton(new com.company.gameobjects.entities.Button(300, 480, Assets.button, "Back"));
         this.setArcherButton(new Rectangle(50, 300, 300, 100));
         this.setMageButton(new Rectangle(450, 300, 300, 100));
     }

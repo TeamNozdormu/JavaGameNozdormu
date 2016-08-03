@@ -1,8 +1,8 @@
 package com.company.eventhandlers;
 
 import com.company.eventhandlers.utilities.PlayMusic;
-import com.company.gameobjects.Game;
-import com.company.gameobjects.entities.Player;
+import com.company.gameobjects.GameImpl;
+import com.company.gameobjects.entities.PlayerImpl;
 import com.company.gamestates.GameStateImpl;
 import com.company.gamestates.utilities.StateManager;
 import com.company.gamestates.menustates.gameplay.GameOverState;
@@ -13,22 +13,22 @@ import com.company.graphics.Display;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
-import static com.company.gameobjects.entities.Player.isMovingLeft;
+import static com.company.gameobjects.entities.PlayerImpl.isMovingLeft;
 
 public class KeyboardInput implements KeyListener {
 
-    private Game game;
+    private GameImpl game;
 
-    public KeyboardInput(Game game, Display display) {
+    public KeyboardInput(GameImpl game, Display display) {
         this.setGame(game);
         display.getCanvas().addKeyListener(this);
     }
 
-    public Game getGame() {
+    public GameImpl getGame() {
         return this.game;
     }
 
-    public void setGame(Game game) {
+    public void setGame(GameImpl game) {
         this.game = game;
     }
 
@@ -41,7 +41,7 @@ public class KeyboardInput implements KeyListener {
         int key = e.getKeyCode();
 
         if (key == KeyEvent.VK_RIGHT) {
-            Player.isMovingRight = true;
+            PlayerImpl.isMovingRight = true;
         } else if (key == KeyEvent.VK_LEFT) {
             isMovingLeft = true;
         } else if (key == KeyEvent.VK_UP) {

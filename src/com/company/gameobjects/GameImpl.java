@@ -1,25 +1,27 @@
 package com.company.gameobjects;
 
-import com.company.gamestates.menustates.main.ChooseSideStateImpl;
-import com.company.utilities.GameSettings;
 import com.company.eventhandlers.KeyboardInput;
 import com.company.eventhandlers.utilities.MouseInput;
-import com.company.gamestates.*;
+import com.company.gameobjects.interfaces.Game;
+import com.company.gamestates.AbstractState;
 import com.company.gamestates.GameStateImpl;
+import com.company.gamestates.interfaces.State;
 import com.company.gamestates.menustates.gameplay.GameOverState;
 import com.company.gamestates.menustates.gameplay.IntroState;
 import com.company.gamestates.menustates.gameplay.IntroTaskState;
 import com.company.gamestates.menustates.main.ChooseDifficultyStateImpl;
+import com.company.gamestates.menustates.main.ChooseSideStateImpl;
 import com.company.gamestates.menustates.main.HighScoresStateImpl;
 import com.company.gamestates.menustates.main.MainMenuStateImpl;
 import com.company.gamestates.utilities.StateManager;
 import com.company.graphics.Display;
 import com.company.graphics.GameMap;
+import com.company.utilities.GameSettings;
 
 import java.awt.*;
 import java.awt.image.BufferStrategy;
 
-public class Game implements Runnable {
+public class GameImpl implements Game, Runnable {
 
     public GameMap map;
     private Display display;
@@ -29,14 +31,14 @@ public class Game implements Runnable {
     private KeyboardInput keyboardInput;
     private BufferStrategy bufferStrategy;
     private Graphics graphics;
-    private AbstractState gameState;
-    private AbstractState menuState;
-    private AbstractState gameOverState;
-    private AbstractState highScoreState;
-    private AbstractState ChooseDifficulty;
-    private AbstractState chooseSideState;
-    private AbstractState IntroState;
-    private AbstractState IntroTaskState;
+    private State gameState;
+    private State menuState;
+    private State gameOverState;
+    private State highScoreState;
+    private State ChooseDifficulty;
+    private State chooseSideState;
+    private State IntroState;
+    private State IntroTaskState;
 
     public boolean isRunning() {
         return this.isRunning;
@@ -102,31 +104,31 @@ public class Game implements Runnable {
         this.graphics = graphics;
     }
 
-    private AbstractState getGameState() {
+    private State getGameState() {
         return this.gameState;
     }
 
-    private void setGameState(AbstractState gameState) {
+    private void setGameState(State gameState) {
         this.gameState = gameState;
     }
 
-    private AbstractState getMenuState() {
+    private State getMenuState() {
         return this.menuState;
     }
 
-    private void setMenuState(AbstractState menuState) {
+    private void setMenuState(State menuState) {
         this.menuState = menuState;
     }
 
-    private AbstractState getGameOverState() {
+    private State getGameOverState() {
         return this.gameOverState;
     }
 
-    private void setGameOverState(AbstractState gameOverState) {
+    private void setGameOverState(State gameOverState) {
         this.gameOverState = gameOverState;
     }
 
-    private AbstractState getHighScoreState() {
+    private State getHighScoreState() {
         return this.highScoreState;
     }
 
@@ -134,15 +136,15 @@ public class Game implements Runnable {
         this.highScoreState = highScoreState;
     }
 
-    private AbstractState getChooseDifficulty() {
+    private State getChooseDifficulty() {
         return this.ChooseDifficulty;
     }
 
-    private void setChooseDifficulty(AbstractState chooseDifficulty) {
+    private void setChooseDifficulty(State chooseDifficulty) {
         ChooseDifficulty = chooseDifficulty;
     }
 
-    private AbstractState getChooseSideState() {
+    private State getChooseSideState() {
         return this.chooseSideState;
     }
 
@@ -150,19 +152,19 @@ public class Game implements Runnable {
         this.chooseSideState = chooseSideState;
     }
 
-    private AbstractState getIntroState() {
+    private State getIntroState() {
         return this.IntroState;
     }
 
-    private void setIntroState(AbstractState introState) {
+    private void setIntroState(State introState) {
         IntroState = introState;
     }
 
-    private AbstractState getIntroTaskState() {
+    private State getIntroTaskState() {
         return this.IntroTaskState;
     }
 
-    private void setIntroTaskState(AbstractState introTaskState) {
+    private void setIntroTaskState(State introTaskState) {
         IntroTaskState = introTaskState;
     }
 

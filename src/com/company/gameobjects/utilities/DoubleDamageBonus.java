@@ -1,9 +1,9 @@
 package com.company.gameobjects.utilities;
 
-import com.company.gameobjects.base.Bonus;
+import com.company.gameobjects.base.AbstractBonus;
 import com.company.graphics.utililies.Assets;
 
-public final class DoubleDamageBonus extends Bonus {
+public final class DoubleDamageBonus extends AbstractBonus {
 
     private static final int DAMAGE_MULTIPLIER = 2;
     private static final int SPEED_MULTIPLIER = 3;
