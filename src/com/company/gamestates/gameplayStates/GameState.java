@@ -24,7 +24,7 @@ import java.util.List;
 
 public class GameState extends State implements Displayable {
 
-    private static final int LEVEL_POINTS = 20;
+    private static int LEVEL_POINTS;
     private static final int MISSED_ENEMIES = 3;
     public static int score;
     private static Player player;
@@ -54,6 +54,15 @@ public class GameState extends State implements Displayable {
         enemiesList = new LinkedList<>();
         bonusList = new LinkedList<>();
         enemiesList.add(new EasyEnemy(RandomGenerator.getNextIntRandom(725), -100, 1, 2));
+
+        if (MouseInput.isEasyButton) {
+            GameState.LEVEL_POINTS = 100;
+        } else if (MouseInput.isMediumButton){
+            GameState.LEVEL_POINTS = 200;
+        } else {
+            GameState.LEVEL_POINTS = 300;
+        }
+
     }
 
     public static Player getPlayer() {
@@ -213,8 +222,8 @@ public class GameState extends State implements Displayable {
         }
 
         //change difficulty
-        if (getEnemiesList().size() < 3) {
-            if (this.getEnemyTypes() == 3) {
+        if (getEnemiesList().size() < 5 ) {
+            if (this.getEnemyTypes() == 5) {
                 this.createSturdyEnemies(Player.getLevel());
             } else {
                 this.addNewEasyEnemy();
@@ -226,17 +235,6 @@ public class GameState extends State implements Displayable {
 
     @Override
     public void display(Graphics g) {
-//        very slow
-
-//        GameMap map = new GameMap(
-//                GameSettings.GAME_WIDTH,
-//                GameSettings.GAME_HEIGHT);
-//
-//        for (Field field : map.getFields()) {
-//            g.drawImage(field.getPicture(), field.getX(), field.getY(), null);
-//        }
-
-
         //TODO draw map
         g.drawImage(Assets.background, 0, 0, null);
 

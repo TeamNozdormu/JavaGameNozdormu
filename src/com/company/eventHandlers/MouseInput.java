@@ -60,8 +60,6 @@ public class MouseInput implements MouseListener {
             if (mouseX >= 330 && mouseX <= 460) {
                 if (mouseY >= 210 && mouseY <= 260) {
                     isEasyButton = true;
-                    //    StateManager.setCurrentState(new GameState());
-                    //   StateManager.setCurrentState(new IntroState());
                     StateManager.setCurrentState(new ChooseSideState());
                 }
             }
@@ -70,8 +68,6 @@ public class MouseInput implements MouseListener {
             if (mouseX >= 330 && mouseX <= 460) {
                 if (mouseY >= 275 && mouseY <= 325) {
                     isMediumButton = true;
-                    //   StateManager.setCurrentState(new GameState());
-                    //   StateManager.setCurrentState(new IntroState());
                     StateManager.setCurrentState(new ChooseSideState());
                 }
             }
@@ -80,8 +76,6 @@ public class MouseInput implements MouseListener {
             if (mouseX >= 330 && mouseX <= 460) {
                 if (mouseY >= 350 && mouseY <= 400) {
                     isHardButton = true;
-                    //   StateManager.setCurrentState(new GameState());
-                    //   StateManager.setCurrentState(new IntroState());
                     StateManager.setCurrentState(new ChooseSideState());
                 }
             }
@@ -95,7 +89,6 @@ public class MouseInput implements MouseListener {
                 if (mouseY >= 300 && mouseY <= 400) {
                     PlayMusic.archer.loop();
                     isMage = false;
-                    // StateManager.setCurrentState(new GameState());
                     StateManager.setCurrentState(new IntroState());
                 }
             }
@@ -105,7 +98,6 @@ public class MouseInput implements MouseListener {
                 if (mouseY >= 300 && mouseY <= 400) {
                     PlayMusic.mage.loop();
                     isMage = true;
-                    //    StateManager.setCurrentState(new GameState());
                     StateManager.setCurrentState(new IntroState());
                 }
             }
