@@ -24,7 +24,7 @@ import java.util.List;
 
 public class GameState extends State implements Displayable {
 
-    private static final int LEVEL_POINTS = 300;
+    private static final int LEVEL_POINTS = 100;
     private static final int MISSED_ENEMIES = 3;
     public static int score;
     private static Player player;
@@ -213,8 +213,8 @@ public class GameState extends State implements Displayable {
         }
 
         //change difficulty
-        if (getEnemiesList().size() < Player.getLevel() * 3) {
-            if (this.getEnemyTypes() == Player.getLevel() * 3) {
+        if (getEnemiesList().size() < 5) {
+            if (this.getEnemyTypes() == 5) {
                 this.createSturdyEnemies(Player.getLevel());
             } else {
                 this.addNewEasyEnemy();
@@ -300,7 +300,7 @@ public class GameState extends State implements Displayable {
     }
 
     private void createSturdyEnemies(int numberOfSturdyEnemies) {
-        for (int i = 0; i < numberOfSturdyEnemies; i++) {
+       // for (int i = 0; i < numberOfSturdyEnemies; i++) {
             getEnemiesList()
                     .add(getFactory()
                             .createSturdyEnemy(
@@ -308,7 +308,7 @@ public class GameState extends State implements Displayable {
                                     -100,
                                     RandomGenerator.getNextIntRandom(4),
                                     RandomGenerator.getNextIntRandom(Player.getLevel() + 1)));
-        }
+      //  }
         this.setEnemyTypes(0);
     }
 
@@ -338,8 +338,7 @@ public class GameState extends State implements Displayable {
     private void increaseLevel() {
         if (this.score >= player.getNextLevel()) {
             player.setNextLevel(
-                    LEVEL_POINTS * player.getLevel() +
-                            (RandomGenerator.getNextIntRandom(LEVEL_POINTS * player.getLevel()) * 2 / 3));
+                    LEVEL_POINTS * player.getLevel());
             if (MouseInput.isMage) {
                 PlayMusic.mage.stop();
             } else {
