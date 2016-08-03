@@ -1,21 +1,16 @@
 package com.company.gameobjects.entities;
 
 import com.company.gameobjects.base.GameObject;
-import com.company.gamestates.gameplayStates.GameState;
+import com.company.gameobjects.utilities.GameObjectConstants;
+import com.company.gamestates.GameState;
 import com.company.graphics.utililies.Assets;
 
 public class Bullet extends GameObject {
-
-    private static final int speedMultiplier = 5;
     private int bulletStrength;
 
     public Bullet(int x, int y, int strengthMultiplier) {
-        super(x, y, Assets.bullet, speedMultiplier);
+        super(x, y, Assets.bullet, GameObjectConstants.BULLET_SPEED_MULTIPLIER);
         this.setBulletStrength(1 * strengthMultiplier);
-    }
-
-    public static int getSpeedMultiplier() {
-        return speedMultiplier;
     }
 
     public int getBulletStrength() {
@@ -34,7 +29,7 @@ public class Bullet extends GameObject {
                 this.getObjectIcon().getWidth(),
                 this.getObjectIcon().getHeight()
         );
-        this.setY(this.getY() - this.getSpeed() * speedMultiplier);
+        this.setY(this.getY() - this.getSpeed() * GameObjectConstants.BULLET_SPEED_MULTIPLIER);
 
         if (this.getY() == 0) {
             GameState.getBulletsList().remove(this);

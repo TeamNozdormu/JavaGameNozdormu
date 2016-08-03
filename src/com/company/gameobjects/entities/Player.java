@@ -3,7 +3,7 @@ package com.company.gameobjects.entities;
 import com.company.constants.PlayerSettings;
 import com.company.gameobjects.base.Bonus;
 import com.company.gameobjects.base.GameObject;
-import com.company.gamestates.gameplayStates.GameState;
+import com.company.gamestates.GameState;
 import com.company.graphics.utililies.Assets;
 
 import java.awt.image.BufferedImage;
@@ -18,20 +18,17 @@ public class Player extends GameObject {
             isFiring = false;
 
     private static int level = 1;
-  //  private static int nextLevel;
     private int numberOfLives;
     private String playerName;
     private int score;
     private Bonus currentBonus;
     private int timeForBonus;
-    private int cropX, cropY;
 
     public Player(int x, int y, String name, int speed, int nextLevel) {
         super(x, y, Assets.player, speed);
         this.setPlayerName(name);
         this.setNumberOfLives(PlayerSettings.PLAYER_INITIAL_NUMBER_OF_LIVES);
         this.setScore(PlayerSettings.PLAYER_DEFAULT_SCORES);
-      //  Player.nextLevel = nextLevel;
     }
 
     public Player(BufferedImage bufferedImage) {
@@ -45,14 +42,6 @@ public class Player extends GameObject {
     public static void setLevel(int level) {
         Player.level = level;
     }
-
-   /* public static int getNextLevel() {
-        return nextLevel;
-    }
-
-    public static void setNextLevel(int nextLevel) {
-        Player.nextLevel = nextLevel;
-    }*/
 
     public static void inceraseLevel() {
         level++;
@@ -105,7 +94,6 @@ public class Player extends GameObject {
 
     @Override
     public void update() {
-        //TODO problem with replace with getter and setter
         if (this.timeForBonus > 0) {
             this.timeForBonus--;
         } else if (this.currentBonus != null && this.timeForBonus == 0) {

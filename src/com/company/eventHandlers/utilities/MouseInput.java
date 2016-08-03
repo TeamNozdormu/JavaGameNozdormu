@@ -1,7 +1,6 @@
-package com.company.eventHandlers;
+package com.company.eventHandlers.utilities;
 
-import com.company.gamestates.*;
-import com.company.gamestates.gameplayStates.GameState;
+import com.company.gamestates.GameState;
 import com.company.gamestates.menuStates.gameplayMenuStates.GainLevelState;
 import com.company.gamestates.menuStates.gameplayMenuStates.IntroState;
 import com.company.gamestates.menuStates.gameplayMenuStates.IntroTaskState;
@@ -10,12 +9,13 @@ import com.company.gamestates.menuStates.mainMenuStates.ChooseSideState;
 import com.company.gamestates.menuStates.mainMenuStates.HighScoresState;
 import com.company.gamestates.menuStates.mainMenuStates.MainMenuState;
 import com.company.gamestates.menuStates.mainMenuStates.QuitState;
+import com.company.gamestates.utilities.StateManager;
 import com.company.graphics.Display;
 
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
-public class MouseInput implements MouseListener {
+public final class MouseInput implements MouseListener {
 
     public static boolean isMage;
     public static boolean isEasyButton = false;

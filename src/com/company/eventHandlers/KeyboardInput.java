@@ -1,9 +1,10 @@
 package com.company.eventHandlers;
 
+import com.company.eventHandlers.utilities.PlayMusic;
 import com.company.gameobjects.Game;
 import com.company.gameobjects.entities.Player;
-import com.company.gamestates.StateManager;
-import com.company.gamestates.gameplayStates.GameState;
+import com.company.gamestates.utilities.StateManager;
+import com.company.gamestates.GameState;
 import com.company.gamestates.menuStates.gameplayMenuStates.GameOverState;
 import com.company.gamestates.menuStates.mainMenuStates.MainMenuState;
 import com.company.graphics.utililies.Assets;

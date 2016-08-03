@@ -1,6 +1,6 @@
 package com.company.graphics.utililies;
 
-import com.company.eventHandlers.MouseInput;
+import com.company.eventHandlers.utilities.MouseInput;
 import com.company.graphics.ImageLoader;
 import com.company.graphics.SpriteSheet;
 

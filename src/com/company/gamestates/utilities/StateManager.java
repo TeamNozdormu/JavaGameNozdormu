@@ -1,6 +1,8 @@
-package com.company.gamestates;
+package com.company.gamestates.utilities;
 
-public class StateManager {
+import com.company.gamestates.State;
+
+public final class StateManager {
 
     private static State currentState;
 

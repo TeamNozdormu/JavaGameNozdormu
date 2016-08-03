@@ -2,9 +2,9 @@ package com.company.gameobjects;
 
 import com.company.constants.GameSettings;
 import com.company.eventHandlers.KeyboardInput;
-import com.company.eventHandlers.MouseInput;
+import com.company.eventHandlers.utilities.MouseInput;
 import com.company.gamestates.*;
-import com.company.gamestates.gameplayStates.GameState;
+import com.company.gamestates.GameState;
 import com.company.gamestates.menuStates.gameplayMenuStates.GameOverState;
 import com.company.gamestates.menuStates.gameplayMenuStates.IntroState;
 import com.company.gamestates.menuStates.gameplayMenuStates.IntroTaskState;
@@ -12,6 +12,7 @@ import com.company.gamestates.menuStates.mainMenuStates.ChooseDifficultyState;
 import com.company.gamestates.menuStates.mainMenuStates.ChooseSideState;
 import com.company.gamestates.menuStates.mainMenuStates.HighScoresState;
 import com.company.gamestates.menuStates.mainMenuStates.MainMenuState;
+import com.company.gamestates.utilities.StateManager;
 import com.company.graphics.Display;
 import com.company.graphics.GameMap;
 

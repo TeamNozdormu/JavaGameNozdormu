@@ -11,7 +11,6 @@ import java.awt.image.BufferedImage;
 
 public abstract class GameObject implements Displayable, Updateable {
 
-    //TODO: implement the basic fields of all obects in the gameobjects
     private int x;
     private int y;
     private int speed;

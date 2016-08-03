@@ -1,17 +1,16 @@
-package com.company.gamestates.gameplayStates;
+package com.company.gamestates;
 
 import com.company.constants.GameSettings;
 import com.company.constants.PlayerSettings;
-import com.company.eventHandlers.MouseInput;
-import com.company.eventHandlers.PlayMusic;
+import com.company.eventHandlers.utilities.MouseInput;
+import com.company.eventHandlers.utilities.PlayMusic;
 import com.company.gameobjects.base.Bonus;
 import com.company.gameobjects.base.Enemy;
 import com.company.gameobjects.entities.Bullet;
 import com.company.gameobjects.entities.EasyEnemy;
 import com.company.gameobjects.entities.Player;
 import com.company.gameobjects.factory.Factory;
-import com.company.gamestates.State;
-import com.company.gamestates.StateManager;
+import com.company.gamestates.utilities.StateManager;
 import com.company.gamestates.menuStates.gameplayMenuStates.GainLevelState;
 import com.company.gamestates.menuStates.gameplayMenuStates.GameOverState;
 import com.company.graphics.utililies.Assets;
@@ -224,7 +223,7 @@ public class GameState extends State implements Displayable {
         //change difficulty
         if (getEnemiesList().size() < 5 ) {
             if (this.getEnemyTypes() == 5) {
-                this.createSturdyEnemies(Player.getLevel());
+                this.createSturdyEnemies(player.getLevel());
             } else {
                 this.addNewEasyEnemy();
             }
@@ -304,7 +303,7 @@ public class GameState extends State implements Displayable {
                                     RandomGenerator.getNextIntRandom(GameSettings.GAME_WIDTH - 100),
                                     -100,
                                     RandomGenerator.getNextIntRandom(4),
-                                    RandomGenerator.getNextIntRandom(Player.getLevel() + 1)));
+                                    RandomGenerator.getNextIntRandom(player.getLevel() + 1)));
         this.setEnemyTypes(0);
     }
 
@@ -341,7 +340,7 @@ public class GameState extends State implements Displayable {
 
             PlayMusic.fire.stop();
 
-            Player.inceraseLevel();
+            player.inceraseLevel();
             this.isLevelGained = true;
 
             StateManager.setCurrentState(new GainLevelState());
