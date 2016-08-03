@@ -297,14 +297,13 @@ public class GameState extends State implements Displayable {
 
     private void createSturdyEnemies(int numberOfSturdyEnemies) {
         for (int i = 0; i < numberOfSturdyEnemies; i++) {
-            int health = RandomGenerator.getNextIntRandom(4);
             getEnemiesList()
                     .add(getFactory()
                             .createSturdyEnemy(
                                     RandomGenerator.getNextIntRandom(GameSettings.GAME_WIDTH - 100),
                                     -100,
-                                    health > 0 ? health : 1,
-                                    RandomGenerator.getNextIntRandom(Player.getLevel())));
+                                    RandomGenerator.getNextIntRandom(4),
+                                    RandomGenerator.getNextIntRandom(Player.getLevel() + 1)));
         }
         this.setEnemyTypes(0);
     }
