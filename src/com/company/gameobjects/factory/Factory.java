@@ -3,7 +3,7 @@ package com.company.gameobjects.factory;
 import com.company.gameobjects.base.AbstractEnemy;
 import com.company.gameobjects.entities.EasyEnemy;
 import com.company.gameobjects.entities.SturdyEnemy;
-import com.company.interfaces.Createable;
+import com.company.gamestates.interfaces.Createable;
 
 /**
  * Created by ivanof on 7/20/16.

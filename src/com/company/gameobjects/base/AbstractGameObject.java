@@ -1,8 +1,8 @@
 package com.company.gameobjects.base;
 
 import com.company.gameobjects.interfaces.GameObject;
-import com.company.interfaces.Displayable;
-import com.company.interfaces.Updateable;
+import com.company.gamestates.interfaces.Displayable;
+import com.company.gamestates.interfaces.Updateable;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;

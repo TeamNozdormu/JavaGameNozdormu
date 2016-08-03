@@ -1,4 +1,4 @@
-package com.company.interfaces;
+package com.company.gamestates.interfaces;
 
 public interface Updateable {
 

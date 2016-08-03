@@ -13,7 +13,7 @@ import com.company.gamestates.menustates.gameplay.GainLevelState;
 import com.company.gamestates.menustates.gameplay.GameOverState;
 import com.company.gamestates.utilities.StateManager;
 import com.company.graphics.utililies.Assets;
-import com.company.interfaces.Displayable;
+import com.company.gamestates.interfaces.Displayable;
 import com.company.utilities.GameSettings;
 import com.company.utilities.PlayerSettings;
 import com.company.utilities.RandomGenerator;

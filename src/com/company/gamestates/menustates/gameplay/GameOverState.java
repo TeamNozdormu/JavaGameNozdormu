@@ -2,7 +2,7 @@ package com.company.gamestates.menustates.gameplay;
 
 import com.company.gamestates.AbstractState;
 import com.company.graphics.utililies.Assets;
-import com.company.interfaces.Displayable;
+import com.company.gamestates.interfaces.Displayable;
 
 import java.awt.*;
 
