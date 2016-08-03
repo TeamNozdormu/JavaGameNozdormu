@@ -1,19 +1,20 @@
 package com.company.gamestates.menustates.gameplay;
 
 import com.company.gameobjects.entities.Button;
-import com.company.gamestates.State;
+import com.company.gamestates.AbstractState;
+import com.company.gamestates.interfaces.ChooseClassState;
 import com.company.graphics.utililies.Assets;
 
 import java.awt.*;
 
-public class ChooseClassState extends State {
+public class ChooseClassStateImpl extends AbstractState implements ChooseClassState {
 
     private static Button backButton = new Button(300, 480, Assets.button, "Back");
     //TODO: Display the menu with options and listen for the event clicked
     private Rectangle archerButton;
     private Rectangle mageButton;
 
-    public ChooseClassState() {
+    public ChooseClassStateImpl() {
         this.setArcherButton(new Rectangle(50, 300, 300, 100));
         this.setMageButton(new Rectangle(450, 300, 300, 100));
     }
@@ -23,7 +24,7 @@ public class ChooseClassState extends State {
     }
 
     private static void setBackButton(Button backButton) {
-        ChooseClassState.backButton = backButton;
+        ChooseClassStateImpl.backButton = backButton;
     }
 
     public Rectangle getArcherButton() {

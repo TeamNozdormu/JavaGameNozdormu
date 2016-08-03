@@ -1,13 +1,14 @@
 package com.company.gamestates.menustates.main;
 
 import com.company.gameobjects.entities.Button;
-import com.company.gamestates.State;
+import com.company.gamestates.AbstractState;
+import com.company.gamestates.interfaces.HighScoresState;
 import com.company.graphics.utililies.Assets;
 
 import java.awt.*;
 import java.util.Map;
 
-public class HighScoresState extends State {
+public class HighScoresStateImpl extends AbstractState implements HighScoresState {
 
     private static final int ROW_HEIGHT = 35;
     private static Button backButton;
@@ -17,10 +18,10 @@ public class HighScoresState extends State {
     private int reverseButtonXPos;
     private String currentSortingOrder;
 
-    public HighScoresState(String order) {
+    public HighScoresStateImpl(String order) {
         this.setCurrentSortingOrder(order);
-        HighScoresState.setBackButton(new Button(100, 470, Assets.button, "Main menu"));
-        HighScoresState.setReverse(new Button(400, 470, Assets.button, "Reverse"));
+        HighScoresStateImpl.setBackButton(new Button(100, 470, Assets.button, "Main menu"));
+        HighScoresStateImpl.setReverse(new Button(400, 470, Assets.button, "Reverse"));
 
         Assets.loadingHighScores(this.getCurrentSortingOrder());
 
@@ -39,7 +40,7 @@ public class HighScoresState extends State {
     }
 
     private static void setBackButton(Button backButton) {
-        HighScoresState.backButton = backButton;
+        HighScoresStateImpl.backButton = backButton;
     }
 
     public static Button getReverseButton() {
@@ -47,7 +48,7 @@ public class HighScoresState extends State {
     }
 
     private static void setReverse(Button reverse) {
-        HighScoresState.reverse = reverse;
+        HighScoresStateImpl.reverse = reverse;
     }
 
     public int getRow() {

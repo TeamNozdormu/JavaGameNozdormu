@@ -2,7 +2,7 @@ package com.company.gameobjects.entities;
 
 import com.company.gameobjects.base.GameObject;
 import com.company.gameobjects.utilities.GameObjectConstants;
-import com.company.gamestates.GameState;
+import com.company.gamestates.GameStateImpl;
 import com.company.graphics.utililies.Assets;
 
 public class Bullet extends GameObject {
@@ -32,7 +32,7 @@ public class Bullet extends GameObject {
         this.setY(this.getY() - this.getSpeed() * GameObjectConstants.BULLET_SPEED_MULTIPLIER);
 
         if (this.getY() == 0) {
-            GameState.getBulletsList().remove(this);
+            GameStateImpl.getBulletsList().remove(this);
         }
     }
 

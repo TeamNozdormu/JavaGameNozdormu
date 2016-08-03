@@ -1,9 +1,9 @@
 package com.company.gameobjects.entities;
 
+import com.company.gamestates.GameStateImpl;
 import com.company.utilities.PlayerSettings;
 import com.company.gameobjects.base.Bonus;
 import com.company.gameobjects.base.GameObject;
-import com.company.gamestates.GameState;
 import com.company.graphics.utililies.Assets;
 
 import java.awt.image.BufferedImage;
@@ -110,7 +110,7 @@ public class Player extends GameObject {
 	private void handleFireAction() {
         if (isFiring) {
             if (this.getCurrentBonus() != null) {
-                GameState.getBulletsList().add(
+                GameStateImpl.getBulletsList().add(
                         new Bullet(
                                 this.getX() + 16,
                                 this.getY(),
@@ -118,7 +118,7 @@ public class Player extends GameObject {
                         )
                 );
             } else {
-                GameState.getBulletsList().add(
+                GameStateImpl.getBulletsList().add(
                         new Bullet(
                                 this.getX() + 16,
                                 this.getY(),

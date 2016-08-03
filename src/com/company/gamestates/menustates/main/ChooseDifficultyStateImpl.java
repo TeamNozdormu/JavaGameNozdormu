@@ -1,20 +1,21 @@
 package com.company.gamestates.menustates.main;
 
 import com.company.gameobjects.entities.Button;
-import com.company.gamestates.State;
+import com.company.gamestates.AbstractState;
+import com.company.gamestates.interfaces.ChooseDifficultyState;
 import com.company.graphics.utililies.Assets;
 
 import java.awt.*;
 
-public class ChooseDifficultyState extends State {
+public class ChooseDifficultyStateImpl extends AbstractState implements ChooseDifficultyState {
 
     private static Button backButton;
     private Rectangle easyButton;
     private Rectangle mediumButton;
     private Rectangle hardButton;
 
-    public ChooseDifficultyState() {
-        ChooseDifficultyState.setBackButton(new Button(300, 420, Assets.button, "Back"));
+    public ChooseDifficultyStateImpl() {
+        ChooseDifficultyStateImpl.setBackButton(new Button(300, 420, Assets.button, "Back"));
         this.setEasyButton(new Rectangle(330, 210, 135, 50));
         this.setMediumButton(new Rectangle(330, 275, 135, 50));
         this.setHardButton(new Rectangle(330, 340, 135, 50));
@@ -25,7 +26,7 @@ public class ChooseDifficultyState extends State {
     }
 
     private static void setBackButton(Button backButton) {
-        ChooseDifficultyState.backButton = backButton;
+        ChooseDifficultyStateImpl.backButton = backButton;
     }
 
     public Rectangle getEasyButton() {

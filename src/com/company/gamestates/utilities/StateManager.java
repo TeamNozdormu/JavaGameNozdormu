@@ -1,6 +1,6 @@
 package com.company.gamestates.utilities;
 
-import com.company.gamestates.State;
+import com.company.gamestates.interfaces.State;
 
 public final class StateManager {
 

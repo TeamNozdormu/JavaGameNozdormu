@@ -1,10 +1,10 @@
 package com.company.gamestates.menustates.main;
 
+import com.company.gamestates.AbstractState;
+
 import java.awt.*;
 
-import com.company.gamestates.State;
-
-public class SettingsState extends State {
+public class SettingsState extends AbstractState {
 
     @Override
     public void update() {

@@ -3,10 +3,10 @@ package com.company.eventhandlers;
 import com.company.eventhandlers.utilities.PlayMusic;
 import com.company.gameobjects.Game;
 import com.company.gameobjects.entities.Player;
+import com.company.gamestates.GameStateImpl;
 import com.company.gamestates.utilities.StateManager;
-import com.company.gamestates.GameState;
 import com.company.gamestates.menustates.gameplay.GameOverState;
-import com.company.gamestates.menustates.main.MainMenuState;
+import com.company.gamestates.menustates.main.MainMenuStateImpl;
 import com.company.graphics.utililies.Assets;
 import com.company.graphics.Display;
 
@@ -45,15 +45,15 @@ public class KeyboardInput implements KeyListener {
         } else if (key == KeyEvent.VK_LEFT) {
             isMovingLeft = true;
         } else if (key == KeyEvent.VK_UP) {
-            GameState.getPlayer().isMovingUp = true;
+            GameStateImpl.getPlayer().isMovingUp = true;
         } else if (key == KeyEvent.VK_DOWN) {
-            GameState.getPlayer().isMovingDown = true;
+            GameStateImpl.getPlayer().isMovingDown = true;
         } else if (key == KeyEvent.VK_BACK_SPACE) {
 
         }
 
-        if (key == KeyEvent.VK_SPACE && GameState.getPlayer().isFiring == false) {
-            GameState.getPlayer().isFiring = true;
+        if (key == KeyEvent.VK_SPACE && GameStateImpl.getPlayer().isFiring == false) {
+            GameStateImpl.getPlayer().isFiring = true;
             PlayMusic.fire.play();
         }
     }
@@ -62,19 +62,19 @@ public class KeyboardInput implements KeyListener {
         int key = e.getKeyCode();
 
         if (key == KeyEvent.VK_RIGHT) {
-            GameState.getPlayer().isMovingRight = false;
+            GameStateImpl.getPlayer().isMovingRight = false;
         } else if (key == KeyEvent.VK_LEFT) {
-            GameState.getPlayer().isMovingLeft = false;
+            GameStateImpl.getPlayer().isMovingLeft = false;
         } else if (key == KeyEvent.VK_UP) {
-            GameState.getPlayer().isMovingUp = false;
+            GameStateImpl.getPlayer().isMovingUp = false;
         } else if (key == KeyEvent.VK_DOWN) {
-            GameState.getPlayer().isMovingDown = false;
+            GameStateImpl.getPlayer().isMovingDown = false;
         } else if (key == KeyEvent.VK_BACK_SPACE) {
 
         }
 
-        if (key == KeyEvent.VK_SPACE && GameState.getPlayer().isFiring == true) {
-            GameState.getPlayer().isFiring = false;
+        if (key == KeyEvent.VK_SPACE && GameStateImpl.getPlayer().isFiring == true) {
+            GameStateImpl.getPlayer().isFiring = false;
         }
         if (StateManager.getCurrentState() instanceof GameOverState) {
             if (key >= 'A' && key <= 'Z' && GameOverState.getStringBuilder().length() < 14) {
@@ -82,10 +82,10 @@ public class KeyboardInput implements KeyListener {
             } else if (key == KeyEvent.VK_BACK_SPACE && GameOverState.getStringBuilder().length() > 0) {
                 GameOverState.getStringBuilder().deleteCharAt(GameOverState.getStringBuilder().length() - 1);
             } else if (key == KeyEvent.VK_ENTER && GameOverState.getStringBuilder().length() > 0) {
-                GameState.getPlayer().setPlayerName(GameOverState.getStringBuilder().toString());
+                GameStateImpl.getPlayer().setPlayerName(GameOverState.getStringBuilder().toString());
                 GameOverState.getStringBuilder().setLength(0);
-                Assets.savingHighScores(GameState.getPlayer().getPlayerName(), GameState.getScore());
-                StateManager.setCurrentState(new MainMenuState());
+                Assets.savingHighScores(GameStateImpl.getPlayer().getPlayerName(), GameStateImpl.getScore());
+                StateManager.setCurrentState(new MainMenuStateImpl());
             }
         }
     }

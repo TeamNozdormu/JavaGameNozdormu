@@ -1,11 +1,11 @@
 package com.company.gamestates.menustates.gameplay;
 
-import com.company.gamestates.State;
+import com.company.gamestates.AbstractState;
 import com.company.graphics.utililies.Assets;
 
 import java.awt.*;
 
-public class IntroState extends State {
+public class IntroState extends AbstractState {
 
     @Override
     public void update() {

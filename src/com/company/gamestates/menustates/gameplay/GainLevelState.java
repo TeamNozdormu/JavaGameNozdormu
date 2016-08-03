@@ -1,12 +1,12 @@
 package com.company.gamestates.menustates.gameplay;
 
-import com.company.gamestates.State;
+import com.company.gamestates.AbstractState;
 import com.company.graphics.utililies.Assets;
 import com.company.interfaces.Displayable;
 
 import java.awt.*;
 
-public class GainLevelState extends State implements Displayable {
+public class GainLevelState extends AbstractState implements Displayable {
 
     @Override
     public void update() {

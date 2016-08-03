@@ -1,6 +1,6 @@
 package com.company.gameobjects.base;
 
-import com.company.gamestates.GameState;
+import com.company.gamestates.GameStateImpl;
 import com.company.graphics.utililies.Assets;
 
 import java.awt.image.BufferedImage;
@@ -59,9 +59,9 @@ public abstract class Bonus extends GameObject {
                 this.getObjectIcon().getHeight()
         );
 
-        if (this.collide(GameState.getPlayer().getColliderBox())) {
-            GameState.getPlayer().setCurrentBonus(this);
-            GameState.getBonusList().remove(this);
+        if (this.collide(GameStateImpl.getPlayer().getColliderBox())) {
+            GameStateImpl.getPlayer().setCurrentBonus(this);
+            GameStateImpl.getBonusList().remove(this);
         }
     }
 }

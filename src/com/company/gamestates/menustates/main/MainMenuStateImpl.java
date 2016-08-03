@@ -1,13 +1,14 @@
 package com.company.gamestates.menustates.main;
 
-import com.company.utilities.GameSettings;
 import com.company.gameobjects.entities.Button;
-import com.company.gamestates.State;
+import com.company.gamestates.AbstractState;
+import com.company.gamestates.interfaces.MainMenuState;
 import com.company.graphics.utililies.Assets;
+import com.company.utilities.GameSettings;
 
 import java.awt.*;
 
-public class MainMenuState extends State {
+public class MainMenuStateImpl extends AbstractState implements MainMenuState {
 
     private static Button playButton;
     private static Button highScoreButton;
@@ -18,10 +19,10 @@ public class MainMenuState extends State {
     private int highScoresButtonXPos;
     private int quitButtonXPos;
 
-    public MainMenuState() {
-        MainMenuState.setPlayButton(new Button(-220, 300, Assets.button, "play"));
-        MainMenuState.setHighScoreButton(new Button(-220, 400, Assets.button, "High scores"));
-        MainMenuState.setQuitButton(new Button(-220, 500, Assets.button, "Quit"));
+    public MainMenuStateImpl() {
+        MainMenuStateImpl.setPlayButton(new Button(-220, 300, Assets.button, "play"));
+        MainMenuStateImpl.setHighScoreButton(new Button(-220, 400, Assets.button, "High scores"));
+        MainMenuStateImpl.setQuitButton(new Button(-220, 500, Assets.button, "Quit"));
 
         this.setPlayButtonXPos(-220);
         this.setHighScoresButtonXPos(-220);
@@ -37,7 +38,7 @@ public class MainMenuState extends State {
     }
 
     private static void setPlayButton(Button playButton) {
-        MainMenuState.playButton = playButton;
+        MainMenuStateImpl.playButton = playButton;
     }
 
     public static Button getHighScoreButton() {
@@ -45,7 +46,7 @@ public class MainMenuState extends State {
     }
 
     private static void setHighScoreButton(Button highScoreButton) {
-        MainMenuState.highScoreButton = highScoreButton;
+        MainMenuStateImpl.highScoreButton = highScoreButton;
     }
 
     public static Button getQuitButton() {
@@ -53,7 +54,7 @@ public class MainMenuState extends State {
     }
 
     private static void setQuitButton(Button quitButton) {
-        MainMenuState.quitButton = quitButton;
+        MainMenuStateImpl.quitButton = quitButton;
     }
 
     public int getCurrentSelection() {

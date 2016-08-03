@@ -1,7 +1,5 @@
 package com.company.gamestates;
 
-import com.company.utilities.GameSettings;
-import com.company.utilities.PlayerSettings;
 import com.company.eventhandlers.utilities.MouseInput;
 import com.company.eventhandlers.utilities.PlayMusic;
 import com.company.gameobjects.base.Bonus;
@@ -10,18 +8,21 @@ import com.company.gameobjects.entities.Bullet;
 import com.company.gameobjects.entities.EasyEnemy;
 import com.company.gameobjects.entities.Player;
 import com.company.gameobjects.factory.Factory;
-import com.company.gamestates.utilities.StateManager;
+import com.company.gamestates.interfaces.GameState;
 import com.company.gamestates.menustates.gameplay.GainLevelState;
 import com.company.gamestates.menustates.gameplay.GameOverState;
+import com.company.gamestates.utilities.StateManager;
 import com.company.graphics.utililies.Assets;
-import com.company.utilities.RandomGenerator;
 import com.company.interfaces.Displayable;
+import com.company.utilities.GameSettings;
+import com.company.utilities.PlayerSettings;
+import com.company.utilities.RandomGenerator;
 
 import java.awt.*;
 import java.util.LinkedList;
 import java.util.List;
 
-public class GameState extends State implements Displayable {
+public class GameStateImpl extends AbstractState implements GameState, Displayable {
 
     private static int LEVEL_POINTS;
     private static final int MISSED_ENEMIES = 3;
@@ -38,7 +39,7 @@ public class GameState extends State implements Displayable {
     private int cropX, cropY;
     private int cropXMonster = 0, cropYMonster = 0;
 
-    public GameState() {
+    public GameStateImpl() {
         if (!isLevelGained) {
             this.score = 0;
         } else {
@@ -55,11 +56,11 @@ public class GameState extends State implements Displayable {
         enemiesList.add(new EasyEnemy(RandomGenerator.getNextIntRandom(725), -100, 1, 2));
 
         if (MouseInput.isEasyButton) {
-            GameState.LEVEL_POINTS = 100;
+            GameStateImpl.LEVEL_POINTS = 100;
         } else if (MouseInput.isMediumButton){
-            GameState.LEVEL_POINTS = 200;
+            GameStateImpl.LEVEL_POINTS = 200;
         } else {
-            GameState.LEVEL_POINTS = 300;
+            GameStateImpl.LEVEL_POINTS = 300;
         }
 
     }

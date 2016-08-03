@@ -1,7 +1,7 @@
 package com.company.gameobjects.base;
 
 import com.company.gameobjects.utilities.DoubleDamageBonus;
-import com.company.gamestates.GameState;
+import com.company.gamestates.GameStateImpl;
 import com.company.utilities.RandomGenerator;
 
 import java.awt.image.BufferedImage;
@@ -77,37 +77,37 @@ public abstract class Enemy extends GameObject {
 	}
 
 	private void handleCollisionWithBullets() {
-		for (int i = 0; i < GameState.getBulletsList().size(); i++) {
-            if (this.collide(GameState.getBulletsList().get(i).getColliderBox())) {
-                this.health -= GameState.getBulletsList().get(i).getBulletStrength();
+		for (int i = 0; i < GameStateImpl.getBulletsList().size(); i++) {
+            if (this.collide(GameStateImpl.getBulletsList().get(i).getColliderBox())) {
+                this.health -= GameStateImpl.getBulletsList().get(i).getBulletStrength();
                 if (this.health < 0) {
                     this.health = 0;
-                    if (GameState.getPlayer().getCurrentBonus() != null) {
-                        this.pointsForPlayer *= GameState.getPlayer().getCurrentBonus().getMultiplierForScore();
+                    if (GameStateImpl.getPlayer().getCurrentBonus() != null) {
+                        this.pointsForPlayer *= GameStateImpl.getPlayer().getCurrentBonus().getMultiplierForScore();
                     }
                 }
 
-                GameState.getBulletsList().remove(i);
+                GameStateImpl.getBulletsList().remove(i);
             }
         }
 	}
 	
 	private void removeEnemy() {
-		GameState.getEnemiesList().remove(this);
+		GameStateImpl.getEnemiesList().remove(this);
 	}
 	
 	private void generateBonus() {
 		double chanceToGenerateBonus = RandomGenerator.getNextDoubleRandom();
 
         if (chanceToGenerateBonus > 0.8) {
-            GameState.getBonusList().add(new DoubleDamageBonus(this.getX(), this.getY()));
+            GameStateImpl.getBonusList().add(new DoubleDamageBonus(this.getX(), this.getY()));
         }
 
-        if (GameState.getPlayer().getCurrentBonus() != null) {
-            GameState.score += this.getPointsForPlayer() * GameState.getPlayer().getCurrentBonus()
+        if (GameStateImpl.getPlayer().getCurrentBonus() != null) {
+            GameStateImpl.score += this.getPointsForPlayer() * GameStateImpl.getPlayer().getCurrentBonus()
                     .getMultiplierForScore();
         } else {
-            GameState.score += this.getPointsForPlayer();
+            GameStateImpl.score += this.getPointsForPlayer();
         }
 	}
 }
