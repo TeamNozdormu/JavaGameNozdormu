@@ -24,7 +24,7 @@ import java.util.List;
 
 public class GameState extends State implements Displayable {
 
-    private static final int LEVEL_POINTS = 100;
+    private static final int LEVEL_POINTS = 20;
     private static final int MISSED_ENEMIES = 3;
     public static int score;
     private static Player player;
@@ -50,7 +50,7 @@ public class GameState extends State implements Displayable {
         factory = new Factory();
         bulletsList = new LinkedList<>();
         player = new Player(PlayerSettings.PLAYER_SET_X, PlayerSettings.PLAYER_SET_Y, PlayerSettings
-                .PLAYER_DEFAULT_NAME, PlayerSettings.PLAYER_DEFAULT_SPEED);
+                .PLAYER_DEFAULT_NAME, PlayerSettings.PLAYER_DEFAULT_SPEED, LEVEL_POINTS);
         enemiesList = new LinkedList<>();
         bonusList = new LinkedList<>();
         enemiesList.add(new EasyEnemy(RandomGenerator.getNextIntRandom(725), -100, 1, 2));
@@ -213,8 +213,8 @@ public class GameState extends State implements Displayable {
         }
 
         //change difficulty
-        if (getEnemiesList().size() < 5) {
-            if (this.getEnemyTypes() == 5) {
+        if (getEnemiesList().size() < 3) {
+            if (this.getEnemyTypes() == 3) {
                 this.createSturdyEnemies(Player.getLevel());
             } else {
                 this.addNewEasyEnemy();
@@ -277,7 +277,7 @@ public class GameState extends State implements Displayable {
         g.setFont(new Font("redensek", Font.PLAIN, 25));
         g.setColor(Color.RED);
         g.drawString(String.format("Level: %d", player.getLevel()), 560, 50);
-        g.drawString(String.format("Next Level: %d", player.getNextLevel()), 560, 80);
+        g.drawString(String.format("Next Level: %d", LEVEL_POINTS * player.getLevel()), 560, 80);
         g.drawString(String.format("Score: %d", this.score), 560, 110);
         g.drawString("Lives: ", 560, 140);
         g.drawString(String.format("Monsters: %d", getEnemiesList().size()), 560, 170);
@@ -300,7 +300,6 @@ public class GameState extends State implements Displayable {
     }
 
     private void createSturdyEnemies(int numberOfSturdyEnemies) {
-       // for (int i = 0; i < numberOfSturdyEnemies; i++) {
             getEnemiesList()
                     .add(getFactory()
                             .createSturdyEnemy(
@@ -308,7 +307,6 @@ public class GameState extends State implements Displayable {
                                     -100,
                                     RandomGenerator.getNextIntRandom(4),
                                     RandomGenerator.getNextIntRandom(Player.getLevel() + 1)));
-      //  }
         this.setEnemyTypes(0);
     }
 
@@ -336,9 +334,7 @@ public class GameState extends State implements Displayable {
     }
 
     private void increaseLevel() {
-        if (this.score >= player.getNextLevel()) {
-            player.setNextLevel(
-                    LEVEL_POINTS * player.getLevel());
+        if (this.score >= LEVEL_POINTS * player.getLevel()) {
             if (MouseInput.isMage) {
                 PlayMusic.mage.stop();
             } else {

@@ -18,7 +18,7 @@ public class Player extends GameObject {
             isFiring = false;
 
     private static int level = 1;
-    private static int nextLevel = 300;
+  //  private static int nextLevel;
     private int numberOfLives;
     private String playerName;
     private int score;
@@ -26,11 +26,12 @@ public class Player extends GameObject {
     private int timeForBonus;
     private int cropX, cropY;
 
-    public Player(int x, int y, String name, int speed) {
+    public Player(int x, int y, String name, int speed, int nextLevel) {
         super(x, y, Assets.player, speed);
         this.setPlayerName(name);
         this.setNumberOfLives(PlayerSettings.PLAYER_INITIAL_NUMBER_OF_LIVES);
         this.setScore(PlayerSettings.PLAYER_DEFAULT_SCORES);
+      //  Player.nextLevel = nextLevel;
     }
 
     public Player(BufferedImage bufferedImage) {
@@ -45,13 +46,13 @@ public class Player extends GameObject {
         Player.level = level;
     }
 
-    public static int getNextLevel() {
+   /* public static int getNextLevel() {
         return nextLevel;
     }
 
     public static void setNextLevel(int nextLevel) {
         Player.nextLevel = nextLevel;
-    }
+    }*/
 
     public static void inceraseLevel() {
         level++;
