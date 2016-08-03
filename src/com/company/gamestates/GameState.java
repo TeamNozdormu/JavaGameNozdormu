@@ -303,7 +303,7 @@ public class GameState extends State implements Displayable {
                                     RandomGenerator.getNextIntRandom(GameSettings.GAME_WIDTH - 100),
                                     -100,
                                     RandomGenerator.getNextIntRandom(4),
-                                    RandomGenerator.getNextIntRandom(Player.getLevel())));
+                                    RandomGenerator.getNextIntRandom(Player.getLevel() + 1)));
         }
         this.setEnemyTypes(0);
     }
