@@ -1,4 +1,4 @@
-package com.company.gamestates.menuStates.mainMenuStates;
+package com.company.gamestates.menustates.main;
 
 import java.awt.*;
 

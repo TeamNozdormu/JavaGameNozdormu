@@ -1,4 +1,4 @@
-package com.company.eventHandlers.utilities;
+package com.company.eventhandlers.utilities;
 
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;

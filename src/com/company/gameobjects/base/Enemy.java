@@ -2,7 +2,7 @@ package com.company.gameobjects.base;
 
 import com.company.gameobjects.utilities.DoubleDamageBonus;
 import com.company.gamestates.GameState;
-import com.company.helperClasses.RandomGenerator;
+import com.company.utilities.RandomGenerator;
 
 import java.awt.image.BufferedImage;
 

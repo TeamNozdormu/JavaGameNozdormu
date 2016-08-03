@@ -1,4 +1,4 @@
-package com.company.gamestates.menuStates.gameplayMenuStates;
+package com.company.gamestates.menustates.gameplay;
 
 import com.company.gamestates.State;
 import com.company.graphics.utililies.Assets;

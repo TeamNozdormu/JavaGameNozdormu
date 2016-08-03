@@ -1,9 +1,9 @@
 package com.company.gamestates;
 
-import com.company.constants.GameSettings;
-import com.company.constants.PlayerSettings;
-import com.company.eventHandlers.utilities.MouseInput;
-import com.company.eventHandlers.utilities.PlayMusic;
+import com.company.utilities.GameSettings;
+import com.company.utilities.PlayerSettings;
+import com.company.eventhandlers.utilities.MouseInput;
+import com.company.eventhandlers.utilities.PlayMusic;
 import com.company.gameobjects.base.Bonus;
 import com.company.gameobjects.base.Enemy;
 import com.company.gameobjects.entities.Bullet;
@@ -11,10 +11,10 @@ import com.company.gameobjects.entities.EasyEnemy;
 import com.company.gameobjects.entities.Player;
 import com.company.gameobjects.factory.Factory;
 import com.company.gamestates.utilities.StateManager;
-import com.company.gamestates.menuStates.gameplayMenuStates.GainLevelState;
-import com.company.gamestates.menuStates.gameplayMenuStates.GameOverState;
+import com.company.gamestates.menustates.gameplay.GainLevelState;
+import com.company.gamestates.menustates.gameplay.GameOverState;
 import com.company.graphics.utililies.Assets;
-import com.company.helperClasses.RandomGenerator;
+import com.company.utilities.RandomGenerator;
 import com.company.interfaces.Displayable;
 
 import java.awt.*;

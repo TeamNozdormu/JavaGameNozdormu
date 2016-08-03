@@ -1,11 +1,11 @@
-package com.company.gamestates.menuStates.gameplayMenuStates;
+package com.company.gamestates.menustates.gameplay;
 
 import com.company.gamestates.State;
 import com.company.graphics.utililies.Assets;
 
 import java.awt.*;
 
-public class IntroState extends State {
+public class IntroTaskState extends State {
 
     @Override
     public void update() {
@@ -13,6 +13,6 @@ public class IntroState extends State {
     }
 
     public void display(Graphics g) {
-        g.drawImage(Assets.intro, 0, 0, null);
+        g.drawImage(Assets.introTask, 0, 0, null);
     }
 }

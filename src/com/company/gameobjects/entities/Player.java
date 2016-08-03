@@ -1,6 +1,6 @@
 package com.company.gameobjects.entities;
 
-import com.company.constants.PlayerSettings;
+import com.company.utilities.PlayerSettings;
 import com.company.gameobjects.base.Bonus;
 import com.company.gameobjects.base.GameObject;
 import com.company.gamestates.GameState;

@@ -1,6 +1,6 @@
-package com.company.gamestates.menuStates.mainMenuStates;
+package com.company.gamestates.menustates.main;
 
-import com.company.constants.GameSettings;
+import com.company.utilities.GameSettings;
 import com.company.gameobjects.entities.Button;
 import com.company.gamestates.State;
 import com.company.graphics.utililies.Assets;

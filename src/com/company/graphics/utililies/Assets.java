@@ -1,6 +1,6 @@
 package com.company.graphics.utililies;
 
-import com.company.eventHandlers.utilities.MouseInput;
+import com.company.eventhandlers.utilities.MouseInput;
 import com.company.graphics.ImageLoader;
 import com.company.graphics.SpriteSheet;
 
@@ -10,7 +10,7 @@ import java.io.*;
 import java.util.*;
 import java.util.List;
 
-public class Assets {
+public final class Assets {
 
     public static BufferedImage backgroundDifficulty;
     public static BufferedImage background;
@@ -52,11 +52,6 @@ public class Assets {
             bullet = ImageLoader.loadImage(ImageAlbum.Arrow.getPath());
             die = new SpriteSheet(ImageLoader.loadImage(ImageAlbum.ArcherDeath.getPath()), 66, 59);
         }
-        //  }else if(MouseInput.isMediumBotton) {
-
-        //  }else if(MouseInput.isHardBotton) {
-
-        //    }
 
         easyEnemy = new SpriteSheet(ImageLoader.loadImage(ImageAlbum.EasyEnemy.getPath()), 97, 56);
         easyEnemyInit = easyEnemy.crop(1, 0);

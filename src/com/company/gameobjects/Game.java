@@ -1,17 +1,17 @@
 package com.company.gameobjects;
 
-import com.company.constants.GameSettings;
-import com.company.eventHandlers.KeyboardInput;
-import com.company.eventHandlers.utilities.MouseInput;
+import com.company.utilities.GameSettings;
+import com.company.eventhandlers.KeyboardInput;
+import com.company.eventhandlers.utilities.MouseInput;
 import com.company.gamestates.*;
 import com.company.gamestates.GameState;
-import com.company.gamestates.menuStates.gameplayMenuStates.GameOverState;
-import com.company.gamestates.menuStates.gameplayMenuStates.IntroState;
-import com.company.gamestates.menuStates.gameplayMenuStates.IntroTaskState;
-import com.company.gamestates.menuStates.mainMenuStates.ChooseDifficultyState;
-import com.company.gamestates.menuStates.mainMenuStates.ChooseSideState;
-import com.company.gamestates.menuStates.mainMenuStates.HighScoresState;
-import com.company.gamestates.menuStates.mainMenuStates.MainMenuState;
+import com.company.gamestates.menustates.gameplay.GameOverState;
+import com.company.gamestates.menustates.gameplay.IntroState;
+import com.company.gamestates.menustates.gameplay.IntroTaskState;
+import com.company.gamestates.menustates.main.ChooseDifficultyState;
+import com.company.gamestates.menustates.main.ChooseSideState;
+import com.company.gamestates.menustates.main.HighScoresState;
+import com.company.gamestates.menustates.main.MainMenuState;
 import com.company.gamestates.utilities.StateManager;
 import com.company.graphics.Display;
 import com.company.graphics.GameMap;

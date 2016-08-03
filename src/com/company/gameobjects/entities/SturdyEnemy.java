@@ -3,7 +3,7 @@ package com.company.gameobjects.entities;
 import com.company.gameobjects.base.Enemy;
 import com.company.gameobjects.utilities.GameObjectConstants;
 import com.company.graphics.utililies.Assets;
-import com.company.helperClasses.RandomGenerator;
+import com.company.utilities.RandomGenerator;
 
 public class SturdyEnemy extends Enemy {
     public SturdyEnemy(int x, int y, int healthPoints, int speedMultiplier) {

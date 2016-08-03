@@ -1,4 +1,4 @@
-package com.company.constants;
+package com.company.utilities;
 
 public final class GameSettings {
 

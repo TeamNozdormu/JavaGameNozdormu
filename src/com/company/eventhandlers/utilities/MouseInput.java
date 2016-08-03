@@ -1,14 +1,14 @@
-package com.company.eventHandlers.utilities;
+package com.company.eventhandlers.utilities;
 
 import com.company.gamestates.GameState;
-import com.company.gamestates.menuStates.gameplayMenuStates.GainLevelState;
-import com.company.gamestates.menuStates.gameplayMenuStates.IntroState;
-import com.company.gamestates.menuStates.gameplayMenuStates.IntroTaskState;
-import com.company.gamestates.menuStates.mainMenuStates.ChooseDifficultyState;
-import com.company.gamestates.menuStates.mainMenuStates.ChooseSideState;
-import com.company.gamestates.menuStates.mainMenuStates.HighScoresState;
-import com.company.gamestates.menuStates.mainMenuStates.MainMenuState;
-import com.company.gamestates.menuStates.mainMenuStates.QuitState;
+import com.company.gamestates.menustates.gameplay.GainLevelState;
+import com.company.gamestates.menustates.gameplay.IntroState;
+import com.company.gamestates.menustates.gameplay.IntroTaskState;
+import com.company.gamestates.menustates.main.ChooseDifficultyState;
+import com.company.gamestates.menustates.main.ChooseSideState;
+import com.company.gamestates.menustates.main.HighScoresState;
+import com.company.gamestates.menustates.main.MainMenuState;
+import com.company.gamestates.menustates.main.QuitState;
 import com.company.gamestates.utilities.StateManager;
 import com.company.graphics.Display;
 
