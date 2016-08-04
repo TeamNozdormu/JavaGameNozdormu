@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>com.company.gameobjects.entities.PlayerImpl</OriginalElement>
+  <nodes>
+    <node x="146.0" y="0.0">com.company.gameobjects.interfaces.GameObject</node>
+    <node x="300.0" y="0.0">com.company.gamestates.interfaces.Displayable</node>
+    <node x="0.0" y="0.0">com.company.gamestates.interfaces.Updateable</node>
+    <node x="72.25" y="166.0">com.company.gameobjects.entities.PlayerImpl</node>
+    <node x="112.5" y="83.0">com.company.gameobjects.base.AbstractGameObject</node>
+    <node x="8.5" y="83.0">com.company.gameobjects.interfaces.Player</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="com.company.gameobjects.base.AbstractGameObject" target="com.company.gamestates.interfaces.Updateable">
+      <point x="-67.0" y="-16.5" />
+      <point x="146.0" y="58.0" />
+      <point x="63.0" y="58.0" />
+      <point x="0.0" y="16.5" />
+    </edge>
+    <edge source="com.company.gameobjects.base.AbstractGameObject" target="com.company.gameobjects.interfaces.GameObject">
+      <point x="0.0" y="-16.5" />
+      <point x="0.0" y="16.5" />
+    </edge>
+    <edge source="com.company.gameobjects.entities.PlayerImpl" target="com.company.gameobjects.interfaces.Player">
+      <point x="-29.75" y="-16.5" />
+      <point x="102.0" y="141.0" />
+      <point x="50.5" y="141.0" />
+      <point x="0.0" y="16.5" />
+    </edge>
+    <edge source="com.company.gameobjects.entities.PlayerImpl" target="com.company.gameobjects.base.AbstractGameObject">
+      <point x="29.75" y="-16.5" />
+      <point x="161.5" y="141.0" />
+      <point x="213.0" y="141.0" />
+      <point x="0.0" y="16.5" />
+    </edge>
+    <edge source="com.company.gameobjects.base.AbstractGameObject" target="com.company.gamestates.interfaces.Displayable">
+      <point x="67.0" y="-16.5" />
+      <point x="280.0" y="58.0" />
+      <point x="362.5" y="58.0" />
+      <point x="0.0" y="16.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="212.5" y="99.5" />
+  <SelectedNodes>
+    <node>com.company.gameobjects.entities.PlayerImpl</node>
+  </SelectedNodes>
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
