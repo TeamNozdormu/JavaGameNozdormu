@@ -42,7 +42,6 @@ public final class Assets {
     public static void init() {
         background = ImageLoader.loadImage(ImageAlbum.Background.getPath());
 
-        //  if(MouseInput.isEasyBotton) {
         if (MouseInput.isMage) {
             player = (ImageLoader.loadImage(ImageAlbum.MagePlayer.getPath()));
             bullet = ImageLoader.loadImage(ImageAlbum.FireBall.getPath());

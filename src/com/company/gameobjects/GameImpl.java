@@ -48,7 +48,7 @@ public class GameImpl implements Game, Runnable {
         this.isRunning = running;
     }
 
-    private GameMap getMap() {
+    public GameMap getMap() {
         return this.map;
     }
 
@@ -56,7 +56,7 @@ public class GameImpl implements Game, Runnable {
         this.map = map;
     }
 
-    private Display getDisplay() {
+    public Display getDisplay() {
         return this.display;
     }
 
@@ -96,7 +96,7 @@ public class GameImpl implements Game, Runnable {
         this.bufferStrategy = bufferStrategy;
     }
 
-    private Graphics getGraphics() {
+    public Graphics getGraphics() {
         return this.graphics;
     }
 
@@ -104,7 +104,7 @@ public class GameImpl implements Game, Runnable {
         this.graphics = graphics;
     }
 
-    private State getGameState() {
+    public State getGameState() {
         return this.gameState;
     }
 

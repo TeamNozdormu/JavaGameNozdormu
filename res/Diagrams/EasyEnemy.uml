@@ -3,36 +3,50 @@
   <ID>JAVA</ID>
   <OriginalElement>com.company.gameobjects.entities.EasyEnemy</OriginalElement>
   <nodes>
-    <node x="83.25" y="246.0">com.company.gameobjects.entities.EasyEnemy</node>
-    <node x="153.0" y="0.0">com.company.interfaces.Updateable</node>
-    <node x="0.0" y="0.0">com.company.interfaces.Displayable</node>
-    <node x="101.25" y="164.0">Enemy</node>
-    <node x="78.75" y="82.0">GameObject</node>
+    <node x="146.0" y="0.0">com.company.gameobjects.interfaces.GameObject</node>
+    <node x="300.0" y="0.0">com.company.gamestates.interfaces.Displayable</node>
+    <node x="67.49999999999999" y="249.0">com.company.gameobjects.entities.EasyEnemy</node>
+    <node x="3.5" y="83.0">com.company.gameobjects.interfaces.Enemy</node>
+    <node x="0.0" y="0.0">com.company.gamestates.interfaces.Updateable</node>
+    <node x="112.49999999999999" y="83.0">com.company.gameobjects.base.AbstractGameObject</node>
+    <node x="52.499999999999986" y="166.0">com.company.gameobjects.base.AbstractEnemy</node>
   </nodes>
   <notes />
   <edges>
-    <edge source="Enemy" target="GameObject">
-      <point x="0.0" y="-16.0" />
-      <point x="0.0" y="16.0" />
+    <edge source="com.company.gameobjects.base.AbstractGameObject" target="com.company.gamestates.interfaces.Updateable">
+      <point x="-67.0" y="-16.5" />
+      <point x="146.0" y="58.0" />
+      <point x="63.0" y="58.0" />
+      <point x="0.0" y="16.5" />
     </edge>
-    <edge source="com.company.gameobjects.entities.EasyEnemy" target="Enemy">
-      <point x="0.0" y="-16.0" />
-      <point x="0.0" y="16.0" />
+    <edge source="com.company.gameobjects.entities.EasyEnemy" target="com.company.gameobjects.base.AbstractEnemy">
+      <point x="0.0" y="-16.5" />
+      <point x="0.0" y="16.5" />
     </edge>
-    <edge source="GameObject" target="com.company.interfaces.Displayable">
-      <point x="-31.0" y="-16.0" />
-      <point x="109.75" y="57.0" />
-      <point x="66.5" y="57.0" />
-      <point x="0.0" y="16.0" />
+    <edge source="com.company.gameobjects.base.AbstractEnemy" target="com.company.gameobjects.base.AbstractGameObject">
+      <point x="39.0" y="-16.5" />
+      <point x="169.5" y="141.0" />
+      <point x="213.0" y="141.0" />
+      <point x="0.0" y="16.5" />
     </edge>
-    <edge source="GameObject" target="com.company.interfaces.Updateable">
-      <point x="31.0" y="-16.0" />
-      <point x="171.75" y="57.0" />
-      <point x="215.0" y="57.0" />
-      <point x="0.0" y="16.0" />
+    <edge source="com.company.gameobjects.base.AbstractEnemy" target="com.company.gameobjects.interfaces.Enemy">
+      <point x="-39.0" y="-16.5" />
+      <point x="91.49999999999999" y="141.0" />
+      <point x="48.0" y="141.0" />
+      <point x="0.0" y="16.5" />
+    </edge>
+    <edge source="com.company.gameobjects.base.AbstractGameObject" target="com.company.gameobjects.interfaces.GameObject">
+      <point x="0.0" y="-16.5" />
+      <point x="0.0" y="16.5" />
+    </edge>
+    <edge source="com.company.gameobjects.base.AbstractGameObject" target="com.company.gamestates.interfaces.Displayable">
+      <point x="67.0" y="-16.5" />
+      <point x="280.0" y="58.0" />
+      <point x="362.5" y="58.0" />
+      <point x="0.0" y="16.5" />
     </edge>
   </edges>
-  <settings layout="Hierarchic Group" zoom="1.0" x="138.5" y="139.0" />
+  <settings layout="Hierarchic Group" zoom="1.0" x="212.5" y="141.0" />
   <SelectedNodes>
     <node>com.company.gameobjects.entities.EasyEnemy</node>
   </SelectedNodes>

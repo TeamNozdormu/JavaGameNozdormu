@@ -1,12 +1,11 @@
 package com.company.gameobjects.entities;
 
 import com.company.gameobjects.base.AbstractGameObject;
-import com.company.gamestates.interfaces.Displayable;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
 
-public class Button extends AbstractGameObject implements Displayable {
+public class Button extends AbstractGameObject {
 
     public String name;
 
