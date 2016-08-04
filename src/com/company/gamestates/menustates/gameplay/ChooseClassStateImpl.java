@@ -43,21 +43,13 @@ public class ChooseClassStateImpl extends AbstractState implements ChooseClassSt
         this.mageButton = mageButton;
     }
 
-    @Override
-    public void update() {
-
-    }
-
     public void display(Graphics g) {
-
         g.drawImage(Assets.chooseSide, 0, 0, null);
         Graphics2D g2d = (Graphics2D) g;
-
         g.setFont(new Font("Immortal", Font.PLAIN, 25));
         g.setColor(Color.white);
         g2d.draw(archerButton);
         g2d.draw(mageButton);
         backButton.display(g);
     }
-
 }

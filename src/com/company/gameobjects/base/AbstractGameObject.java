@@ -33,7 +33,7 @@ public abstract class AbstractGameObject implements GameObject, Displayable, Upd
     }
 
     public AbstractGameObject(BufferedImage bufferedImage) {
-
+        this.setObjectIcon(bufferedImage);
     }
 
     public int getX() {
@@ -89,8 +89,4 @@ public abstract class AbstractGameObject implements GameObject, Displayable, Upd
         g.drawImage(this.getObjectIcon(), this.getX(), this.getY(), null);
     }
 
-    @Override
-    public void update() {
-
-    }
 }

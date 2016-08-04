@@ -14,11 +14,6 @@ public class GameOverState extends AbstractState implements Displayable {
         return stringBuilder;
     }
 
-    @Override
-    public void update() {
-
-    }
-
     public void display(Graphics g) {
 
         g.setColor(Color.WHITE);

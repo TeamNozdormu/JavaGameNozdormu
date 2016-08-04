@@ -53,11 +53,6 @@ public class ChooseDifficultyStateImpl extends AbstractState implements ChooseDi
         this.hardButton = hardButton;
     }
 
-    @Override
-    public void update() {
-
-    }
-
     public void display(Graphics g) {
 
         g.drawImage(Assets.backgroundDifficulty, 0, 0, null);

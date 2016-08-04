@@ -1,6 +1,5 @@
 package com.company.gamestates.interfaces;
 
-public interface SettingsState {
+public interface SettingsState extends Updateable {
 
-    void update();
 }

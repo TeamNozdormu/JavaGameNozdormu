@@ -7,11 +7,6 @@ import java.awt.*;
 
 public class IntroState extends AbstractState {
 
-    @Override
-    public void update() {
-
-    }
-
     public void display(Graphics g) {
         g.drawImage(Assets.intro, 0, 0, null);
     }

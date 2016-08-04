@@ -7,11 +7,6 @@ import java.awt.*;
 
 public class IntroTaskState extends AbstractState {
 
-    @Override
-    public void update() {
-
-    }
-
     public void display(Graphics g) {
         g.drawImage(Assets.introTask, 0, 0, null);
     }

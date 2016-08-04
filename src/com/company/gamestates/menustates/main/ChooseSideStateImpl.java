@@ -44,12 +44,6 @@ public class ChooseSideStateImpl extends AbstractState implements ChooseSideStat
         this.mageButton = mageButton;
     }
 
-
-    @Override
-    public void update() {
-
-    }
-
     public void display(Graphics g) {
         g.drawImage(Assets.chooseSide, 0, 0, null);
         Graphics2D g2d = (Graphics2D) g;

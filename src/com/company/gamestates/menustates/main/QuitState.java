@@ -7,11 +7,6 @@ import java.awt.*;
 public class QuitState extends AbstractState {
 
     @Override
-    public void update() {
-
-    }
-
-    @Override
     public void display(Graphics g) {
 
     }
